@@ -1,0 +1,37 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: install gtest
+      run: git clone https://github.com/google/googletest &&
+           cd googletest &&
+           cmake ./ &&
+           make &&
+           sudo make install
+    
+    - name: cmake
+      run: mkdir build && 
+           cd build && 
+           cmake ../
+  
+    - name: make
+      run:  cd build && make
+
+    - name: array
+      run: ./build/bin/array
+    
+    - name: vector
+      run: ./build/bin/vector
+
+    - name: list
+      run: ./build/bin/list
+
+    - name: deque
+      run: ./build/bin/deque

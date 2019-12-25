@@ -1,0 +1,409 @@
+#include <stdint.h>
+#include <stdlib.h>
+#include <malloc.h>
+#include <string.h>
+#include <stdbool.h>
+
+#include "CTL_allocator.h"
+#include "CTL_deque.h"
+
+static inline void set_node(CTL_deque_iterator *dest, char **src, size_t buf_size, size_t T_size)
+{
+    dest->node = src;
+    dest->first = *src;
+    dest->last = *src + (buf_size * T_size);
+}
+
+static void reallocate_map(CTL_deque *handle, size_t nodes_to_add, bool front);
+
+static void push_aux_back(CTL_deque *handle, void *data);
+
+static void push_aux_front(CTL_deque *handle, void *data);
+
+static void pop_aux_back(CTL_deque *handle);
+
+static void pop_aux_front(CTL_deque *handle);
+
+void CTL_deque_new(CTL_deque *handle, size_t buf_size, size_t T_size)
+{
+    handle->buf_size = buf_size;
+    //一个map至少 拥有8个节点
+    handle->map_size = 8;
+    handle->map = (char **)CTL_allocate(sizeof(char *) * handle->map_size);
+
+    //先分配一个缓存区
+    char **start = handle->map + ((handle->map_size - 1) / 2);
+    char **finish = start;
+    *start = (char *)CTL_allocate(T_size * handle->buf_size);
+    //设置 begin和end 两个迭代器
+    set_node(&handle->begin, start, handle->buf_size, T_size);
+    handle->begin.data = *start;
+    handle->begin.T_size = T_size;
+
+    set_node(&handle->end, finish, handle->buf_size, T_size);
+    handle->end.data = *finish;
+    handle->end.T_size = T_size;
+}
+
+void CTL_deque_clear(CTL_deque *handle)
+{
+    //删除 第二个 - 倒数第二个 缓存区
+
+    // 删除前后两个数组的元素.
+    if (handle->begin.node != handle->end.node)
+    {
+        //释放缓存区
+        for (char **node = handle->begin.node + 1; node <= handle->end.node; ++node)
+        {
+            CTL_deallocate(*node, handle->end.T_size * handle->buf_size);
+        }
+    }
+
+    //重新调整map
+    char **start = handle->begin.node;
+    char **finish = start;
+    //设置 begin和end 两个迭代器
+    set_node(&handle->begin, start, handle->buf_size, handle->end.T_size);
+    handle->begin.data = *start;
+    set_node(&handle->end, finish, handle->buf_size, handle->end.T_size);
+    handle->end.data = *finish;
+}
+
+void CTL_deque_delete(CTL_deque *handle)
+{
+    CTL_deque_clear(handle);
+    CTL_deallocate(*handle->begin.node, handle->end.T_size * handle->buf_size);
+    CTL_deallocate(handle->map, sizeof(char *) * handle->map_size);
+}
+
+void *CTL_deque_front(const CTL_deque *handle)
+{
+    return handle->begin.data;
+}
+
+void *CTL_deque_back(const CTL_deque *handle)
+{
+    return CTL_deque_iterator_move(&handle->end, -1).data;
+}
+
+CTL_deque_iterator CTL_deque_begin(const CTL_deque *handle)
+{
+    return handle->begin;
+}
+
+CTL_deque_iterator CTL_deque_end(const CTL_deque *handle)
+{
+    return handle->end;
+}
+
+static void reallocate_map(CTL_deque *handle, size_t nodes_to_add, bool front)
+{
+    size_t num_old_nodes = handle->end.node - handle->begin.node + 1;
+    size_t num_new_nodes = num_old_nodes + nodes_to_add;
+
+    char **new_start;
+
+    if (handle->map_size > 2 * num_new_nodes)
+    {
+        //map空间足够
+        new_start = handle->map + (handle->map_size - num_new_nodes) / 2 + (front ? nodes_to_add : 0);
+
+        memmove(new_start, handle->begin.node, sizeof(char *) * (handle->end.node - handle->begin.node + 1));
+    }
+    else
+    {
+        //重新 分配 map空间
+        size_t new_map_size = handle->map_size + 2 + (handle->map_size > nodes_to_add ? handle->map_size : nodes_to_add);
+        char **new_map = (char **)CTL_allocate(sizeof(char *) * new_map_size);
+
+        new_start = new_map + (new_map_size - num_new_nodes) / 2 + (front ? nodes_to_add : 0);
+
+        memcpy(new_start, handle->begin.node, sizeof(char *) * (handle->end.node - handle->begin.node + 1));
+        CTL_deallocate(handle->map, sizeof(char *) * handle->map_size);
+
+        handle->map = new_map;
+        handle->map_size = new_map_size;
+    }
+
+    set_node(&handle->begin, new_start, handle->buf_size, handle->end.T_size);
+    handle->begin.data = *new_start;
+    handle->end.data = *(new_start + num_old_nodes - 1) + (handle->end.data - handle->end.first);
+    set_node(&handle->end, new_start + num_old_nodes - 1, handle->buf_size, handle->end.T_size);
+}
+
+static void push_aux_back(CTL_deque *handle, void *data)
+{
+    memcpy(handle->end.data, data, handle->end.T_size);
+
+    if (2 > handle->map_size - (handle->end.node - handle->map))
+    {
+        //尾端 空间不足
+        reallocate_map(handle, 1, false);
+    }
+    //分配一个新节点
+    *(handle->end.node + 1) = (char *)CTL_allocate(handle->end.T_size * handle->buf_size);
+    //设置end 迭代器
+    ++handle->end.node;
+    set_node(&handle->end, handle->end.node, handle->buf_size, handle->end.T_size);
+    handle->end.data = handle->end.first;
+}
+
+void CTL_deque_push_back(CTL_deque *handle, void *data)
+{
+    if (handle->end.data != handle->end.last - handle->end.T_size)
+    {
+        //最后一个缓存区 尚有 空间
+        memcpy(handle->end.data, data, handle->end.T_size);
+        handle->end.data += handle->end.T_size;
+    }
+    else
+    {
+
+        push_aux_back(handle, data);
+    }
+    ++handle->size;
+}
+
+static void push_aux_front(CTL_deque *handle, void *data)
+{
+    if (1 > handle->begin.node - handle->map)
+    {
+        //前端 空间不足
+        reallocate_map(handle, 1, true);
+    }
+    //分配一个新节点
+    *(handle->begin.node - 1) = (char *)CTL_allocate(handle->end.T_size * handle->buf_size);
+    //设置begin 迭代器
+    --handle->begin.node;
+    set_node(&handle->begin, handle->begin.node, handle->buf_size, handle->end.T_size);
+    handle->begin.data = handle->begin.last - handle->end.T_size;
+
+    memcpy(handle->begin.data, data, handle->end.T_size);
+}
+
+void CTL_deque_push_front(CTL_deque *handle, void *data)
+{
+    if (handle->begin.data != handle->begin.first)
+    {
+        //第一个缓存区 尚有 空间
+        handle->begin.data -= handle->end.T_size;
+        memcpy(handle->begin.data, data, handle->end.T_size);
+    }
+    else
+    {
+        push_aux_front(handle, data);
+    }
+    ++handle->size;
+}
+
+static void pop_aux_back(CTL_deque *handle)
+{
+    CTL_deallocate(*handle->end.node, handle->end.T_size * handle->buf_size);
+    --handle->end.node;
+    set_node(&handle->end, handle->end.node, handle->buf_size, handle->end.T_size);
+    handle->end.data = handle->end.last - handle->end.T_size;
+}
+
+void CTL_deque_pop_back(CTL_deque *handle)
+{
+
+    if (handle->end.data != handle->end.first)
+    {
+        //缓存区 更多元素
+        //最后一个缓存区 尚有 一个空间
+        handle->end.data -= handle->end.T_size;
+    }
+    else
+    {
+        //仅有一个元素
+        pop_aux_back(handle);
+    }
+    --handle->size;
+}
+
+static void pop_aux_front(CTL_deque *handle)
+{
+    CTL_deallocate(*handle->begin.node, handle->end.T_size * handle->buf_size);
+    ++handle->begin.node;
+    set_node(&handle->begin, handle->begin.node, handle->buf_size, handle->end.T_size);
+    handle->begin.data = handle->begin.first;
+}
+
+void CTL_deque_pop_front(CTL_deque *handle)
+{
+    if (handle->begin.data != handle->begin.last - handle->end.T_size)
+    {
+        //缓存区 更多元素
+        //最后一个缓存区 尚有 一个空间
+        handle->begin.data += handle->end.T_size;
+    }
+    else
+    {
+        //仅有一个元素
+        pop_aux_front(handle);
+    }
+    --handle->size;
+}
+
+static void insert_aux(CTL_deque *handle, const CTL_deque_iterator *iterator, void *data)
+{
+    ptrdiff_t index = CTL_deque_iterator_diff(iterator, &handle->begin);
+
+    if (index < handle->size / 2)
+    {
+        CTL_deque_push_front(handle, handle->begin.data);
+
+        CTL_deque_iterator result = CTL_deque_iterator_move(&handle->begin, 1);
+        CTL_deque_iterator first = CTL_deque_iterator_move(&result, 1);
+        CTL_deque_iterator last = CTL_deque_iterator_move(&handle->begin, index + 1);
+
+        while (!CTL_deque_iterator_equal(&first, &last))
+        {
+            memcpy(result.data, first.data, iterator->T_size);
+            first = CTL_deque_iterator_move(&first, 1);
+            result = CTL_deque_iterator_move(&result, 1);
+        }
+
+        memcpy(CTL_deque_iterator_move(&last, -1).data, data, iterator->T_size);
+    }
+    else
+    {
+
+        CTL_deque_push_back(handle, handle->end.data);
+
+        CTL_deque_iterator result = CTL_deque_iterator_move(&handle->end, -1);
+        CTL_deque_iterator first = CTL_deque_iterator_move(&result, -1);
+        CTL_deque_iterator last = CTL_deque_iterator_move(&handle->begin, index - 1);
+
+        while (!CTL_deque_iterator_equal(&first, &last))
+        {
+            memcpy(result.data, first.data, iterator->T_size);
+            first = CTL_deque_iterator_move(&first, -1);
+            result = CTL_deque_iterator_move(&result, -1);
+        }
+
+        memcpy(iterator->data, data, iterator->T_size);
+    }
+}
+
+void CTL_deque_insert(CTL_deque *handle, const CTL_deque_iterator *iterator, void *data)
+{
+    if (CTL_deque_iterator_equal(iterator, &handle->begin))
+    {
+        CTL_deque_push_front(handle, data);
+    }
+    else if (CTL_deque_iterator_equal(iterator, &handle->end))
+    {
+        CTL_deque_push_back(handle, data);
+    }
+    else
+    {
+        insert_aux(handle, iterator, data);
+    }
+}
+
+void CTL_deque_erase(CTL_deque *handle, const CTL_deque_iterator *iterator)
+{
+    CTL_deque_iterator next = CTL_deque_iterator_move(iterator, -1);
+
+    ptrdiff_t index = CTL_deque_iterator_diff(iterator, &handle->begin);
+
+    if (index < handle->size / 2)
+    {
+        CTL_deque_iterator result = *iterator;
+        CTL_deque_iterator first = CTL_deque_iterator_move(iterator, -1);
+        CTL_deque_iterator last = CTL_deque_iterator_move(&handle->begin, -1);
+
+        while (!CTL_deque_iterator_equal(&first, &last))
+        {
+            memcpy(result.data, first.data, iterator->T_size);
+            first = CTL_deque_iterator_move(&first, -1);
+            result = CTL_deque_iterator_move(&result, -1);
+        }
+
+        CTL_deque_pop_front(handle);
+    }
+    else
+    {
+        CTL_deque_iterator result = *iterator;
+        CTL_deque_iterator first = CTL_deque_iterator_move(iterator, 1);
+        CTL_deque_iterator last = CTL_deque_iterator_move(&handle->end, 1);
+
+        while (!CTL_deque_iterator_equal(&first, &last))
+        {
+            memcpy(result.data, first.data, iterator->T_size);
+            first = CTL_deque_iterator_move(&first, 1);
+            result = CTL_deque_iterator_move(&result, 1);
+        }
+
+        CTL_deque_pop_back(handle);
+    }
+}
+
+CTL_deque_iterator CTL_deque_at(const CTL_deque *handle, size_t pos)
+{
+    return CTL_deque_iterator_move(&handle->begin, pos);
+}
+
+CTL_deque_iterator CTL_deque_iterator_move(const CTL_deque_iterator *handle, ptrdiff_t pos)
+{
+    CTL_deque_iterator result = *handle;
+    ptrdiff_t buf_size = handle->last - handle->first;
+    ptrdiff_t offset = (pos * handle->T_size) + (handle->data - handle->first);
+
+    if (offset >= 0 && offset < buf_size)
+    {
+        result.data = handle->data + (pos * handle->T_size);
+    }
+    else
+    {
+        ptrdiff_t node_offset = offset > 0 ? offset / buf_size : ((-offset - 1) / buf_size - 1);
+        set_node(&result, handle->node + node_offset, buf_size, 1);
+        result.data = result.first + offset - (node_offset * buf_size);
+    }
+    return result;
+}
+
+bool CTL_deque_iterator_equal(const CTL_deque_iterator *left, const CTL_deque_iterator *right)
+{
+    return left->data == right->data;
+}
+
+bool CTL_deque_iterator_more(const CTL_deque_iterator *left, const CTL_deque_iterator *right)
+{
+    if (left->node == right->node)
+    {
+        return left->data > right->data;
+    }
+    else
+    {
+        return left->node > right->node;
+    }
+}
+
+ptrdiff_t CTL_deque_iterator_diff(const CTL_deque_iterator *left, const CTL_deque_iterator *right)
+{
+    if (left->node == right->node)
+    {
+        return (left->data - right->data) / left->T_size;
+    }
+
+    ptrdiff_t buf_size = left->last - left->first;
+    ptrdiff_t left_diff, right_diff;
+    left_diff = (left->data - left->first);
+    right_diff = (right->last - right->data);
+
+    if (left->node < right->node)
+    {
+        return (left_diff + right_diff + ((left->node - right->node - 1) * buf_size)) / left->T_size;
+    }
+    else
+    {
+        return (left_diff + right_diff + ((left->node - right->node - 1) * buf_size)) / left->T_size;
+    }
+}
+
+size_t CTL_deque_size(const CTL_deque *handle)
+{
+    return handle->size;
+}
