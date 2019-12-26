@@ -60,3 +60,5 @@ bool CTL_deque_iterator_more(const CTL_deque_iterator *left, const CTL_deque_ite
 ptrdiff_t CTL_deque_iterator_diff(const CTL_deque_iterator *left, const CTL_deque_iterator *right);
 
 size_t CTL_deque_size(const CTL_deque *handle);
+
+bool CTL_deque_empty(const CTL_deque *handle);

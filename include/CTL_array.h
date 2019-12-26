@@ -39,3 +39,5 @@ bool CTL_array_iterator_more(const CTL_array_iterator *left, const CTL_array_ite
 size_t CTL_array_size(const CTL_array *handle);
 
 size_t CTL_array_capacity(const CTL_array *handle);
+
+bool CTL_array_empty(const CTL_array *handle);

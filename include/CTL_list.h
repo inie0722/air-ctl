@@ -63,6 +63,6 @@ CTL_list_iterator CTL_list_iterator_move(const CTL_list_iterator *handle, const 
 
 bool CTL_list_iterator_equal(const CTL_list_iterator *left, const CTL_list_iterator *right);
 
-bool CTL_list_empty(const CTL_list *handle);
-
 size_t CTL_list_size(const CTL_list *handle);
+
+bool CTL_list_empty(const CTL_list *handle);
