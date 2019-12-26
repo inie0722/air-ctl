@@ -73,3 +73,8 @@ size_t CTL_array_capacity(const CTL_array *handle)
 {
     return CTL_array_iterator_diff(&handle->end, &handle->begin);
 }
+
+bool CTL_array_empty(const CTL_array *handle)
+{
+	return !handle->begin.data;
+}

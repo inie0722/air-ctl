@@ -54,3 +54,5 @@ bool CTL_vector_iterator_more(const CTL_vector_iterator *left, const CTL_vector_
 size_t CTL_vector_size(const CTL_vector *handle);
 
 size_t CTL_vector_capacity(const CTL_vector *handle);
+
+bool CTL_vector_empty(const CTL_vector *handle);

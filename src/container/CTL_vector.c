@@ -145,3 +145,8 @@ size_t CTL_vector_capacity(const CTL_vector *handle)
 {
     return CTL_vector_iterator_diff(&handle->end_of_storage, &handle->begin);
 }
+
+bool CTL_vector_empty(const CTL_vector *handle)
+{
+	return !handle->begin.data;
+}

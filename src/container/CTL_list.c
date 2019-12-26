@@ -263,11 +263,6 @@ bool CTL_list_iterator_equal(const CTL_list_iterator *left, const CTL_list_itera
 	return left->node == right->node;
 }
 
-bool CTL_list_empty(const CTL_list *handle)
-{
-	return handle->list->next == handle->list;
-}
-
 size_t CTL_list_size(const CTL_list *handle)
 {
 	size_t size = 0;
@@ -280,4 +275,9 @@ size_t CTL_list_size(const CTL_list *handle)
 	}
 
 	return size;
+}
+
+bool CTL_list_empty(const CTL_list *handle)
+{
+	return handle->list->next == handle->list;
 }

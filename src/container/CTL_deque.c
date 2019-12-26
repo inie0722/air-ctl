@@ -304,8 +304,6 @@ void CTL_deque_insert(CTL_deque *handle, const CTL_deque_iterator *iterator, voi
 
 void CTL_deque_erase(CTL_deque *handle, const CTL_deque_iterator *iterator)
 {
-    CTL_deque_iterator next = CTL_deque_iterator_move(iterator, -1);
-
     ptrdiff_t index = CTL_deque_iterator_diff(iterator, &handle->begin);
 
     if (index < handle->size / 2)
@@ -406,4 +404,9 @@ ptrdiff_t CTL_deque_iterator_diff(const CTL_deque_iterator *left, const CTL_dequ
 size_t CTL_deque_size(const CTL_deque *handle)
 {
     return handle->size;
+}
+
+bool CTL_deque_empty(const CTL_deque *handle)
+{
+    return !handle->size;
 }

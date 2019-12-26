@@ -61,12 +61,10 @@ TEST(Modifiers, push_front)
 
 TEST(Modifiers, pop_back)
 {
-    cout<<(void*)ctl.list->prior << " "<<(void*)ctl.list->next->prior<<endl;
     for (int i = 0; i < 50; i++)
     {
         stl.pop_back();
         CTL_list_pop_back(&ctl);
-        cout<<(void*)ctl.list->prior << " "<<(void*)ctl.list->next->prior<<endl;
     }
 
     auto ctl_it = CTL_list_begin(&ctl);
