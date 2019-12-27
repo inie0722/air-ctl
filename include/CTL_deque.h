@@ -41,17 +41,17 @@ void CTL_deque_push_back(CTL_deque *handle, void *data);
 
 void CTL_deque_push_front(CTL_deque *handle, void *data);
 
-CTL_deque_iterator CTL_deque_iterator_move(const CTL_deque_iterator *handle, const ptrdiff_t pos);
-
 void CTL_deque_pop_back(CTL_deque *handle);
 
 void CTL_deque_pop_front(CTL_deque *handle);
 
-CTL_deque_iterator CTL_deque_at(const CTL_deque *handle, size_t pos);
-
 void CTL_deque_insert(CTL_deque *handle, const CTL_deque_iterator *iterator, void *data);
 
 void CTL_deque_erase(CTL_deque *handle, const CTL_deque_iterator *iterator);
+
+CTL_deque_iterator CTL_deque_at(const CTL_deque *handle, size_t pos);
+
+CTL_deque_iterator CTL_deque_iterator_move(const CTL_deque_iterator *handle, const ptrdiff_t pos);
 
 bool CTL_deque_iterator_equal(const CTL_deque_iterator *left, const CTL_deque_iterator *right);
 

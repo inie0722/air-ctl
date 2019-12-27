@@ -5,15 +5,15 @@
 #include "CTL_vector.h"
 #include "CTL_allocator.h"
 
-void CTL_vector_new(CTL_vector *handle, const size_t size, const size_t T_size)
+void CTL_vector_new(CTL_vector *handle, const size_t buf_size, const size_t T_size)
 {
     handle->begin.T_size = T_size;
     handle->end.T_size = T_size;
     handle->end_of_storage.T_size = T_size;
 
-    handle->begin.data = (char *)CTL_allocate(T_size * size);
+    handle->begin.data = (char *)CTL_allocate(T_size * buf_size);
     handle->end.data = handle->begin.data;
-    handle->end_of_storage.data = handle->begin.data + (T_size * size);
+    handle->end_of_storage.data = handle->begin.data + (T_size * buf_size);
 }
 
 void CTL_vector_clear(CTL_vector *handle)

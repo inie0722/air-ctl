@@ -16,7 +16,7 @@ typedef struct
     CTL_array_iterator end;
 } CTL_array;
 
-void CTL_array_new(CTL_array *handle, const void *begin, const void *end, const size_t T_size);
+void CTL_array_init(CTL_array *handle, const void *begin, const void *end, const size_t T_size);
 
 void *CTL_array_front(const CTL_array *handle);
 

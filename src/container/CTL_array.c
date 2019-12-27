@@ -4,7 +4,7 @@
 
 #include "CTL_array.h"
 
-void CTL_array_new(CTL_array *handle, const void *begin, const void *end, const size_t T_size)
+void CTL_array_init(CTL_array *handle, const void *begin, const void *end, const size_t T_size)
 {
     handle->begin.data = (char *)begin;
     handle->begin.T_size = T_size;
