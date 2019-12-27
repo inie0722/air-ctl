@@ -8,12 +8,5 @@ using namespace std;
 
 int main()
 {
-    deque<int> ve;
-    ve.push_back(66);
-    ve.push_back(66);
-    ve.push_back(66);
-    ve.push_back(66);
-    ve.push_back(66);
-    printf("%d\n", ve.capacity());
     return 0;
 }
