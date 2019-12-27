@@ -1,14 +1,19 @@
 #include <stdio.h>
-#include <vector>
-#include <iostream>
+#include <deque>
+
+//#include "CTL_container.h"
+//#include "CTL_array.h"
 
 using namespace std;
-int main(void)
+
+int main()
 {
-    vector<int>l;
-    l.push_back(99);
-    l.push_back(98);
-    l.pop_back();
-    cout<<*l.end()<<endl;
+    deque<int> ve;
+    ve.push_back(66);
+    ve.push_back(66);
+    ve.push_back(66);
+    ve.push_back(66);
+    ve.push_back(66);
+    printf("%d\n", ve.capacity());
     return 0;
 }
