@@ -1,3 +1,6 @@
+#include <stddef.h>
+#include <stdbool.h>
+
 #include "CTL_queue.h"
 
 void CTL_queue_new(CTL_queue *handle, CTL_functions *functions, size_t buf_size, size_t T_size)
