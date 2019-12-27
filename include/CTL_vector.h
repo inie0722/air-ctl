@@ -19,7 +19,7 @@ typedef struct
     CTL_vector_iterator end_of_storage;
 } CTL_vector;
 
-void CTL_vector_new(CTL_vector *handle, const size_t size, const size_t T_size);
+void CTL_vector_new(CTL_vector *handle, const size_t buf_size, const size_t T_size);
 
 void CTL_vector_clear(CTL_vector *handle);
 

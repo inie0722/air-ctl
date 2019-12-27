@@ -16,7 +16,7 @@ array<int, 100> stl;
 void test_new()
 {
     int *array = new int[100];
-    CTL_array_new(&ctl, array, array + 100, sizeof(int));
+    CTL_array_init(&ctl, array, array + 100, sizeof(int));
 
     for (size_t i = 0; i < 100; i++)
     {
