@@ -1,7 +1,7 @@
-#include <gtest/gtest.h>
-
 #include <iostream>
 #include <array>
+
+#include <gtest/gtest.h>
 
 extern "C"
 {
@@ -29,7 +29,11 @@ TEST(Element_access, at)
 {
     for (size_t i = 0; i < 100; i++)
     {
-        ASSERT_TRUE(stl[i] == *(int *)CTL_array_at(&ctl, i).data);
+        CTL_array_iterator at;
+        CTL_array_begin(&ctl, &at);
+        CTL_array_iterator_move(&at, i, &at);
+        //CTL_array_at(&ctl, i, &at);
+        ASSERT_TRUE(stl[i] == *(int *)at.data);
     }
 }
 
@@ -45,34 +49,38 @@ TEST(Element_access, front)
 
 TEST(Iterators, begin)
 {
-    auto stl_at = stl.begin();
-    auto ctl_at = CTL_array_begin(&ctl);
+    auto stl_it = stl.begin();
+    CTL_array_iterator ctl_it;
+    CTL_array_begin(&ctl, &ctl_it);
 
-    while (stl_at != stl.end())
+    while (stl_it != stl.end())
     {
-        ASSERT_TRUE(*stl_at == *(int *)ctl_at.data);
-        ++stl_at;
-        ctl_at = CTL_array_iterator_move(&ctl_at, 1);
+        ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
+        ++stl_it;
+        CTL_array_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
 TEST(Iterators, end)
 {
-    auto stl_at = stl.end();
-    auto ctl_at = CTL_array_end(&ctl);
+    auto stl_it = stl.end();
+    CTL_array_iterator ctl_it;
+    CTL_array_end(&ctl, &ctl_it);
 
-    while (stl_at != stl.begin())
+    while (stl_it != stl.begin())
     {
-        --stl_at;
-        ctl_at = CTL_array_iterator_move(&ctl_at, -1);
-        ASSERT_TRUE(*stl_at == *(int *)ctl_at.data);
+        --stl_it;
+        CTL_array_iterator_move(&ctl_it, -1, &ctl_it);
+        ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
     }
 }
 
 TEST(Iterators, operator)
 {
-    auto begin = CTL_array_begin(&ctl);
-    auto end = CTL_array_end(&ctl);
+    CTL_array_iterator begin;
+    CTL_array_iterator end;
+    CTL_array_begin(&ctl, &begin);
+    CTL_array_end(&ctl, &end);
 
     // ==
     ASSERT_TRUE(CTL_array_iterator_equal(&begin, &begin));

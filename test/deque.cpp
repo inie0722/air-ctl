@@ -1,8 +1,10 @@
+#include <time.h>
+
 #include <iostream>
-#include <gtest/gtest.h>
 #include <deque>
 #include <algorithm>
-#include <time.h>
+
+#include <gtest/gtest.h>
 
 extern "C"
 {
@@ -36,7 +38,7 @@ TEST(Modifiers, push_back)
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_deque_iterator_move(&ctl_it, 1);
+        CTL_deque_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
@@ -54,7 +56,7 @@ TEST(Modifiers, push_front)
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_deque_iterator_move(&ctl_it, 1);
+        CTL_deque_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
@@ -72,7 +74,7 @@ TEST(Modifiers, pop_back)
     while (stl_it != stl.begin())
     {
         --stl_it;
-        ctl_it = CTL_deque_iterator_move(&ctl_it, -1);
+        CTL_deque_iterator_move(&ctl_it, -1, &ctl_it);
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
     }
 }
@@ -93,7 +95,7 @@ TEST(Modifiers, pop_front)
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_deque_iterator_move(&ctl_it, 1);
+        CTL_deque_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
@@ -104,7 +106,10 @@ TEST(Modifiers, insert)
 
         int pos = rand() % ctl.size;
         stl.insert(stl.begin() + pos, i);
-        auto it = CTL_deque_at(&ctl, pos);
+
+        CTL_deque_iterator it;
+        CTL_deque_begin(&ctl, &it);
+        CTL_deque_iterator_move(&it, pos, &it);
         CTL_deque_insert(&ctl, &it, &i);
     }
 
@@ -115,7 +120,7 @@ TEST(Modifiers, insert)
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_deque_iterator_move(&ctl_it, 1);
+        CTL_deque_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
@@ -126,7 +131,10 @@ TEST(Modifiers, erase)
 
         int pos = rand() % ctl.size;
         stl.erase(stl.begin() + pos);
-        auto it = CTL_deque_at(&ctl, pos);
+
+        CTL_deque_iterator it;
+        CTL_deque_begin(&ctl, &it);
+        CTL_deque_iterator_move(&it, pos, &it);
         CTL_deque_erase(&ctl, &it);
     }
 
@@ -137,7 +145,7 @@ TEST(Modifiers, erase)
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_deque_iterator_move(&ctl_it, 1);
+        CTL_deque_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
@@ -154,33 +162,38 @@ TEST(Element_access, front)
 TEST(Iterators, begin)
 {
     auto stl_at = stl.begin();
-    auto ctl_at = CTL_deque_begin(&ctl);
+    CTL_deque_iterator ctl_at;
+    CTL_deque_begin(&ctl, &ctl_at);
 
     while (stl_at != stl.end())
     {
         ASSERT_TRUE(*stl_at == *(int *)ctl_at.data);
         ++stl_at;
-        ctl_at = CTL_deque_iterator_move(&ctl_at, 1);
+        CTL_deque_iterator_move(&ctl_at, 1, &ctl_at);
     }
 }
 
 TEST(Iterators, end)
 {
     auto stl_at = stl.end();
-    auto ctl_at = CTL_deque_end(&ctl);
+    CTL_deque_iterator ctl_at;
+    CTL_deque_end(&ctl, &ctl_at);
 
     while (stl_at != stl.begin())
     {
         --stl_at;
-        ctl_at = CTL_deque_iterator_move(&ctl_at, -1);
+        CTL_deque_iterator_move(&ctl_at, -1, &ctl_at);
         ASSERT_TRUE(*stl_at == *(int *)ctl_at.data);
     }
 }
 
 TEST(Iterators, operator)
 {
-    auto begin = CTL_deque_begin(&ctl);
-    auto end = CTL_deque_end(&ctl);
+    CTL_deque_iterator begin;
+    CTL_deque_begin(&ctl, &begin);
+
+    CTL_deque_iterator end;
+    CTL_deque_end(&ctl, &end);
 
     // ==
     ASSERT_TRUE(CTL_deque_iterator_equal(&begin, &begin));
@@ -198,8 +211,7 @@ TEST(Iterators, operator)
 TEST(allocator, delete)
 {
     CTL_deque_delete(&ctl);
-    ASSERT_TRUE(CTL_debug_mem == 0);
-    ASSERT_TRUE(CTL_debug_mem_size == 0);
+    ASSERT_TRUE(CTL_get_mem_size() == 0);
 }
 
 int main(int argc, char **argv)

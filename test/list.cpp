@@ -1,12 +1,15 @@
+#include <time.h>
+
 #include <iostream>
-#include <gtest/gtest.h>
 #include <list>
 #include <algorithm>
-#include <time.h>
+
+#include <gtest/gtest.h>
 
 extern "C"
 {
 #include "CTL_list.h"
+#include "CTL_allocator.h"
 }
 
 using namespace std;
@@ -28,14 +31,15 @@ TEST(Modifiers, push_back)
         CTL_list_push_back(&ctl, &i);
     }
 
-    auto ctl_it = CTL_list_begin(&ctl);
+    CTL_list_iterator ctl_it;
+    CTL_list_begin(&ctl, &ctl_it);
     auto stl_it = stl.begin();
 
     while (stl_it != stl.end())
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_list_iterator_move(&ctl_it, 1);
+        CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
@@ -47,17 +51,17 @@ TEST(Modifiers, push_front)
         CTL_list_push_front(&ctl, &i);
     }
 
-    auto ctl_it = CTL_list_begin(&ctl);
+    CTL_list_iterator ctl_it;
+    CTL_list_begin(&ctl, &ctl_it);
     auto stl_it = stl.begin();
 
     while (stl_it != stl.end())
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_list_iterator_move(&ctl_it, 1);
+        CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
-
 
 TEST(Modifiers, pop_back)
 {
@@ -67,17 +71,17 @@ TEST(Modifiers, pop_back)
         CTL_list_pop_back(&ctl);
     }
 
-    auto ctl_it = CTL_list_begin(&ctl);
+    CTL_list_iterator ctl_it;
+    CTL_list_begin(&ctl, &ctl_it);
     auto stl_it = stl.begin();
 
     while (stl_it != stl.end())
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_list_iterator_move(&ctl_it, 1);
+        CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
-
 
 TEST(Modifiers, pop_front)
 {
@@ -87,14 +91,15 @@ TEST(Modifiers, pop_front)
         CTL_list_pop_front(&ctl);
     }
 
-    auto ctl_it = CTL_list_begin(&ctl);
+    CTL_list_iterator ctl_it;
+    CTL_list_begin(&ctl, &ctl_it);
     auto stl_it = stl.begin();
 
     while (stl_it != stl.end())
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_list_iterator_move(&ctl_it, 1);
+        CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
@@ -103,27 +108,30 @@ TEST(Modifiers, erase)
     for (int i = 0; i < 50; i++)
     {
         int pos = rand() % 50;
+
+        CTL_list_iterator ctl_it;
+        CTL_list_begin(&ctl, &ctl_it);
         auto stl_it = stl.begin();
-        auto ctl_it = CTL_list_begin(&ctl);
 
         for (int i = 0; i < pos; i++)
         {
             stl_it++;
-            ctl_it = CTL_list_iterator_move(&ctl_it, 1);
+            CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
         }
 
         stl.erase(stl_it);
         CTL_list_erase(&ctl, &ctl_it);
     }
 
-    auto ctl_it = CTL_list_begin(&ctl);
+    CTL_list_iterator ctl_it;
+    CTL_list_begin(&ctl, &ctl_it);
     auto stl_it = stl.begin();
 
     while (stl_it != stl.end())
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_list_iterator_move(&ctl_it, 1);
+        CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
@@ -132,27 +140,30 @@ TEST(Modifiers, insert)
     for (int i = 0; i < 50; i++)
     {
         int pos = rand() % 50;
+
+        CTL_list_iterator ctl_it;
+        CTL_list_begin(&ctl, &ctl_it);
         auto stl_it = stl.begin();
-        auto ctl_it = CTL_list_begin(&ctl);
 
         for (int i = 0; i < pos; i++)
         {
             stl_it++;
-            ctl_it = CTL_list_iterator_move(&ctl_it, 1);
+            CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
         }
 
         CTL_list_insert(&ctl, &ctl_it, &i);
         stl.insert(stl_it, i);
     }
 
-    auto ctl_it = CTL_list_begin(&ctl);
+    CTL_list_iterator ctl_it;
+    CTL_list_begin(&ctl, &ctl_it);
     auto stl_it = stl.begin();
 
     while (stl_it != stl.end())
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_list_iterator_move(&ctl_it, 1);
+        CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
@@ -168,34 +179,39 @@ TEST(Element_access, front)
 
 TEST(Iterators, begin)
 {
-    auto stl_at = stl.begin();
-    auto ctl_at = CTL_list_begin(&ctl);
+    CTL_list_iterator ctl_it;
+    CTL_list_begin(&ctl, &ctl_it);
+    auto stl_it = stl.begin();
 
-    while (stl_at != stl.end())
+    while (stl_it != stl.end())
     {
-        ASSERT_TRUE(*stl_at == *(int *)ctl_at.data);
-        ++stl_at;
-        ctl_at = CTL_list_iterator_move(&ctl_at, 1);
+        ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
+        ++stl_it;
+        CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
 TEST(Iterators, end)
 {
-    auto stl_at = stl.end();
-    auto ctl_at = CTL_list_end(&ctl);
+    CTL_list_iterator ctl_it;
+    CTL_list_end(&ctl, &ctl_it);
+    auto stl_it = stl.end();
 
-    while (stl_at != stl.begin())
+    while (stl_it != stl.begin())
     {
-        --stl_at;
-        ctl_at = CTL_list_iterator_move(&ctl_at, -1);
-        ASSERT_TRUE(*stl_at == *(int *)ctl_at.data);
+        --stl_it;
+        CTL_list_iterator_move(&ctl_it, -1, &ctl_it);
+        ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
     }
 }
 
 TEST(Iterators, operator)
 {
-    auto begin = CTL_list_begin(&ctl);
-    auto end = CTL_list_end(&ctl);
+    CTL_list_iterator begin;
+    CTL_list_begin(&ctl, &begin);
+
+    CTL_list_iterator end;
+    CTL_list_end(&ctl, &end);
 
     // ==
     ASSERT_TRUE(CTL_list_iterator_equal(&begin, &begin));
@@ -214,21 +230,27 @@ TEST(Operations, splice)
         CTL_list_push_back(&ctl_sp, &i);
     }
 
-    auto begin = CTL_list_begin(&ctl);
-    auto sp_begin = CTL_list_begin(&ctl_sp);
-    auto sp_end = CTL_list_end(&ctl_sp);
+    CTL_list_iterator begin;
+    CTL_list_begin(&ctl, &begin);
+
+    CTL_list_iterator sp_begin;
+    CTL_list_begin(&ctl_sp, &sp_begin);
+
+    CTL_list_iterator sp_end;
+    CTL_list_end(&ctl_sp, &sp_end);
 
     CTL_list_splice(&ctl, &begin, &sp_begin, &sp_end);
     stl.splice(stl.begin(), stl_sp, stl_sp.begin(), stl_sp.end());
 
-    auto ctl_it = CTL_list_begin(&ctl);
+    CTL_list_iterator ctl_it;
+    CTL_list_begin(&ctl, &ctl_it);
     auto stl_it = stl.begin();
 
     while (stl_it != stl.end())
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_list_iterator_move(&ctl_it, 1);
+        CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
     }
 
     CTL_list_delete(&ctl_sp);
@@ -263,14 +285,15 @@ TEST(Operations, merge)
     stl.merge(stl_mer);
     CTL_list_merge(&ctl, &ctl_mer, max);
 
-    auto ctl_it = CTL_list_begin(&ctl);
+    CTL_list_iterator ctl_it;
+    CTL_list_begin(&ctl, &ctl_it);
     auto stl_it = stl.begin();
 
     while (stl_it != stl.end())
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_list_iterator_move(&ctl_it, 1);
+        CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
     }
 
     CTL_list_delete(&ctl_mer);
@@ -293,14 +316,15 @@ TEST(Operations, sort)
     stl.sort();
     cout << "STL list sort: " << clock() - time << " us" << endl;
 
-    auto ctl_it = CTL_list_begin(&ctl);
+    CTL_list_iterator ctl_it;
+    CTL_list_begin(&ctl, &ctl_it);
     auto stl_it = stl.begin();
 
     while (stl_it != stl.end())
     {
         ASSERT_TRUE(*stl_it == *(int *)ctl_it.data);
         ++stl_it;
-        ctl_it = CTL_list_iterator_move(&ctl_it, 1);
+        CTL_list_iterator_move(&ctl_it, 1, &ctl_it);
     }
 }
 
@@ -308,8 +332,7 @@ TEST(allocator, delete)
 {
     ASSERT_TRUE(CTL_list_size(&ctl) == stl.size());
     CTL_list_delete(&ctl);
-    ASSERT_TRUE(CTL_debug_mem_size == 0);
-    ASSERT_TRUE(CTL_debug_mem == 0);
+    ASSERT_TRUE(CTL_get_mem_size() == 0);
 }
 
 int main(int argc, char **argv)

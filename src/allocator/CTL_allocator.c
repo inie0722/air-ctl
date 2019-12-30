@@ -1,39 +1,26 @@
 #include <stdbool.h>
-#include <assert.h>
+#include <stddef.h>
 #include <malloc.h>
 #include <string.h>
-#include <CTL_threads.h>
+#include <assert.h>
+
+#include <threads.h>
 
 #include "CTL_allocator.h"
 
-int CTL_debug_mem = 0;
-
-size_t CTL_debug_mem_size = 0;
+size_t CTL_mem_size = 0;
 
 void (*CTL_malloc_handler)() = NULL; //内存分配失败 处理函数 由用户自定义
 
-#ifdef CTL_NO_ALLOCATE
-void *CTL_allocate(size_t size)
+size_t CTL_get_mem_size()
 {
-    void *old_ptr = malloc(size);
-    CTL_debug_mem_size += size;
-    ++CTL_debug_mem;
-    return old_ptr;
+    return CTL_mem_size;
 }
 
-void *CTL_reallocate(void *old_ptr, size_t old_size, size_t new_size)
+void CTL_set_malloc_handler(void (*handler)())
 {
-    CTL_debug_mem_size += (new_size - old_size);
-    return realloc(old_ptr, old_size);
+    CTL_malloc_handler = handler;
 }
-
-void CTL_deallocate(void *ptr, size_t size)
-{
-    CTL_debug_mem_size -= size;
-    --CTL_debug_mem;
-    free(ptr);
-}
-#else
 
 //一级分配器
 static void *CTL_malloc(size_t size);
@@ -71,6 +58,28 @@ static void CTL_free(void *ptr)
     free(ptr);
 }
 
+#ifdef CTL_NO_ALLOCATE
+void *CTL_allocate(size_t size)
+{
+    void *old_ptr = CTL_malloc(size);
+    CTL_mem_size += size;
+    return old_ptr;
+}
+
+void *CTL_reallocate(void *old_ptr, size_t old_size, size_t new_size)
+{
+    CTL_mem_size += (new_size - old_size);
+    return CTL_remalloc(old_ptr, old_size);
+}
+
+void CTL_deallocate(void *ptr, size_t size)
+{
+    CTL_mem_size -= size;
+    CTL_free(ptr);
+}
+#else
+
+#include <threads.h>
 
 //二级分配器
 #define ALIGN 8                      //区块上调边界
@@ -99,12 +108,11 @@ static obj *free_list[NFREELISTS] = {NULL};
 static char *begin_free = 0; // 内存池的首地址
 static char *end_free = 0;   //内存池的结束地址
 static size_t heap_size = 0; //大小
-static mtx_t mutex; //内存池互斥锁
+static mtx_t mutex;          //内存池互斥锁
 
 void *CTL_allocate(size_t size)
 {
-    ++CTL_debug_mem;
-    CTL_debug_mem_size += size;
+    CTL_mem_size += size;
 
     obj *result;
 
@@ -158,8 +166,7 @@ void *CTL_reallocate(void *old_ptr, size_t old_size, size_t new_size)
 
 void CTL_deallocate(void *ptr, size_t size)
 {
-    CTL_debug_mem_size -= size;
-    --CTL_debug_mem;
+    CTL_mem_size -= size;
     //释放内存 大于 MAX_BYTES 直接 交给 一级分配器
     if (size > MAX_BYTES)
     {
