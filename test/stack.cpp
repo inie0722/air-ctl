@@ -1,12 +1,15 @@
+#include <time.h>
+
 #include <iostream>
-#include <gtest/gtest.h>
 #include <stack>
 #include <algorithm>
-#include <time.h>
+
+#include <gtest/gtest.h>
 
 extern "C"
 {
 #include "CTL_stack.h"
+#include "CTL_allocator.h"
 }
 
 using namespace std;
@@ -55,8 +58,7 @@ TEST(Capacity, empty)
 TEST(allocator, delete)
 {
     CTL_stack_delete(&ctl);
-    ASSERT_TRUE(CTL_debug_mem_size == 0);
-    ASSERT_TRUE(CTL_debug_mem == 0);
+    ASSERT_TRUE(CTL_get_mem_size() == 0);
 }
 
 int main(int argc, char **argv)

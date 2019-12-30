@@ -1,16 +1,15 @@
 #pragma once
 
-#include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
 
 typedef struct
 {
-    char *data;  //当前所指的位置
+    char *data; //当前所指的位置
+    size_t T_size;
     char *first; //此迭代器 所指缓存区 的头地址
     char *last;  //此迭代器 所指缓存区 的尾地址(含备用空间)
     char **node; //指向map 管控中心
-    ptrdiff_t T_size;
 } CTL_deque_iterator;
 
 typedef struct
@@ -23,35 +22,35 @@ typedef struct
     CTL_deque_iterator end;   //最后一个指针
 } CTL_deque;
 
-void CTL_deque_new(CTL_deque *handle, size_t buf_size, size_t T_size);
+extern void CTL_deque_new(CTL_deque *handle, const size_t buf_size, const size_t T_size);
 
-void CTL_deque_clear(CTL_deque *handle);
+extern void CTL_deque_clear(CTL_deque *handle);
 
-void CTL_deque_delete(CTL_deque *handle);
+extern void CTL_deque_delete(CTL_deque *handle);
 
-void *CTL_deque_front(const CTL_deque *handle);
+extern void *CTL_deque_front(const CTL_deque *handle);
 
-void *CTL_deque_back(const CTL_deque *handle);
+extern void *CTL_deque_back(const CTL_deque *handle);
 
-CTL_deque_iterator CTL_deque_begin(const CTL_deque *handle);
+extern void CTL_deque_begin(const CTL_deque *handle, CTL_deque_iterator *ret);
 
-CTL_deque_iterator CTL_deque_end(const CTL_deque *handle);
+extern void CTL_deque_end(const CTL_deque *handle, CTL_deque_iterator *ret);
 
-void CTL_deque_push_back(CTL_deque *handle, void *data);
+void CTL_deque_push_back(CTL_deque *handle, const void *data);
 
-void CTL_deque_push_front(CTL_deque *handle, void *data);
+void CTL_deque_push_front(CTL_deque *handle, const void *data);
 
 void CTL_deque_pop_back(CTL_deque *handle);
 
 void CTL_deque_pop_front(CTL_deque *handle);
 
-void CTL_deque_insert(CTL_deque *handle, const CTL_deque_iterator *iterator, void *data);
+void CTL_deque_insert(CTL_deque *handle, CTL_deque_iterator *iterator, const void *data);
 
-void CTL_deque_erase(CTL_deque *handle, const CTL_deque_iterator *iterator);
+void CTL_deque_erase(CTL_deque *handle, CTL_deque_iterator *iterator);
 
-CTL_deque_iterator CTL_deque_at(const CTL_deque *handle, size_t pos);
+void *CTL_deque_at(const CTL_deque *handle, const size_t index);
 
-CTL_deque_iterator CTL_deque_iterator_move(const CTL_deque_iterator *handle, const ptrdiff_t pos);
+void CTL_deque_iterator_move(const CTL_deque_iterator *handle, const ptrdiff_t index, CTL_deque_iterator *ret);
 
 bool CTL_deque_iterator_equal(const CTL_deque_iterator *left, const CTL_deque_iterator *right);
 

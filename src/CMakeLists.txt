@@ -5,4 +5,6 @@ file(GLOB container ./container/* ./adapter/*)
 file(GLOB adapter ./adapter/*)
 
 #add_library(InCTL SHARED ${allocator} ${container})
-add_library(InCTL ${allocator} ${container} ${adapter})
+
+#target_link_libraries(InCTL pthread)
+add_library(InCTL SHARED ${allocator} ${container} ${adapter})

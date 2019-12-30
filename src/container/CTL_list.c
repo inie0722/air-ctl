@@ -1,5 +1,4 @@
 #include <malloc.h>
-#include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <string.h>
@@ -61,52 +60,50 @@ void *CTL_list_back(const CTL_list *handle)
 	return handle->list->prior->data;
 }
 
-CTL_list_iterator CTL_list_begin(const CTL_list *handle)
+void CTL_list_begin(const CTL_list *handle, CTL_list_iterator *ret)
 {
-	CTL_list_iterator result;
-	result.node = handle->list->next;
-	result.data = result.node->data;
-	result.T_size = handle->T_size;
-
-	return result;
+	ret->node = handle->list->next;
+	ret->data = ret->node->data;
+	ret->T_size = handle->T_size;
 }
 
-CTL_list_iterator CTL_list_end(const CTL_list *handle)
+void CTL_list_end(const CTL_list *handle, CTL_list_iterator *ret)
 {
-	CTL_list_iterator result;
-	result.node = handle->list;
-	result.data = result.node->data;
-	result.T_size = handle->T_size;
-
-	return result;
+	ret->node = handle->list;
+	ret->data = ret->node->data;
+	ret->T_size = handle->T_size;
 }
 
 void CTL_list_push_back(CTL_list *handle, const void *data)
 {
-	CTL_list_iterator end = CTL_list_end(handle);
+	CTL_list_iterator end;
+	CTL_list_end(handle, &end);
 	CTL_list_insert(handle, &end, data);
 }
 
 void CTL_list_push_front(CTL_list *handle, const void *data)
 {
-	CTL_list_iterator begin = CTL_list_begin(handle);
+	CTL_list_iterator begin;
+	CTL_list_begin(handle, &begin);
 	CTL_list_insert(handle, &begin, data);
 }
 
 void CTL_list_pop_back(CTL_list *handle)
 {
-	CTL_list_iterator end = CTL_list_end(handle);
-	end = CTL_list_iterator_move(&end, -1);
+	CTL_list_iterator end;
+	CTL_list_end(handle, &end);
+	CTL_list_iterator_move(&end, -1, &end);
 	CTL_list_erase(handle, &end);
 }
 
 void CTL_list_pop_front(CTL_list *handle)
 {
-	CTL_list_iterator begin = CTL_list_begin(handle);
+	CTL_list_iterator begin;
+	CTL_list_begin(handle, &begin);
 	CTL_list_erase(handle, &begin);
 }
 
-void CTL_list_insert(CTL_list *handle, const CTL_list_iterator *iterator, const void *data)
+void CTL_list_insert(CTL_list *handle, CTL_list_iterator *iterator, const void *data)
 {
 	__CTL_list_node *new_node = (__CTL_list_node *)CTL_allocate(sizeof(__CTL_list_node));
 
@@ -119,7 +116,7 @@ void CTL_list_insert(CTL_list *handle, const CTL_list_iterator *iterator, const 
 	iterator->node->prior = new_node;
 }
 
-void CTL_list_erase(CTL_list *handle, const CTL_list_iterator *iterator)
+void CTL_list_erase(CTL_list *handle, CTL_list_iterator *iterator)
 {
 	iterator->node->prior->next = iterator->node->next;
 	iterator->node->next->prior = iterator->node->prior;
@@ -150,24 +147,31 @@ void CTL_list_splice(CTL_list *handle, const CTL_list_iterator *position, const 
 
 void CTL_list_merge(CTL_list *handle, CTL_list *x, bool (*compare_handler)(void *a, void *b))
 {
-	CTL_list_iterator first_1 = CTL_list_begin(handle);
-	CTL_list_iterator last_1 = CTL_list_end(handle);
+	CTL_list_iterator first_1;
+	CTL_list_begin(handle, &first_1);
 
-	CTL_list_iterator first_2 = CTL_list_begin(x);
-	CTL_list_iterator last_2 = CTL_list_end(x);
+	CTL_list_iterator last_1;
+	CTL_list_end(handle, &last_1);
+
+	CTL_list_iterator first_2;
+	CTL_list_begin(x, &first_2);
+
+	CTL_list_iterator last_2;
+	CTL_list_end(x, &last_2);
 
 	//循环进行合并
 	while (!CTL_list_iterator_equal(&first_1, &last_1) && !CTL_list_iterator_equal(&first_2, &last_2))
 	{
 		if (compare_handler(first_1.data, first_2.data))
 		{
-			CTL_list_iterator next = CTL_list_iterator_move(&first_2, 1);
+			CTL_list_iterator next;
+			CTL_list_iterator_move(&first_2, 1, &next);
 			__transfer(&first_1, &first_2, &next);
 			first_2 = next;
 		}
 		else
 		{
-			first_1 = CTL_list_iterator_move(&first_1, 1);
+			CTL_list_iterator_move(&first_1, 1, &first_1);
 		}
 	}
 
@@ -200,9 +204,14 @@ void CTL_list_sort(CTL_list *handle, bool (*compare_handler)(void *a, void *b))
 	//非递归 归并排序
 	while (!CTL_list_empty(handle))
 	{
-		CTL_list_iterator begin = CTL_list_begin(handle);
-		CTL_list_iterator last = CTL_list_iterator_move(&begin, 1);
-		CTL_list_iterator carry_begin = CTL_list_begin(&carry);
+		CTL_list_iterator begin;
+		CTL_list_begin(handle, &begin);
+
+		CTL_list_iterator last;
+		CTL_list_iterator_move(&begin, 1, &last);
+
+		CTL_list_iterator carry_begin;
+		CTL_list_begin(&carry, &carry_begin);
 		CTL_list_splice(&carry, &carry_begin, &begin, &last);
 
 		int i = 0;
@@ -234,28 +243,25 @@ void CTL_list_sort(CTL_list *handle, bool (*compare_handler)(void *a, void *b))
 	}
 }
 
-CTL_list_iterator CTL_list_iterator_move(const CTL_list_iterator *handle, const ptrdiff_t pos)
+void CTL_list_iterator_move(const CTL_list_iterator *handle, const ptrdiff_t index, CTL_list_iterator *ret)
 {
-	CTL_list_iterator result;
-	result.T_size = handle->T_size;
-	if (pos < 0)
+	ret->T_size = handle->T_size;
+	if (index < 0)
 	{
 		__CTL_list_node *node = handle->node;
-		for (ptrdiff_t i = pos; node && i < 0; ++i, node = node->prior)
+		for (ptrdiff_t i = index; node && i < 0; ++i, node = node->prior)
 			;
-		result.node = node;
-		result.data = node->data;
+		ret->node = node;
+		ret->data = node->data;
 	}
 	else
 	{
 		__CTL_list_node *node = handle->node;
-		for (ptrdiff_t i = 0; i < pos; ++i, node = node->next)
+		for (ptrdiff_t i = 0; i < index; ++i, node = node->next)
 			;
-		result.node = node;
-		result.data = node->data;
+		ret->node = node;
+		ret->data = node->data;
 	}
-
-	return result;
 }
 
 bool CTL_list_iterator_equal(const CTL_list_iterator *left, const CTL_list_iterator *right)

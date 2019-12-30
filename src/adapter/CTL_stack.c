@@ -3,7 +3,7 @@
 
 #include "CTL_stack.h"
 
-void CTL_stack_new(CTL_stack *handle, CTL_functions *functions, size_t buf_size, size_t T_size)
+void CTL_stack_new(CTL_stack *handle, CTL_functions *functions, const size_t buf_size, const size_t T_size)
 {
     handle->functions = functions;
     handle->functions->__new(&handle->container, buf_size, T_size);
@@ -19,7 +19,7 @@ void *CTL_stack_top(const CTL_stack *handle)
     return handle->functions->back(&handle->container);
 }
 
-void CTL_stack_push(CTL_stack *handle, void* data)
+void CTL_stack_push(CTL_stack *handle, const void *data)
 {
     handle->functions->push_back(&handle->container, data);
 }

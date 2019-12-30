@@ -3,7 +3,7 @@
 
 #include "CTL_queue.h"
 
-void CTL_queue_new(CTL_queue *handle, CTL_functions *functions, size_t buf_size, size_t T_size)
+void CTL_queue_new(CTL_queue *handle, CTL_functions *functions, const size_t buf_size, const size_t T_size)
 {
     handle->functions = functions;
     handle->functions->__new(&handle->container, buf_size, T_size);
@@ -24,7 +24,7 @@ void *CTL_queue_back(const CTL_queue *handle)
     return handle->functions->back(&handle->container);
 }
 
-void CTL_queue_push(CTL_queue *handle, void* data)
+void CTL_queue_push(CTL_queue *handle, const void *data)
 {
     handle->functions->push_back(&handle->container, data);
 }

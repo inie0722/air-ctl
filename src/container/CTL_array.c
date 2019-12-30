@@ -1,6 +1,7 @@
+#include <stdbool.h>
+#include <stddef.h>
 #include <malloc.h>
 #include <string.h>
-#include <stdbool.h>
 
 #include "CTL_array.h"
 
@@ -20,33 +21,28 @@ void *CTL_array_front(const CTL_array *handle)
 
 void *CTL_array_back(const CTL_array *handle)
 {
-    return CTL_array_iterator_move(&handle->end, -1).data;
+    return handle->end.data - handle->end.T_size;
 }
 
-CTL_array_iterator CTL_array_begin(const CTL_array *handle)
+void CTL_array_begin(const CTL_array *handle, CTL_array_iterator *ret)
 {
-    return handle->begin;
+    *ret = handle->begin;
 }
 
-CTL_array_iterator CTL_array_end(const CTL_array *handle)
+void CTL_array_end(const CTL_array *handle, CTL_array_iterator *ret)
 {
-    return handle->end;
+    *ret = handle->end;
 }
 
-CTL_array_iterator CTL_array_at(const CTL_array *handle, const size_t pos)
+void *CTL_array_at(const CTL_array *handle, const size_t index)
 {
-    CTL_array_iterator result;
-    result.T_size = handle->end.T_size;
-    result.data = handle->begin.data + (pos * handle->end.T_size);
-    return result;
+    return handle->begin.data + (index * handle->end.T_size);
 }
 
-CTL_array_iterator CTL_array_iterator_move(const CTL_array_iterator *handle, const ptrdiff_t pos)
+void CTL_array_iterator_move(const CTL_array_iterator *handle, const ptrdiff_t index, CTL_array_iterator *ret)
 {
-    CTL_array_iterator result;
-    result.T_size = handle->T_size;
-    result.data = handle->data + (pos * handle->T_size);
-    return result;
+    ret->T_size = handle->T_size;
+    ret->data = handle->data + (index * handle->T_size);
 }
 
 bool CTL_array_iterator_equal(const CTL_array_iterator *left, const CTL_array_iterator *right)
@@ -56,7 +52,7 @@ bool CTL_array_iterator_equal(const CTL_array_iterator *left, const CTL_array_it
 
 ptrdiff_t CTL_array_iterator_diff(const CTL_array_iterator *left, const CTL_array_iterator *right)
 {
-    return (left->data - right->data) / left->T_size;
+    return (left->data - right->data) / (ptrdiff_t)left->T_size;
 }
 
 bool CTL_array_iterator_more(const CTL_array_iterator *left, const CTL_array_iterator *right)
@@ -76,5 +72,5 @@ size_t CTL_array_capacity(const CTL_array *handle)
 
 bool CTL_array_empty(const CTL_array *handle)
 {
-	return !handle->begin.data;
+    return !handle->begin.data;
 }
