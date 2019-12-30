@@ -5,7 +5,7 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 
 add_definitions(-D CTL_NO_ALLOCATE)
 
-add_definitions(-Wall -O3)
+add_definitions(-Wall -O3 -g)
 
 include_directories(include/)
 

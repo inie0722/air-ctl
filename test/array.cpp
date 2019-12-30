@@ -13,14 +13,16 @@ using namespace std;
 CTL_array ctl;
 array<int, 100> stl;
 
+int *Ptr_array;
+
 void test_new()
 {
-    int *array = new int[100];
-    CTL_array_init(&ctl, array, array + 100, sizeof(int));
+    Ptr_array = (int*)malloc(100 * sizeof(100));
+    CTL_array_init(&ctl, Ptr_array, Ptr_array + 100, sizeof(int));
 
     for (size_t i = 0; i < 100; i++)
     {
-        array[i] = i;
+        Ptr_array[i] = i;
         stl[i] = i;
     }
 }
@@ -32,7 +34,7 @@ TEST(Element_access, at)
         CTL_array_iterator at;
         CTL_array_begin(&ctl, &at);
         CTL_array_iterator_move(&at, i, &at);
-        //CTL_array_at(&ctl, i, &at);
+
         ASSERT_TRUE(stl[i] == *(int *)at.data);
     }
 }
@@ -103,6 +105,7 @@ TEST(Capacity, size)
 TEST(Capacity, capacity)
 {
     ASSERT_TRUE(stl.max_size() == CTL_array_capacity(&ctl));
+    free(Ptr_array);
 }
 
 int main(int argc, char **argv)
