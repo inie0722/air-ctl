@@ -45,7 +45,7 @@ TEST(push, Test)
         CTL_push_heap(CTL_vector_functions(), (CTL_iterator *)&begin, (CTL_iterator *)&end, max);
     }
 
-    for (size_t i = 0; i < 100; i++)
+    for (size_t i = 0; i < stl.size(); i++)
     {
         ASSERT_TRUE(stl[i] == *(size_t *)CTL_vector_at(&ctl, i));
     }
@@ -53,16 +53,30 @@ TEST(push, Test)
 
 TEST(sort, Test)
 {
+    srand((unsigned)time(NULL));
+
+    for (size_t i = 0; i < 100000; i++)
+    {
+        size_t val = rand();
+        CTL_vector_push_back(&ctl, &val);
+        stl.push_back(val);
+    }
+
     CTL_vector_iterator begin;
     CTL_vector_begin(&ctl, &begin);
 
     CTL_vector_iterator end;
     CTL_vector_end(&ctl, &end);
 
-    sort_heap(stl.begin(), stl.end());
+    clock_t time = clock();
     CTL_sort_heap(CTL_vector_functions(), (CTL_iterator *)&begin, (CTL_iterator *)&end, max);
+    cout << "CTL heap sort: " << clock() - time << " us" << endl;
 
-    for (size_t i = 0; i < 100; i++)
+    time = clock();
+    sort_heap(stl.begin(), stl.end());
+    cout << "STL heap sort: " << clock() - time << " us" << endl;
+
+    for (size_t i = 0; i < stl.size(); i++)
     {
         ASSERT_TRUE(stl[i] == *(size_t *)CTL_vector_at(&ctl, i));
     }
@@ -70,7 +84,6 @@ TEST(sort, Test)
 
 TEST(make, Test)
 {
-    make_heap(stl.begin(), stl.end());
 
     CTL_vector_iterator begin;
     CTL_vector_begin(&ctl, &begin);
@@ -78,9 +91,15 @@ TEST(make, Test)
     CTL_vector_iterator end;
     CTL_vector_end(&ctl, &end);
 
+    clock_t time = clock();
     CTL_make_heap(CTL_vector_functions(), (CTL_iterator *)&begin, (CTL_iterator *)&end, max);
+    cout << "CTL heap make: " << clock() - time << " us" << endl;
 
-    for (size_t i = 0; i < 100; i++)
+    time = clock();
+    make_heap(stl.begin(), stl.end());
+    cout << "STL heap make: " << clock() - time << " us" << endl;
+
+    for (size_t i = 0; i < stl.size(); i++)
     {
         ASSERT_TRUE(stl[i] == *(size_t *)CTL_vector_at(&ctl, i));
     }
@@ -98,11 +117,11 @@ TEST(pop, Test)
         CTL_vector_iterator end;
         CTL_vector_end(&ctl, &end);
 
-        CTL_vector_iterator_move(&begin, 100 - i, &end);
+        CTL_vector_iterator_move(&begin, stl.size() - i, &end);
         CTL_pop_heap(CTL_vector_functions(), (CTL_iterator *)&begin, (CTL_iterator *)&end, max);
     }
 
-    for (size_t i = 0; i < 100; i++)
+    for (size_t i = 0; i < stl.size(); i++)
     {
         ASSERT_TRUE(stl[i] == *(size_t *)CTL_vector_at(&ctl, i));
     }
