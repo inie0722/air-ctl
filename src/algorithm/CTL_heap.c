@@ -3,14 +3,13 @@
 #include <string.h>
 
 #include "CTL_heap.h"
-#include "CTL_vector.h"
 
-void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t topIndex, void* value, bool (*compare_handler)(void *a, void *b));
-void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t len, void* value, bool (*compare_handler)(void *a, void *b));
+static void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t topIndex, void *value, bool (*compare_handler)(void *a, void *b));
+static void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t len, void *value, bool (*compare_handler)(void *a, void *b));
 
 void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b))
 {
-    void* value = alloca(first->T_size);
+    void *value = alloca(first->T_size);
     CTL_iterator back;
     functions->iterator_move(last, -1, &back);
     memcpy(value, back.data, first->T_size);
@@ -18,7 +17,7 @@ void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *
     __push_heap(functions, first, functions->iterator_diff(last, first) - 1, 0, value, compare_handler);
 }
 
-void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t topIndex, void* value, bool (*compare_handler)(void *a, void *b))
+static void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t topIndex, void *value, bool (*compare_handler)(void *a, void *b))
 {
     CTL_iterator move_result;
 
@@ -55,7 +54,7 @@ void CTL_pop_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *l
     __adjust_heap(functions, first, 0, functions->iterator_diff(last, first) - 1, value, compare_handler);
 }
 
-void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t len, void* value, bool (*compare_handler)(void *a, void *b))
+static void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t len, void *value, bool (*compare_handler)(void *a, void *b))
 {
     CTL_iterator move_result;
 
@@ -68,7 +67,7 @@ void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t hole
         //比较左右节点 将较大的子节点替换到父节点位置
         if (compare_handler((functions->iterator_move(first, secondChild, &move_result), move_result.data), (functions->iterator_move(first, secondChild - 1, &move_result), move_result.data)))
             --secondChild;
-        
+
         memcpy((functions->iterator_move(first, holeIndex, &move_result), move_result.data), (functions->iterator_move(first, secondChild, &move_result), move_result.data), first->T_size);
         holeIndex = secondChild;
         //下一个字节点位置
@@ -89,7 +88,7 @@ void CTL_sort_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *
 {
     CTL_iterator w_last = *last;
     //通过循环出堆 进行排序 大堆 变成 从小到大排序
-    while(functions->iterator_diff(&w_last, first) > 1)
+    while (functions->iterator_diff(&w_last, first) > 1)
     {
         CTL_pop_heap(functions, first, &w_last, compare_handler);
         functions->iterator_move(&w_last, -1, &w_last);
@@ -105,13 +104,13 @@ void CTL_make_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *
 
     //parent是第一个需重新排列的子树头部
     ptrdiff_t parent = (len - 2) / 2;
-    void* value = alloca(first->T_size);
+    void *value = alloca(first->T_size);
 
     while (parent >= 0)
     {
         CTL_iterator move_result;
         //len 是防止越界的 如果子节点 大于 父节点 便进行交换
-         memcpy(value, (functions->iterator_move(first, parent, &move_result), move_result.data), first->T_size);
+        memcpy(value, (functions->iterator_move(first, parent, &move_result), move_result.data), first->T_size);
         __adjust_heap(functions, first, parent, len, value, compare_handler);
         parent--;
     }
