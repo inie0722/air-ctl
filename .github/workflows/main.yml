@@ -35,3 +35,6 @@ jobs:
 
     - name: deque
       run: ./build/bin/deque
+
+    - name: heap
+      run: ./build/bin/heap
