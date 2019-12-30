@@ -4,8 +4,6 @@
 #include <string.h>
 #include <assert.h>
 
-#include <threads.h>
-
 #include "CTL_allocator.h"
 
 size_t CTL_mem_size = 0;
@@ -79,7 +77,7 @@ void CTL_deallocate(void *ptr, size_t size)
 }
 #else
 
-#include <threads.h>
+#include <CTL_threads.h>
 
 //二级分配器
 #define ALIGN 8                      //区块上调边界
