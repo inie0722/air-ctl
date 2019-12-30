@@ -14,6 +14,8 @@ add_executable(stack stack.cpp)
 
 add_executable(heap heap.cpp)
 
+add_executable(priority_queue priority_queue.cpp)
+
 add_executable(test test.cpp)
 
 target_link_libraries(test InCTL)
@@ -31,3 +33,5 @@ target_link_libraries(queue gtest pthread InCTL)
 target_link_libraries(stack gtest pthread InCTL)
 
 target_link_libraries(heap gtest pthread InCTL)
+
+target_link_libraries(priority_queue gtest pthread InCTL)

@@ -38,3 +38,6 @@ jobs:
 
     - name: heap
       run: ./build/bin/heap
+
+    - name: priority_queue
+      run: ./build/bin/priority_queue
