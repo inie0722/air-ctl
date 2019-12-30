@@ -1,13 +1,14 @@
 #include <algorithm>
 #include <iostream>
-#include <deque>
+#include <vector>
+#include <time.h>
 
 using namespace std;
 
 extern "C"
 {
 #include "CTL_heap.h"
-#include "CTL_deque.h"
+#include "CTL_vector.h"
 }
 
 
@@ -19,30 +20,31 @@ bool max(void* a, void* b)
 
 int main()
 {
-    CTL_deque ve;
-    deque<int> stl;
-    CTL_deque_new(&ve, 10, sizeof(int));
+    srand((unsigned)time(NULL));
+    CTL_vector ve;
+    vector<int> stl;
+    CTL_vector_new(&ve, 512, sizeof(int));
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 10000; i++)
     {
-        CTL_deque_push_back(&ve, &i);
-        stl.push_back(i);
+        int val = rand();
+        CTL_vector_push_back(&ve, &val);
+        stl.push_back(val);
     }
 
-    CTL_deque_iterator begin;
-    CTL_deque_begin(&ve, &begin);
+    CTL_vector_iterator begin;
+    CTL_vector_begin(&ve, &begin);
 
-    CTL_deque_iterator end;
-    CTL_deque_end(&ve, &end);
+    CTL_vector_iterator end;
+    CTL_vector_end(&ve, &end);
 
-    CTL_make_heap(CTL_deque_functions(), (CTL_iterator*)&begin, (CTL_iterator*)&end, max);
-    make_heap(stl.begin(), stl.end());
+    clock_t time = clock();
+    CTL_sort_heap(CTL_vector_functions(), (CTL_iterator*)&begin, (CTL_iterator*)&end, max);
+    cout << "CTL heap sort: " << clock() - time << " us" << endl;
 
-    for (int i = 0; i < 100; i++)
-    {
-        cout<< *(int*)begin.data <<" " << stl[i]<< endl;
-        CTL_deque_iterator_move(&begin, 1, &begin);
-    }
+    time = clock();
+    sort_heap(stl.begin(), stl.end());
+    cout << "STL heap sort: " << clock() - time << " us" << endl;
     
     return 0;
 }

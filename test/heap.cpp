@@ -27,7 +27,7 @@ bool max(void *a, void *b)
     return *(size_t *)a < *(size_t *)b;
 }
 
-TEST(push, Test)
+TEST(Modifiers, push)
 {
     for (size_t i = 0; i < 100; i++)
     {
@@ -51,11 +51,11 @@ TEST(push, Test)
     }
 }
 
-TEST(sort, Test)
+TEST(Algorithm, sort)
 {
     srand((unsigned)time(NULL));
 
-    for (size_t i = 0; i < 100000; i++)
+    for (size_t i = 0; i < 10000; i++)
     {
         size_t val = rand();
         CTL_vector_push_back(&ctl, &val);
@@ -82,7 +82,7 @@ TEST(sort, Test)
     }
 }
 
-TEST(make, Test)
+TEST(Algorithm, make)
 {
 
     CTL_vector_iterator begin;
@@ -105,7 +105,7 @@ TEST(make, Test)
     }
 }
 
-TEST(pop, Test)
+TEST(Modifiers, pop)
 {
     for (size_t i = 0; i < 100; i++)
     {
