@@ -41,3 +41,6 @@ jobs:
 
     - name: priority_queue
       run: ./build/bin/priority_queue
+
+    - name: tree_map
+      run: ./build/bin/tree_map
