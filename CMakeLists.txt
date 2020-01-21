@@ -9,9 +9,9 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 #SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pg")
 #SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -pg")
 
-add_definitions(-D CTL_NO_ALLOCATE)
+#add_definitions(-D CTL_NO_ALLOCATE)
 
-add_definitions(-Wall -g)
+add_definitions(-Wall -O3)
 
 include_directories(include/)
 
