@@ -16,9 +16,13 @@ add_executable(heap heap.cpp)
 
 add_executable(priority_queue priority_queue.cpp)
 
-add_executable(test test.cpp)
+add_executable(tree_map tree_map.cpp)
 
-target_link_libraries(test InCTL)
+add_executable(rb rb.cpp)
+
+target_link_libraries(tree_map gtest pthread InCTL)
+
+#target_link_libraries(rb InCTL)
 
 target_link_libraries(array gtest pthread InCTL)
 
