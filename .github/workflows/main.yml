@@ -44,3 +44,9 @@ jobs:
 
     - name: tree_map
       run: ./build/bin/tree_map
+
+    - name: hash_map
+      run: ./build/bin/hash_map
+
+    - name: test
+      run: ./build/bin/test
