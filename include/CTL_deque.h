@@ -36,17 +36,17 @@ extern void CTL_deque_begin(const CTL_deque *handle, CTL_deque_iterator *ret);
 
 extern void CTL_deque_end(const CTL_deque *handle, CTL_deque_iterator *ret);
 
-void CTL_deque_push_back(CTL_deque *handle, const void *data);
+extern void CTL_deque_push_back(CTL_deque *handle, const void *data);
 
-void CTL_deque_push_front(CTL_deque *handle, const void *data);
+extern void CTL_deque_push_front(CTL_deque *handle, const void *data);
 
-void CTL_deque_pop_back(CTL_deque *handle);
+extern void CTL_deque_pop_back(CTL_deque *handle);
 
-void CTL_deque_pop_front(CTL_deque *handle);
+extern void CTL_deque_pop_front(CTL_deque *handle);
 
-void CTL_deque_insert(CTL_deque *handle, CTL_deque_iterator *iterator, const void *data);
+extern void CTL_deque_insert(CTL_deque *handle, CTL_deque_iterator *iterator, const void *data);
 
-void CTL_deque_erase(CTL_deque *handle, CTL_deque_iterator *iterator);
+extern void CTL_deque_erase(CTL_deque *handle, CTL_deque_iterator *iterator);
 
 void *CTL_deque_at(const CTL_deque *handle, const size_t index);
 
