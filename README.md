@@ -1,5 +1,16 @@
 # InCTL
 C Language Template Library C语言 模板库<br>
+__安装__
+```
+git clone https://github.com/inie0722/InCTL
+cd InCTL
+mkdir build && cd build
+cmake ../
+//生成全部文件
+cmake --build ./
+//如果你不需要 生成 单元测试 可以使用命令
+cmake --build ./ --config --target InCTL
+```
 
 ## 关于
 本库是仿照STL书写的C语言容器库, 你可以像STL那样使用本库<br>
