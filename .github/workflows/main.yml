@@ -19,10 +19,8 @@ jobs:
     - name: cmake
       run: mkdir build && 
            cd build && 
-           cmake ../
-  
-    - name: make
-      run:  cd build && make
+           cmake ../ && 
+           cmake --build ./
 
     - name: array
       run: ./build/bin/array
