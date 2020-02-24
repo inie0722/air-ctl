@@ -98,7 +98,7 @@ typedef union obj //free list 节点
 
 static void *refill(size_t size); //free list 填充函数
 
-static void *chunk_alloc(size_t size, int *nobjs); //该函数 负责向内存池 索要 内存
+static void *chunk_alloc(size_t size, size_t *nobjs); //该函数 负责向内存池 索要 内存
 
 static obj *free_list[NFREELISTS] = {NULL};
 
@@ -185,7 +185,7 @@ static void *refill(size_t size)
 {
     obj *result;
     //申请 20个 size 大小区块 具体过程由chunk_alloc 函数执行
-    int nobjs = 20;
+    size_t nobjs = 20;
     char *chunk = (char *)chunk_alloc(size, &nobjs);
 
     //如果只获得了一个区块 就将这个区块直接返回给用户 此时free_list中无新节点
@@ -219,7 +219,7 @@ static void *refill(size_t size)
     return result;
 }
 
-static void *chunk_alloc(size_t size, int *nobjs)
+static void *chunk_alloc(size_t size, size_t *nobjs)
 {
     void *result;
     //要分配的 内存 数量
@@ -237,7 +237,7 @@ static void *chunk_alloc(size_t size, int *nobjs)
     else if (bytes_left > size)
     {
         //内存池 空间不足 但至少够一个区块的
-        *nobjs = (int)(bytes_left / size);
+        *nobjs = (size_t)(bytes_left / size);
         bytes_total = size * (*nobjs);
         result = begin_free;
         begin_free += bytes_total;
