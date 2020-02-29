@@ -76,7 +76,7 @@ void CTL_deallocate(void *ptr, size_t size)
     CTL_free(ptr);
 }
 #else
-#include <CTL_threads.h>
+#include <threads.h>
 
 //二级分配器
 #define ALIGN 8                      //区块上调边界
