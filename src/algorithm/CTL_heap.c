@@ -1,5 +1,4 @@
 #include <malloc.h>
-#include <alloca.h>
 #include <string.h>
 
 #include "CTL_heap.h"
@@ -9,7 +8,8 @@ static void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff
 
 void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b))
 {
-    void *value = alloca(first->T_size);
+
+    char value[first->T_size];
     CTL_iterator back;
     functions->iterator_move(last, -1, &back);
     memcpy(value, back.data, first->T_size);
@@ -44,7 +44,7 @@ static void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t
 void CTL_pop_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b))
 {
     //保存数据
-    void *value = alloca(first->T_size);
+    char value[first->T_size];
 
     CTL_iterator back;
     functions->iterator_move(last, -1, &back);
@@ -104,7 +104,7 @@ void CTL_make_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *
 
     //parent是第一个需重新排列的子树头部
     ptrdiff_t parent = (len - 2) / 2;
-    void *value = alloca(first->T_size);
+    char value[first->T_size];
 
     while (parent >= 0)
     {
