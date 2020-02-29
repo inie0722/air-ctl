@@ -55,7 +55,7 @@ TEST(Algorithm, sort)
 {
     srand((unsigned)time(NULL));
 
-    for (size_t i = 0; i < 10000; i++)
+    for (size_t i = 0; i < 1000000; i++)
     {
         size_t val = rand();
         CTL_vector_push_back(&ctl, &val);
