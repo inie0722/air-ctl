@@ -1,4 +1,3 @@
-#include <malloc.h>
 #include <string.h>
 
 #include "CTL_heap.h"

@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #include <stddef.h>
-#include <malloc.h>
 #include <string.h>
 
 #include "CTL_array.h"
