@@ -1,5 +1,3 @@
-project(test)
+add_executable(sort sort.c)
 
-add_executable(test test.c)
-
-target_link_libraries(test InSort)
+target_link_libraries(sort libc_algorithm)

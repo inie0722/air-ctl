@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "in_sort.h"
+#include "intro_sort.h"
+#include "tim_sort.h"
 
 bool compare(const void *a, const void *b)
 {
@@ -19,15 +20,15 @@ int Q_compare(const void *a, const void *b)
 
 int main(void)
 {
-    int *in_sort_buf = (int *)malloc(sizeof(int) * BUF_SIZE);
-    int *in_stable_sort_buf = (int *)malloc(sizeof(int) * BUF_SIZE);
+    int *intro_sort_buf = (int *)malloc(sizeof(int) * BUF_SIZE);
+    int *tim_sort_buf = (int *)malloc(sizeof(int) * BUF_SIZE);
     int *qsort_buf = (int *)malloc(sizeof(int) * BUF_SIZE);
 
     for (size_t i = 0; i < BUF_SIZE; i++)
     {
         int data = i;
-        in_sort_buf[i] = data;
-        in_stable_sort_buf[i] = data;
+        intro_sort_buf[i] = data;
+        tim_sort_buf[i] = data;
         qsort_buf[i] = data;
     }
 
@@ -35,19 +36,19 @@ int main(void)
     {
         int data = rand() % BUF_SIZE;
 
-        in_sort_buf[i] = data;
-        in_stable_sort_buf[i] = data;
+        intro_sort_buf[i] = data;
+        tim_sort_buf[i] = data;
         qsort_buf[i] = data;
     }
 
     clock_t time;
     time = clock();
-    in_sort(in_sort_buf, in_sort_buf + BUF_SIZE, sizeof(int), compare);
-    printf("in_sort: %ld us\n", clock() - time);
+    intro_sort(intro_sort_buf, intro_sort_buf + BUF_SIZE, sizeof(int), compare);
+    printf("intro_sort: %ld us\n", clock() - time);
 
     time = clock();
-    in_stable_sort(in_stable_sort_buf, in_stable_sort_buf + BUF_SIZE, sizeof(int), compare);
-    printf("in_stable_sort: %ld us\n", clock() - time);
+    tim_sort(tim_sort_buf, tim_sort_buf + BUF_SIZE, sizeof(int), compare);
+    printf("tim_sort: %ld us\n", clock() - time);
 
     time = clock();
     qsort(qsort_buf, BUF_SIZE, sizeof(int), Q_compare);
@@ -55,21 +56,21 @@ int main(void)
 
     for (size_t i = 0; i < BUF_SIZE; i++)
     {
-        if (in_sort_buf[i] != qsort_buf[i])
+        if (intro_sort_buf[i] != qsort_buf[i])
         {
-            printf("Error: in_sort\n");
+            printf("Error: intro_sort\n");
             break;
         }
 
-        if (in_stable_sort_buf[i] != qsort_buf[i])
+        if (tim_sort_buf[i] != qsort_buf[i])
         {
-            printf("Error: in_stable_sort\n");
+            printf("Error: tim_sort\n");
             break;
         }
     }
 
-    free(in_sort_buf);
-    free(in_stable_sort_buf);
+    free(intro_sort_buf);
+    free(tim_sort_buf);
     free(qsort_buf);
 
     return 0;
