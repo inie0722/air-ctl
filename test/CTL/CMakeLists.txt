@@ -1,5 +1,3 @@
-project(test)
-
 add_executable(array array.cpp)
 
 add_executable(vector vector.cpp)
