@@ -2,14 +2,14 @@
 C Language Template Library C语言 模板库<br>
 __安装__
 ```
-git clone https://github.com/inie0722/InCTL
-cd InCTL
+git clone https://github.com/inie0722/libc
+cd libc
 mkdir build && cd build
 cmake ../
 //生成全部文件
 cmake --build ./
 //如果你不需要 生成 单元测试 可以使用命令
-cmake --build ./ --config --target InCTL
+cmake --build ./ --config --target libc_ctl
 ```
 
 ## 关于
