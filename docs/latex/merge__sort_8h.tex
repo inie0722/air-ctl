@@ -1,0 +1,65 @@
+\hypertarget{merge__sort_8h}{}\doxysection{include/\+CTL/algorithm/merge\+\_\+sort.h File Reference}
+\label{merge__sort_8h}\index{include/CTL/algorithm/merge\_sort.h@{include/CTL/algorithm/merge\_sort.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for merge\+\_\+sort.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{merge__sort_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{merge__sort_8h_a1e8e79a51d765f72441d83db11354458}{merge\+\_\+sort}} (void $\ast$first, void $\ast$last, size\+\_\+t T\+\_\+size, bool($\ast$compare)(const void $\ast$, const void $\ast$))
+\begin{DoxyCompactList}\small\item\em sort elements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{merge__sort_8h_a67b89db3550a2b87f5b0283c1031d3fc}\label{merge__sort_8h_a67b89db3550a2b87f5b0283c1031d3fc}} 
+void {\bfseries merge} (void $\ast$first\+\_\+1, void $\ast$last\+\_\+1, void $\ast$first\+\_\+2, void $\ast$last\+\_\+2, void $\ast$buf, size\+\_\+t T\+\_\+size, bool($\ast$compare)(const void $\ast$, const void $\ast$))
+\item 
+\mbox{\Hypertarget{merge__sort_8h_af02640f065616e9724467364e4e97cff}\label{merge__sort_8h_af02640f065616e9724467364e4e97cff}} 
+void {\bfseries inplace\+\_\+merge} (void $\ast$first\+\_\+1, void $\ast$last\+\_\+1, void $\ast$first\+\_\+2, void $\ast$last\+\_\+2, size\+\_\+t T\+\_\+size, bool($\ast$compare)(const void $\ast$, const void $\ast$))
+\item 
+\mbox{\Hypertarget{merge__sort_8h_ada0cdcb330a483bf4c576f29adcd845f}\label{merge__sort_8h_ada0cdcb330a483bf4c576f29adcd845f}} 
+void {\bfseries reverse} (void $\ast$first, void $\ast$last, size\+\_\+t T\+\_\+size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+然Y (\href{mailto:inie0722@gmail.com}{\texttt{ inie0722@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/20
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{merge__sort_8h_a1e8e79a51d765f72441d83db11354458}\label{merge__sort_8h_a1e8e79a51d765f72441d83db11354458}} 
+\index{merge\_sort.h@{merge\_sort.h}!merge\_sort@{merge\_sort}}
+\index{merge\_sort@{merge\_sort}!merge\_sort.h@{merge\_sort.h}}
+\doxysubsubsection{\texorpdfstring{merge\_sort()}{merge\_sort()}}
+{\footnotesize\ttfamily void merge\+\_\+sort (\begin{DoxyParamCaption}\item[{void $\ast$}]{first,  }\item[{void $\ast$}]{last,  }\item[{size\+\_\+t}]{T\+\_\+size,  }\item[{bool($\ast$)(const void $\ast$, const void $\ast$)}]{compare }\end{DoxyParamCaption})}
+
+
+
+sort elements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & \\
+\hline
+{\em last} & \\
+\hline
+{\em T\+\_\+size} & element type size \\
+\hline
+{\em compare} & compare function \\
+\hline
+\end{DoxyParams}

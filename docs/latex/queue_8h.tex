@@ -1,0 +1,197 @@
+\hypertarget{queue_8h}{}\doxysection{include/\+CTL/queue.h File Reference}
+\label{queue_8h}\index{include/CTL/queue.h@{include/CTL/queue.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}CTL/container.\+h\char`\"{}}\newline
+Include dependency graph for queue.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{queue_8h_a99bb6d644a0976b5a6fcab7206a547cd}{CTL\+\_\+queue\+\_\+new}} (\mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$handle, \mbox{\hyperlink{structCTL__functions}{CTL\+\_\+functions}} $\ast$functions, const size\+\_\+t data\+\_\+size, const size\+\_\+t T\+\_\+size)
+\begin{DoxyCompactList}\small\item\em creates a new queue \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_a89950cb9a59f8816bbf699eeebcd5dc4}{CTL\+\_\+queue\+\_\+delete}} (\mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em destroys a queue \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{queue_8h_acc8b25ff83379768b79ca081076aedf3}{CTL\+\_\+queue\+\_\+front}} (const \mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em get first element \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{queue_8h_ae9c373d1bead2b50b215d4a4a22a0aa1}{CTL\+\_\+queue\+\_\+back}} (const \mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em get last element \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_af5c44468b963605573a537c1cd213a4a}{CTL\+\_\+queue\+\_\+push}} (\mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$handle, const void $\ast$element)
+\begin{DoxyCompactList}\small\item\em push element to the back \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_a6c6791bc7b6a530cc03036d17431c708}{CTL\+\_\+queue\+\_\+pop}} (\mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em pop element from the front \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{queue_8h_a55182e7b8b75f73b87bda9325e00e403}{CTL\+\_\+queue\+\_\+size}} (const \mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em get the number of elements that can be held in currently allocated storage \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{queue_8h_ab29a38d2808d4a49ec328baeba222b97}{CTL\+\_\+queue\+\_\+empty}} (const \mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em if the queue is empty \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+然Y (\href{mailto:inie0722@gmail.com}{\texttt{ inie0722@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/19
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{queue_8h_ae9c373d1bead2b50b215d4a4a22a0aa1}\label{queue_8h_ae9c373d1bead2b50b215d4a4a22a0aa1}} 
+\index{queue.h@{queue.h}!CTL\_queue\_back@{CTL\_queue\_back}}
+\index{CTL\_queue\_back@{CTL\_queue\_back}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_queue\_back()}{CTL\_queue\_back()}}
+{\footnotesize\ttfamily void$\ast$ CTL\+\_\+queue\+\_\+back (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+get last element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ last element address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{queue_8h_a89950cb9a59f8816bbf699eeebcd5dc4}\label{queue_8h_a89950cb9a59f8816bbf699eeebcd5dc4}} 
+\index{queue.h@{queue.h}!CTL\_queue\_delete@{CTL\_queue\_delete}}
+\index{CTL\_queue\_delete@{CTL\_queue\_delete}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_queue\_delete()}{CTL\_queue\_delete()}}
+{\footnotesize\ttfamily void CTL\+\_\+queue\+\_\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+destroys a queue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue_8h_ab29a38d2808d4a49ec328baeba222b97}\label{queue_8h_ab29a38d2808d4a49ec328baeba222b97}} 
+\index{queue.h@{queue.h}!CTL\_queue\_empty@{CTL\_queue\_empty}}
+\index{CTL\_queue\_empty@{CTL\_queue\_empty}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_queue\_empty()}{CTL\_queue\_empty()}}
+{\footnotesize\ttfamily bool CTL\+\_\+queue\+\_\+empty (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+if the queue is empty 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{queue_8h_acc8b25ff83379768b79ca081076aedf3}\label{queue_8h_acc8b25ff83379768b79ca081076aedf3}} 
+\index{queue.h@{queue.h}!CTL\_queue\_front@{CTL\_queue\_front}}
+\index{CTL\_queue\_front@{CTL\_queue\_front}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_queue\_front()}{CTL\_queue\_front()}}
+{\footnotesize\ttfamily void$\ast$ CTL\+\_\+queue\+\_\+front (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+get first element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ first element address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{queue_8h_a99bb6d644a0976b5a6fcab7206a547cd}\label{queue_8h_a99bb6d644a0976b5a6fcab7206a547cd}} 
+\index{queue.h@{queue.h}!CTL\_queue\_new@{CTL\_queue\_new}}
+\index{CTL\_queue\_new@{CTL\_queue\_new}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_queue\_new()}{CTL\_queue\_new()}}
+{\footnotesize\ttfamily void CTL\+\_\+queue\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__functions}{CTL\+\_\+functions}} $\ast$}]{functions,  }\item[{const size\+\_\+t}]{data\+\_\+size,  }\item[{const size\+\_\+t}]{T\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+creates a new queue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em functions} & container functions \\
+\hline
+{\em data\+\_\+size} & initial data size \\
+\hline
+{\em T\+\_\+size} & element type size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue_8h_a6c6791bc7b6a530cc03036d17431c708}\label{queue_8h_a6c6791bc7b6a530cc03036d17431c708}} 
+\index{queue.h@{queue.h}!CTL\_queue\_pop@{CTL\_queue\_pop}}
+\index{CTL\_queue\_pop@{CTL\_queue\_pop}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_queue\_pop()}{CTL\_queue\_pop()}}
+{\footnotesize\ttfamily void CTL\+\_\+queue\+\_\+pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+pop element from the front 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue_8h_af5c44468b963605573a537c1cd213a4a}\label{queue_8h_af5c44468b963605573a537c1cd213a4a}} 
+\index{queue.h@{queue.h}!CTL\_queue\_push@{CTL\_queue\_push}}
+\index{CTL\_queue\_push@{CTL\_queue\_push}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_queue\_push()}{CTL\_queue\_push()}}
+{\footnotesize\ttfamily void CTL\+\_\+queue\+\_\+push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$}]{handle,  }\item[{const void $\ast$}]{element }\end{DoxyParamCaption})}
+
+
+
+push element to the back 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em element} & element address \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue_8h_a55182e7b8b75f73b87bda9325e00e403}\label{queue_8h_a55182e7b8b75f73b87bda9325e00e403}} 
+\index{queue.h@{queue.h}!CTL\_queue\_size@{CTL\_queue\_size}}
+\index{CTL\_queue\_size@{CTL\_queue\_size}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_queue\_size()}{CTL\_queue\_size()}}
+{\footnotesize\ttfamily size\+\_\+t CTL\+\_\+queue\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__queue}{CTL\+\_\+queue}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+get the number of elements that can be held in currently allocated storage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t number of elements that can be held in currently allocated storage 
+\end{DoxyReturn}

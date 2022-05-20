@@ -1,0 +1,177 @@
+\hypertarget{stack_8h}{}\doxysection{include/\+CTL/stack.h File Reference}
+\label{stack_8h}\index{include/CTL/stack.h@{include/CTL/stack.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}CTL/container.\+h\char`\"{}}\newline
+Include dependency graph for stack.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stack_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}}
+\begin{DoxyCompactList}\small\item\em stack \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{stack_8h_a4c17131750bf5bcd56995996715a4056}{CTL\+\_\+stack\+\_\+new}} (\mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$handle, \mbox{\hyperlink{structCTL__functions}{CTL\+\_\+functions}} $\ast$functions, const size\+\_\+t buf\+\_\+size, const size\+\_\+t T\+\_\+size)
+\begin{DoxyCompactList}\small\item\em create stack \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8h_af1faa2f02335d4a16ddb4e42d93af8db}{CTL\+\_\+stack\+\_\+delete}} (\mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em destroy stack \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{stack_8h_ad184cde12e405dcdde4797781241ef1a}{CTL\+\_\+stack\+\_\+top}} (const \mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em get top element \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8h_a96a5a8f74d64f4bfae567c080f9910d7}{CTL\+\_\+stack\+\_\+push}} (\mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$handle, const void $\ast$element)
+\begin{DoxyCompactList}\small\item\em push element \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8h_a129a939451d974e03987708e59d52709}{CTL\+\_\+stack\+\_\+pop}} (\mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em pop element \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{stack_8h_a34971ba9f65f6906a74c1af2930cd433}{CTL\+\_\+stack\+\_\+size}} (const \mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em get the number of elements that can be held in currently allocated storage \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{stack_8h_a00571b3de180f357d90c63db53013ba2}{CTL\+\_\+stack\+\_\+empty}} (const \mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em if the stack is empty \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+然Y (\href{mailto:inie0722@gmail.com}{\texttt{ inie0722@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/19
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{stack_8h_af1faa2f02335d4a16ddb4e42d93af8db}\label{stack_8h_af1faa2f02335d4a16ddb4e42d93af8db}} 
+\index{stack.h@{stack.h}!CTL\_stack\_delete@{CTL\_stack\_delete}}
+\index{CTL\_stack\_delete@{CTL\_stack\_delete}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_stack\_delete()}{CTL\_stack\_delete()}}
+{\footnotesize\ttfamily void CTL\+\_\+stack\+\_\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+destroy stack 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8h_a00571b3de180f357d90c63db53013ba2}\label{stack_8h_a00571b3de180f357d90c63db53013ba2}} 
+\index{stack.h@{stack.h}!CTL\_stack\_empty@{CTL\_stack\_empty}}
+\index{CTL\_stack\_empty@{CTL\_stack\_empty}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_stack\_empty()}{CTL\_stack\_empty()}}
+{\footnotesize\ttfamily bool CTL\+\_\+stack\+\_\+empty (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+if the stack is empty 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{stack_8h_a4c17131750bf5bcd56995996715a4056}\label{stack_8h_a4c17131750bf5bcd56995996715a4056}} 
+\index{stack.h@{stack.h}!CTL\_stack\_new@{CTL\_stack\_new}}
+\index{CTL\_stack\_new@{CTL\_stack\_new}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_stack\_new()}{CTL\_stack\_new()}}
+{\footnotesize\ttfamily void CTL\+\_\+stack\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__functions}{CTL\+\_\+functions}} $\ast$}]{functions,  }\item[{const size\+\_\+t}]{buf\+\_\+size,  }\item[{const size\+\_\+t}]{T\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+create stack 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em functions} & container functions \\
+\hline
+{\em data\+\_\+size} & initial data size \\
+\hline
+{\em T\+\_\+size} & element type size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8h_a129a939451d974e03987708e59d52709}\label{stack_8h_a129a939451d974e03987708e59d52709}} 
+\index{stack.h@{stack.h}!CTL\_stack\_pop@{CTL\_stack\_pop}}
+\index{CTL\_stack\_pop@{CTL\_stack\_pop}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_stack\_pop()}{CTL\_stack\_pop()}}
+{\footnotesize\ttfamily void CTL\+\_\+stack\+\_\+pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+pop element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8h_a96a5a8f74d64f4bfae567c080f9910d7}\label{stack_8h_a96a5a8f74d64f4bfae567c080f9910d7}} 
+\index{stack.h@{stack.h}!CTL\_stack\_push@{CTL\_stack\_push}}
+\index{CTL\_stack\_push@{CTL\_stack\_push}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_stack\_push()}{CTL\_stack\_push()}}
+{\footnotesize\ttfamily void CTL\+\_\+stack\+\_\+push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$}]{handle,  }\item[{const void $\ast$}]{element }\end{DoxyParamCaption})}
+
+
+
+push element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em element} & element address \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8h_a34971ba9f65f6906a74c1af2930cd433}\label{stack_8h_a34971ba9f65f6906a74c1af2930cd433}} 
+\index{stack.h@{stack.h}!CTL\_stack\_size@{CTL\_stack\_size}}
+\index{CTL\_stack\_size@{CTL\_stack\_size}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_stack\_size()}{CTL\_stack\_size()}}
+{\footnotesize\ttfamily size\+\_\+t CTL\+\_\+stack\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+get the number of elements that can be held in currently allocated storage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t number of elements that can be held in currently allocated storage 
+\end{DoxyReturn}
+\mbox{\Hypertarget{stack_8h_ad184cde12e405dcdde4797781241ef1a}\label{stack_8h_ad184cde12e405dcdde4797781241ef1a}} 
+\index{stack.h@{stack.h}!CTL\_stack\_top@{CTL\_stack\_top}}
+\index{CTL\_stack\_top@{CTL\_stack\_top}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_stack\_top()}{CTL\_stack\_top()}}
+{\footnotesize\ttfamily void$\ast$ CTL\+\_\+stack\+\_\+top (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__stack}{CTL\+\_\+stack}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+get top element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ top element address 
+\end{DoxyReturn}

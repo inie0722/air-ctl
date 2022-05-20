@@ -1,0 +1,292 @@
+\hypertarget{hash__map_8h}{}\doxysection{include/\+CTL/hash\+\_\+map.h File Reference}
+\label{hash__map_8h}\index{include/CTL/hash\_map.h@{include/CTL/hash\_map.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for hash\+\_\+map.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{hash__map_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct____CTL__hash__map__node}{\+\_\+\+\_\+\+CTL\+\_\+hash\+\_\+map\+\_\+node}}
+\item 
+struct \mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}}
+\begin{DoxyCompactList}\small\item\em hash map \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em hash map iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{hash__map_8h_a5b254356896f21f9838da7ed0d6888bd}\label{hash__map_8h_a5b254356896f21f9838da7ed0d6888bd}} 
+typedef struct \mbox{\hyperlink{struct____CTL__hash__map__node}{\+\_\+\+\_\+\+CTL\+\_\+hash\+\_\+map\+\_\+node}} {\bfseries \+\_\+\+\_\+\+CTL\+\_\+hash\+\_\+map\+\_\+node}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hash__map_8h_a4e54403329b1d966fb6ce74fd0ca00ba}{CTL\+\_\+hash\+\_\+map\+\_\+new}} (\mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$handle, size\+\_\+t key\+\_\+size, size\+\_\+t T\+\_\+size)
+\begin{DoxyCompactList}\small\item\em create hash map \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash__map_8h_aa955835b099b0659b7f75a84c8ca5190}{CTL\+\_\+hash\+\_\+map\+\_\+clear}} (\mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em clear hash map \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash__map_8h_aa64a56675b934f218270ee748ba1c091}{CTL\+\_\+hash\+\_\+map\+\_\+delete}} (\mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em destroy hash map \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{hash__map_8h_a5a3701aab3225c57ee040a6ec3cb6585}{CTL\+\_\+hash\+\_\+map\+\_\+insert}} (\mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$handle, void $\ast$key, void $\ast$element)
+\begin{DoxyCompactList}\small\item\em insert element \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash__map_8h_a11b87e68e47effd48e4d41d4059ee356}{CTL\+\_\+hash\+\_\+map\+\_\+erase}} (\mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$handle, \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$iterator)
+\begin{DoxyCompactList}\small\item\em erases the element at a given position \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{hash__map_8h_ad2be30e0ea4045373ad77a79d2bbbf49}{CTL\+\_\+hash\+\_\+map\+\_\+find}} (const \mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$handle, const void $\ast$key, \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$res)
+\begin{DoxyCompactList}\small\item\em find key \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash__map_8h_afeb4e7b424e6760cde650d516a674927}{CTL\+\_\+hash\+\_\+map\+\_\+begin}} (const \mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$handle, \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$res)
+\begin{DoxyCompactList}\small\item\em get begin iterator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash__map_8h_a708508875624956cd6eac6404443c237}{CTL\+\_\+hash\+\_\+map\+\_\+end}} (const \mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$handle, \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$res)
+\begin{DoxyCompactList}\small\item\em get end iterator \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{hash__map_8h_a58f90bf1ca66bd0a38b4b2f82b201e98}{CTL\+\_\+hash\+\_\+map\+\_\+size}} (const \mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em get the number of elements \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{hash__map_8h_a636aa61b61427b4d5b0dc5b01c4bb88c}{CTL\+\_\+hash\+\_\+map\+\_\+empty}} (const \mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em if hash map is empty return true, else return false \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash__map_8h_ac7ecd8f9ba032103032d7eb6928d8fa0}{CTL\+\_\+hash\+\_\+map\+\_\+iterator\+\_\+next}} (const \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$handle, \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$res)
+\begin{DoxyCompactList}\small\item\em get iterator next \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{hash__map_8h_a317cf3aaf8d7b739cac004e185b910d1}{CTL\+\_\+hash\+\_\+map\+\_\+iterator\+\_\+equal}} (const \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$left, const \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$right)
+\begin{DoxyCompactList}\small\item\em if left iterator equal right iterator return true, else return false \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+然Y (\href{mailto:inie0722@gmail.com}{\texttt{ inie0722@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/19
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hash__map_8h_afeb4e7b424e6760cde650d516a674927}\label{hash__map_8h_afeb4e7b424e6760cde650d516a674927}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_begin@{CTL\_hash\_map\_begin}}
+\index{CTL\_hash\_map\_begin@{CTL\_hash\_map\_begin}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_begin()}{CTL\_hash\_map\_begin()}}
+{\footnotesize\ttfamily void CTL\+\_\+hash\+\_\+map\+\_\+begin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+get begin iterator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em res} & result begin iterator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__map_8h_aa955835b099b0659b7f75a84c8ca5190}\label{hash__map_8h_aa955835b099b0659b7f75a84c8ca5190}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_clear@{CTL\_hash\_map\_clear}}
+\index{CTL\_hash\_map\_clear@{CTL\_hash\_map\_clear}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_clear()}{CTL\_hash\_map\_clear()}}
+{\footnotesize\ttfamily void CTL\+\_\+hash\+\_\+map\+\_\+clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+clear hash map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__map_8h_aa64a56675b934f218270ee748ba1c091}\label{hash__map_8h_aa64a56675b934f218270ee748ba1c091}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_delete@{CTL\_hash\_map\_delete}}
+\index{CTL\_hash\_map\_delete@{CTL\_hash\_map\_delete}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_delete()}{CTL\_hash\_map\_delete()}}
+{\footnotesize\ttfamily void CTL\+\_\+hash\+\_\+map\+\_\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+destroy hash map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__map_8h_a636aa61b61427b4d5b0dc5b01c4bb88c}\label{hash__map_8h_a636aa61b61427b4d5b0dc5b01c4bb88c}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_empty@{CTL\_hash\_map\_empty}}
+\index{CTL\_hash\_map\_empty@{CTL\_hash\_map\_empty}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_empty()}{CTL\_hash\_map\_empty()}}
+{\footnotesize\ttfamily bool CTL\+\_\+hash\+\_\+map\+\_\+empty (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+if hash map is empty return true, else return false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash__map_8h_a708508875624956cd6eac6404443c237}\label{hash__map_8h_a708508875624956cd6eac6404443c237}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_end@{CTL\_hash\_map\_end}}
+\index{CTL\_hash\_map\_end@{CTL\_hash\_map\_end}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_end()}{CTL\_hash\_map\_end()}}
+{\footnotesize\ttfamily void CTL\+\_\+hash\+\_\+map\+\_\+end (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+get end iterator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em res} & result end iterator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__map_8h_a11b87e68e47effd48e4d41d4059ee356}\label{hash__map_8h_a11b87e68e47effd48e4d41d4059ee356}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_erase@{CTL\_hash\_map\_erase}}
+\index{CTL\_hash\_map\_erase@{CTL\_hash\_map\_erase}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_erase()}{CTL\_hash\_map\_erase()}}
+{\footnotesize\ttfamily void CTL\+\_\+hash\+\_\+map\+\_\+erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$}]{iterator }\end{DoxyParamCaption})}
+
+
+
+erases the element at a given position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em iterator} & erase position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__map_8h_ad2be30e0ea4045373ad77a79d2bbbf49}\label{hash__map_8h_ad2be30e0ea4045373ad77a79d2bbbf49}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_find@{CTL\_hash\_map\_find}}
+\index{CTL\_hash\_map\_find@{CTL\_hash\_map\_find}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_find()}{CTL\_hash\_map\_find()}}
+{\footnotesize\ttfamily int CTL\+\_\+hash\+\_\+map\+\_\+find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$}]{handle,  }\item[{const void $\ast$}]{key,  }\item[{\mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+find key 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em key} & key address \\
+\hline
+{\em res} & result key position iterator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 if success, -\/1 if failed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash__map_8h_a5a3701aab3225c57ee040a6ec3cb6585}\label{hash__map_8h_a5a3701aab3225c57ee040a6ec3cb6585}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_insert@{CTL\_hash\_map\_insert}}
+\index{CTL\_hash\_map\_insert@{CTL\_hash\_map\_insert}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_insert()}{CTL\_hash\_map\_insert()}}
+{\footnotesize\ttfamily int CTL\+\_\+hash\+\_\+map\+\_\+insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$}]{handle,  }\item[{void $\ast$}]{key,  }\item[{void $\ast$}]{element }\end{DoxyParamCaption})}
+
+
+
+insert element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em key} & key address \\
+\hline
+{\em element} & element address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 if success, -\/1 if failed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash__map_8h_a317cf3aaf8d7b739cac004e185b910d1}\label{hash__map_8h_a317cf3aaf8d7b739cac004e185b910d1}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_iterator\_equal@{CTL\_hash\_map\_iterator\_equal}}
+\index{CTL\_hash\_map\_iterator\_equal@{CTL\_hash\_map\_iterator\_equal}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_iterator\_equal()}{CTL\_hash\_map\_iterator\_equal()}}
+{\footnotesize\ttfamily bool CTL\+\_\+hash\+\_\+map\+\_\+iterator\+\_\+equal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$}]{left,  }\item[{const \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$}]{right }\end{DoxyParamCaption})}
+
+
+
+if left iterator equal right iterator return true, else return false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & \\
+\hline
+{\em right} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash__map_8h_ac7ecd8f9ba032103032d7eb6928d8fa0}\label{hash__map_8h_ac7ecd8f9ba032103032d7eb6928d8fa0}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_iterator\_next@{CTL\_hash\_map\_iterator\_next}}
+\index{CTL\_hash\_map\_iterator\_next@{CTL\_hash\_map\_iterator\_next}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_iterator\_next()}{CTL\_hash\_map\_iterator\_next()}}
+{\footnotesize\ttfamily void CTL\+\_\+hash\+\_\+map\+\_\+iterator\+\_\+next (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__hash__map__iterator}{CTL\+\_\+hash\+\_\+map\+\_\+iterator}} $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+get iterator next 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em res} & result iterator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__map_8h_a4e54403329b1d966fb6ce74fd0ca00ba}\label{hash__map_8h_a4e54403329b1d966fb6ce74fd0ca00ba}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_new@{CTL\_hash\_map\_new}}
+\index{CTL\_hash\_map\_new@{CTL\_hash\_map\_new}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_new()}{CTL\_hash\_map\_new()}}
+{\footnotesize\ttfamily void CTL\+\_\+hash\+\_\+map\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$}]{handle,  }\item[{size\+\_\+t}]{key\+\_\+size,  }\item[{size\+\_\+t}]{T\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+create hash map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em key\+\_\+size} & key type size \\
+\hline
+{\em T\+\_\+size} & element type size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__map_8h_a58f90bf1ca66bd0a38b4b2f82b201e98}\label{hash__map_8h_a58f90bf1ca66bd0a38b4b2f82b201e98}} 
+\index{hash\_map.h@{hash\_map.h}!CTL\_hash\_map\_size@{CTL\_hash\_map\_size}}
+\index{CTL\_hash\_map\_size@{CTL\_hash\_map\_size}!hash\_map.h@{hash\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_hash\_map\_size()}{CTL\_hash\_map\_size()}}
+{\footnotesize\ttfamily size\+\_\+t CTL\+\_\+hash\+\_\+map\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__hash__map}{CTL\+\_\+hash\+\_\+map}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+get the number of elements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t number of elements 
+\end{DoxyReturn}

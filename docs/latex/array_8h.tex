@@ -1,0 +1,324 @@
+\hypertarget{array_8h}{}\doxysection{include/\+CTL/array.h File Reference}
+\label{array_8h}\index{include/CTL/array.h@{include/CTL/array.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for array.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{array_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{array_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em array iterator \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}}
+\begin{DoxyCompactList}\small\item\em array \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{array_8h_a84b2f299751cbb7d7d73a192b444d4fa}{CTL\+\_\+array\+\_\+init}} (\mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$handle, const void $\ast$begin, const void $\ast$end, const size\+\_\+t T\+\_\+size)
+\begin{DoxyCompactList}\small\item\em init array \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{array_8h_a21d5c3af580c14e6b5bed98d17b1f91e}{CTL\+\_\+array\+\_\+front}} (const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em get first element \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{array_8h_a3b4824c900fe06fcd5afc3de99566a4e}{CTL\+\_\+array\+\_\+back}} (const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em get last element \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{array_8h_a49b1582ecde142cdd138df5d451fd0be}{CTL\+\_\+array\+\_\+begin}} (const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$handle, \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$res)
+\begin{DoxyCompactList}\small\item\em get begin iterator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{array_8h_af1fb03cbb2af7392a21d729df90b7a89}{CTL\+\_\+array\+\_\+end}} (const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$handle, \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$res)
+\begin{DoxyCompactList}\small\item\em get end iterator \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{array_8h_afca832c5d5b858e29d669f4bcf5babc4}{CTL\+\_\+array\+\_\+at}} (const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$handle, const size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em get index element \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{array_8h_a2009cd1daf4c249cf15e4f6cc4b7e774}{CTL\+\_\+array\+\_\+size}} (const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em get the number of elements \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{array_8h_acefb4285bbf230b6b567ba85b50888ea}{CTL\+\_\+array\+\_\+capacity}} (const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em get the number of elements that can be held in currently allocated storage \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{array_8h_a64affdd7d8810fbcfd913856719cd1c1}{CTL\+\_\+array\+\_\+empty}} (const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em if array is empty return true, else return false \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{array_8h_a533561aed10c559de483b8e0e6737efc}{CTL\+\_\+array\+\_\+iterator\+\_\+move}} (const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$handle, const ptrdiff\+\_\+t n, \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$res)
+\begin{DoxyCompactList}\small\item\em iterator move to n \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{array_8h_a65dfe706097f366bece0672c50538b44}{CTL\+\_\+array\+\_\+iterator\+\_\+equal}} (const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$left, const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$right)
+\begin{DoxyCompactList}\small\item\em if left iterator equal right iterator return true, else return false \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{array_8h_a6ac49d5abd8b8a54218058839d11c975}{CTL\+\_\+array\+\_\+iterator\+\_\+less}} (const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$left, const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$right)
+\begin{DoxyCompactList}\small\item\em if left iterator precedes right iterator return true, else return false \end{DoxyCompactList}\item 
+ptrdiff\+\_\+t \mbox{\hyperlink{array_8h_ac7efaa781000ac3d51565adc906a2a1f}{CTL\+\_\+array\+\_\+iterator\+\_\+diff}} (const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$left, const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$right)
+\begin{DoxyCompactList}\small\item\em calculate distance between left and right iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+然Y (\href{mailto:inie0722@gmail.com}{\texttt{ inie0722@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/19
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{array_8h_afca832c5d5b858e29d669f4bcf5babc4}\label{array_8h_afca832c5d5b858e29d669f4bcf5babc4}} 
+\index{array.h@{array.h}!CTL\_array\_at@{CTL\_array\_at}}
+\index{CTL\_array\_at@{CTL\_array\_at}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_at()}{CTL\_array\_at()}}
+{\footnotesize\ttfamily void$\ast$ CTL\+\_\+array\+\_\+at (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$}]{handle,  }\item[{const size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+get index element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ element address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{array_8h_a3b4824c900fe06fcd5afc3de99566a4e}\label{array_8h_a3b4824c900fe06fcd5afc3de99566a4e}} 
+\index{array.h@{array.h}!CTL\_array\_back@{CTL\_array\_back}}
+\index{CTL\_array\_back@{CTL\_array\_back}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_back()}{CTL\_array\_back()}}
+{\footnotesize\ttfamily void$\ast$ CTL\+\_\+array\+\_\+back (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+get last element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ last element address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{array_8h_a49b1582ecde142cdd138df5d451fd0be}\label{array_8h_a49b1582ecde142cdd138df5d451fd0be}} 
+\index{array.h@{array.h}!CTL\_array\_begin@{CTL\_array\_begin}}
+\index{CTL\_array\_begin@{CTL\_array\_begin}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_begin()}{CTL\_array\_begin()}}
+{\footnotesize\ttfamily void CTL\+\_\+array\+\_\+begin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+get begin iterator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em res} & result begin iterator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{array_8h_acefb4285bbf230b6b567ba85b50888ea}\label{array_8h_acefb4285bbf230b6b567ba85b50888ea}} 
+\index{array.h@{array.h}!CTL\_array\_capacity@{CTL\_array\_capacity}}
+\index{CTL\_array\_capacity@{CTL\_array\_capacity}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_capacity()}{CTL\_array\_capacity()}}
+{\footnotesize\ttfamily size\+\_\+t CTL\+\_\+array\+\_\+capacity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+get the number of elements that can be held in currently allocated storage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t number of elements that can be held in currently allocated storage 
+\end{DoxyReturn}
+\mbox{\Hypertarget{array_8h_a64affdd7d8810fbcfd913856719cd1c1}\label{array_8h_a64affdd7d8810fbcfd913856719cd1c1}} 
+\index{array.h@{array.h}!CTL\_array\_empty@{CTL\_array\_empty}}
+\index{CTL\_array\_empty@{CTL\_array\_empty}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_empty()}{CTL\_array\_empty()}}
+{\footnotesize\ttfamily bool CTL\+\_\+array\+\_\+empty (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+if array is empty return true, else return false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{array_8h_af1fb03cbb2af7392a21d729df90b7a89}\label{array_8h_af1fb03cbb2af7392a21d729df90b7a89}} 
+\index{array.h@{array.h}!CTL\_array\_end@{CTL\_array\_end}}
+\index{CTL\_array\_end@{CTL\_array\_end}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_end()}{CTL\_array\_end()}}
+{\footnotesize\ttfamily void CTL\+\_\+array\+\_\+end (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+get end iterator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em res} & result end iterator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{array_8h_a21d5c3af580c14e6b5bed98d17b1f91e}\label{array_8h_a21d5c3af580c14e6b5bed98d17b1f91e}} 
+\index{array.h@{array.h}!CTL\_array\_front@{CTL\_array\_front}}
+\index{CTL\_array\_front@{CTL\_array\_front}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_front()}{CTL\_array\_front()}}
+{\footnotesize\ttfamily void$\ast$ CTL\+\_\+array\+\_\+front (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+get first element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ first element address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{array_8h_a84b2f299751cbb7d7d73a192b444d4fa}\label{array_8h_a84b2f299751cbb7d7d73a192b444d4fa}} 
+\index{array.h@{array.h}!CTL\_array\_init@{CTL\_array\_init}}
+\index{CTL\_array\_init@{CTL\_array\_init}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_init()}{CTL\_array\_init()}}
+{\footnotesize\ttfamily void CTL\+\_\+array\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$}]{handle,  }\item[{const void $\ast$}]{begin,  }\item[{const void $\ast$}]{end,  }\item[{const size\+\_\+t}]{T\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+init array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em begin} & array begin address \\
+\hline
+{\em end} & array end address \\
+\hline
+{\em T\+\_\+size} & element type size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{array_8h_ac7efaa781000ac3d51565adc906a2a1f}\label{array_8h_ac7efaa781000ac3d51565adc906a2a1f}} 
+\index{array.h@{array.h}!CTL\_array\_iterator\_diff@{CTL\_array\_iterator\_diff}}
+\index{CTL\_array\_iterator\_diff@{CTL\_array\_iterator\_diff}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_iterator\_diff()}{CTL\_array\_iterator\_diff()}}
+{\footnotesize\ttfamily ptrdiff\+\_\+t CTL\+\_\+array\+\_\+iterator\+\_\+diff (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$}]{left,  }\item[{const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$}]{right }\end{DoxyParamCaption})}
+
+
+
+calculate distance between left and right iterator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & \\
+\hline
+{\em right} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ptrdiff\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{array_8h_a65dfe706097f366bece0672c50538b44}\label{array_8h_a65dfe706097f366bece0672c50538b44}} 
+\index{array.h@{array.h}!CTL\_array\_iterator\_equal@{CTL\_array\_iterator\_equal}}
+\index{CTL\_array\_iterator\_equal@{CTL\_array\_iterator\_equal}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_iterator\_equal()}{CTL\_array\_iterator\_equal()}}
+{\footnotesize\ttfamily bool CTL\+\_\+array\+\_\+iterator\+\_\+equal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$}]{left,  }\item[{const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$}]{right }\end{DoxyParamCaption})}
+
+
+
+if left iterator equal right iterator return true, else return false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & \\
+\hline
+{\em right} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{array_8h_a6ac49d5abd8b8a54218058839d11c975}\label{array_8h_a6ac49d5abd8b8a54218058839d11c975}} 
+\index{array.h@{array.h}!CTL\_array\_iterator\_less@{CTL\_array\_iterator\_less}}
+\index{CTL\_array\_iterator\_less@{CTL\_array\_iterator\_less}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_iterator\_less()}{CTL\_array\_iterator\_less()}}
+{\footnotesize\ttfamily bool CTL\+\_\+array\+\_\+iterator\+\_\+less (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$}]{left,  }\item[{const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$}]{right }\end{DoxyParamCaption})}
+
+
+
+if left iterator precedes right iterator return true, else return false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & \\
+\hline
+{\em right} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{array_8h_a533561aed10c559de483b8e0e6737efc}\label{array_8h_a533561aed10c559de483b8e0e6737efc}} 
+\index{array.h@{array.h}!CTL\_array\_iterator\_move@{CTL\_array\_iterator\_move}}
+\index{CTL\_array\_iterator\_move@{CTL\_array\_iterator\_move}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_iterator\_move()}{CTL\_array\_iterator\_move()}}
+{\footnotesize\ttfamily void CTL\+\_\+array\+\_\+iterator\+\_\+move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$}]{handle,  }\item[{const ptrdiff\+\_\+t}]{n,  }\item[{\mbox{\hyperlink{structCTL__array__iterator}{CTL\+\_\+array\+\_\+iterator}} $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+iterator move to n 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em n} & positive move forward, negative move backward \\
+\hline
+{\em res} & result iterator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{array_8h_a2009cd1daf4c249cf15e4f6cc4b7e774}\label{array_8h_a2009cd1daf4c249cf15e4f6cc4b7e774}} 
+\index{array.h@{array.h}!CTL\_array\_size@{CTL\_array\_size}}
+\index{CTL\_array\_size@{CTL\_array\_size}!array.h@{array.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_array\_size()}{CTL\_array\_size()}}
+{\footnotesize\ttfamily size\+\_\+t CTL\+\_\+array\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__array}{CTL\+\_\+array}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+get the number of elements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of elements 
+\end{DoxyReturn}

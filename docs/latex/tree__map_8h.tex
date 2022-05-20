@@ -1,0 +1,291 @@
+\hypertarget{tree__map_8h}{}\doxysection{include/\+CTL/tree\+\_\+map.h File Reference}
+\label{tree__map_8h}\index{include/CTL/tree\_map.h@{include/CTL/tree\_map.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for tree\+\_\+map.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{tree__map_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct____rb__tree__node}{\+\_\+\+\_\+rb\+\_\+tree\+\_\+node}}
+\item 
+struct \mbox{\hyperlink{structCTL__tree__map__key}{CTL\+\_\+tree\+\_\+map\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em tree map key \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}}
+\begin{DoxyCompactList}\small\item\em tree map \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em tree map iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{tree__map_8h_a0144b5d488d6cb5f16f7a1e06344e470}\label{tree__map_8h_a0144b5d488d6cb5f16f7a1e06344e470}} 
+typedef struct \mbox{\hyperlink{struct____rb__tree__node}{\+\_\+\+\_\+rb\+\_\+tree\+\_\+node}} {\bfseries \+\_\+\+\_\+rb\+\_\+tree\+\_\+node}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{tree__map_8h_a853e0c128c7b20212a2cbe36fcd2fbdd}{CTL\+\_\+tree\+\_\+map\+\_\+new}} (\mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$handle, \mbox{\hyperlink{structCTL__tree__map__key}{CTL\+\_\+tree\+\_\+map\+\_\+key}} $\ast$key, const size\+\_\+t T\+\_\+size)
+\begin{DoxyCompactList}\small\item\em create tree map \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tree__map_8h_a9f2009b4e2f74925a1a6ef3ae41a1411}{CTL\+\_\+tree\+\_\+map\+\_\+delete}} (\mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em destroy tree map \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tree__map_8h_a19219d88605e0489af165a728da07451}{CTL\+\_\+tree\+\_\+map\+\_\+clear}} (\mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em clear tree map \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tree__map_8h_a269d95da10e06f82e0a70148ea6fa1ed}{CTL\+\_\+tree\+\_\+map\+\_\+begin}} (const \mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$handle, \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$res)
+\begin{DoxyCompactList}\small\item\em get begin iterator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tree__map_8h_a290b8a5ca505bdd55c7209312c8f49e4}{CTL\+\_\+tree\+\_\+map\+\_\+end}} (const \mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$handle, \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$res)
+\begin{DoxyCompactList}\small\item\em get end iterator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tree__map_8h_a686beed67c8138d7485349ad52783282}{CTL\+\_\+tree\+\_\+map\+\_\+insert}} (\mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$handle, void $\ast$key, void $\ast$element)
+\begin{DoxyCompactList}\small\item\em insert element \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tree__map_8h_a30b5f68352374aabdcd62af401e6e285}{CTL\+\_\+tree\+\_\+map\+\_\+erase}} (\mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$handle, \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$iterator)
+\begin{DoxyCompactList}\small\item\em erases the element at a given position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tree__map_8h_a97475a34bdbbf3c96456522695039fe2}{CTL\+\_\+tree\+\_\+map\+\_\+find}} (const \mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$handle, const void $\ast$key, \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$res)
+\begin{DoxyCompactList}\small\item\em find key \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{tree__map_8h_a9c446e8083e6acd8120452588cd9ccc7}{CTL\+\_\+tree\+\_\+map\+\_\+size}} (const \mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em get the number of elements \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{tree__map_8h_a70b2a4e47efb41870a230f5fc69d1e21}{CTL\+\_\+tree\+\_\+map\+\_\+empty}} (const \mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em if list is empty return true, else return false \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tree__map_8h_a90fa73664b28a6568d4606db2208d699}{CTL\+\_\+tree\+\_\+map\+\_\+iterator\+\_\+move}} (const \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$handle, const ptrdiff\+\_\+t n, \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$res)
+\begin{DoxyCompactList}\small\item\em iterator move to n \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{tree__map_8h_a47edcc605587b6c3ceaa6a09bf6afc5a}{CTL\+\_\+tree\+\_\+map\+\_\+iterator\+\_\+equal}} (const \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$left, const \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$right)
+\begin{DoxyCompactList}\small\item\em if left iterator equal right iterator return true, else return false \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+然Y (\href{mailto:inie0722@gmail.com}{\texttt{ inie0722@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/20
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tree__map_8h_a269d95da10e06f82e0a70148ea6fa1ed}\label{tree__map_8h_a269d95da10e06f82e0a70148ea6fa1ed}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_begin@{CTL\_tree\_map\_begin}}
+\index{CTL\_tree\_map\_begin@{CTL\_tree\_map\_begin}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_begin()}{CTL\_tree\_map\_begin()}}
+{\footnotesize\ttfamily void CTL\+\_\+tree\+\_\+map\+\_\+begin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+get begin iterator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em res} & result begin iterator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tree__map_8h_a19219d88605e0489af165a728da07451}\label{tree__map_8h_a19219d88605e0489af165a728da07451}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_clear@{CTL\_tree\_map\_clear}}
+\index{CTL\_tree\_map\_clear@{CTL\_tree\_map\_clear}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_clear()}{CTL\_tree\_map\_clear()}}
+{\footnotesize\ttfamily void CTL\+\_\+tree\+\_\+map\+\_\+clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+clear tree map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tree__map_8h_a9f2009b4e2f74925a1a6ef3ae41a1411}\label{tree__map_8h_a9f2009b4e2f74925a1a6ef3ae41a1411}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_delete@{CTL\_tree\_map\_delete}}
+\index{CTL\_tree\_map\_delete@{CTL\_tree\_map\_delete}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_delete()}{CTL\_tree\_map\_delete()}}
+{\footnotesize\ttfamily void CTL\+\_\+tree\+\_\+map\+\_\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+destroy tree map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tree__map_8h_a70b2a4e47efb41870a230f5fc69d1e21}\label{tree__map_8h_a70b2a4e47efb41870a230f5fc69d1e21}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_empty@{CTL\_tree\_map\_empty}}
+\index{CTL\_tree\_map\_empty@{CTL\_tree\_map\_empty}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_empty()}{CTL\_tree\_map\_empty()}}
+{\footnotesize\ttfamily bool CTL\+\_\+tree\+\_\+map\+\_\+empty (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+if list is empty return true, else return false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tree__map_8h_a290b8a5ca505bdd55c7209312c8f49e4}\label{tree__map_8h_a290b8a5ca505bdd55c7209312c8f49e4}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_end@{CTL\_tree\_map\_end}}
+\index{CTL\_tree\_map\_end@{CTL\_tree\_map\_end}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_end()}{CTL\_tree\_map\_end()}}
+{\footnotesize\ttfamily void CTL\+\_\+tree\+\_\+map\+\_\+end (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+get end iterator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em res} & result end iterator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tree__map_8h_a30b5f68352374aabdcd62af401e6e285}\label{tree__map_8h_a30b5f68352374aabdcd62af401e6e285}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_erase@{CTL\_tree\_map\_erase}}
+\index{CTL\_tree\_map\_erase@{CTL\_tree\_map\_erase}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_erase()}{CTL\_tree\_map\_erase()}}
+{\footnotesize\ttfamily void CTL\+\_\+tree\+\_\+map\+\_\+erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$}]{iterator }\end{DoxyParamCaption})}
+
+
+
+erases the element at a given position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em iterator} & erase position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tree__map_8h_a97475a34bdbbf3c96456522695039fe2}\label{tree__map_8h_a97475a34bdbbf3c96456522695039fe2}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_find@{CTL\_tree\_map\_find}}
+\index{CTL\_tree\_map\_find@{CTL\_tree\_map\_find}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_find()}{CTL\_tree\_map\_find()}}
+{\footnotesize\ttfamily void CTL\+\_\+tree\+\_\+map\+\_\+find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$}]{handle,  }\item[{const void $\ast$}]{key,  }\item[{\mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+find key 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em key} & key address \\
+\hline
+{\em res} & result key position iterator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tree__map_8h_a686beed67c8138d7485349ad52783282}\label{tree__map_8h_a686beed67c8138d7485349ad52783282}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_insert@{CTL\_tree\_map\_insert}}
+\index{CTL\_tree\_map\_insert@{CTL\_tree\_map\_insert}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_insert()}{CTL\_tree\_map\_insert()}}
+{\footnotesize\ttfamily void CTL\+\_\+tree\+\_\+map\+\_\+insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$}]{handle,  }\item[{void $\ast$}]{key,  }\item[{void $\ast$}]{element }\end{DoxyParamCaption})}
+
+
+
+insert element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em key} & key address \\
+\hline
+{\em element} & element address \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tree__map_8h_a47edcc605587b6c3ceaa6a09bf6afc5a}\label{tree__map_8h_a47edcc605587b6c3ceaa6a09bf6afc5a}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_iterator\_equal@{CTL\_tree\_map\_iterator\_equal}}
+\index{CTL\_tree\_map\_iterator\_equal@{CTL\_tree\_map\_iterator\_equal}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_iterator\_equal()}{CTL\_tree\_map\_iterator\_equal()}}
+{\footnotesize\ttfamily bool CTL\+\_\+tree\+\_\+map\+\_\+iterator\+\_\+equal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$}]{left,  }\item[{const \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$}]{right }\end{DoxyParamCaption})}
+
+
+
+if left iterator equal right iterator return true, else return false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & \\
+\hline
+{\em right} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tree__map_8h_a90fa73664b28a6568d4606db2208d699}\label{tree__map_8h_a90fa73664b28a6568d4606db2208d699}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_iterator\_move@{CTL\_tree\_map\_iterator\_move}}
+\index{CTL\_tree\_map\_iterator\_move@{CTL\_tree\_map\_iterator\_move}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_iterator\_move()}{CTL\_tree\_map\_iterator\_move()}}
+{\footnotesize\ttfamily void CTL\+\_\+tree\+\_\+map\+\_\+iterator\+\_\+move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$}]{handle,  }\item[{const ptrdiff\+\_\+t}]{n,  }\item[{\mbox{\hyperlink{structCTL__tree__map__iterator}{CTL\+\_\+tree\+\_\+map\+\_\+iterator}} $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+iterator move to n 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em n} & positive move forward, negative move backward \\
+\hline
+{\em res} & result iterator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tree__map_8h_a853e0c128c7b20212a2cbe36fcd2fbdd}\label{tree__map_8h_a853e0c128c7b20212a2cbe36fcd2fbdd}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_new@{CTL\_tree\_map\_new}}
+\index{CTL\_tree\_map\_new@{CTL\_tree\_map\_new}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_new()}{CTL\_tree\_map\_new()}}
+{\footnotesize\ttfamily void CTL\+\_\+tree\+\_\+map\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{structCTL__tree__map__key}{CTL\+\_\+tree\+\_\+map\+\_\+key}} $\ast$}]{key,  }\item[{const size\+\_\+t}]{T\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+create tree map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+{\em key} & \\
+\hline
+{\em T\+\_\+size} & element type size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tree__map_8h_a9c446e8083e6acd8120452588cd9ccc7}\label{tree__map_8h_a9c446e8083e6acd8120452588cd9ccc7}} 
+\index{tree\_map.h@{tree\_map.h}!CTL\_tree\_map\_size@{CTL\_tree\_map\_size}}
+\index{CTL\_tree\_map\_size@{CTL\_tree\_map\_size}!tree\_map.h@{tree\_map.h}}
+\doxysubsubsection{\texorpdfstring{CTL\_tree\_map\_size()}{CTL\_tree\_map\_size()}}
+{\footnotesize\ttfamily size\+\_\+t CTL\+\_\+tree\+\_\+map\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCTL__tree__map}{CTL\+\_\+tree\+\_\+map}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+get the number of elements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t number of elements 
+\end{DoxyReturn}

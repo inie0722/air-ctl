@@ -1,0 +1,62 @@
+\hypertarget{quick__sort_8h}{}\doxysection{include/\+CTL/algorithm/quick\+\_\+sort.h File Reference}
+\label{quick__sort_8h}\index{include/CTL/algorithm/quick\_sort.h@{include/CTL/algorithm/quick\_sort.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for quick\+\_\+sort.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{quick__sort_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{quick__sort_8h_a9f904d614ecef0ab1d88f140ae405f98}{quick\+\_\+sort}} (void $\ast$first, void $\ast$last, size\+\_\+t T\+\_\+size, bool($\ast$compare)(const void $\ast$, const void $\ast$))
+\begin{DoxyCompactList}\small\item\em sort elements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{quick__sort_8h_a44266b9abf526e859e66afca1a9e9073}\label{quick__sort_8h_a44266b9abf526e859e66afca1a9e9073}} 
+void $\ast$ {\bfseries median} (void $\ast$a, void $\ast$b, void $\ast$c, bool($\ast$compare)(const void $\ast$, const void $\ast$))
+\item 
+\mbox{\Hypertarget{quick__sort_8h_aba0d08e6f984235e465abf90325e8326}\label{quick__sort_8h_aba0d08e6f984235e465abf90325e8326}} 
+void $\ast$ {\bfseries unguarded\+\_\+partition} (void $\ast$first, void $\ast$last, void $\ast$value, size\+\_\+t T\+\_\+size, bool($\ast$compare)(const void $\ast$, const void $\ast$))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+然Y (\href{mailto:inie0722@gmail.com}{\texttt{ inie0722@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/20
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{quick__sort_8h_a9f904d614ecef0ab1d88f140ae405f98}\label{quick__sort_8h_a9f904d614ecef0ab1d88f140ae405f98}} 
+\index{quick\_sort.h@{quick\_sort.h}!quick\_sort@{quick\_sort}}
+\index{quick\_sort@{quick\_sort}!quick\_sort.h@{quick\_sort.h}}
+\doxysubsubsection{\texorpdfstring{quick\_sort()}{quick\_sort()}}
+{\footnotesize\ttfamily void quick\+\_\+sort (\begin{DoxyParamCaption}\item[{void $\ast$}]{first,  }\item[{void $\ast$}]{last,  }\item[{size\+\_\+t}]{T\+\_\+size,  }\item[{bool($\ast$)(const void $\ast$, const void $\ast$)}]{compare }\end{DoxyParamCaption})}
+
+
+
+sort elements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & \\
+\hline
+{\em last} & \\
+\hline
+{\em T\+\_\+size} & element type size \\
+\hline
+{\em compare} & compare function \\
+\hline
+\end{DoxyParams}
