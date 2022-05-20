@@ -21,8 +21,8 @@
  * @param T_size element type size
  * @param compare compare function
  */
-extern void quick_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
+extern void CTL_quick_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
 
-extern void *median(void *a, void *b, void *c, bool (*compare)(const void *, const void *));
+extern void *__CTL_median(void *a, void *b, void *c, bool (*compare)(const void *, const void *));
 
-extern void *unguarded_partition(void *first, void *last, void *value, size_t T_size, bool (*compare)(const void *, const void *));
+extern void *__CTL_unguarded_partition(void *first, void *last, void *value, size_t T_size, bool (*compare)(const void *, const void *));

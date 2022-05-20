@@ -11,7 +11,7 @@ static inline void __merge(char *first_1, char *last_1, char *first_2, char *las
 static void __inplace_merge_sort(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *));
 static inline void __inplace_merge(char *first_1, char *last_1, char *first_2, char *last_2, size_t T_size, bool (*compare)(const void *, const void *));
 
-void merge_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
+void CTL_merge_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
     void *buf = malloc(last - first);
     if (buf != NULL)
@@ -25,17 +25,17 @@ void merge_sort(void *first, void *last, size_t T_size, bool (*compare)(const vo
     }
 }
 
-void merge(void *first_1, void *last_1, void *first_2, void *last_2, void *buf, size_t T_size, bool (*compare)(const void *, const void *))
+void __CTL_merge(void *first_1, void *last_1, void *first_2, void *last_2, void *buf, size_t T_size, bool (*compare)(const void *, const void *))
 {
     __merge((char *)first_1, (char *)last_1, (char *)first_2, (char *)last_2, buf, T_size, compare);
 }
 
-void inplace_merge(void *first_1, void *last_1, void *first_2, void *last_2, size_t T_size, bool (*compare)(const void *, const void *))
+void __CTL_inplace_merge(void *first_1, void *last_1, void *first_2, void *last_2, size_t T_size, bool (*compare)(const void *, const void *))
 {
     __inplace_merge((char *)first_1, (char *)last_1, (char *)first_2, (char *)last_2, T_size, compare);
 }
 
-void reverse(void *first, void *last, size_t T_size)
+void __CTL_reverse(void *first, void *last, size_t T_size)
 {
     void *tmp = alloca(T_size);
 
@@ -54,7 +54,7 @@ static void __merge_sort(char *first, char *last, void *buf, size_t T_size, bool
     {
         __merge_sort(first, last - (mid * T_size), buf, T_size, compare);
         __merge_sort(last - (mid * T_size), last, buf, T_size, compare);
-        merge(first, last - (mid * T_size), last - (mid * T_size), last, buf, T_size, compare);
+        __CTL_merge(first, last - (mid * T_size), last - (mid * T_size), last, buf, T_size, compare);
     }
 }
 
@@ -124,9 +124,9 @@ static inline void __inplace_merge(char *first_1, char *last_1, char *first_2, c
             cur_2 += T_size;
         }
 
-        reverse(cur_1, first_2, T_size);
-        reverse(first_2, cur_2, T_size);
-        reverse(cur_1, cur_2, T_size);
+        __CTL_reverse(cur_1, first_2, T_size);
+        __CTL_reverse(first_2, cur_2, T_size);
+        __CTL_reverse(cur_1, cur_2, T_size);
 
         first_1 = cur_1 + (cur_2 - first_2);
         first_2 = cur_2;

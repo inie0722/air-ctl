@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "intro_sort.h"
-#include "tim_sort.h"
+#include "CTL/algorithm/intro_sort.h"
+#include "CTL/algorithm/tim_sort.h"
 
 bool compare(const void *a, const void *b)
 {
@@ -43,11 +43,11 @@ int main(void)
 
     clock_t time;
     time = clock();
-    intro_sort(intro_sort_buf, intro_sort_buf + BUF_SIZE, sizeof(int), compare);
+    CTL_intro_sort(intro_sort_buf, intro_sort_buf + BUF_SIZE, sizeof(int), compare);
     printf("intro_sort: %ld us\n", clock() - time);
 
     time = clock();
-    tim_sort(tim_sort_buf, tim_sort_buf + BUF_SIZE, sizeof(int), compare);
+    CTL_tim_sort(tim_sort_buf, tim_sort_buf + BUF_SIZE, sizeof(int), compare);
     printf("tim_sort: %ld us\n", clock() - time);
 
     time = clock();

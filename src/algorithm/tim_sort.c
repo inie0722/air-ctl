@@ -44,7 +44,7 @@ static inline bool merge_rule(run *stack, size_t top)
                run_length(stack[top]) + run_length(stack[top - 1]) > run_length(stack[top - 2]);
 }
 
-void tim_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
+void CTL_tim_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
     void *buf = malloc(last - first);
     run *stack = alloca(sizeof(run) * lg((last - first) / T_size) * 2);
@@ -61,9 +61,9 @@ void tim_sort(void *first, void *last, size_t T_size, bool (*compare)(const void
         while (merge_rule(stack, top))
         {
             if (buf != NULL)
-                merge(stack[top - 1].first, stack[top - 1].last, stack[top].first, stack[top].last, buf, T_size, compare);
+                __CTL_merge(stack[top - 1].first, stack[top - 1].last, stack[top].first, stack[top].last, buf, T_size, compare);
             else
-                inplace_merge(stack[top - 1].first, stack[top - 1].last, stack[top].first, stack[top].last, T_size, compare);
+                __CTL_inplace_merge(stack[top - 1].first, stack[top - 1].last, stack[top].first, stack[top].last, T_size, compare);
 
             stack[top - 1].last = stack[top].last;
             --top;
@@ -75,9 +75,9 @@ void tim_sort(void *first, void *last, size_t T_size, bool (*compare)(const void
     {
         --top;
         if (buf != NULL)
-            merge(stack[top - 1].first, stack[top - 1].last, stack[top].first, stack[top].last, buf, T_size, compare);
+            __CTL_merge(stack[top - 1].first, stack[top - 1].last, stack[top].first, stack[top].last, buf, T_size, compare);
         else
-            inplace_merge(stack[top - 1].first, stack[top - 1].last, stack[top].first, stack[top].last, T_size, compare);
+            __CTL_inplace_merge(stack[top - 1].first, stack[top - 1].last, stack[top].first, stack[top].last, T_size, compare);
 
         stack[top - 1].last = stack[top].last;
     }
@@ -112,14 +112,14 @@ static inline size_t next_partition(void *first, void *last, size_t T_size, bool
             cur += T_size;
             next += T_size;
         }
-        reverse(first, next, T_size);
+        __CTL_reverse(first, next, T_size);
     }
 
     //run 长度 过小
     if (next < last && run_len < MIN_RUN)
     {
         last = first + MIN_RUN * T_size < last ? first + MIN_RUN * T_size : last;
-        insertion_sort(first, last, T_size, compare);
+        CTL_insertion_sort(first, last, T_size, compare);
         return (last - first) / T_size;
     }
     else

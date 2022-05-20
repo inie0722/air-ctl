@@ -9,12 +9,12 @@ static inline void __insertion_sort(char *first, char *last, size_t T_size, bool
 static inline void linear_insert(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *));
 static inline void __unguarded_linear_insert(char *last, void *value, size_t T_size, bool (*compare)(const void *, const void *));
 
-void insertion_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
+void CTL_insertion_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
     __insertion_sort((char *)first, (char *)last, T_size, compare);
 }
 
-void unguarded_linear_insert(void *last, void *value, size_t T_size, bool (*compare)(const void *, const void *))
+void __CTL_unguarded_linear_insert(void *last, void *value, size_t T_size, bool (*compare)(const void *, const void *))
 {
     __unguarded_linear_insert((char *)last, value, T_size, compare);
 }
@@ -39,7 +39,7 @@ static inline void linear_insert(char *first, char *last, size_t T_size, bool (*
         memcpy(first, value, T_size);
     }
     else // 尾不小于头
-        unguarded_linear_insert(last, value, T_size, compare);
+        __CTL_unguarded_linear_insert(last, value, T_size, compare);
 }
 
 static inline void __unguarded_linear_insert(char *last, void *value, size_t T_size, bool (*compare)(const void *, const void *))

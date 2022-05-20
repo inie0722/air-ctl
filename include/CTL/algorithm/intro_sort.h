@@ -21,4 +21,4 @@
  * @param T_size element type size
  * @param compare compare function
  */
-extern void intro_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
+extern void CTL_intro_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
