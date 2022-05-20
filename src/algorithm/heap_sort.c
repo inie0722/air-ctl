@@ -8,31 +8,31 @@
 static inline void __heap_push(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *));
 static inline void __heap_pop(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *));
 
-void heap_push(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
+void CTL_heap_push(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
     __heap_push((char *)first, (char *)last, T_size, compare);
 }
 
-void heap_pop(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
+void CTL_heap_pop(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
     __heap_pop((char *)first, (char *)last, T_size, compare);
 }
 
-void heap_make(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
+void CTL_heap_make(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
     for (size_t i = T_size; i < last - first; i += T_size)
     {
-        heap_push(first, first + i, T_size, compare);
+        CTL_heap_push(first, first + i, T_size, compare);
     }
 }
 
-void heap_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
+void CTL_heap_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
-    heap_make(first, last, T_size, compare);
+    CTL_heap_make(first, last, T_size, compare);
 
     for (size_t i = 0; i < last - first; i += T_size)
     {
-        heap_pop(first, last - i, T_size, compare);
+        CTL_heap_pop(first, last - i, T_size, compare);
     }
 }
 
