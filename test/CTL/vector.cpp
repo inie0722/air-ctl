@@ -7,8 +7,8 @@
 
 extern "C"
 {
-#include "CTL_vector.h"
-#include "CTL_allocator.h"
+#include "CTL/vector.h"
+#include "CTL/allocator.h"
 }
 
 using namespace std;
@@ -151,9 +151,9 @@ TEST(Iterators, operator)
     ASSERT_TRUE(CTL_vector_iterator_diff(&begin, &end) == stl.begin() - stl.end());
     ASSERT_TRUE(CTL_vector_iterator_diff(&end, &begin) == stl.end() - stl.begin());
 
-    // >
-    ASSERT_TRUE(CTL_vector_iterator_more(&end, &begin));
-    ASSERT_FALSE(CTL_vector_iterator_more(&begin, &end));
+    // <
+    ASSERT_TRUE(CTL_vector_iterator_less(&begin, &end));
+    ASSERT_FALSE(CTL_vector_iterator_less(&end, &begin));
 }
 
 TEST(Capacity, size)
