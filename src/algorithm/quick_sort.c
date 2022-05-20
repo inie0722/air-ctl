@@ -1,4 +1,4 @@
-#include "quick_sort.h"
+#include "CTL/algorithm/quick_sort.h"
 
 #include <stdbool.h>
 #include <stddef.h>
