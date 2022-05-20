@@ -1,3 +1,13 @@
-add_subdirectory(algorithm)
+project(CTL)
 
-add_subdirectory(CTL)
+file(GLOB allocator ./allocator/*)
+file(GLOB container ./container/* ./adapter/*)
+file(GLOB adapter ./adapter/*)
+file(GLOB algorithm ./algorithm/*)
+
+add_library(CTL SHARED ${allocator} ${container} ${adapter} ${algorithm})
+
+#是否开启分配器
+add_definitions(-D CTL_NO_ALLOCATE)
+
+target_link_libraries(CTL pthread)

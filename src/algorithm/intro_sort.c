@@ -1,8 +1,8 @@
-#include "intro_sort.h"
+#include "CTL/algorithm/intro_sort.h"
 
-#include "insertion_sort.h"
-#include "heap_sort.h"
-#include "quick_sort.h"
+#include "CTL/algorithm/insertion_sort.h"
+#include "CTL/algorithm/heap_sort.h"
+#include "CTL/algorithm/quick_sort.h"
 
 #include <stdbool.h>
 #include <stddef.h>

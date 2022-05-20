@@ -1,4 +1,4 @@
-#include "merge_sort.h"
+#include "CTL/algorithm/merge_sort.h"
 
 #include <stdbool.h>
 #include <stddef.h>

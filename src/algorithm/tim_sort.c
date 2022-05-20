@@ -1,7 +1,7 @@
-#include "tim_sort.h"
+#include "CTL/algorithm/tim_sort.h"
 
-#include "merge_sort.h"
-#include "insertion_sort.h"
+#include "CTL/algorithm/merge_sort.h"
+#include "CTL/algorithm/insertion_sort.h"
 
 #include <stdbool.h>
 #include <stddef.h>
