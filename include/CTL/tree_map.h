@@ -1,3 +1,15 @@
+/**
+ * @file tree_map.h
+ * @author 然Y (inie0722@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-05-20
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+#pragma once
+
 #include <stdbool.h>
 #include <stddef.h>
 
@@ -46,7 +58,7 @@ typedef struct
 typedef struct
 {
     size_t T_size;
-    
+
     char *data;
     char *key;
     __rb_tree_node *node;
