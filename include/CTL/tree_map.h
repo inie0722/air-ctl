@@ -23,8 +23,8 @@ typedef struct
     /// @brief equal function
     bool (*equal)(const void *left, const void *right);
 
-    /// @brief less function
-    bool (*less)(const void *left, const void *right);
+    /// @brief compare function
+    bool (*compare)(const void *left, const void *right);
 } CTL_tree_map_key;
 
 /**
@@ -46,7 +46,9 @@ typedef struct
 typedef struct
 {
     size_t T_size;
+    
     char *data;
+    char *key;
     __rb_tree_node *node;
 } CTL_tree_map_iterator;
 

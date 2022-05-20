@@ -8,8 +8,8 @@
 
 extern "C"
 {
-#include "CTL_queue.h"
-#include "CTL_allocator.h"
+#include "CTL/queue.h"
+#include "CTL/allocator.h"
 }
 
 using namespace std;

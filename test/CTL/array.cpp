@@ -5,7 +5,7 @@
 
 extern "C"
 {
-#include "CTL_array.h"
+#include "CTL/array.h"
 }
 
 using namespace std;
@@ -92,9 +92,9 @@ TEST(Iterators, operator)
     ASSERT_TRUE(CTL_array_iterator_diff(&begin, &end) == stl.begin() - stl.end());
     ASSERT_TRUE(CTL_array_iterator_diff(&end, &begin) == stl.end() - stl.begin());
 
-    // >
-    ASSERT_TRUE(CTL_array_iterator_more(&end, &begin));
-    ASSERT_FALSE(CTL_array_iterator_more(&begin, &end));
+    // <
+    ASSERT_TRUE(CTL_array_iterator_less(&begin, &end));
+    ASSERT_FALSE(CTL_array_iterator_less(&end, &begin));
 }
 
 TEST(Capacity, size)
