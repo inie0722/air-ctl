@@ -1,15 +1,15 @@
-# InCTL
+# CTL
 C Language Template Library C语言 模板库<br>
 __安装__
 ```
-git clone https://github.com/inie0722/libc
-cd libc
+git clone https://github.com/inie0722/CTL
+cd CTL
 mkdir build && cd build
 cmake ../
 //生成全部文件
 cmake --build ./
 //如果你不需要 生成 单元测试 可以使用命令
-cmake --build ./ --config --target libc_ctl
+cmake --build ./ --config --target CTL
 ```
 
 ## 关于
@@ -32,8 +32,7 @@ hash_map 使用开链式hash表实现, 不允许键入相同Key, 使用memcmp进
 
 __排序算法__<br>
 本库仅提供了一个堆排序,适用于deque vector array等支持随机访问的容器<br>
-如果你需要使用其他排序算法,可以去使用[InSort](https://github.com/inie0722/InSort)<br>
-[InSort](https://github.com/inie0722/InSort)可以对数组进行排序,就像qsort一样<br>
+如果你需要使用其他排序算法,可以去使用algorithm<br>
 它提供了两种高级排序算法 intro_sort 和 tim_sort<br>
 前者不稳定,对于乱序数据排序比较快<br>
 后者稳定,对于部分有序数据排序比较快<br>
