@@ -8,8 +8,8 @@
 
 extern "C"
 {
-#include "CTL_deque.h"
-#include "CTL_allocator.h"
+#include "CTL/deque.h"
+#include "CTL/allocator.h"
 }
 
 using namespace std;
@@ -203,9 +203,9 @@ TEST(Iterators, operator)
     ASSERT_TRUE(CTL_deque_iterator_diff(&begin, &end) == stl.begin() - stl.end());
     ASSERT_TRUE(CTL_deque_iterator_diff(&end, &begin) == stl.end() - stl.begin());
 
-    // >
-    ASSERT_TRUE(CTL_deque_iterator_more(&end, &begin));
-    ASSERT_FALSE(CTL_deque_iterator_more(&begin, &end));
+    // <
+    ASSERT_TRUE(CTL_deque_iterator_less(&begin, &end));
+    ASSERT_FALSE(CTL_deque_iterator_less(&end, &begin));
 }
 
 TEST(allocator, delete)

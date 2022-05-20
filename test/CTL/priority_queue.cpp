@@ -8,8 +8,8 @@
 
 extern "C"
 {
-#include "CTL_priority_queue.h"
-#include "CTL_allocator.h"
+#include "CTL/priority_queue.h"
+#include "CTL/allocator.h"
 }
 
 using namespace std;

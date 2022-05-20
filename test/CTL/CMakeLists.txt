@@ -18,22 +18,22 @@ add_executable(tree_map tree_map.cpp)
 
 add_executable(hash_map hash_map.cpp)
 
-target_link_libraries(array gtest pthread libc_ctl)
+target_link_libraries(array gtest pthread CTL)
 
-target_link_libraries(vector gtest pthread libc_ctl)
+target_link_libraries(vector gtest pthread CTL)
 
-target_link_libraries(list gtest pthread libc_ctl)
+target_link_libraries(list gtest pthread CTL)
 
-target_link_libraries(deque gtest pthread libc_ctl)
+target_link_libraries(deque gtest pthread CTL)
 
-target_link_libraries(queue gtest pthread libc_ctl)
+target_link_libraries(queue gtest pthread CTL)
 
-target_link_libraries(stack gtest pthread libc_ctl)
+target_link_libraries(stack gtest pthread CTL)
 
-target_link_libraries(heap gtest pthread libc_ctl)
+target_link_libraries(heap gtest pthread CTL)
 
-target_link_libraries(priority_queue gtest pthread libc_ctl)
+target_link_libraries(priority_queue gtest pthread CTL)
 
-target_link_libraries(tree_map gtest pthread libc_ctl)
+target_link_libraries(tree_map gtest pthread CTL)
 
-target_link_libraries(hash_map gtest pthread libc_ctl)
+target_link_libraries(hash_map gtest pthread CTL)

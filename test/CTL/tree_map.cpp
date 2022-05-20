@@ -7,8 +7,8 @@
 
 extern "C"
 {
-#include "CTL_tree_map.h"
-#include "CTL_allocator.h"
+#include "CTL/tree_map.h"
+#include "CTL/allocator.h"
 }
 
 using namespace std;
@@ -21,7 +21,7 @@ bool equal(const void *a, const void *b)
     return *(int *)a == *(int *)b;
 }
 
-bool more(const void *a, const void *b)
+bool less(const void *a, const void *b)
 {
     return *(int *)a > *(int *)b;
 }
@@ -29,10 +29,10 @@ bool more(const void *a, const void *b)
 void test_new()
 {
     srand((unsigned)time(NULL));
-    CTL_key key;
+    CTL_tree_map_key key;
     key.size = sizeof(int);
     key.equal = equal;
-    key.more = more;
+    key.compare = ::less;
     CTL_tree_map_new(&ctl, &key, sizeof(int));
 }
 
@@ -51,6 +51,7 @@ TEST(Modifiers, insert)
 
     while (stl_it != stl.end())
     {
+        // std::cout <<stl_it->first  << " " << *(int *)ctl_it.node->key << std::endl;
         ASSERT_TRUE(stl_it->second == *(int *)ctl_it.data);
         ++stl_it;
         CTL_tree_map_iterator_move(&ctl_it, 1, &ctl_it);

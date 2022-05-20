@@ -6,8 +6,8 @@
 
 extern "C"
 {
-#include "CTL_hash_map.h"
-#include "CTL_allocator.h"
+#include "CTL/hash_map.h"
+#include "CTL/allocator.h"
 }
 
 using namespace std;
@@ -61,7 +61,7 @@ TEST(Iterators, begin)
     while (!CTL_hash_map_iterator_equal(&ctl_it, &end))
     {
         arr[-*(int*)ctl_it.data]++;
-        CTL_hash_map_iterator_add(&ctl_it, &ctl_it);
+        CTL_hash_map_iterator_next(&ctl_it, &ctl_it);
     }
 
     for (size_t i = 0; i < 200; i++)

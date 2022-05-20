@@ -6,9 +6,9 @@
 
 extern "C"
 {
-#include "CTL_heap.h"
-#include "CTL_vector.h"
-#include "CTL_allocator.h"
+#include "CTL/heap.h"
+#include "CTL/vector.h"
+#include "CTL/allocator.h"
 }
 
 using namespace std;

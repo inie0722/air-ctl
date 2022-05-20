@@ -8,8 +8,8 @@
 
 extern "C"
 {
-#include "CTL_list.h"
-#include "CTL_allocator.h"
+#include "CTL/list.h"
+#include "CTL/allocator.h"
 }
 
 using namespace std;

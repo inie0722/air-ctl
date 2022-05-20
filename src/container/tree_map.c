@@ -352,6 +352,7 @@ void CTL_tree_map_delete(CTL_tree_map *handle)
 void CTL_tree_map_begin(const CTL_tree_map *handle, CTL_tree_map_iterator *res)
 {
     res->T_size = handle->T_size;
+    res->key = handle->header->left->key;
     res->data = handle->header->left->data;
     res->node = handle->header->left;
 }
@@ -360,6 +361,7 @@ void CTL_tree_map_end(const CTL_tree_map *handle, CTL_tree_map_iterator *res)
 {
     res->T_size = handle->T_size;
     res->data = NULL;
+    res->key = NULL;
     res->node = handle->header;
 }
 
@@ -372,7 +374,7 @@ void CTL_tree_map_insert(CTL_tree_map *handle, void *key, void *element)
     while (i != NULL)
     {
         parent = i;
-        i = (handle->key.less(i->key, key) ? i->left : i->right);
+        i = (handle->key.compare(i->key, key) ? i->left : i->right);
     }
 
     __rb_tree_node *new_node = (__rb_tree_node *)CTL_allocate(sizeof(__rb_tree_node));
@@ -393,7 +395,7 @@ void CTL_tree_map_insert(CTL_tree_map *handle, void *key, void *element)
         handle->header->left = new_node;
         handle->header->right = new_node;
     }
-    else if (handle->key.less(parent->key, key))
+    else if (handle->key.compare(parent->key, key))
     {
         parent->left = new_node;
 
@@ -428,7 +430,7 @@ void CTL_tree_map_find(const CTL_tree_map *handle, const void *key, CTL_tree_map
 
     while (t != NULL)
     {
-        if (!handle->key.less(key, t->key))
+        if (!handle->key.compare(key, t->key))
         {
             last = t;
             t = t->left;
@@ -446,6 +448,7 @@ void CTL_tree_map_find(const CTL_tree_map *handle, const void *key, CTL_tree_map
     else
     {
         res->data = last->data;
+        res->key = last->key;
         res->node = last;
         res->T_size = handle->T_size;
     }
@@ -614,6 +617,7 @@ void CTL_tree_map_iterator_move(const CTL_tree_map_iterator *handle, const ptrdi
     }
 
     res->node = node;
+    res->key = node->key;
     res->data = node->data;
 }
 
