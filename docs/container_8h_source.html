@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,6 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CTL
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -45,6 +50,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('container_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_613d60abcf46c506831f816b5a965fcd.html">CTL</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">container.h</div>  </div>
@@ -140,18 +157,18 @@ $(function() {
 <div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="structCTL__functions.html#a3beba3614a934363f3a1b1f592962b73">  109</a></span>&#160;    bool (*empty)(<span class="keyword">const</span> <a class="code" href="unionCTL__container.html">CTL_container</a> *handle);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;} <a class="code" href="structCTL__functions.html">CTL_functions</a>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="container_8h.html#ae6af44192b5e1a3e8a19c4135907e773">  117</a></span>&#160;<a class="code" href="structCTL__functions.html">CTL_functions</a> *<a class="code" href="container_8h.html#ae6af44192b5e1a3e8a19c4135907e773">CTL_array_functions</a>();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<a class="code" href="structCTL__functions.html">CTL_functions</a> *<a class="code" href="container_8h.html#ae6af44192b5e1a3e8a19c4135907e773">CTL_array_functions</a>();</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="container_8h.html#a019f94f10be83f52cae984bcaf701ff9">  124</a></span>&#160;<a class="code" href="structCTL__functions.html">CTL_functions</a> *<a class="code" href="container_8h.html#a019f94f10be83f52cae984bcaf701ff9">CTL_vector_functions</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<a class="code" href="structCTL__functions.html">CTL_functions</a> *<a class="code" href="container_8h.html#a019f94f10be83f52cae984bcaf701ff9">CTL_vector_functions</a>();</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="container_8h.html#a640e9c4ac57c270e6bf318ca8ee26918">  131</a></span>&#160;<a class="code" href="structCTL__functions.html">CTL_functions</a> *<a class="code" href="container_8h.html#a640e9c4ac57c270e6bf318ca8ee26918">CTL_list_functions</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<a class="code" href="structCTL__functions.html">CTL_functions</a> *<a class="code" href="container_8h.html#a640e9c4ac57c270e6bf318ca8ee26918">CTL_list_functions</a>();</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="container_8h.html#aedfd5cbad224735c82029d54189ada35">  138</a></span>&#160;<a class="code" href="structCTL__functions.html">CTL_functions</a> *<a class="code" href="container_8h.html#aedfd5cbad224735c82029d54189ada35">CTL_deque_functions</a>();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<a class="code" href="structCTL__functions.html">CTL_functions</a> *<a class="code" href="container_8h.html#aedfd5cbad224735c82029d54189ada35">CTL_deque_functions</a>();</div>
 <div class="ttc" id="aarray_8h_html"><div class="ttname"><a href="array_8h.html">array.h</a></div></div>
-<div class="ttc" id="acontainer_8h_html_a019f94f10be83f52cae984bcaf701ff9"><div class="ttname"><a href="container_8h.html#a019f94f10be83f52cae984bcaf701ff9">CTL_vector_functions</a></div><div class="ttdeci">CTL_functions * CTL_vector_functions()</div><div class="ttdoc">get vector member function</div></div>
-<div class="ttc" id="acontainer_8h_html_a640e9c4ac57c270e6bf318ca8ee26918"><div class="ttname"><a href="container_8h.html#a640e9c4ac57c270e6bf318ca8ee26918">CTL_list_functions</a></div><div class="ttdeci">CTL_functions * CTL_list_functions()</div><div class="ttdoc">get list member function</div></div>
-<div class="ttc" id="acontainer_8h_html_ae6af44192b5e1a3e8a19c4135907e773"><div class="ttname"><a href="container_8h.html#ae6af44192b5e1a3e8a19c4135907e773">CTL_array_functions</a></div><div class="ttdeci">CTL_functions * CTL_array_functions()</div><div class="ttdoc">get array member function</div></div>
-<div class="ttc" id="acontainer_8h_html_aedfd5cbad224735c82029d54189ada35"><div class="ttname"><a href="container_8h.html#aedfd5cbad224735c82029d54189ada35">CTL_deque_functions</a></div><div class="ttdeci">CTL_functions * CTL_deque_functions()</div><div class="ttdoc">get deque member function</div></div>
+<div class="ttc" id="acontainer_8h_html_a019f94f10be83f52cae984bcaf701ff9"><div class="ttname"><a href="container_8h.html#a019f94f10be83f52cae984bcaf701ff9">CTL_vector_functions</a></div><div class="ttdeci">CTL_functions * CTL_vector_functions()</div><div class="ttdoc">get vector member function</div><div class="ttdef"><b>Definition:</b> container.c:48</div></div>
+<div class="ttc" id="acontainer_8h_html_a640e9c4ac57c270e6bf318ca8ee26918"><div class="ttname"><a href="container_8h.html#a640e9c4ac57c270e6bf318ca8ee26918">CTL_list_functions</a></div><div class="ttdeci">CTL_functions * CTL_list_functions()</div><div class="ttdoc">get list member function</div><div class="ttdef"><b>Definition:</b> container.c:81</div></div>
+<div class="ttc" id="acontainer_8h_html_ae6af44192b5e1a3e8a19c4135907e773"><div class="ttname"><a href="container_8h.html#ae6af44192b5e1a3e8a19c4135907e773">CTL_array_functions</a></div><div class="ttdeci">CTL_functions * CTL_array_functions()</div><div class="ttdoc">get array member function</div><div class="ttdef"><b>Definition:</b> container.c:20</div></div>
+<div class="ttc" id="acontainer_8h_html_aedfd5cbad224735c82029d54189ada35"><div class="ttname"><a href="container_8h.html#aedfd5cbad224735c82029d54189ada35">CTL_deque_functions</a></div><div class="ttdeci">CTL_functions * CTL_deque_functions()</div><div class="ttdoc">get deque member function</div><div class="ttdef"><b>Definition:</b> container.c:112</div></div>
 <div class="ttc" id="adeque_8h_html"><div class="ttname"><a href="deque_8h.html">deque.h</a></div></div>
 <div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
 <div class="ttc" id="astructCTL__array__iterator_html"><div class="ttname"><a href="structCTL__array__iterator.html">CTL_array_iterator</a></div><div class="ttdoc">array iterator</div><div class="ttdef"><b>Definition:</b> array.h:21</div></div>
@@ -167,9 +184,13 @@ $(function() {
 <div class="ttc" id="aunionCTL__iterator_html"><div class="ttname"><a href="unionCTL__iterator.html">CTL_iterator</a></div><div class="ttdoc">iterator</div><div class="ttdef"><b>Definition:</b> container.h:35</div></div>
 <div class="ttc" id="avector_8h_html"><div class="ttname"><a href="vector_8h.html">vector.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_613d60abcf46c506831f816b5a965fcd.html">CTL</a></li><li class="navelem"><a class="el" href="container_8h.html">container.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

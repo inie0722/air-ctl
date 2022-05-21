@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CTL: Main Page</title>
+<title>CTL: CTL</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,6 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CTL
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -46,6 +51,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,15 +81,58 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">CTL Documentation</div>  </div>
+<div class="title">CTL </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a>C Language Template Library<br  />
+ <b>Install</b> </p><div class="fragment"><div class="line">git clone https://github.com/inie0722/CTL</div>
+<div class="line">cd CTL</div>
+<div class="line">mkdir build &amp;&amp; cd build</div>
+<div class="line">cmake ../</div>
+<div class="line">//build all</div>
+<div class="line">cmake --build ./ --config Release</div>
+<div class="line">//run test</div>
+<div class="line">ctest</div>
+<div class="line">//if you want to build only library file</div>
+<div class="line">cmake --build ./ --config Release --config --target CTL_shared CTL_static</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1"></a>
+About</h1>
+<p>This library is a C language container library written by imitating STL, you can use this library like STL<br  />
+ If you want to see the specific container usage method, you can go to the <a href="https://inie0722.github.io/CTL/">documentation</a> The code implementation is modeled after SGI-STL<br  />
+</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Note</h1>
+<p>This library provides an allocator, you can disable the allocator by precompiling the macro CTL_NO_ALLOCATE<br  />
+ For memory overflow, function callback is used, which means that all APIs will not return the error of memory allocation failure, but you need to set the OOM callback function yourself<br  />
+ </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="allocator_8h.html#a14991d06fbd4b532f7f719ad7d3d8ba3">CTL_set_malloc_handler</a>(<span class="keywordtype">void</span> (*handler)()); <span class="comment">//Memory allocation failure Handler function Defined </span></div>
+<div class="ttc" id="aallocator_8h_html_a14991d06fbd4b532f7f719ad7d3d8ba3"><div class="ttname"><a href="allocator_8h.html#a14991d06fbd4b532f7f719ad7d3d8ba3">CTL_set_malloc_handler</a></div><div class="ttdeci">void CTL_set_malloc_handler(void(*handler)())</div><div class="ttdoc">set memory allocation failure handling operation</div><div class="ttdef"><b>Definition:</b> allocator.c:18</div></div>
+</div><!-- fragment --><p><b>This library provides two different map</b><br  />
+ <a href="https://inie0722.github.io/CTL/tree__map_8h.html">tree_map</a> Implemented using a red-black tree, allowing the same key to be typed, and using a callback function for key comparison and judgment<br  />
+ <a href="https://inie0722.github.io/CTL/hash__map_8h.html">hash_map</a> Implemented using an open-chain hash table, it is not allowed to enter the same key, and use memcmp for key comparison judgment, you need to pay extra attention to this<br  />
+</p>
+<p><b>Sort Algorithm</b><br  />
+ This library only provides a <a href="https://inie0722.github.io/CTL/heap_8h.html">heap sort</a>, which is suitable for containers that support random access such as deque vector array<br  />
+ If you need to use other sort algorithms, you can use <a href="https://inie0722.github.io/CTL/dir_dbd12e429e2e67fe2605de08ad0007a6.html">algorithm</a><br  />
+ It provides two advanced sort algorithms <a href="https://inie0722.github.io/CTL/intro__sort_8h.html">intro_sort</a> and <a href="https://inie0722.github.io/CTL/tim__sort_8h.html">tim_sort</a><br  />
+ The former is unstable, and it is faster to sort out-of-order data<br  />
+ The latter is stable, and sorting is faster for partially ordered data<br  />
+</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Other</h1>
+<p>For the API, I can't promise any compatibility<br  />
+ Because of my limited ability, I cannot ensure that every API is correct. If you find a bug, please let me know in time<br  />
+ If you like this library, you can give me a star<br  />
+ </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

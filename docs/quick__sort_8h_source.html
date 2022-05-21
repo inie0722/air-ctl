@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,6 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CTL
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -45,6 +50,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('quick__sort_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_613d60abcf46c506831f816b5a965fcd.html">CTL</a></li><li class="navelem"><a class="el" href="dir_dbd12e429e2e67fe2605de08ad0007a6.html">algorithm</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">quick_sort.h</div>  </div>
@@ -75,16 +92,20 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="quick__sort_8h.html#ab05e4dff6f9e896c1edf0a87e77b78d7">   24</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="quick__sort_8h.html#ab05e4dff6f9e896c1edf0a87e77b78d7">CTL_quick_sort</a>(<span class="keywordtype">void</span> *first, <span class="keywordtype">void</span> *last, <span class="keywordtype">size_t</span> T_size, <span class="keywordtype">bool</span> (*compare)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="quick__sort_8h.html#ab05e4dff6f9e896c1edf0a87e77b78d7">CTL_quick_sort</a>(<span class="keywordtype">void</span> *first, <span class="keywordtype">void</span> *last, <span class="keywordtype">size_t</span> T_size, <span class="keywordtype">bool</span> (*compare)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *));</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> *__CTL_median(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *c, <span class="keywordtype">bool</span> (*compare)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *));</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> *__CTL_unguarded_partition(<span class="keywordtype">void</span> *first, <span class="keywordtype">void</span> *last, <span class="keywordtype">void</span> *value, <span class="keywordtype">size_t</span> T_size, <span class="keywordtype">bool</span> (*compare)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *));</div>
-<div class="ttc" id="aquick__sort_8h_html_ab05e4dff6f9e896c1edf0a87e77b78d7"><div class="ttname"><a href="quick__sort_8h.html#ab05e4dff6f9e896c1edf0a87e77b78d7">CTL_quick_sort</a></div><div class="ttdeci">void CTL_quick_sort(void *first, void *last, size_t T_size, bool(*compare)(const void *, const void *))</div><div class="ttdoc">sort elements</div></div>
+<div class="ttc" id="aquick__sort_8h_html_ab05e4dff6f9e896c1edf0a87e77b78d7"><div class="ttname"><a href="quick__sort_8h.html#ab05e4dff6f9e896c1edf0a87e77b78d7">CTL_quick_sort</a></div><div class="ttdeci">void CTL_quick_sort(void *first, void *last, size_t T_size, bool(*compare)(const void *, const void *))</div><div class="ttdoc">sort elements</div><div class="ttdef"><b>Definition:</b> quick_sort.c:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_613d60abcf46c506831f816b5a965fcd.html">CTL</a></li><li class="navelem"><a class="el" href="dir_dbd12e429e2e67fe2605de08ad0007a6.html">algorithm</a></li><li class="navelem"><a class="el" href="quick__sort_8h.html">quick_sort.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

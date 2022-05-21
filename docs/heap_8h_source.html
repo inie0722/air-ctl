@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,6 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CTL
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -45,6 +50,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('heap_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_613d60abcf46c506831f816b5a965fcd.html">CTL</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">heap.h</div>  </div>
@@ -75,24 +92,28 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="container_8h.html">CTL/container.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="heap_8h.html#ac13657fdcd5e69135dfdb0a7ddb0b406">   24</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="heap_8h.html#ac13657fdcd5e69135dfdb0a7ddb0b406">CTL_push_heap</a>(<a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *last, <span class="keywordtype">bool</span> (*compare_handler)(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="heap_8h.html#ac13657fdcd5e69135dfdb0a7ddb0b406">CTL_push_heap</a>(<a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *last, <span class="keywordtype">bool</span> (*compare_handler)(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b));</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="heap_8h.html#a255e898dc1cd1b636cfbbe93bc64dd01">   34</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="heap_8h.html#a255e898dc1cd1b636cfbbe93bc64dd01">CTL_pop_heap</a>(<a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *last, <span class="keywordtype">bool</span> (*compare_handler)(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b));</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="heap_8h.html#a255e898dc1cd1b636cfbbe93bc64dd01">CTL_pop_heap</a>(<a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *last, <span class="keywordtype">bool</span> (*compare_handler)(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b));</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="heap_8h.html#a80212f4aa2979caf5eb24dccdb5e3251">   44</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="heap_8h.html#a80212f4aa2979caf5eb24dccdb5e3251">CTL_sort_heap</a>(<a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *last, <span class="keywordtype">bool</span> (*compare_handler)(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="heap_8h.html#a80212f4aa2979caf5eb24dccdb5e3251">CTL_sort_heap</a>(<a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *last, <span class="keywordtype">bool</span> (*compare_handler)(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b));</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="heap_8h.html#ad3fc34859794ed28c2a3480f3cfba29e">   54</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="heap_8h.html#ad3fc34859794ed28c2a3480f3cfba29e">CTL_make_heap</a>(<a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *last, <span class="keywordtype">bool</span> (*compare_handler)(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="heap_8h.html#ad3fc34859794ed28c2a3480f3cfba29e">CTL_make_heap</a>(<a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="code" href="unionCTL__iterator.html">CTL_iterator</a> *last, <span class="keywordtype">bool</span> (*compare_handler)(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b));</div>
 <div class="ttc" id="acontainer_8h_html"><div class="ttname"><a href="container_8h.html">container.h</a></div></div>
-<div class="ttc" id="aheap_8h_html_a255e898dc1cd1b636cfbbe93bc64dd01"><div class="ttname"><a href="heap_8h.html#a255e898dc1cd1b636cfbbe93bc64dd01">CTL_pop_heap</a></div><div class="ttdeci">void CTL_pop_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool(*compare_handler)(void *a, void *b))</div><div class="ttdoc">pop element</div></div>
-<div class="ttc" id="aheap_8h_html_a80212f4aa2979caf5eb24dccdb5e3251"><div class="ttname"><a href="heap_8h.html#a80212f4aa2979caf5eb24dccdb5e3251">CTL_sort_heap</a></div><div class="ttdeci">void CTL_sort_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool(*compare_handler)(void *a, void *b))</div><div class="ttdoc">sort elements</div></div>
-<div class="ttc" id="aheap_8h_html_ac13657fdcd5e69135dfdb0a7ddb0b406"><div class="ttname"><a href="heap_8h.html#ac13657fdcd5e69135dfdb0a7ddb0b406">CTL_push_heap</a></div><div class="ttdeci">void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool(*compare_handler)(void *a, void *b))</div><div class="ttdoc">push element</div></div>
-<div class="ttc" id="aheap_8h_html_ad3fc34859794ed28c2a3480f3cfba29e"><div class="ttname"><a href="heap_8h.html#ad3fc34859794ed28c2a3480f3cfba29e">CTL_make_heap</a></div><div class="ttdeci">void CTL_make_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool(*compare_handler)(void *a, void *b))</div><div class="ttdoc">make heap</div></div>
+<div class="ttc" id="aheap_8h_html_a255e898dc1cd1b636cfbbe93bc64dd01"><div class="ttname"><a href="heap_8h.html#a255e898dc1cd1b636cfbbe93bc64dd01">CTL_pop_heap</a></div><div class="ttdeci">void CTL_pop_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool(*compare_handler)(void *a, void *b))</div><div class="ttdoc">pop element</div><div class="ttdef"><b>Definition:</b> heap.c:43</div></div>
+<div class="ttc" id="aheap_8h_html_a80212f4aa2979caf5eb24dccdb5e3251"><div class="ttname"><a href="heap_8h.html#a80212f4aa2979caf5eb24dccdb5e3251">CTL_sort_heap</a></div><div class="ttdeci">void CTL_sort_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool(*compare_handler)(void *a, void *b))</div><div class="ttdoc">sort elements</div><div class="ttdef"><b>Definition:</b> heap.c:86</div></div>
+<div class="ttc" id="aheap_8h_html_ac13657fdcd5e69135dfdb0a7ddb0b406"><div class="ttname"><a href="heap_8h.html#ac13657fdcd5e69135dfdb0a7ddb0b406">CTL_push_heap</a></div><div class="ttdeci">void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool(*compare_handler)(void *a, void *b))</div><div class="ttdoc">push element</div><div class="ttdef"><b>Definition:</b> heap.c:8</div></div>
+<div class="ttc" id="aheap_8h_html_ad3fc34859794ed28c2a3480f3cfba29e"><div class="ttname"><a href="heap_8h.html#ad3fc34859794ed28c2a3480f3cfba29e">CTL_make_heap</a></div><div class="ttdeci">void CTL_make_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool(*compare_handler)(void *a, void *b))</div><div class="ttdoc">make heap</div><div class="ttdef"><b>Definition:</b> heap.c:97</div></div>
 <div class="ttc" id="astructCTL__functions_html"><div class="ttname"><a href="structCTL__functions.html">CTL_functions</a></div><div class="ttdoc">member function</div><div class="ttdef"><b>Definition:</b> container.h:53</div></div>
 <div class="ttc" id="aunionCTL__iterator_html"><div class="ttname"><a href="unionCTL__iterator.html">CTL_iterator</a></div><div class="ttdoc">iterator</div><div class="ttdef"><b>Definition:</b> container.h:35</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_613d60abcf46c506831f816b5a965fcd.html">CTL</a></li><li class="navelem"><a class="el" href="heap_8h.html">heap.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

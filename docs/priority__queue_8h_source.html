@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,6 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CTL
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -45,6 +50,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('priority__queue_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_613d60abcf46c506831f816b5a965fcd.html">CTL</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">priority_queue.h</div>  </div>
@@ -84,34 +101,38 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    bool (*compare_handler)(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;} <a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="priority__queue_8h.html#a331647fd1bc47931347b9771b3d4fd58">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="priority__queue_8h.html#a331647fd1bc47931347b9771b3d4fd58">CTL_priority_queue_new</a>(<a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle, <span class="keywordtype">bool</span> (*compare_handler)(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b), <a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <span class="keyword">const</span> <span class="keywordtype">size_t</span> data_size, <span class="keyword">const</span> <span class="keywordtype">size_t</span> T_size);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="priority__queue_8h.html#a331647fd1bc47931347b9771b3d4fd58">CTL_priority_queue_new</a>(<a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle, <span class="keywordtype">bool</span> (*compare_handler)(<span class="keywordtype">void</span> *a, <span class="keywordtype">void</span> *b), <a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <span class="keyword">const</span> <span class="keywordtype">size_t</span> data_size, <span class="keyword">const</span> <span class="keywordtype">size_t</span> T_size);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="priority__queue_8h.html#a2c36317588cecb8014c966597603b12f">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="priority__queue_8h.html#a2c36317588cecb8014c966597603b12f">CTL_priority_queue_delete</a>(<a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> <a class="code" href="priority__queue_8h.html#a2c36317588cecb8014c966597603b12f">CTL_priority_queue_delete</a>(<a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="priority__queue_8h.html#aca9e49c860eab30840ecf7c8463f0f0c">   53</a></span>&#160;<span class="keywordtype">void</span> *<a class="code" href="priority__queue_8h.html#aca9e49c860eab30840ecf7c8463f0f0c">CTL_priority_queue_top</a>(<span class="keyword">const</span> <a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> *<a class="code" href="priority__queue_8h.html#aca9e49c860eab30840ecf7c8463f0f0c">CTL_priority_queue_top</a>(<span class="keyword">const</span> <a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="priority__queue_8h.html#a85d1c5e3b655538ed1afa1bb73d0926a">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="priority__queue_8h.html#a85d1c5e3b655538ed1afa1bb73d0926a">CTL_priority_queue_push</a>(<a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *element);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span> <a class="code" href="priority__queue_8h.html#a85d1c5e3b655538ed1afa1bb73d0926a">CTL_priority_queue_push</a>(<a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *element);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="priority__queue_8h.html#a2b5cf08d1fe9b7e5c011edeb3b019b94">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="priority__queue_8h.html#a2b5cf08d1fe9b7e5c011edeb3b019b94">CTL_priority_queue_pop</a>(<a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> <a class="code" href="priority__queue_8h.html#a2b5cf08d1fe9b7e5c011edeb3b019b94">CTL_priority_queue_pop</a>(<a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="priority__queue_8h.html#a4ed3d5374760c7de00f648a288cf2c39">   76</a></span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="priority__queue_8h.html#a4ed3d5374760c7de00f648a288cf2c39">CTL_priority_queue_size</a>(<span class="keyword">const</span> <a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="priority__queue_8h.html#a4ed3d5374760c7de00f648a288cf2c39">CTL_priority_queue_size</a>(<span class="keyword">const</span> <a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="priority__queue_8h.html#a4c62aa72d99ab1fcc1f54ff4c3454768">   85</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="priority__queue_8h.html#a4c62aa72d99ab1fcc1f54ff4c3454768">CTL_priority_queue_empty</a>(<span class="keyword">const</span> <a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="priority__queue_8h.html#a4c62aa72d99ab1fcc1f54ff4c3454768">CTL_priority_queue_empty</a>(<span class="keyword">const</span> <a class="code" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle);</div>
 <div class="ttc" id="acontainer_8h_html"><div class="ttname"><a href="container_8h.html">container.h</a></div></div>
-<div class="ttc" id="apriority__queue_8h_html_a2b5cf08d1fe9b7e5c011edeb3b019b94"><div class="ttname"><a href="priority__queue_8h.html#a2b5cf08d1fe9b7e5c011edeb3b019b94">CTL_priority_queue_pop</a></div><div class="ttdeci">void CTL_priority_queue_pop(CTL_priority_queue *handle)</div><div class="ttdoc">pop element</div></div>
-<div class="ttc" id="apriority__queue_8h_html_a2c36317588cecb8014c966597603b12f"><div class="ttname"><a href="priority__queue_8h.html#a2c36317588cecb8014c966597603b12f">CTL_priority_queue_delete</a></div><div class="ttdeci">void CTL_priority_queue_delete(CTL_priority_queue *handle)</div><div class="ttdoc">destroys a priority queue</div></div>
-<div class="ttc" id="apriority__queue_8h_html_a331647fd1bc47931347b9771b3d4fd58"><div class="ttname"><a href="priority__queue_8h.html#a331647fd1bc47931347b9771b3d4fd58">CTL_priority_queue_new</a></div><div class="ttdeci">void CTL_priority_queue_new(CTL_priority_queue *handle, bool(*compare_handler)(void *a, void *b), CTL_functions *functions, const size_t data_size, const size_t T_size)</div><div class="ttdoc">creates a new priority queue</div></div>
-<div class="ttc" id="apriority__queue_8h_html_a4c62aa72d99ab1fcc1f54ff4c3454768"><div class="ttname"><a href="priority__queue_8h.html#a4c62aa72d99ab1fcc1f54ff4c3454768">CTL_priority_queue_empty</a></div><div class="ttdeci">bool CTL_priority_queue_empty(const CTL_priority_queue *handle)</div><div class="ttdoc">if priority queue is empty</div></div>
-<div class="ttc" id="apriority__queue_8h_html_a4ed3d5374760c7de00f648a288cf2c39"><div class="ttname"><a href="priority__queue_8h.html#a4ed3d5374760c7de00f648a288cf2c39">CTL_priority_queue_size</a></div><div class="ttdeci">size_t CTL_priority_queue_size(const CTL_priority_queue *handle)</div><div class="ttdoc">get the number of elements that can be held in currently allocated storage</div></div>
-<div class="ttc" id="apriority__queue_8h_html_a85d1c5e3b655538ed1afa1bb73d0926a"><div class="ttname"><a href="priority__queue_8h.html#a85d1c5e3b655538ed1afa1bb73d0926a">CTL_priority_queue_push</a></div><div class="ttdeci">void CTL_priority_queue_push(CTL_priority_queue *handle, const void *element)</div><div class="ttdoc">push element</div></div>
-<div class="ttc" id="apriority__queue_8h_html_aca9e49c860eab30840ecf7c8463f0f0c"><div class="ttname"><a href="priority__queue_8h.html#aca9e49c860eab30840ecf7c8463f0f0c">CTL_priority_queue_top</a></div><div class="ttdeci">void * CTL_priority_queue_top(const CTL_priority_queue *handle)</div><div class="ttdoc">get top element</div></div>
+<div class="ttc" id="apriority__queue_8h_html_a2b5cf08d1fe9b7e5c011edeb3b019b94"><div class="ttname"><a href="priority__queue_8h.html#a2b5cf08d1fe9b7e5c011edeb3b019b94">CTL_priority_queue_pop</a></div><div class="ttdeci">void CTL_priority_queue_pop(CTL_priority_queue *handle)</div><div class="ttdoc">pop element</div><div class="ttdef"><b>Definition:</b> priority_queue.c:35</div></div>
+<div class="ttc" id="apriority__queue_8h_html_a2c36317588cecb8014c966597603b12f"><div class="ttname"><a href="priority__queue_8h.html#a2c36317588cecb8014c966597603b12f">CTL_priority_queue_delete</a></div><div class="ttdeci">void CTL_priority_queue_delete(CTL_priority_queue *handle)</div><div class="ttdoc">destroys a priority queue</div><div class="ttdef"><b>Definition:</b> priority_queue.c:14</div></div>
+<div class="ttc" id="apriority__queue_8h_html_a331647fd1bc47931347b9771b3d4fd58"><div class="ttname"><a href="priority__queue_8h.html#a331647fd1bc47931347b9771b3d4fd58">CTL_priority_queue_new</a></div><div class="ttdeci">void CTL_priority_queue_new(CTL_priority_queue *handle, bool(*compare_handler)(void *a, void *b), CTL_functions *functions, const size_t data_size, const size_t T_size)</div><div class="ttdoc">creates a new priority queue</div><div class="ttdef"><b>Definition:</b> priority_queue.c:7</div></div>
+<div class="ttc" id="apriority__queue_8h_html_a4c62aa72d99ab1fcc1f54ff4c3454768"><div class="ttname"><a href="priority__queue_8h.html#a4c62aa72d99ab1fcc1f54ff4c3454768">CTL_priority_queue_empty</a></div><div class="ttdeci">bool CTL_priority_queue_empty(const CTL_priority_queue *handle)</div><div class="ttdoc">if priority queue is empty</div><div class="ttdef"><b>Definition:</b> priority_queue.c:51</div></div>
+<div class="ttc" id="apriority__queue_8h_html_a4ed3d5374760c7de00f648a288cf2c39"><div class="ttname"><a href="priority__queue_8h.html#a4ed3d5374760c7de00f648a288cf2c39">CTL_priority_queue_size</a></div><div class="ttdeci">size_t CTL_priority_queue_size(const CTL_priority_queue *handle)</div><div class="ttdoc">get the number of elements that can be held in currently allocated storage</div><div class="ttdef"><b>Definition:</b> priority_queue.c:46</div></div>
+<div class="ttc" id="apriority__queue_8h_html_a85d1c5e3b655538ed1afa1bb73d0926a"><div class="ttname"><a href="priority__queue_8h.html#a85d1c5e3b655538ed1afa1bb73d0926a">CTL_priority_queue_push</a></div><div class="ttdeci">void CTL_priority_queue_push(CTL_priority_queue *handle, const void *element)</div><div class="ttdoc">push element</div><div class="ttdef"><b>Definition:</b> priority_queue.c:24</div></div>
+<div class="ttc" id="apriority__queue_8h_html_aca9e49c860eab30840ecf7c8463f0f0c"><div class="ttname"><a href="priority__queue_8h.html#aca9e49c860eab30840ecf7c8463f0f0c">CTL_priority_queue_top</a></div><div class="ttdeci">void * CTL_priority_queue_top(const CTL_priority_queue *handle)</div><div class="ttdoc">get top element</div><div class="ttdef"><b>Definition:</b> priority_queue.c:19</div></div>
 <div class="ttc" id="astructCTL__functions_html"><div class="ttname"><a href="structCTL__functions.html">CTL_functions</a></div><div class="ttdoc">member function</div><div class="ttdef"><b>Definition:</b> container.h:53</div></div>
 <div class="ttc" id="astructCTL__priority__queue_html"><div class="ttname"><a href="structCTL__priority__queue.html">CTL_priority_queue</a></div><div class="ttdoc">priority queue</div><div class="ttdef"><b>Definition:</b> priority_queue.h:23</div></div>
 <div class="ttc" id="aunionCTL__container_html"><div class="ttname"><a href="unionCTL__container.html">CTL_container</a></div><div class="ttdoc">container</div><div class="ttdef"><b>Definition:</b> container.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_613d60abcf46c506831f816b5a965fcd.html">CTL</a></li><li class="navelem"><a class="el" href="priority__queue_8h.html">priority_queue.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

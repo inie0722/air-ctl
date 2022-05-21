@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,6 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CTL
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -45,6 +50,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('queue_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_613d60abcf46c506831f816b5a965fcd.html">CTL</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">queue.h</div>  </div>
@@ -83,37 +100,41 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="structCTL__functions.html">CTL_functions</a> *functions;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;} <a class="code" href="structCTL__queue.html">CTL_queue</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="queue_8h.html#a99bb6d644a0976b5a6fcab7206a547cd">   32</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="queue_8h.html#a99bb6d644a0976b5a6fcab7206a547cd">CTL_queue_new</a>(<a class="code" href="structCTL__queue.html">CTL_queue</a> *handle, <a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <span class="keyword">const</span> <span class="keywordtype">size_t</span> data_size, <span class="keyword">const</span> <span class="keywordtype">size_t</span> T_size);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="queue_8h.html#a99bb6d644a0976b5a6fcab7206a547cd">CTL_queue_new</a>(<a class="code" href="structCTL__queue.html">CTL_queue</a> *handle, <a class="code" href="structCTL__functions.html">CTL_functions</a> *functions, <span class="keyword">const</span> <span class="keywordtype">size_t</span> data_size, <span class="keyword">const</span> <span class="keywordtype">size_t</span> T_size);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="queue_8h.html#a89950cb9a59f8816bbf699eeebcd5dc4">   39</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="queue_8h.html#a89950cb9a59f8816bbf699eeebcd5dc4">CTL_queue_delete</a>(<a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="queue_8h.html#a89950cb9a59f8816bbf699eeebcd5dc4">CTL_queue_delete</a>(<a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="queue_8h.html#acc8b25ff83379768b79ca081076aedf3">   47</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> *<a class="code" href="queue_8h.html#acc8b25ff83379768b79ca081076aedf3">CTL_queue_front</a>(<span class="keyword">const</span> <a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> *<a class="code" href="queue_8h.html#acc8b25ff83379768b79ca081076aedf3">CTL_queue_front</a>(<span class="keyword">const</span> <a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="queue_8h.html#ae9c373d1bead2b50b215d4a4a22a0aa1">   55</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> *<a class="code" href="queue_8h.html#ae9c373d1bead2b50b215d4a4a22a0aa1">CTL_queue_back</a>(<span class="keyword">const</span> <a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> *<a class="code" href="queue_8h.html#ae9c373d1bead2b50b215d4a4a22a0aa1">CTL_queue_back</a>(<span class="keyword">const</span> <a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="queue_8h.html#af5c44468b963605573a537c1cd213a4a">   63</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="queue_8h.html#af5c44468b963605573a537c1cd213a4a">CTL_queue_push</a>(<a class="code" href="structCTL__queue.html">CTL_queue</a> *handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *element);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="queue_8h.html#af5c44468b963605573a537c1cd213a4a">CTL_queue_push</a>(<a class="code" href="structCTL__queue.html">CTL_queue</a> *handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *element);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="queue_8h.html#a6c6791bc7b6a530cc03036d17431c708">   70</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="queue_8h.html#a6c6791bc7b6a530cc03036d17431c708">CTL_queue_pop</a>(<a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="queue_8h.html#a6c6791bc7b6a530cc03036d17431c708">CTL_queue_pop</a>(<a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="queue_8h.html#a55182e7b8b75f73b87bda9325e00e403">   78</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">size_t</span> <a class="code" href="queue_8h.html#a55182e7b8b75f73b87bda9325e00e403">CTL_queue_size</a>(<span class="keyword">const</span> <a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">size_t</span> <a class="code" href="queue_8h.html#a55182e7b8b75f73b87bda9325e00e403">CTL_queue_size</a>(<span class="keyword">const</span> <a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="queue_8h.html#ab29a38d2808d4a49ec328baeba222b97">   87</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="queue_8h.html#ab29a38d2808d4a49ec328baeba222b97">CTL_queue_empty</a>(<span class="keyword">const</span> <a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="queue_8h.html#ab29a38d2808d4a49ec328baeba222b97">CTL_queue_empty</a>(<span class="keyword">const</span> <a class="code" href="structCTL__queue.html">CTL_queue</a> *handle);</div>
 <div class="ttc" id="acontainer_8h_html"><div class="ttname"><a href="container_8h.html">container.h</a></div></div>
-<div class="ttc" id="aqueue_8h_html_a55182e7b8b75f73b87bda9325e00e403"><div class="ttname"><a href="queue_8h.html#a55182e7b8b75f73b87bda9325e00e403">CTL_queue_size</a></div><div class="ttdeci">size_t CTL_queue_size(const CTL_queue *handle)</div><div class="ttdoc">get the number of elements that can be held in currently allocated storage</div></div>
-<div class="ttc" id="aqueue_8h_html_a6c6791bc7b6a530cc03036d17431c708"><div class="ttname"><a href="queue_8h.html#a6c6791bc7b6a530cc03036d17431c708">CTL_queue_pop</a></div><div class="ttdeci">void CTL_queue_pop(CTL_queue *handle)</div><div class="ttdoc">pop element from the front</div></div>
-<div class="ttc" id="aqueue_8h_html_a89950cb9a59f8816bbf699eeebcd5dc4"><div class="ttname"><a href="queue_8h.html#a89950cb9a59f8816bbf699eeebcd5dc4">CTL_queue_delete</a></div><div class="ttdeci">void CTL_queue_delete(CTL_queue *handle)</div><div class="ttdoc">destroys a queue</div></div>
-<div class="ttc" id="aqueue_8h_html_a99bb6d644a0976b5a6fcab7206a547cd"><div class="ttname"><a href="queue_8h.html#a99bb6d644a0976b5a6fcab7206a547cd">CTL_queue_new</a></div><div class="ttdeci">void CTL_queue_new(CTL_queue *handle, CTL_functions *functions, const size_t data_size, const size_t T_size)</div><div class="ttdoc">creates a new queue</div></div>
-<div class="ttc" id="aqueue_8h_html_ab29a38d2808d4a49ec328baeba222b97"><div class="ttname"><a href="queue_8h.html#ab29a38d2808d4a49ec328baeba222b97">CTL_queue_empty</a></div><div class="ttdeci">bool CTL_queue_empty(const CTL_queue *handle)</div><div class="ttdoc">if the queue is empty</div></div>
-<div class="ttc" id="aqueue_8h_html_acc8b25ff83379768b79ca081076aedf3"><div class="ttname"><a href="queue_8h.html#acc8b25ff83379768b79ca081076aedf3">CTL_queue_front</a></div><div class="ttdeci">void * CTL_queue_front(const CTL_queue *handle)</div><div class="ttdoc">get first element</div></div>
-<div class="ttc" id="aqueue_8h_html_ae9c373d1bead2b50b215d4a4a22a0aa1"><div class="ttname"><a href="queue_8h.html#ae9c373d1bead2b50b215d4a4a22a0aa1">CTL_queue_back</a></div><div class="ttdeci">void * CTL_queue_back(const CTL_queue *handle)</div><div class="ttdoc">get last element</div></div>
-<div class="ttc" id="aqueue_8h_html_af5c44468b963605573a537c1cd213a4a"><div class="ttname"><a href="queue_8h.html#af5c44468b963605573a537c1cd213a4a">CTL_queue_push</a></div><div class="ttdeci">void CTL_queue_push(CTL_queue *handle, const void *element)</div><div class="ttdoc">push element to the back</div></div>
+<div class="ttc" id="aqueue_8h_html_a55182e7b8b75f73b87bda9325e00e403"><div class="ttname"><a href="queue_8h.html#a55182e7b8b75f73b87bda9325e00e403">CTL_queue_size</a></div><div class="ttdeci">size_t CTL_queue_size(const CTL_queue *handle)</div><div class="ttdoc">get the number of elements that can be held in currently allocated storage</div><div class="ttdef"><b>Definition:</b> queue.c:37</div></div>
+<div class="ttc" id="aqueue_8h_html_a6c6791bc7b6a530cc03036d17431c708"><div class="ttname"><a href="queue_8h.html#a6c6791bc7b6a530cc03036d17431c708">CTL_queue_pop</a></div><div class="ttdeci">void CTL_queue_pop(CTL_queue *handle)</div><div class="ttdoc">pop element from the front</div><div class="ttdef"><b>Definition:</b> queue.c:32</div></div>
+<div class="ttc" id="aqueue_8h_html_a89950cb9a59f8816bbf699eeebcd5dc4"><div class="ttname"><a href="queue_8h.html#a89950cb9a59f8816bbf699eeebcd5dc4">CTL_queue_delete</a></div><div class="ttdeci">void CTL_queue_delete(CTL_queue *handle)</div><div class="ttdoc">destroys a queue</div><div class="ttdef"><b>Definition:</b> queue.c:12</div></div>
+<div class="ttc" id="aqueue_8h_html_a99bb6d644a0976b5a6fcab7206a547cd"><div class="ttname"><a href="queue_8h.html#a99bb6d644a0976b5a6fcab7206a547cd">CTL_queue_new</a></div><div class="ttdeci">void CTL_queue_new(CTL_queue *handle, CTL_functions *functions, const size_t data_size, const size_t T_size)</div><div class="ttdoc">creates a new queue</div><div class="ttdef"><b>Definition:</b> queue.c:6</div></div>
+<div class="ttc" id="aqueue_8h_html_ab29a38d2808d4a49ec328baeba222b97"><div class="ttname"><a href="queue_8h.html#ab29a38d2808d4a49ec328baeba222b97">CTL_queue_empty</a></div><div class="ttdeci">bool CTL_queue_empty(const CTL_queue *handle)</div><div class="ttdoc">if the queue is empty</div><div class="ttdef"><b>Definition:</b> queue.c:42</div></div>
+<div class="ttc" id="aqueue_8h_html_acc8b25ff83379768b79ca081076aedf3"><div class="ttname"><a href="queue_8h.html#acc8b25ff83379768b79ca081076aedf3">CTL_queue_front</a></div><div class="ttdeci">void * CTL_queue_front(const CTL_queue *handle)</div><div class="ttdoc">get first element</div><div class="ttdef"><b>Definition:</b> queue.c:17</div></div>
+<div class="ttc" id="aqueue_8h_html_ae9c373d1bead2b50b215d4a4a22a0aa1"><div class="ttname"><a href="queue_8h.html#ae9c373d1bead2b50b215d4a4a22a0aa1">CTL_queue_back</a></div><div class="ttdeci">void * CTL_queue_back(const CTL_queue *handle)</div><div class="ttdoc">get last element</div><div class="ttdef"><b>Definition:</b> queue.c:22</div></div>
+<div class="ttc" id="aqueue_8h_html_af5c44468b963605573a537c1cd213a4a"><div class="ttname"><a href="queue_8h.html#af5c44468b963605573a537c1cd213a4a">CTL_queue_push</a></div><div class="ttdeci">void CTL_queue_push(CTL_queue *handle, const void *element)</div><div class="ttdoc">push element to the back</div><div class="ttdef"><b>Definition:</b> queue.c:27</div></div>
 <div class="ttc" id="astructCTL__functions_html"><div class="ttname"><a href="structCTL__functions.html">CTL_functions</a></div><div class="ttdoc">member function</div><div class="ttdef"><b>Definition:</b> container.h:53</div></div>
 <div class="ttc" id="astructCTL__queue_html"><div class="ttname"><a href="structCTL__queue.html">CTL_queue</a></div><div class="ttdef"><b>Definition:</b> queue.h:19</div></div>
 <div class="ttc" id="aunionCTL__container_html"><div class="ttname"><a href="unionCTL__container.html">CTL_container</a></div><div class="ttdoc">container</div><div class="ttdef"><b>Definition:</b> container.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_613d60abcf46c506831f816b5a965fcd.html">CTL</a></li><li class="navelem"><a class="el" href="queue_8h.html">queue.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>
