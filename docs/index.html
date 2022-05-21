@@ -87,7 +87,14 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a>C Language Template Library<br  />
- <b>Install</b> </p><div class="fragment"><div class="line">git clone https://github.com/inie0722/CTL</div>
+</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Install</h1>
+<div class="fragment"><div class="line">//use vcpkg install</div>
+<div class="line">vcpkg install ctl</div>
+<div class="line"> </div>
+<div class="line">// or use git</div>
+<div class="line">git clone https://github.com/inie0722/CTL</div>
 <div class="line">cd CTL</div>
 <div class="line">mkdir build &amp;&amp; cd build</div>
 <div class="line">cmake ../</div>
@@ -97,12 +104,13 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line">ctest</div>
 <div class="line">//if you want to build only library file</div>
 <div class="line">cmake --build ./ --config Release --config --target CTL_shared CTL_static</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1"></a>
+<div class="line">make install</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
 About</h1>
 <p>This library is a C language container library written by imitating STL, you can use this library like STL<br  />
  If you want to see the specific container usage method, you can go to the <a href="https://inie0722.github.io/CTL/">documentation</a> The code implementation is modeled after SGI-STL<br  />
 </p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Note</h1>
 <p>This library provides an allocator, you can disable the allocator by precompiling the macro CTL_NO_ALLOCATE<br  />
  For memory overflow, function callback is used, which means that all APIs will not return the error of memory allocation failure, but you need to set the OOM callback function yourself<br  />
@@ -119,7 +127,7 @@ Note</h1>
  The former is unstable, and it is faster to sort out-of-order data<br  />
  The latter is stable, and sorting is faster for partially ordered data<br  />
 </p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Other</h1>
 <p>For the API, I can't promise any compatibility<br  />
  Because of my limited ability, I cannot ensure that every API is correct. If you find a bug, please let me know in time<br  />

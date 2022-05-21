@@ -25,9 +25,10 @@
 var NAVTREE =
 [
   [ "CTL", "index.html", [
-    [ "About", "index.html#autotoc_md1", null ],
-    [ "Note", "index.html#autotoc_md2", null ],
-    [ "Other", "index.html#autotoc_md3", null ],
+    [ "Install", "index.html#autotoc_md1", null ],
+    [ "About", "index.html#autotoc_md2", null ],
+    [ "Note", "index.html#autotoc_md3", null ],
+    [ "Other", "index.html#autotoc_md4", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -49,7 +50,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "allocator_8h.html",
-"structCTL__vector__iterator.html#a97980039bef536202e6fe463cf6682a8"
+"structCTL__vector__iterator.html#a2f22bd2387fbf7db5c1897c60dcff093"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
