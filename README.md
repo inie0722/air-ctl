@@ -1,7 +1,12 @@
 # CTL
 C Language Template Library<br>
-__Install__
+
+## Install
 ```
+//use vcpkg install
+vcpkg install ctl
+
+// or use git
 git clone https://github.com/inie0722/CTL
 cd CTL
 mkdir build && cd build
@@ -12,6 +17,7 @@ cmake --build ./ --config Release
 ctest
 //if you want to build only library file
 cmake --build ./ --config Release --config --target CTL_shared CTL_static
+make install
 ```
 
 ## About
