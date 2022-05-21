@@ -1,45 +1,43 @@
 # CTL
-C Language Template Library C语言 模板库<br>
-__安装__
+C Language Template Library<br>
+__Install__
 ```
 git clone https://github.com/inie0722/CTL
 cd CTL
 mkdir build && cd build
 cmake ../
-//生成全部文件
-cmake --build ./
-//如果你不需要 生成 单元测试 可以使用命令
-cmake --build ./ --config --target CTL
+//build all
+cmake --build ./ --config Release
+//run test
+ctest
+//if you want to build only library file
+cmake --build ./ --config Release --config --target CTL_shared CTL_static
 ```
 
-## 关于
-本库是仿照STL书写的C语言容器库, 你可以像STL那样使用本库<br>
-通过CMake构造本库,采用gtest框架书写的单元测试,所有单元测试都放置到test文件夹中<br>
-如果你想查看具体容器使用例子,请自行参照test文件夹中的单元测试<br>
-代码实现是仿照SGI-STL书写的<br>
+## About
+This library is a C language container library written by imitating STL, you can use this library like STL<br>
+If you want to see the specific container usage method, you can go to the [documentation](https://inie0722.github.io/CTL/)
+The code implementation is modeled after SGI-STL<br>
 
-## [文档](https://inie0722.github.io/CTL/)
-
-## 注意
-本库提供了一个分配器,你可以通过预编译宏CTL_NO_ALLOCATE禁用改分配器<br>
-对于内存溢出采用函数回调处理,这意味着所有API均不会返回内存分配失败的错误,但是你需要自行设置OOM回调函数<br>
+## Note
+This library provides an allocator, you can disable the allocator by precompiling the macro CTL_NO_ALLOCATE<br>
+For memory overflow, function callback is used, which means that all APIs will not return the error of memory allocation failure, but you need to set the OOM callback function yourself<br>
 ```c
-void CTL_set_malloc_handler(void (*handler)()); //内存分配失败 处理函数 由用户自定义
+void CTL_set_malloc_handler(void (*handler)()); //Memory allocation failure Handler function Defined 
 ```
-通过该函数设置OOM回调函数<br>
 
-__本库提供了两种不同的map__<br>
-tree_map 使用红黑树实现, 允许键入相同的Key, 使用回调函数进行Key比较判断<br>
-hash_map 使用开链式hash表实现, 不允许键入相同Key, 使用memcmp进行Key比较判断, 你需要额外注意这点<br>
+__This library provides two different map__<br>
+[tree_map](https://inie0722.github.io/CTL/tree__map_8h.html) Implemented using a red-black tree, allowing the same key to be typed, and using a callback function for key comparison and judgment<br>
+[hash_map](https://inie0722.github.io/CTL/hash__map_8h.html) Implemented using an open-chain hash table, it is not allowed to enter the same key, and use memcmp for key comparison judgment, you need to pay extra attention to this<br>
 
-__排序算法__<br>
-本库仅提供了一个堆排序,适用于deque vector array等支持随机访问的容器<br>
-如果你需要使用其他排序算法,可以去使用algorithm<br>
-它提供了两种高级排序算法 intro_sort 和 tim_sort<br>
-前者不稳定,对于乱序数据排序比较快<br>
-后者稳定,对于部分有序数据排序比较快<br>
+__Sort Algorithm__<br>
+This library only provides a [heap sort](https://inie0722.github.io/CTL/heap_8h.html), which is suitable for containers that support random access such as deque vector array<br>
+If you need to use other sort algorithms, you can use [algorithm](https://inie0722.github.io/CTL/dir_dbd12e429e2e67fe2605de08ad0007a6.html)<br>
+It provides two advanced sort algorithms [intro_sort](https://inie0722.github.io/CTL/intro__sort_8h.html) and [tim_sort](https://inie0722.github.io/CTL/tim__sort_8h.html)<br>
+The former is unstable, and it is faster to sort out-of-order data<br>
+The latter is stable, and sorting is faster for partially ordered data<br>
 
-## 其他
-对于API,我无法承诺任何的兼容性<br>
-因为本人能力有限,无法确保每一个API都是正确无误的,如果你发现了bug可以及时告诉我<br>
-如果你喜欢本库,可以给予我一个star<br>
+## Other
+For the API, I can't promise any compatibility<br>
+Because of my limited ability, I cannot ensure that every API is correct. If you find a bug, please let me know in time<br>
+If you like this library, you can give me a star<br>
