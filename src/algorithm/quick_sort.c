@@ -3,7 +3,13 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <string.h>
+
+#if defined(linux) || defined(__linux) || defined(__linux__)
 #include <alloca.h>
+#elif defined(__WIN32__) || defined(_WIN32)
+#include <malloc.h>
+#define alloca(size) _alloca(size)
+#endif
 
 static inline char *__unguarded_partition(char *first, char *last, void *value, size_t T_size, bool (*compare)(const void *, const void *));
 
