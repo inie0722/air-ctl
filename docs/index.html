@@ -98,13 +98,10 @@ Install</h1>
 <div class="line">cd CTL</div>
 <div class="line">mkdir build &amp;&amp; cd build</div>
 <div class="line">cmake ../</div>
-<div class="line">//build all</div>
-<div class="line">cmake --build ./ --config Release</div>
+<div class="line">cmake --build ./ --config Release --target install</div>
+<div class="line"> </div>
 <div class="line">//run test</div>
-<div class="line">ctest</div>
-<div class="line">//if you want to build only library file</div>
-<div class="line">cmake --build ./ --config Release --config --target CTL_shared CTL_static</div>
-<div class="line">make install</div>
+<div class="line">make check &amp;&amp; ctest</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
 About</h1>
 <p>This library is a C language container library written by imitating STL, you can use this library like STL<br  />

@@ -11,13 +11,10 @@ git clone https://github.com/inie0722/CTL
 cd CTL
 mkdir build && cd build
 cmake ../
-//build all
-cmake --build ./ --config Release
+cmake --build ./ --config Release --target install
+
 //run test
-ctest
-//if you want to build only library file
-cmake --build ./ --config Release --config --target CTL_shared CTL_static
-make install
+make check && ctest
 ```
 
 ## About
