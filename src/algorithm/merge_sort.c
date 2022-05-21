@@ -3,8 +3,14 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <malloc.h>
-#include <alloca.h>
 #include <string.h>
+
+#if defined(linux) || defined(__linux) || defined(__linux__)
+#include <alloca.h>
+#elif defined(__WIN32__) || defined(_WIN32)
+#include <malloc.h>
+#define alloca(size) _alloca(size)
+#endif
 
 static void __merge_sort(char *first, char *last, void *buf, size_t T_size, bool (*compare)(const void *, const void *));
 static inline void __merge(char *first_1, char *last_1, char *first_2, char *last_2, void *buf, size_t T_size, bool (*compare)(const void *, const void *));

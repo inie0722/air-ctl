@@ -3,7 +3,13 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <string.h>
+
+#if defined(linux) || defined(__linux) || defined(__linux__)
 #include <alloca.h>
+#elif defined(__WIN32__) || defined(_WIN32)
+#include <malloc.h>
+#define alloca(size) _alloca(size)
+#endif
 
 static inline void __insertion_sort(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *));
 static inline void linear_insert(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *));
