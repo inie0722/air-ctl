@@ -3,7 +3,7 @@
 
 #include "CTL/queue.h"
 
-void CTL_queue_new(CTL_queue *handle, CTL_functions *functions, const size_t data_size, const size_t T_size)
+void CTL_queue_new(CTL_queue *handle, CTL_functions *functions, size_t data_size, size_t T_size)
 {
     handle->functions = functions;
     handle->functions->__new(&handle->container, data_size, T_size);

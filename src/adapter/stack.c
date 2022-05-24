@@ -3,7 +3,7 @@
 
 #include "CTL/stack.h"
 
-void CTL_stack_new(CTL_stack *handle, CTL_functions *functions, const size_t data_size, const size_t T_size)
+void CTL_stack_new(CTL_stack *handle, CTL_functions *functions, size_t data_size, size_t T_size)
 {
     handle->functions = functions;
     handle->functions->__new(&handle->container, data_size, T_size);

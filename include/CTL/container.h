@@ -52,7 +52,7 @@ typedef union
 typedef struct
 {
     /// @brief create a container
-    void (*__new)(CTL_container *handle, const size_t data_size, const size_t T_size);
+    void (*__new)(CTL_container *handle, size_t data_size, size_t T_size);
 
     /// @brief destroy container
     void (*__delete)(CTL_container *handle);
@@ -88,7 +88,7 @@ typedef struct
     void (*erase)(CTL_container *handle, CTL_iterator *iterator);
 
     /// @brief get index element
-    void *(*at)(const CTL_container *handle, const size_t index);
+    void *(*at)(const CTL_container *handle, size_t index);
 
     /// @brief iterator move to n
     void (*iterator_move)(const CTL_iterator *handle, const ptrdiff_t n, CTL_iterator *res);

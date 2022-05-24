@@ -77,7 +77,7 @@ extern void CTL_hash_map_delete(CTL_hash_map *handle);
  * @param element element address
  * @return int 0 if success, -1 if failed
  */
-extern int CTL_hash_map_insert(CTL_hash_map *handle, void *key, void *element);
+extern int CTL_hash_map_insert(CTL_hash_map *handle, const void *key, const void *element);
 
 /**
  * @brief erases the element at a given position

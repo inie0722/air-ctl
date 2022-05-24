@@ -34,7 +34,7 @@ typedef struct
  * @param data_size initial data size
  * @param T_size element type size
  */
-extern void CTL_stack_new(CTL_stack *handle, CTL_functions *functions, const size_t buf_size, const size_t T_size);
+extern void CTL_stack_new(CTL_stack *handle, CTL_functions *functions, size_t buf_size, size_t T_size);
 
 /**
  * @brief destroy stack

@@ -22,9 +22,9 @@ void test_new()
     CTL_vector_new(&ctl, 10, sizeof(size_t));
 }
 
-bool max(void *a, void *b)
+bool max(const void *left, const void *right)
 {
-    return *(size_t *)a < *(size_t *)b;
+    return *(const size_t *)left < *(const size_t *)right;
 }
 
 TEST(Algorithm, sort)

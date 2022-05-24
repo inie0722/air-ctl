@@ -7,10 +7,10 @@
 
 #include "CTL/heap.h"
 
-static void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t topIndex, void *value, bool (*compare_handler)(void *a, void *b));
-static void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t len, void *value, bool (*compare_handler)(void *a, void *b));
+static void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t topIndex, void *value, bool (*compare_handler)(const void *left, const void *right));
+static void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t len, void *value, bool (*compare_handler)(const void *left, const void *right));
 
-void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b))
+void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(const void *left, const void *right))
 {
 #if defined(__linux__) || defined(__APPLE__)
     void *value = alloca(first->T_size);
@@ -24,7 +24,7 @@ void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *
     __push_heap(functions, first, functions->iterator_diff(last, first) - 1, 0, value, compare_handler);
 }
 
-static void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t topIndex, void *value, bool (*compare_handler)(void *a, void *b))
+static void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t topIndex, void *value, bool (*compare_handler)(const void *left, const void *right))
 {
     CTL_iterator move_result;
 
@@ -50,7 +50,7 @@ static void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t
     memcpy((functions->iterator_move(first, holeIndex, &move_result), move_result.data), value, first->T_size);
 }
 
-void CTL_pop_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b))
+void CTL_pop_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(const void *left, const void *right))
 {
     //保存数据
 #if defined(__linux__) || defined(__APPLE__)
@@ -67,7 +67,7 @@ void CTL_pop_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *l
     __adjust_heap(functions, first, 0, functions->iterator_diff(last, first) - 1, value, compare_handler);
 }
 
-static void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t len, void *value, bool (*compare_handler)(void *a, void *b))
+static void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t holeIndex, ptrdiff_t len, void *value, bool (*compare_handler)(const void *left, const void *right))
 {
     CTL_iterator move_result;
 
@@ -106,7 +106,7 @@ static void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff
     __push_heap(functions, first, holeIndex, topIndex, value, compare_handler);
 }
 
-void CTL_sort_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b))
+void CTL_sort_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(const void *left, const void *right))
 {
     CTL_iterator w_last = *last;
     //通过循环出堆 进行排序 大堆 变成 从小到大排序
@@ -117,7 +117,7 @@ void CTL_sort_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *
     }
 }
 
-void CTL_make_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b))
+void CTL_make_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(const void *left, const void *right))
 {
     ptrdiff_t len = functions->iterator_diff(last, first);
     //数据量 小于或等于2 直接返回 无需操作

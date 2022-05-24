@@ -47,7 +47,7 @@ typedef struct
  * @param handle
  * @param T_size element type size
  */
-extern void CTL_list_new(CTL_list *handle, const size_t T_size);
+extern void CTL_list_new(CTL_list *handle, size_t T_size);
 
 /**
  * @brief destroy list
@@ -176,7 +176,7 @@ extern void CTL_list_splice(CTL_list *handle, const CTL_list_iterator *position,
  * @param other another container to merge
  * @param compare_handler compare function
  */
-extern void CTL_list_merge(CTL_list *handle, CTL_list *other, bool (*compare_handler)(void *a, void *b));
+extern void CTL_list_merge(CTL_list *handle, CTL_list *other, bool (*compare_handler)(const void *left, const void *right));
 
 /**
  * @brief sorts the elements
@@ -184,7 +184,7 @@ extern void CTL_list_merge(CTL_list *handle, CTL_list *other, bool (*compare_han
  * @param handle
  * @param compare_handler compare function
  */
-extern void CTL_list_sort(CTL_list *handle, bool (*compare_handler)(void *a, void *b));
+extern void CTL_list_sort(CTL_list *handle, bool (*compare_handler)(const void *left, const void *right));
 
 /**
  * @brief iterator move to n
@@ -193,7 +193,7 @@ extern void CTL_list_sort(CTL_list *handle, bool (*compare_handler)(void *a, voi
  * @param n positive move forward, negative move backward
  * @param res result iterator
  */
-extern void CTL_list_iterator_move(const CTL_list_iterator *handle, const ptrdiff_t index, CTL_list_iterator *res);
+extern void CTL_list_iterator_move(const CTL_list_iterator *handle, ptrdiff_t index, CTL_list_iterator *res);
 
 /**
  * @brief if left iterator equal right iterator return true, else return false

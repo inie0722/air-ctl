@@ -109,7 +109,7 @@ void CTL_vector_erase(CTL_vector *handle, CTL_vector_iterator *iterator)
     handle->end.data -= handle->end.T_size;
 }
 
-void *CTL_vector_at(const CTL_vector *handle, const size_t index)
+void *CTL_vector_at(const CTL_vector *handle, size_t index)
 {
     return handle->begin.data + (index * handle->end.T_size);
 }

@@ -9,7 +9,7 @@
 #define BUCKET_INITIAL_CAPACITY 16
 #define LOAD_FACTOR 0.75
 
-static unsigned long hash_code(const unsigned long hash_offset_basis, const void *key, const size_t size)
+static unsigned long hash_code(const unsigned long hash_offset_basis, const void *key, size_t size)
 {
 	const unsigned char fnv_prime = 251;
 	unsigned long hash = hash_offset_basis;
@@ -87,7 +87,7 @@ void CTL_hash_map_delete(CTL_hash_map *handle)
 	CTL_deallocate(handle->bucket, handle->B_size * sizeof(__CTL_hash_map_node *));
 }
 
-int CTL_hash_map_insert(CTL_hash_map *handle, void *key, void *element)
+int CTL_hash_map_insert(CTL_hash_map *handle, const void *key, const void *element)
 {
 	unsigned long hash = hash_code(handle->hash_offset_basis, key, handle->K_size);
 	size_t index = __index(hash, handle->B_size);

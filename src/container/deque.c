@@ -23,7 +23,7 @@ static void pop_aux_front(CTL_deque *handle);
 
 static void insert_aux(CTL_deque *handle, const CTL_deque_iterator *iterator, const void *element);
 
-void CTL_deque_new(CTL_deque *handle, const size_t data_size, const size_t T_size)
+void CTL_deque_new(CTL_deque *handle, size_t data_size, size_t T_size)
 {
     handle->data_size = data_size;
     //一个map至少 拥有8个节点

@@ -29,7 +29,7 @@ typedef struct
  * @param data_size initial data size
  * @param T_size element type size
  */
-extern void CTL_queue_new(CTL_queue *handle, CTL_functions *functions, const size_t data_size, const size_t T_size);
+extern void CTL_queue_new(CTL_queue *handle, CTL_functions *functions, size_t data_size, size_t T_size);
 
 /**
  * @brief destroys a queue

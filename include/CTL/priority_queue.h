@@ -23,7 +23,7 @@ typedef struct
 {
     CTL_container container;
     CTL_functions *functions;
-    bool (*compare_handler)(void *a, void *b);
+    bool (*compare_handler)(const void *left, const void *right);
 } CTL_priority_queue;
 
 /**
@@ -35,7 +35,7 @@ typedef struct
  * @param data_size initial data size
  * @param T_size element type size
  */
-void CTL_priority_queue_new(CTL_priority_queue *handle, bool (*compare_handler)(void *a, void *b), CTL_functions *functions, const size_t data_size, const size_t T_size);
+void CTL_priority_queue_new(CTL_priority_queue *handle, bool (*compare_handler)(const void *left, const void *right), CTL_functions *functions, size_t data_size, size_t T_size);
 
 /**
  * @brief destroys a priority queue
