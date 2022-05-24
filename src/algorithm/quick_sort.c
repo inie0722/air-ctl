@@ -3,16 +3,22 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <string.h>
-#include <alloca.h>
+#include <stdlib.h>
 
-static inline char *__unguarded_partition(char *first, char *last, void *value, size_t T_size, bool (*compare)(const void *, const void *));
+#if defined(_WIN32)
+#include <malloc.h>
+#endif
 
-void CTL_quick_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
+static inline void __quick_sort(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
     if (last - first < T_size * 2)
         return;
 
+#if defined(__linux__) || defined(__APPLE__)
     void *value = alloca(T_size);
+#elif defined(_WIN32)
+    void *value = _malloca(T_size);
+#endif
 
     void *med[3];
     if (last - first > T_size * 16)
@@ -32,11 +38,16 @@ void CTL_quick_sort(void *first, void *last, size_t T_size, bool (*compare)(cons
 
     void *cur = __CTL_unguarded_partition(first, last, value, T_size, compare);
 
-    CTL_quick_sort(first, cur, T_size, compare);
-    CTL_quick_sort(cur, last, T_size, compare);
+    __quick_sort(first, cur, T_size, compare);
+    __quick_sort(cur, last, T_size, compare);
 }
 
-void *__CTL_median(void *a, void *b, void *c, bool (*compare)(const void *, const void *))
+void CTL_quick_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
+{
+    __quick_sort(first, last, T_size, compare);
+}
+
+void *__CTL_median(char *a, char *b, char *c, bool (*compare)(const void *, const void *))
 {
     if (compare(b, a))
     {
@@ -55,14 +66,13 @@ void *__CTL_median(void *a, void *b, void *c, bool (*compare)(const void *, cons
         return b;
 }
 
-void *__CTL_unguarded_partition(void *first, void *last, void *value, size_t T_size, bool (*compare)(const void *, const void *))
+char *__CTL_unguarded_partition(char *first, char *last, char *value, size_t T_size, bool (*compare)(const void *, const void *))
 {
-    return __unguarded_partition((char *)first, (char *)last, value, T_size, compare);
-}
-
-static inline char *__unguarded_partition(char *first, char *last, void *value, size_t T_size, bool (*compare)(const void *, const void *))
-{
+#if defined(__linux__) || defined(__APPLE__)
     void *tmp = alloca(T_size);
+#elif defined(_WIN32)
+    void *tmp = _malloca(T_size);
+#endif
 
     while (1)
     {

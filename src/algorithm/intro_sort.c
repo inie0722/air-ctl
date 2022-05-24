@@ -7,11 +7,17 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <string.h>
-#include <alloca.h>
+#include <stdlib.h>
+
+#if defined(_WIN32)
+#include <malloc.h>
+#endif
 
 #define THRESHOLD 16
 
-static void introsort_loop(void *first, void *last, size_t depth_limit, size_t T_size, bool (*compare)(const void *, const void *));
+static inline void introsort_loop(char *first, char *last, size_t depth_limit, size_t T_size, bool (*compare)(const void *, const void *));
+
+static inline void __intro_sort(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *));
 
 static inline size_t lg(size_t n)
 {
@@ -25,7 +31,16 @@ static inline size_t lg(size_t n)
 
 void CTL_intro_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
+    __intro_sort((char *)first, (char *)last, T_size, compare);
+}
+
+void __intro_sort(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *))
+{
+#if defined(__linux__) || defined(__APPLE__)
     void *value = alloca(T_size);
+#elif defined(_WIN32)
+    void *value = _malloca(T_size);
+#endif
     if (first != last)
     {
         //最多允许递归logn*2
@@ -38,7 +53,7 @@ void CTL_intro_sort(void *first, void *last, size_t T_size, bool (*compare)(cons
             //因为这些元素都被快排过了 第一段元素必定拥有最小的元素 因此直接进入内部循环即可
 
             int t = 0;
-            for (void *i = first + THRESHOLD * T_size; i != last; i += T_size)
+            for (char *i = first + THRESHOLD * T_size; i != last; i += T_size)
             {
                 ++t;
                 memcpy(value, i, T_size);
@@ -52,9 +67,13 @@ void CTL_intro_sort(void *first, void *last, size_t T_size, bool (*compare)(cons
     }
 }
 
-static void introsort_loop(void *first, void *last, size_t depth_limit, size_t T_size, bool (*compare)(const void *, const void *))
+static void introsort_loop(char *first, char *last, size_t depth_limit, size_t T_size, bool (*compare)(const void *, const void *))
 {
+#if defined(__linux__) || defined(__APPLE__)
     void *value = alloca(T_size);
+#elif defined(_WIN32)
+    void *value = _malloca(T_size);
+#endif
     while (last - first > THRESHOLD * T_size)
     {
         //如果到达递归深度极限

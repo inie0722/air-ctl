@@ -76,7 +76,6 @@ void CTL_deallocate(void *ptr, size_t size)
     CTL_free(ptr);
 }
 #else
-#include <threads.h>
 
 //二级分配器
 #define ALIGN 8                      //区块上调边界
@@ -102,10 +101,28 @@ static void *chunk_alloc(size_t size, size_t *nobjs); //该函数 负责向内�
 static obj *free_list[NFREELISTS] = {NULL};
 
 //这三个变量 负责管理内存池
-static char *begin_free = 0; // 内存池的首地址
-static char *end_free = 0;   //内存池的结束地址
-static size_t heap_size = 0; //大小
-static mtx_t mutex;          //内存池互斥锁
+static char *begin_free = 0;                              // 内存池的首地址
+static char *end_free = 0;                                //内存池的结束地址
+static size_t heap_size = 0;                              //大小
+
+#if defined(__linux__) || defined(__APPLE__)
+#include <pthread.h>
+static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER; //内存池互斥锁
+#elif defined(WIN32) || defined(_WIN32)
+#include <windows.h>
+//内存池互斥锁
+static volatile HANDLE mutex = NULL;
+int emulate_pthread_mutex_lock(volatile HANDLE *mx)
+{
+    if (*mx == NULL)
+    {
+        HANDLE p = CreateMutex(NULL, FALSE, NULL);
+        if (InterlockedCompareExchangePointer((PVOID *)mx, (PVOID)p, NULL) != NULL)
+            CloseHandle(p);
+    }
+    return WaitForSingleObject(*mx, INFINITE) == WAIT_FAILED;
+}
+#endif
 
 void *CTL_allocate(size_t size)
 {
@@ -118,15 +135,11 @@ void *CTL_allocate(size_t size)
         //申请内存 大于MAX_BYTES 直接交给 一级分配器
         return CTL_malloc(size);
     }
-
-    static bool mutex_status = false;
-    if (mutex_status == false)
-    {
-        mtx_init(&mutex, mtx_plain);
-        mutex_status = true;
-    }
-
-    mtx_lock(&mutex);
+#if defined(__linux__) || defined(__APPLE__)
+    pthread_mutex_lock(&mutex);
+#elif defined(WIN32) || defined(_WIN32)
+    emulate_pthread_mutex_lock(&mutex);
+#endif
     //找到合适的 free list
     obj **my_free_list = free_list + FREELIST_INDEX(size);
     result = *my_free_list;
@@ -140,8 +153,11 @@ void *CTL_allocate(size_t size)
     {
         *my_free_list = result->free_list_link;
     }
-
-    mtx_unlock(&mutex);
+#if defined(__linux__) || defined(__APPLE__)
+    pthread_mutex_unlock(&mutex);
+#elif defined(WIN32) || defined(_WIN32)
+    ReleaseMutex(mutex);
+#endif
     return result;
 }
 
@@ -171,13 +187,21 @@ void CTL_deallocate(void *ptr, size_t size)
     }
     else
     {
-        mtx_lock(&mutex);
+#if defined(__linux__) || defined(__APPLE__)
+        pthread_mutex_lock(&mutex);
+#elif defined(WIN32) || defined(_WIN32)
+       emulate_pthread_mutex_lock(&mutex);
+#endif
         //将其交给 合适的 free list
         obj **my_free_list = free_list + FREELIST_INDEX(size);
         ((obj *)ptr)->free_list_link = *my_free_list;
         *my_free_list = (obj *)ptr;
     }
-    mtx_unlock(&mutex);
+#if defined(__linux__) || defined(__APPLE__)
+    pthread_mutex_unlock(&mutex);
+#elif defined(WIN32) || defined(_WIN32)
+    ReleaseMutex(mutex);
+#endif
 }
 
 static void *refill(size_t size)

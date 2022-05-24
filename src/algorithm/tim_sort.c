@@ -5,17 +5,21 @@
 
 #include <stdbool.h>
 #include <stddef.h>
+#include <stdlib.h>
+
+#if defined(_WIN32)
 #include <malloc.h>
-#include <alloca.h>
+#endif
 
 #define MIN_RUN 16
 
-static inline size_t next_partition(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
+static inline size_t next_partition(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *));
+static inline void __tim_sort(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *));
 
 typedef struct
 {
-    void *first;
-    void *last;
+    char *first;
+    char *last;
 } run;
 
 static inline size_t run_length(run node)
@@ -46,10 +50,21 @@ static inline bool merge_rule(run *stack, size_t top)
 
 void CTL_tim_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
+    __tim_sort((char *)first, (char *)last, T_size, compare);
+}
+
+void __tim_sort(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *))
+{
     void *buf = malloc(last - first);
+
+#if defined(__linux__) || defined(__APPLE__)
     run *stack = alloca(sizeof(run) * lg((last - first) / T_size) * 2);
+#elif defined(_WIN32)
+    run *stack = _malloca(sizeof(run) * lg((last - first) / T_size) * 2);
+#endif
+
     size_t top = 0;
-    void *cur = first;
+    char *cur = first;
 
     while (cur < last)
     {
@@ -86,14 +101,14 @@ void CTL_tim_sort(void *first, void *last, size_t T_size, bool (*compare)(const 
         free(buf);
 }
 
-static inline size_t next_partition(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
+static inline size_t next_partition(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
     if (last - first < 2 * T_size)
         return last - first;
     size_t run_len = 1;
 
-    void *cur = first;
-    void *next = first + T_size;
+    char *cur = first;
+    char *next = first + T_size;
 
     if (compare(cur, next))
     {
@@ -115,7 +130,7 @@ static inline size_t next_partition(void *first, void *last, size_t T_size, bool
         __CTL_reverse(first, next, T_size);
     }
 
-    //run 长度 过小
+    // run 长度 过小
     if (next < last && run_len < MIN_RUN)
     {
         last = first + MIN_RUN * T_size < last ? first + MIN_RUN * T_size : last;
