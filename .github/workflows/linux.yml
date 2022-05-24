@@ -24,7 +24,8 @@ jobs:
       run: |
           sudo apt-get install libgtest-dev
           cd /usr/src/gtest
-          sudo cmake CMakeLists.txt && make
+          sudo cmake CMakeLists.txt
+          sudo make
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
