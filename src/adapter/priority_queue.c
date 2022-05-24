@@ -4,7 +4,7 @@
 #include "CTL/priority_queue.h"
 #include "CTL/heap.h"
 
-void CTL_priority_queue_new(CTL_priority_queue *handle, bool (*compare_handler)(void *a, void *b), CTL_functions *functions, const size_t data_size, const size_t T_size)
+void CTL_priority_queue_new(CTL_priority_queue *handle, bool (*compare_handler)(const void *left, const void *right), CTL_functions *functions, size_t data_size, size_t T_size)
 {
     handle->functions = functions;
     handle->compare_handler = compare_handler;

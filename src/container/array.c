@@ -4,7 +4,7 @@
 
 #include "CTL/array.h"
 
-void CTL_array_init(CTL_array *handle, const void *begin, const void *end, const size_t T_size)
+void CTL_array_init(CTL_array *handle, const void *begin, const void *end, size_t T_size)
 {
     handle->begin.data = (char *)begin;
     handle->begin.T_size = T_size;
@@ -33,12 +33,12 @@ void CTL_array_end(const CTL_array *handle, CTL_array_iterator *res)
     *res = handle->end;
 }
 
-void *CTL_array_at(const CTL_array *handle, const size_t index)
+void *CTL_array_at(const CTL_array *handle, size_t index)
 {
     return handle->begin.data + (index * handle->end.T_size);
 }
 
-void CTL_array_iterator_move(const CTL_array_iterator *handle, const ptrdiff_t n, CTL_array_iterator *res)
+void CTL_array_iterator_move(const CTL_array_iterator *handle, ptrdiff_t n, CTL_array_iterator *res)
 {
     res->T_size = handle->T_size;
     res->data = handle->data + (n * handle->T_size);

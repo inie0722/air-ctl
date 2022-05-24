@@ -41,7 +41,7 @@ typedef struct
  * @param data_size initial data size
  * @param T_size element type size
  */
-extern void CTL_vector_new(CTL_vector *handle, const size_t data_size, const size_t T_size);
+extern void CTL_vector_new(CTL_vector *handle, size_t data_size, size_t T_size);
 
 /**
  * @brief clear vector
@@ -128,7 +128,7 @@ extern void CTL_vector_erase(CTL_vector *handle, CTL_vector_iterator *iterator);
  * @param index
  * @return void* element address
  */
-extern void *CTL_vector_at(const CTL_vector *handle, const size_t index);
+extern void *CTL_vector_at(const CTL_vector *handle, size_t index);
 
 /**
  * @brief get the number of elements

@@ -41,7 +41,7 @@ typedef struct
  * @param end array end address
  * @param T_size element type size
  */
-extern void CTL_array_init(CTL_array *handle, const void *begin, const void *end, const size_t T_size);
+extern void CTL_array_init(CTL_array *handle, const void *begin, const void *end, size_t T_size);
 
 /**
  * @brief get first element
@@ -116,7 +116,7 @@ extern bool CTL_array_empty(const CTL_array *handle);
  * @param n positive move forward, negative move backward
  * @param res result iterator
  */
-extern void CTL_array_iterator_move(const CTL_array_iterator *handle, const ptrdiff_t n, CTL_array_iterator *res);
+extern void CTL_array_iterator_move(const CTL_array_iterator *handle, ptrdiff_t n, CTL_array_iterator *res);
 
 /**
  * @brief if left iterator equal right iterator return true, else return false

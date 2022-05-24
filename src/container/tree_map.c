@@ -321,7 +321,7 @@ static void fix_erase(CTL_tree_map *handle, __rb_tree_node *x)
     }
 }
 
-void CTL_tree_map_new(CTL_tree_map *handle, CTL_tree_map_key *key, const size_t T_size)
+void CTL_tree_map_new(CTL_tree_map *handle, CTL_tree_map_key *key, size_t T_size)
 {
     handle->header = (__rb_tree_node *)CTL_allocate(sizeof(__rb_tree_node));
     handle->header->parent = NULL;
@@ -365,7 +365,7 @@ void CTL_tree_map_end(const CTL_tree_map *handle, CTL_tree_map_iterator *res)
     res->node = handle->header;
 }
 
-void CTL_tree_map_insert(CTL_tree_map *handle, void *key, void *element)
+void CTL_tree_map_insert(CTL_tree_map *handle, const void *key, const void *element)
 {
     __rb_tree_node *i = __root(handle);
     __rb_tree_node *parent = handle->header;

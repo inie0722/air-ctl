@@ -71,7 +71,7 @@ typedef struct
  * @param key
  * @param T_size element type size
  */
-extern void CTL_tree_map_new(CTL_tree_map *handle, CTL_tree_map_key *key, const size_t T_size);
+extern void CTL_tree_map_new(CTL_tree_map *handle, CTL_tree_map_key *key, size_t T_size);
 
 /**
  * @brief destroy tree map
@@ -110,7 +110,7 @@ extern void CTL_tree_map_end(const CTL_tree_map *handle, CTL_tree_map_iterator *
  * @param key key address
  * @param element element address
  */
-extern void CTL_tree_map_insert(CTL_tree_map *handle, void *key, void *element);
+extern void CTL_tree_map_insert(CTL_tree_map *handle, const void *key, const void *element);
 
 /**
  * @brief erases the element at a given position

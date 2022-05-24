@@ -17,9 +17,9 @@ using namespace std;
 priority_queue<int> stl;
 CTL_priority_queue ctl;
 
-bool max(void *a, void *b)
+bool max(const void *left, const void *right)
 {
-    return *(int *)a < *(int *)b;
+    return *(const int *)left < *(const int *)right;
 }
 
 void test_new()

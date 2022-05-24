@@ -47,7 +47,7 @@ typedef struct
  * @param data_size initial data size
  * @param T_size element type size
  */
-extern void CTL_deque_new(CTL_deque *handle, const size_t data_size, const size_t T_size);
+extern void CTL_deque_new(CTL_deque *handle, size_t data_size, size_t T_size);
 
 /**
  * @brief destroy deque

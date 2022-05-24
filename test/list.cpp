@@ -256,9 +256,9 @@ TEST(Operations, splice)
     CTL_list_delete(&ctl_sp);
 }
 
-bool max(void *a, void *b)
+bool max(const void *left, const void *right)
 {
-    return *(int *)a > *(int *)b;
+    return *(const int *)left > *(const int *)left;
 }
 
 TEST(Operations, merge)

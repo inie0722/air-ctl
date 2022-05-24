@@ -21,7 +21,7 @@
  * @param last last iterator
  * @param compare_handler compare function
  */
-extern void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b));
+extern void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(const void *left, const void *right));
 
 /**
  * @brief pop element
@@ -31,7 +31,7 @@ extern void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_ite
  * @param last last iterator
  * @param compare_handler compare function
  */
-extern void CTL_pop_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b));
+extern void CTL_pop_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(const void *left, const void *right));
 
 /**
  * @brief sort elements
@@ -41,7 +41,7 @@ extern void CTL_pop_heap(CTL_functions *functions, CTL_iterator *first, CTL_iter
  * @param last last iterator
  * @param compare_handler compare function
  */
-extern void CTL_sort_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b));
+extern void CTL_sort_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(const void *left, const void *right));
 
 /**
  * @brief make heap
@@ -51,4 +51,4 @@ extern void CTL_sort_heap(CTL_functions *functions, CTL_iterator *first, CTL_ite
  * @param last last iterator
  * @param compare_handler compare function
  */
-extern void CTL_make_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b));
+extern void CTL_make_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(const void *left, const void *right));

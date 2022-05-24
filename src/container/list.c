@@ -14,7 +14,7 @@
                              \
 	} while (false);
 
-void CTL_list_new(CTL_list *handle, const size_t T_size)
+void CTL_list_new(CTL_list *handle, size_t T_size)
 {
 	//构造 一个 头结点
 	__CTL_list_node *node = (__CTL_list_node *)CTL_allocate(sizeof(__CTL_list_node));
@@ -144,7 +144,7 @@ void CTL_list_splice(CTL_list *handle, const CTL_list_iterator *position, const 
 	__transfer(position, first, last);
 }
 
-void CTL_list_merge(CTL_list *handle, CTL_list *other, bool (*compare_handler)(void *a, void *b))
+void CTL_list_merge(CTL_list *handle, CTL_list *other, bool (*compare_handler)(const void *left, const void *right))
 {
 	CTL_list_iterator first_1;
 	CTL_list_begin(handle, &first_1);
@@ -181,7 +181,7 @@ void CTL_list_merge(CTL_list *handle, CTL_list *other, bool (*compare_handler)(v
 	}
 }
 
-void CTL_list_sort(CTL_list *handle, bool (*compare_handler)(void *a, void *b))
+void CTL_list_sort(CTL_list *handle, bool (*compare_handler)(const void *left, const void *right))
 {
 	//节点少于1 便直接退出
 	if (handle->list->next == handle->list || handle->list->next->next == handle->list)
@@ -242,7 +242,7 @@ void CTL_list_sort(CTL_list *handle, bool (*compare_handler)(void *a, void *b))
 	}
 }
 
-void CTL_list_iterator_move(const CTL_list_iterator *handle, const ptrdiff_t index, CTL_list_iterator *res)
+void CTL_list_iterator_move(const CTL_list_iterator *handle, ptrdiff_t index, CTL_list_iterator *res)
 {
 	res->T_size = handle->T_size;
 	if (index < 0)
