@@ -13,7 +13,11 @@ add_executable(hash_map EXCLUDE_FROM_ALL  hash_map.cpp)
 
 add_custom_target(check DEPENDS array deque hash_map heap list priority_queue queue stack tree_map vector sort)
 
-set(target_lib CTL_static GTest::gtest)
+if(UNIX OR APPLE)
+set(target_lib CTL_shared GTest::gtest pthread)
+elseif(WIN32)
+    set(target_lib CTL_shared GTest::gtest)
+endif()
 
 target_link_libraries(array ${target_lib})
 target_link_libraries(vector ${target_lib})

@@ -10,4 +10,6 @@ set_target_properties(CTL_shared PROPERTIES OUTPUT_NAME "ctl")
 set_target_properties(CTL_static PROPERTIES OUTPUT_NAME "ctl")
 
 
-#target_link_libraries(CTL_shared pthread)
+if(UNIX OR APPLE)
+    target_link_libraries(CTL_shared pthread)
+endif()
