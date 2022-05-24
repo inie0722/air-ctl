@@ -1,4 +1,9 @@
 #include <string.h>
+#include <stdlib.h>
+
+#if defined(_WIN32)
+#include <malloc.h>
+#endif
 
 #include "CTL/heap.h"
 
@@ -7,8 +12,11 @@ static void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff
 
 void CTL_push_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b))
 {
-
-    char value[first->T_size];
+#if defined(__linux__) || defined(__APPLE__)
+    void *value = alloca(first->T_size);
+#elif defined(_WIN32)
+    void *value = _malloca(first->T_size);
+#endif
     CTL_iterator back;
     functions->iterator_move(last, -1, &back);
     memcpy(value, back.data, first->T_size);
@@ -28,7 +36,9 @@ static void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t
     while (holeIndex > topIndex && compare_handler((functions->iterator_move(first, parent, &move_result), move_result.data), value))
     {
         //第一个holeIndex的值已经被保存到value里了 所以这里直接赋值
-        memcpy((functions->iterator_move(first, holeIndex, &move_result), move_result.data), (functions->iterator_move(first, parent, &move_result), move_result.data), first->T_size);
+        void *dest = (functions->iterator_move(first, holeIndex, &move_result), move_result.data);
+        void *src = (functions->iterator_move(first, parent, &move_result), move_result.data);
+        memcpy(dest, src, first->T_size);
 
         //这里和上面一样 holeIndex变成parent
         holeIndex = parent;
@@ -43,7 +53,11 @@ static void __push_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff_t
 void CTL_pop_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *last, bool (*compare_handler)(void *a, void *b))
 {
     //保存数据
-    char value[first->T_size];
+#if defined(__linux__) || defined(__APPLE__)
+    void *value = alloca(first->T_size);
+#elif defined(_WIN32)
+    void *value = _malloca(first->T_size);
+#endif
 
     CTL_iterator back;
     functions->iterator_move(last, -1, &back);
@@ -64,10 +78,15 @@ static void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff
     while (secondChild < len)
     {
         //比较左右节点 将较大的子节点替换到父节点位置
-        if (compare_handler((functions->iterator_move(first, secondChild, &move_result), move_result.data), (functions->iterator_move(first, secondChild - 1, &move_result), move_result.data)))
+        void *a = (functions->iterator_move(first, secondChild, &move_result), move_result.data);
+        void *b = (functions->iterator_move(first, secondChild - 1, &move_result), move_result.data);
+        if (compare_handler(a, b))
             --secondChild;
 
-        memcpy((functions->iterator_move(first, holeIndex, &move_result), move_result.data), (functions->iterator_move(first, secondChild, &move_result), move_result.data), first->T_size);
+        void *dest = (functions->iterator_move(first, holeIndex, &move_result), move_result.data);
+        void *src = (functions->iterator_move(first, secondChild, &move_result), move_result.data);
+        memcpy(dest, src, first->T_size);
+
         holeIndex = secondChild;
         //下一个字节点位置
         secondChild = 2 * (secondChild + 1);
@@ -75,7 +94,11 @@ static void __adjust_heap(CTL_functions *functions, CTL_iterator *first, ptrdiff
     if (secondChild == len)
     {
         //右节点为空 将左节点移动到父节点位置
-        memcpy((functions->iterator_move(first, holeIndex, &move_result), move_result.data), (functions->iterator_move(first, secondChild - 1, &move_result), move_result.data), first->T_size);
+
+        void *dest = (functions->iterator_move(first, holeIndex, &move_result), move_result.data);
+        void *src = (functions->iterator_move(first, secondChild - 1, &move_result), move_result.data);
+        memcpy(dest, src, first->T_size);
+
         holeIndex = secondChild - 1;
     }
     //重新调整堆 在合适的位置插入 value 及是 先前last-1的值
@@ -103,7 +126,11 @@ void CTL_make_heap(CTL_functions *functions, CTL_iterator *first, CTL_iterator *
 
     // parent是第一个需重新排列的子树头部
     ptrdiff_t parent = (len - 2) / 2;
-    char value[first->T_size];
+#if defined(__linux__) || defined(__APPLE__)
+    void *value = alloca(first->T_size);
+#elif defined(_WIN32)
+    void *value = malloc(first->T_size);
+#endif
 
     while (parent >= 0)
     {

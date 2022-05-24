@@ -23,6 +23,6 @@
  */
 extern void CTL_quick_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
 
-extern void *__CTL_median(void *a, void *b, void *c, bool (*compare)(const void *, const void *));
+extern void *__CTL_median(char *a, char *b, char *c, bool (*compare)(const void *, const void *));
 
-extern void *__CTL_unguarded_partition(void *first, void *last, void *value, size_t T_size, bool (*compare)(const void *, const void *));
+extern char *__CTL_unguarded_partition(char *first, char *last, char *value, size_t T_size, bool (*compare)(const void *, const void *));

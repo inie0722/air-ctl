@@ -23,4 +23,4 @@
  */
 extern void CTL_insertion_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
 
-extern void __CTL_unguarded_linear_insert(void *last, void *value, size_t T_size, bool (*compare)(const void *, const void *));
+extern void __CTL_unguarded_linear_insert(char *last, char *value, size_t T_size, bool (*compare)(const void *, const void *));

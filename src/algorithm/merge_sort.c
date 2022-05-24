@@ -2,18 +2,20 @@
 
 #include <stdbool.h>
 #include <stddef.h>
-#include <malloc.h>
-#include <alloca.h>
+#include <stdlib.h>
 #include <string.h>
+
+#if defined(_WIN32)
+#include <malloc.h>
+#endif
 
 static void __merge_sort(char *first, char *last, void *buf, size_t T_size, bool (*compare)(const void *, const void *));
 static inline void __merge(char *first_1, char *last_1, char *first_2, char *last_2, void *buf, size_t T_size, bool (*compare)(const void *, const void *));
 static void __inplace_merge_sort(char *first, char *last, size_t T_size, bool (*compare)(const void *, const void *));
-static inline void __inplace_merge(char *first_1, char *last_1, char *first_2, char *last_2, size_t T_size, bool (*compare)(const void *, const void *));
 
 void CTL_merge_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *))
 {
-    void *buf = malloc(last - first);
+    void *buf = malloc((char*)last - (char*)first);
     if (buf != NULL)
     {
         __merge_sort((char *)first, (char *)last, buf, T_size, compare);
@@ -25,19 +27,13 @@ void CTL_merge_sort(void *first, void *last, size_t T_size, bool (*compare)(cons
     }
 }
 
-void __CTL_merge(void *first_1, void *last_1, void *first_2, void *last_2, void *buf, size_t T_size, bool (*compare)(const void *, const void *))
+void __CTL_reverse(char *first, char *last, size_t T_size)
 {
-    __merge((char *)first_1, (char *)last_1, (char *)first_2, (char *)last_2, buf, T_size, compare);
-}
-
-void __CTL_inplace_merge(void *first_1, void *last_1, void *first_2, void *last_2, size_t T_size, bool (*compare)(const void *, const void *))
-{
-    __inplace_merge((char *)first_1, (char *)last_1, (char *)first_2, (char *)last_2, T_size, compare);
-}
-
-void __CTL_reverse(void *first, void *last, size_t T_size)
-{
+#if defined(__linux__) || defined(__APPLE__)
     void *tmp = alloca(T_size);
+#elif defined(_WIN32)
+    void *tmp = _malloca(T_size);
+#endif
 
     for (size_t i = 0; i < (last - first) / T_size / 2; ++i)
     {
@@ -58,7 +54,7 @@ static void __merge_sort(char *first, char *last, void *buf, size_t T_size, bool
     }
 }
 
-static inline void __merge(char *first_1, char *last_1, char *first_2, char *last_2, void *buf, size_t T_size, bool (*compare)(const void *, const void *))
+void __CTL_merge(char *first_1, char *last_1, char *first_2, char *last_2, char *buf, size_t T_size, bool (*compare)(const void *, const void *))
 {
     char *cur_1 = first_1;
     char *cur_2 = first_2;
@@ -100,11 +96,11 @@ static void __inplace_merge_sort(char *first, char *last, size_t T_size, bool (*
     {
         __inplace_merge_sort(first, last - (mid * T_size), T_size, compare);
         __inplace_merge_sort(last - (mid * T_size), last, T_size, compare);
-        __inplace_merge(first, last - (mid * T_size), last - (mid * T_size), last, T_size, compare);
+        __CTL_inplace_merge(first, last - (mid * T_size), last - (mid * T_size), last, T_size, compare);
     }
 }
 
-static inline void __inplace_merge(char *first_1, char *last_1, char *first_2, char *last_2, size_t T_size, bool (*compare)(const void *, const void *))
+void __CTL_inplace_merge(char *first_1, char *last_1, char *first_2, char *last_2, size_t T_size, bool (*compare)(const void *, const void *))
 {
     while (first_1 < last_2 && first_2 < last_2)
     {

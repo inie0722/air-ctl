@@ -27,7 +27,7 @@ typedef struct __CTL_list_node
 typedef struct
 {
 	char *data;
-	long T_size;
+	size_t T_size;
 	__CTL_list_node *node;
 } CTL_list_iterator;
 
@@ -37,7 +37,7 @@ typedef struct
  */
 typedef struct
 {
-	long T_size;
+	size_t T_size;
 	__CTL_list_node *list;
 } CTL_list;
 
