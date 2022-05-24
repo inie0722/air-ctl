@@ -21,13 +21,13 @@ jobs:
     - uses: actions/checkout@v3
     - name: Install vcpkg
       run : |
-          sudo apt install git
+          brew install git
           git clone https://github.com/microsoft/vcpkg
           ./vcpkg/bootstrap-vcpkg.sh
     
     - name: Install gtest
       run:  |
-        ./vcpkg/vcpkg install googletest
+        ./vcpkg/vcpkg install gtest
         ./vcpkg/vcpkg integrate install
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
