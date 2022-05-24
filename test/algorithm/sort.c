@@ -15,7 +15,7 @@ int Q_compare(const void *a, const void *b)
     return *(int *)a - *(int *)b;
 }
 
-#define BUF_SIZE 1000 * 10000
+#define BUF_SIZE 1000
 
 int main(void)
 {
