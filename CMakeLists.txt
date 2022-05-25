@@ -1,10 +1,7 @@
 cmake_minimum_required(VERSION 3.00)
 project(CTL)
 
-if(WIN32)
-    option(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-endif()
-
+option(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
