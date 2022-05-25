@@ -1,5 +1,5 @@
 var structrun =
 [
-    [ "first", "structrun.html#a20b9c1f84e84dc760c709afc44ffc7d6", null ],
-    [ "last", "structrun.html#ad8eefdfa43581e04c5b145f716239c19", null ]
+    [ "first", "structrun.html#a7633f084f567e8920f1ea89ed711f8c7", null ],
+    [ "last", "structrun.html#a256fb867b27b5cab7abf5e77a2e531b1", null ]
 ];

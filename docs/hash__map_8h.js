@@ -11,7 +11,7 @@ var hash__map_8h =
     [ "CTL_hash_map_end", "hash__map_8h.html#a708508875624956cd6eac6404443c237", null ],
     [ "CTL_hash_map_erase", "hash__map_8h.html#a11b87e68e47effd48e4d41d4059ee356", null ],
     [ "CTL_hash_map_find", "hash__map_8h.html#ad2be30e0ea4045373ad77a79d2bbbf49", null ],
-    [ "CTL_hash_map_insert", "hash__map_8h.html#a5a3701aab3225c57ee040a6ec3cb6585", null ],
+    [ "CTL_hash_map_insert", "hash__map_8h.html#ad0d462d1632a929afd8771c4566d6d1c", null ],
     [ "CTL_hash_map_iterator_equal", "hash__map_8h.html#a317cf3aaf8d7b739cac004e185b910d1", null ],
     [ "CTL_hash_map_iterator_next", "hash__map_8h.html#ac7ecd8f9ba032103032d7eb6928d8fa0", null ],
     [ "CTL_hash_map_new", "hash__map_8h.html#a4e54403329b1d966fb6ce74fd0ca00ba", null ],

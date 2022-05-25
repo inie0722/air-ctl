@@ -16,7 +16,7 @@ var deque_8h =
     [ "CTL_deque_iterator_equal", "deque_8h.html#a241c5840af5de29ba75927d8c65b1fcc", null ],
     [ "CTL_deque_iterator_less", "deque_8h.html#a70ab8a92bc8ac6a6cedcf7eb852ac418", null ],
     [ "CTL_deque_iterator_move", "deque_8h.html#aae81ffd05318ef84862b99d58e60f7d5", null ],
-    [ "CTL_deque_new", "deque_8h.html#ab4002cb1b5bfdcd389ca74950de68a79", null ],
+    [ "CTL_deque_new", "deque_8h.html#a4dcd3a4a4ce0b0fc9048f88b2d3c375d", null ],
     [ "CTL_deque_pop_back", "deque_8h.html#a0cb8fe0673d2ef593de3870a2226ccab", null ],
     [ "CTL_deque_pop_front", "deque_8h.html#ae71f07e8ffd0f9f40a33843407839f28", null ],
     [ "CTL_deque_push_back", "deque_8h.html#a194a71a5f010a9b2792cd6baeb9f6adc", null ],

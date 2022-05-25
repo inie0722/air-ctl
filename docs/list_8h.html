@@ -137,9 +137,9 @@ typedef struct <a class="el" href="struct____CTL__list__node.html">__CTL_list_no
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1ffe99ccf30bc802823373366d9a2f5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a1ffe99ccf30bc802823373366d9a2f5d">CTL_list_new</a> (<a class="el" href="structCTL__list.html">CTL_list</a> *handle, const size_t T_size)</td></tr>
-<tr class="memdesc:a1ffe99ccf30bc802823373366d9a2f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a list  <a href="list_8h.html#a1ffe99ccf30bc802823373366d9a2f5d">More...</a><br /></td></tr>
-<tr class="separator:a1ffe99ccf30bc802823373366d9a2f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef18ec94b17b06905bdc28e266e5f836"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#aef18ec94b17b06905bdc28e266e5f836">CTL_list_new</a> (<a class="el" href="structCTL__list.html">CTL_list</a> *handle, size_t T_size)</td></tr>
+<tr class="memdesc:aef18ec94b17b06905bdc28e266e5f836"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a list  <a href="list_8h.html#aef18ec94b17b06905bdc28e266e5f836">More...</a><br /></td></tr>
+<tr class="separator:aef18ec94b17b06905bdc28e266e5f836"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1e1850e6b312f5b54a12a3a0fe8369f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#ac1e1850e6b312f5b54a12a3a0fe8369f">CTL_list_delete</a> (<a class="el" href="structCTL__list.html">CTL_list</a> *handle)</td></tr>
 <tr class="memdesc:ac1e1850e6b312f5b54a12a3a0fe8369f"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy list  <a href="list_8h.html#ac1e1850e6b312f5b54a12a3a0fe8369f">More...</a><br /></td></tr>
 <tr class="separator:ac1e1850e6b312f5b54a12a3a0fe8369f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,15 +185,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ae1954391d0f4fc8aeee9103cba3d35f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#ae1954391d0f4fc8aeee9103cba3d35f4">CTL_list_splice</a> (<a class="el" href="structCTL__list.html">CTL_list</a> *handle, const <a class="el" href="structCTL__list__iterator.html">CTL_list_iterator</a> *position, const <a class="el" href="structCTL__list__iterator.html">CTL_list_iterator</a> *first, const <a class="el" href="structCTL__list__iterator.html">CTL_list_iterator</a> *last)</td></tr>
 <tr class="memdesc:ae1954391d0f4fc8aeee9103cba3d35f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">splices the range [first, last) into the range starting at position  <a href="list_8h.html#ae1954391d0f4fc8aeee9103cba3d35f4">More...</a><br /></td></tr>
 <tr class="separator:ae1954391d0f4fc8aeee9103cba3d35f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08cd47d8e3adefe2744b1c1d6b084d8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a08cd47d8e3adefe2744b1c1d6b084d8b">CTL_list_merge</a> (<a class="el" href="structCTL__list.html">CTL_list</a> *handle, <a class="el" href="structCTL__list.html">CTL_list</a> *other, bool(*compare_handler)(void *a, void *b))</td></tr>
-<tr class="memdesc:a08cd47d8e3adefe2744b1c1d6b084d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">merges two sorted lists  <a href="list_8h.html#a08cd47d8e3adefe2744b1c1d6b084d8b">More...</a><br /></td></tr>
-<tr class="separator:a08cd47d8e3adefe2744b1c1d6b084d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93168ce529bcb2a90c2cd20992ec0515"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a93168ce529bcb2a90c2cd20992ec0515">CTL_list_sort</a> (<a class="el" href="structCTL__list.html">CTL_list</a> *handle, bool(*compare_handler)(void *a, void *b))</td></tr>
-<tr class="memdesc:a93168ce529bcb2a90c2cd20992ec0515"><td class="mdescLeft">&#160;</td><td class="mdescRight">sorts the elements  <a href="list_8h.html#a93168ce529bcb2a90c2cd20992ec0515">More...</a><br /></td></tr>
-<tr class="separator:a93168ce529bcb2a90c2cd20992ec0515"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a285ee7fb3eec0917c39b93ecefa71fac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a285ee7fb3eec0917c39b93ecefa71fac">CTL_list_iterator_move</a> (const <a class="el" href="structCTL__list__iterator.html">CTL_list_iterator</a> *handle, const ptrdiff_t index, <a class="el" href="structCTL__list__iterator.html">CTL_list_iterator</a> *res)</td></tr>
-<tr class="memdesc:a285ee7fb3eec0917c39b93ecefa71fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterator move to n  <a href="list_8h.html#a285ee7fb3eec0917c39b93ecefa71fac">More...</a><br /></td></tr>
-<tr class="separator:a285ee7fb3eec0917c39b93ecefa71fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a850f4042df2b022a7670646d7a6a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a97a850f4042df2b022a7670646d7a6a7">CTL_list_merge</a> (<a class="el" href="structCTL__list.html">CTL_list</a> *handle, <a class="el" href="structCTL__list.html">CTL_list</a> *other, bool(*compare_handler)(const void *left, const void *right))</td></tr>
+<tr class="memdesc:a97a850f4042df2b022a7670646d7a6a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">merges two sorted lists  <a href="list_8h.html#a97a850f4042df2b022a7670646d7a6a7">More...</a><br /></td></tr>
+<tr class="separator:a97a850f4042df2b022a7670646d7a6a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c2be08dc0ccf94a32d5450d062abb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#ab8c2be08dc0ccf94a32d5450d062abb2">CTL_list_sort</a> (<a class="el" href="structCTL__list.html">CTL_list</a> *handle, bool(*compare_handler)(const void *left, const void *right))</td></tr>
+<tr class="memdesc:ab8c2be08dc0ccf94a32d5450d062abb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">sorts the elements  <a href="list_8h.html#ab8c2be08dc0ccf94a32d5450d062abb2">More...</a><br /></td></tr>
+<tr class="separator:ab8c2be08dc0ccf94a32d5450d062abb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69a50177be1597ce2a265d49ab637fe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a69a50177be1597ce2a265d49ab637fe1">CTL_list_iterator_move</a> (const <a class="el" href="structCTL__list__iterator.html">CTL_list_iterator</a> *handle, ptrdiff_t index, <a class="el" href="structCTL__list__iterator.html">CTL_list_iterator</a> *res)</td></tr>
+<tr class="memdesc:a69a50177be1597ce2a265d49ab637fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterator move to n  <a href="list_8h.html#a69a50177be1597ce2a265d49ab637fe1">More...</a><br /></td></tr>
+<tr class="separator:a69a50177be1597ce2a265d49ab637fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b16a416afbf8345ba21b828e20cba50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a0b16a416afbf8345ba21b828e20cba50">CTL_list_iterator_equal</a> (const <a class="el" href="structCTL__list__iterator.html">CTL_list_iterator</a> *left, const <a class="el" href="structCTL__list__iterator.html">CTL_list_iterator</a> *right)</td></tr>
 <tr class="memdesc:a0b16a416afbf8345ba21b828e20cba50"><td class="mdescLeft">&#160;</td><td class="mdescRight">if left iterator equal right iterator return true, else return false  <a href="list_8h.html#a0b16a416afbf8345ba21b828e20cba50">More...</a><br /></td></tr>
 <tr class="separator:a0b16a416afbf8345ba21b828e20cba50"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -534,8 +534,8 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a285ee7fb3eec0917c39b93ecefa71fac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a285ee7fb3eec0917c39b93ecefa71fac">&#9670;&nbsp;</a></span>CTL_list_iterator_move()</h2>
+<a id="a69a50177be1597ce2a265d49ab637fe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69a50177be1597ce2a265d49ab637fe1">&#9670;&nbsp;</a></span>CTL_list_iterator_move()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -549,7 +549,7 @@ false </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const ptrdiff_t&#160;</td>
+          <td class="paramtype">ptrdiff_t&#160;</td>
           <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
@@ -578,8 +578,8 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a08cd47d8e3adefe2744b1c1d6b084d8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08cd47d8e3adefe2744b1c1d6b084d8b">&#9670;&nbsp;</a></span>CTL_list_merge()</h2>
+<a id="a97a850f4042df2b022a7670646d7a6a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a850f4042df2b022a7670646d7a6a7">&#9670;&nbsp;</a></span>CTL_list_merge()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -599,7 +599,7 @@ false </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool(*)(void *a, void *b)&#160;</td>
+          <td class="paramtype">bool(*)(const void *left, const void *right)&#160;</td>
           <td class="paramname"><em>compare_handler</em>&#160;</td>
         </tr>
         <tr>
@@ -622,8 +622,8 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a1ffe99ccf30bc802823373366d9a2f5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ffe99ccf30bc802823373366d9a2f5d">&#9670;&nbsp;</a></span>CTL_list_new()</h2>
+<a id="aef18ec94b17b06905bdc28e266e5f836"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef18ec94b17b06905bdc28e266e5f836">&#9670;&nbsp;</a></span>CTL_list_new()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -637,7 +637,7 @@ false </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>T_size</em>&#160;</td>
         </tr>
         <tr>
@@ -812,8 +812,8 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a93168ce529bcb2a90c2cd20992ec0515"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93168ce529bcb2a90c2cd20992ec0515">&#9670;&nbsp;</a></span>CTL_list_sort()</h2>
+<a id="ab8c2be08dc0ccf94a32d5450d062abb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8c2be08dc0ccf94a32d5450d062abb2">&#9670;&nbsp;</a></span>CTL_list_sort()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -827,7 +827,7 @@ false </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool(*)(void *a, void *b)&#160;</td>
+          <td class="paramtype">bool(*)(const void *left, const void *right)&#160;</td>
           <td class="paramname"><em>compare_handler</em>&#160;</td>
         </tr>
         <tr>

@@ -4,7 +4,7 @@ C Language Template Library<br>
 ## Install
 ```
 //use vcpkg install
-vcpkg install ctl
+vcpkg install air-ctl
 
 // or use git
 git clone https://github.com/inie0722/CTL

@@ -1,8 +1,8 @@
 var structCTL__functions =
 [
     [ "__delete", "structCTL__functions.html#af9cd542db6dfc5294f057c03d4de6027", null ],
-    [ "__new", "structCTL__functions.html#ae929bfa3ab39e793fccce0d35c30db1b", null ],
-    [ "at", "structCTL__functions.html#a3fa856f75b611e6945f6ab6c89d9dedc", null ],
+    [ "__new", "structCTL__functions.html#aaf3e8c4860f960763c431150b18b6389", null ],
+    [ "at", "structCTL__functions.html#a51fa7248d8537edf1076c8b0aa9f791a", null ],
     [ "back", "structCTL__functions.html#a080772249084ca6f3c7fc0e65f4deb90", null ],
     [ "begin", "structCTL__functions.html#a47003d833077daacab0c871151646e7f", null ],
     [ "empty", "structCTL__functions.html#a3beba3614a934363f3a1b1f592962b73", null ],

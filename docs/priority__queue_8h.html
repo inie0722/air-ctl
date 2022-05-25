@@ -118,9 +118,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a331647fd1bc47931347b9771b3d4fd58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="priority__queue_8h.html#a331647fd1bc47931347b9771b3d4fd58">CTL_priority_queue_new</a> (<a class="el" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle, bool(*compare_handler)(void *a, void *b), <a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, const size_t data_size, const size_t T_size)</td></tr>
-<tr class="memdesc:a331647fd1bc47931347b9771b3d4fd58"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates a new priority queue  <a href="priority__queue_8h.html#a331647fd1bc47931347b9771b3d4fd58">More...</a><br /></td></tr>
-<tr class="separator:a331647fd1bc47931347b9771b3d4fd58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc0ed1c051cf41e9b905d51c93843abe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="priority__queue_8h.html#acc0ed1c051cf41e9b905d51c93843abe">CTL_priority_queue_new</a> (<a class="el" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle, bool(*compare_handler)(const void *left, const void *right), <a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, size_t data_size, size_t T_size)</td></tr>
+<tr class="memdesc:acc0ed1c051cf41e9b905d51c93843abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates a new priority queue  <a href="priority__queue_8h.html#acc0ed1c051cf41e9b905d51c93843abe">More...</a><br /></td></tr>
+<tr class="separator:acc0ed1c051cf41e9b905d51c93843abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c36317588cecb8014c966597603b12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="priority__queue_8h.html#a2c36317588cecb8014c966597603b12f">CTL_priority_queue_delete</a> (<a class="el" href="structCTL__priority__queue.html">CTL_priority_queue</a> *handle)</td></tr>
 <tr class="memdesc:a2c36317588cecb8014c966597603b12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroys a priority queue  <a href="priority__queue_8h.html#a2c36317588cecb8014c966597603b12f">More...</a><br /></td></tr>
 <tr class="separator:a2c36317588cecb8014c966597603b12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,8 +201,8 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a331647fd1bc47931347b9771b3d4fd58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a331647fd1bc47931347b9771b3d4fd58">&#9670;&nbsp;</a></span>CTL_priority_queue_new()</h2>
+<a id="acc0ed1c051cf41e9b905d51c93843abe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc0ed1c051cf41e9b905d51c93843abe">&#9670;&nbsp;</a></span>CTL_priority_queue_new()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -216,7 +216,7 @@ false </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool(*)(void *a, void *b)&#160;</td>
+          <td class="paramtype">bool(*)(const void *left, const void *right)&#160;</td>
           <td class="paramname"><em>compare_handler</em>, </td>
         </tr>
         <tr>
@@ -228,13 +228,13 @@ false </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>data_size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>T_size</em>&#160;</td>
         </tr>
         <tr>

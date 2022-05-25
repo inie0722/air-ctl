@@ -1,7 +1,7 @@
 var heap_8h =
 [
-    [ "CTL_make_heap", "heap_8h.html#ad3fc34859794ed28c2a3480f3cfba29e", null ],
-    [ "CTL_pop_heap", "heap_8h.html#a255e898dc1cd1b636cfbbe93bc64dd01", null ],
-    [ "CTL_push_heap", "heap_8h.html#ac13657fdcd5e69135dfdb0a7ddb0b406", null ],
-    [ "CTL_sort_heap", "heap_8h.html#a80212f4aa2979caf5eb24dccdb5e3251", null ]
+    [ "CTL_make_heap", "heap_8h.html#a5736c8b26e80eba6f7bf30a35b32b284", null ],
+    [ "CTL_pop_heap", "heap_8h.html#ae68b07a0be1b20d89dad36f44c2d87ea", null ],
+    [ "CTL_push_heap", "heap_8h.html#a64dfd87b4aaaece817fff36390ea7635", null ],
+    [ "CTL_sort_heap", "heap_8h.html#a3a9f440691e7973556ac01772fb90987", null ]
 ];
