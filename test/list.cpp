@@ -258,7 +258,7 @@ TEST(Operations, splice)
 
 bool max(const void *left, const void *right)
 {
-    return *(const int *)left > *(const int *)left;
+    return *(const int *)left > *(const int *)right;
 }
 
 TEST(Operations, merge)
@@ -301,7 +301,7 @@ TEST(Operations, merge)
 
 TEST(Operations, sort)
 {
-    for (int i = 0; i < 100 * 10000; i++)
+    for (int i = 0; i < 100 * 1000; i++)
     {
         int val = rand();
         CTL_list_push_back(&ctl, &val);
