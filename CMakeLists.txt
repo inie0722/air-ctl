@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.00)
 project(CTL)
-
-option(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-
 set(CMAKE_CXX_STANDARD 17)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
@@ -17,10 +14,17 @@ if(Test)
     add_subdirectory(${CMAKE_SOURCE_DIR}/test)
 endif()
 
-install(TARGETS CTL
-        RUNTIME DESTINATION bin
+TARGET_INCLUDE_DIRECTORIES(CTL INTERFACE $<INSTALL_INTERFACE:include>)
+
+install(TARGETS CTL EXPORT air-ctl-config
     	LIBRARY DESTINATION lib
     	ARCHIVE DESTINATION lib)
+      
+install(EXPORT air-ctl-config
+        FILE air-ctl-config.cmake
+        NAMESPACE air-ctl::
+        DESTINATION share/air-ctl
+)
 
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/CTL
     	DESTINATION include
