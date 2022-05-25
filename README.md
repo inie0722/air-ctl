@@ -14,6 +14,7 @@ cmake ../
 cmake --build ./ --config Release --target install
 
 //run test
+cmake ../ -DTest=ON
 make check && ctest
 ```
 
