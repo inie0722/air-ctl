@@ -13,6 +13,8 @@
 #include <stddef.h>
 #include <stdbool.h>
 
+#include "CTL/config.h"
+
 /**
  * @brief deque iterator
  *
@@ -47,21 +49,21 @@ typedef struct
  * @param data_size initial data size
  * @param T_size element type size
  */
-extern void CTL_deque_new(CTL_deque *handle, size_t data_size, size_t T_size);
+CTL_API extern void CTL_deque_new(CTL_deque *handle, size_t data_size, size_t T_size);
 
 /**
  * @brief destroy deque
  *
  * @param handle
  */
-extern void CTL_deque_delete(CTL_deque *handle);
+CTL_API extern void CTL_deque_delete(CTL_deque *handle);
 
 /**
  * @brief clear deque
  *
  * @param handle
  */
-extern void CTL_deque_clear(CTL_deque *handle);
+CTL_API extern void CTL_deque_clear(CTL_deque *handle);
 
 /**
  * @brief get first element
@@ -69,7 +71,7 @@ extern void CTL_deque_clear(CTL_deque *handle);
  * @param handle
  * @return void* first element address
  */
-extern void *CTL_deque_front(const CTL_deque *handle);
+CTL_API extern void *CTL_deque_front(const CTL_deque *handle);
 
 /**
  * @brief get last element
@@ -77,7 +79,7 @@ extern void *CTL_deque_front(const CTL_deque *handle);
  * @param handle
  * @return void* last element address
  */
-extern void *CTL_deque_back(const CTL_deque *handle);
+CTL_API extern void *CTL_deque_back(const CTL_deque *handle);
 
 /**
  * @brief get begin iterator
@@ -85,7 +87,7 @@ extern void *CTL_deque_back(const CTL_deque *handle);
  * @param handle
  * @param res result begin iterator
  */
-extern void CTL_deque_begin(const CTL_deque *handle, CTL_deque_iterator *res);
+CTL_API extern void CTL_deque_begin(const CTL_deque *handle, CTL_deque_iterator *res);
 
 /**
  * @brief get end iterator
@@ -93,7 +95,7 @@ extern void CTL_deque_begin(const CTL_deque *handle, CTL_deque_iterator *res);
  * @param handle
  * @param res result end iterator
  */
-extern void CTL_deque_end(const CTL_deque *handle, CTL_deque_iterator *res);
+CTL_API extern void CTL_deque_end(const CTL_deque *handle, CTL_deque_iterator *res);
 
 /**
  * @brief adds an element to the end
@@ -101,7 +103,7 @@ extern void CTL_deque_end(const CTL_deque *handle, CTL_deque_iterator *res);
  * @param handle
  * @param element element address
  */
-extern void CTL_deque_push_back(CTL_deque *handle, const void *element);
+CTL_API extern void CTL_deque_push_back(CTL_deque *handle, const void *element);
 
 /**
  * @brief adds an element to the front
@@ -109,21 +111,21 @@ extern void CTL_deque_push_back(CTL_deque *handle, const void *element);
  * @param handle
  * @param element element address
  */
-extern void CTL_deque_push_front(CTL_deque *handle, const void *element);
+CTL_API extern void CTL_deque_push_front(CTL_deque *handle, const void *element);
 
 /**
  * @brief erases the last element
  *
  * @param handle
  */
-extern void CTL_deque_pop_back(CTL_deque *handle);
+CTL_API extern void CTL_deque_pop_back(CTL_deque *handle);
 
 /**
  * @brief erases the first element
  *
  * @param handle
  */
-extern void CTL_deque_pop_front(CTL_deque *handle);
+CTL_API extern void CTL_deque_pop_front(CTL_deque *handle);
 
 /**
  * @brief inserts an element at a given position
@@ -132,7 +134,7 @@ extern void CTL_deque_pop_front(CTL_deque *handle);
  * @param iterator insert position
  * @param element element address
  */
-extern void CTL_deque_insert(CTL_deque *handle, CTL_deque_iterator *iterator, const void *element);
+CTL_API extern void CTL_deque_insert(CTL_deque *handle, CTL_deque_iterator *iterator, const void *element);
 
 /**
  * @brief erases the element at a given position
@@ -140,7 +142,7 @@ extern void CTL_deque_insert(CTL_deque *handle, CTL_deque_iterator *iterator, co
  * @param handle
  * @param iterator erase position
  */
-extern void CTL_deque_erase(CTL_deque *handle, CTL_deque_iterator *iterator);
+CTL_API extern void CTL_deque_erase(CTL_deque *handle, CTL_deque_iterator *iterator);
 
 /**
  * @brief get index element
@@ -149,7 +151,7 @@ extern void CTL_deque_erase(CTL_deque *handle, CTL_deque_iterator *iterator);
  * @param index
  * @return void* element address
  */
-void *CTL_deque_at(const CTL_deque *handle, const size_t index);
+CTL_API extern void *CTL_deque_at(const CTL_deque *handle, const size_t index);
 
 /**
  * @brief get the number of elements
@@ -157,7 +159,7 @@ void *CTL_deque_at(const CTL_deque *handle, const size_t index);
  * @param handle deque handle
  * @return size_t number of elements
  */
-size_t CTL_deque_size(const CTL_deque *handle);
+CTL_API extern size_t CTL_deque_size(const CTL_deque *handle);
 
 /**
  * @brief if deque is empty return true, else return false
@@ -166,7 +168,7 @@ size_t CTL_deque_size(const CTL_deque *handle);
  * @return true
  * @return false
  */
-bool CTL_deque_empty(const CTL_deque *handle);
+CTL_API extern bool CTL_deque_empty(const CTL_deque *handle);
 
 /**
  * @brief iterator move to n
@@ -175,7 +177,7 @@ bool CTL_deque_empty(const CTL_deque *handle);
  * @param n positive move forward, negative move backward
  * @param res result iterator
  */
-void CTL_deque_iterator_move(const CTL_deque_iterator *handle, const ptrdiff_t n, CTL_deque_iterator *res);
+CTL_API extern void CTL_deque_iterator_move(const CTL_deque_iterator *handle, const ptrdiff_t n, CTL_deque_iterator *res);
 
 /**
  * @brief if left iterator equal right iterator return true, else return false
@@ -185,7 +187,7 @@ void CTL_deque_iterator_move(const CTL_deque_iterator *handle, const ptrdiff_t n
  * @return true
  * @return false
  */
-bool CTL_deque_iterator_equal(const CTL_deque_iterator *left, const CTL_deque_iterator *right);
+CTL_API extern bool CTL_deque_iterator_equal(const CTL_deque_iterator *left, const CTL_deque_iterator *right);
 
 /**
  * @brief if left iterator precedes right iterator return true, else return false
@@ -195,7 +197,7 @@ bool CTL_deque_iterator_equal(const CTL_deque_iterator *left, const CTL_deque_it
  * @return true
  * @return false
  */
-bool CTL_deque_iterator_less(const CTL_deque_iterator *left, const CTL_deque_iterator *right);
+CTL_API extern bool CTL_deque_iterator_less(const CTL_deque_iterator *left, const CTL_deque_iterator *right);
 
 /**
  * @brief calculate distance between left and right iterator
@@ -204,4 +206,4 @@ bool CTL_deque_iterator_less(const CTL_deque_iterator *left, const CTL_deque_ite
  * @param right
  * @return ptrdiff_t
  */
-ptrdiff_t CTL_deque_iterator_diff(const CTL_deque_iterator *left, const CTL_deque_iterator *right);
+CTL_API extern ptrdiff_t CTL_deque_iterator_diff(const CTL_deque_iterator *left, const CTL_deque_iterator *right);

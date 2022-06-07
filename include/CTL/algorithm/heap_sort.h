@@ -13,6 +13,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#include "CTL/config.h"
+
 /**
  * @brief push element
  * 
@@ -21,7 +23,7 @@
  * @param T_size element type size
  * @param compare compare function
  */
-extern void CTL_heap_push(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
+CTL_API extern void CTL_heap_push(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
 
 /**
  * @brief pop element
@@ -31,7 +33,7 @@ extern void CTL_heap_push(void *first, void *last, size_t T_size, bool (*compare
  * @param T_size element type size
  * @param compare compare function
  */
-extern void CTL_heap_pop(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
+CTL_API extern void CTL_heap_pop(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
 
 /**
  * @brief make heap
@@ -41,7 +43,7 @@ extern void CTL_heap_pop(void *first, void *last, size_t T_size, bool (*compare)
  * @param T_size element type size
  * @param compare compare function
  */
-extern void CTL_heap_make(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
+CTL_API extern void CTL_heap_make(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
 
 /**
  * @brief sort elements
@@ -51,4 +53,4 @@ extern void CTL_heap_make(void *first, void *last, size_t T_size, bool (*compare
  * @param T_size element type size
  * @param compare compare function
  */
-extern void CTL_heap_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
+CTL_API extern void CTL_heap_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));

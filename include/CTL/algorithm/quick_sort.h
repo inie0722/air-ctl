@@ -13,6 +13,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#include "CTL/config.h"
+
 /**
  * @brief sort elements
  * 
@@ -21,8 +23,8 @@
  * @param T_size element type size
  * @param compare compare function
  */
-extern void CTL_quick_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
+CTL_API extern void CTL_quick_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
 
-extern void *__CTL_median(char *a, char *b, char *c, bool (*compare)(const void *, const void *));
+CTL_API extern void *__CTL_median(char *a, char *b, char *c, bool (*compare)(const void *, const void *));
 
-extern char *__CTL_unguarded_partition(char *first, char *last, char *value, size_t T_size, bool (*compare)(const void *, const void *));
+CTL_API extern char *__CTL_unguarded_partition(char *first, char *last, char *value, size_t T_size, bool (*compare)(const void *, const void *));

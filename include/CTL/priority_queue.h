@@ -14,6 +14,7 @@
 #include <stdbool.h>
 
 #include "CTL/container.h"
+#include "CTL/config.h"
 
 /**
  * @brief priority queue
@@ -35,14 +36,14 @@ typedef struct
  * @param data_size initial data size
  * @param T_size element type size
  */
-void CTL_priority_queue_new(CTL_priority_queue *handle, bool (*compare_handler)(const void *left, const void *right), CTL_functions *functions, size_t data_size, size_t T_size);
+CTL_API extern void CTL_priority_queue_new(CTL_priority_queue *handle, bool (*compare_handler)(const void *left, const void *right), CTL_functions *functions, size_t data_size, size_t T_size);
 
 /**
  * @brief destroys a priority queue
  *
  * @param handle
  */
-void CTL_priority_queue_delete(CTL_priority_queue *handle);
+CTL_API extern void CTL_priority_queue_delete(CTL_priority_queue *handle);
 
 /**
  * @brief get top element
@@ -50,7 +51,7 @@ void CTL_priority_queue_delete(CTL_priority_queue *handle);
  * @param handle
  * @return void* top element address
  */
-void *CTL_priority_queue_top(const CTL_priority_queue *handle);
+CTL_API extern void *CTL_priority_queue_top(const CTL_priority_queue *handle);
 
 /**
  * @brief push element
@@ -58,14 +59,14 @@ void *CTL_priority_queue_top(const CTL_priority_queue *handle);
  * @param handle
  * @param element element address
  */
-void CTL_priority_queue_push(CTL_priority_queue *handle, const void *element);
+CTL_API extern void CTL_priority_queue_push(CTL_priority_queue *handle, const void *element);
 
 /**
  * @brief pop element
  *
  * @param handle
  */
-void CTL_priority_queue_pop(CTL_priority_queue *handle);
+CTL_API extern void CTL_priority_queue_pop(CTL_priority_queue *handle);
 
 /**
  * @brief get the number of elements that can be held in currently allocated storage
@@ -73,7 +74,7 @@ void CTL_priority_queue_pop(CTL_priority_queue *handle);
  * @param handle
  * @return size_t number of elements that can be held in currently allocated storage
  */
-size_t CTL_priority_queue_size(const CTL_priority_queue *handle);
+CTL_API extern size_t CTL_priority_queue_size(const CTL_priority_queue *handle);
 
 /**
  * @brief if priority queue is empty
@@ -82,4 +83,4 @@ size_t CTL_priority_queue_size(const CTL_priority_queue *handle);
  * @return true
  * @return false
  */
-bool CTL_priority_queue_empty(const CTL_priority_queue *handle);
+CTL_API extern bool CTL_priority_queue_empty(const CTL_priority_queue *handle);

@@ -13,6 +13,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#include "CTL/config.h"
+
 typedef struct __CTL_list_node
 {
 	char *data;
@@ -47,21 +49,21 @@ typedef struct
  * @param handle
  * @param T_size element type size
  */
-extern void CTL_list_new(CTL_list *handle, size_t T_size);
+CTL_API extern void CTL_list_new(CTL_list *handle, size_t T_size);
 
 /**
  * @brief destroy list
  *
  * @param handle
  */
-extern void CTL_list_delete(CTL_list *handle);
+CTL_API extern void CTL_list_delete(CTL_list *handle);
 
 /**
  * @brief clear list
  *
  * @param handle
  */
-extern void CTL_list_clear(CTL_list *handle);
+CTL_API extern void CTL_list_clear(CTL_list *handle);
 
 /**
  * @brief get first element
@@ -69,7 +71,7 @@ extern void CTL_list_clear(CTL_list *handle);
  * @param handle
  * @return void* first element address
  */
-extern void *CTL_list_front(const CTL_list *handle);
+CTL_API extern void *CTL_list_front(const CTL_list *handle);
 
 /**
  * @brief get last element
@@ -77,7 +79,7 @@ extern void *CTL_list_front(const CTL_list *handle);
  * @param handle
  * @return void* last element address
  */
-extern void *CTL_list_back(const CTL_list *handle);
+CTL_API extern void *CTL_list_back(const CTL_list *handle);
 
 /**
  * @brief get begin iterator
@@ -85,7 +87,7 @@ extern void *CTL_list_back(const CTL_list *handle);
  * @param handle
  * @param res result begin iterator
  */
-extern void CTL_list_begin(const CTL_list *handle, CTL_list_iterator *res);
+CTL_API extern void CTL_list_begin(const CTL_list *handle, CTL_list_iterator *res);
 
 /**
  * @brief get end iterator
@@ -93,7 +95,7 @@ extern void CTL_list_begin(const CTL_list *handle, CTL_list_iterator *res);
  * @param handle
  * @param res result end iterator
  */
-extern void CTL_list_end(const CTL_list *handle, CTL_list_iterator *res);
+CTL_API extern void CTL_list_end(const CTL_list *handle, CTL_list_iterator *res);
 
 /**
  * @brief adds an element to the end
@@ -101,7 +103,7 @@ extern void CTL_list_end(const CTL_list *handle, CTL_list_iterator *res);
  * @param handle
  * @param data element address
  */
-extern void CTL_list_push_back(CTL_list *handle, const void *element);
+CTL_API extern void CTL_list_push_back(CTL_list *handle, const void *element);
 
 /**
  * @brief adds an element to the front
@@ -109,21 +111,21 @@ extern void CTL_list_push_back(CTL_list *handle, const void *element);
  * @param handle
  * @param element element address
  */
-extern void CTL_list_push_front(CTL_list *handle, const void *element);
+CTL_API extern void CTL_list_push_front(CTL_list *handle, const void *element);
 
 /**
  * @brief erases the last element
  *
  * @param handle
  */
-extern void CTL_list_pop_back(CTL_list *handle);
+CTL_API extern void CTL_list_pop_back(CTL_list *handle);
 
 /**
  * @brief erases the first element
  *
  * @param handle
  */
-extern void CTL_list_pop_front(CTL_list *handle);
+CTL_API extern void CTL_list_pop_front(CTL_list *handle);
 
 /**
  * @brief inserts an element at a given position
@@ -132,7 +134,7 @@ extern void CTL_list_pop_front(CTL_list *handle);
  * @param iterator insert position
  * @param element element address
  */
-extern void CTL_list_insert(CTL_list *handle, CTL_list_iterator *iterator, const void *element);
+CTL_API extern void CTL_list_insert(CTL_list *handle, CTL_list_iterator *iterator, const void *element);
 
 /**
  * @brief erases the element at a given position
@@ -140,7 +142,7 @@ extern void CTL_list_insert(CTL_list *handle, CTL_list_iterator *iterator, const
  * @param handle
  * @param iterator erase position
  */
-extern void CTL_list_erase(CTL_list *handle, CTL_list_iterator *iterator);
+CTL_API extern void CTL_list_erase(CTL_list *handle, CTL_list_iterator *iterator);
 
 /**
  * @brief get the number of elements
@@ -148,7 +150,7 @@ extern void CTL_list_erase(CTL_list *handle, CTL_list_iterator *iterator);
  * @param handle
  * @return size_t number of elements
  */
-extern size_t CTL_list_size(const CTL_list *handle);
+CTL_API extern size_t CTL_list_size(const CTL_list *handle);
 
 /**
  * @brief if list is empty return true, else return false
@@ -157,7 +159,7 @@ extern size_t CTL_list_size(const CTL_list *handle);
  * @return true
  * @return false
  */
-extern bool CTL_list_empty(const CTL_list *handle);
+CTL_API extern bool CTL_list_empty(const CTL_list *handle);
 
 /**
  * @brief splices the range [first, last) into the range starting at position
@@ -167,7 +169,7 @@ extern bool CTL_list_empty(const CTL_list *handle);
  * @param first
  * @param last
  */
-extern void CTL_list_splice(CTL_list *handle, const CTL_list_iterator *position, const CTL_list_iterator *first, const CTL_list_iterator *last);
+CTL_API extern void CTL_list_splice(CTL_list *handle, const CTL_list_iterator *position, const CTL_list_iterator *first, const CTL_list_iterator *last);
 
 /**
  * @brief merges two sorted lists
@@ -176,7 +178,7 @@ extern void CTL_list_splice(CTL_list *handle, const CTL_list_iterator *position,
  * @param other another container to merge
  * @param compare_handler compare function
  */
-extern void CTL_list_merge(CTL_list *handle, CTL_list *other, bool (*compare_handler)(const void *left, const void *right));
+CTL_API extern void CTL_list_merge(CTL_list *handle, CTL_list *other, bool (*compare_handler)(const void *left, const void *right));
 
 /**
  * @brief sorts the elements
@@ -184,7 +186,7 @@ extern void CTL_list_merge(CTL_list *handle, CTL_list *other, bool (*compare_han
  * @param handle
  * @param compare_handler compare function
  */
-extern void CTL_list_sort(CTL_list *handle, bool (*compare_handler)(const void *left, const void *right));
+CTL_API extern void CTL_list_sort(CTL_list *handle, bool (*compare_handler)(const void *left, const void *right));
 
 /**
  * @brief iterator move to n
@@ -193,7 +195,7 @@ extern void CTL_list_sort(CTL_list *handle, bool (*compare_handler)(const void *
  * @param n positive move forward, negative move backward
  * @param res result iterator
  */
-extern void CTL_list_iterator_move(const CTL_list_iterator *handle, ptrdiff_t index, CTL_list_iterator *res);
+CTL_API extern void CTL_list_iterator_move(const CTL_list_iterator *handle, ptrdiff_t index, CTL_list_iterator *res);
 
 /**
  * @brief if left iterator equal right iterator return true, else return false
@@ -203,4 +205,4 @@ extern void CTL_list_iterator_move(const CTL_list_iterator *handle, ptrdiff_t in
  * @return true
  * @return false
  */
-extern bool CTL_list_iterator_equal(const CTL_list_iterator *left, const CTL_list_iterator *right);
+CTL_API extern bool CTL_list_iterator_equal(const CTL_list_iterator *left, const CTL_list_iterator *right);

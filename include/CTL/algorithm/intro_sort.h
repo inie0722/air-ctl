@@ -13,6 +13,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#include "CTL/config.h"
+
 /**
  * @brief sort elements
  * 
@@ -21,4 +23,4 @@
  * @param T_size element type size
  * @param compare compare function
  */
-extern void CTL_intro_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
+CTL_API extern void CTL_intro_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));

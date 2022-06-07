@@ -14,6 +14,7 @@
 #include <stdbool.h>
 
 #include "CTL/container.h"
+#include "CTL/config.h"
 
 typedef struct
 {
@@ -29,14 +30,14 @@ typedef struct
  * @param data_size initial data size
  * @param T_size element type size
  */
-extern void CTL_queue_new(CTL_queue *handle, CTL_functions *functions, size_t data_size, size_t T_size);
+CTL_API extern void CTL_queue_new(CTL_queue *handle, CTL_functions *functions, size_t data_size, size_t T_size);
 
 /**
  * @brief destroys a queue
  *
  * @param handle
  */
-extern void CTL_queue_delete(CTL_queue *handle);
+CTL_API extern void CTL_queue_delete(CTL_queue *handle);
 
 /**
  * @brief get first element
@@ -44,7 +45,7 @@ extern void CTL_queue_delete(CTL_queue *handle);
  * @param handle
  * @return void* first element address
  */
-extern void *CTL_queue_front(const CTL_queue *handle);
+CTL_API extern void *CTL_queue_front(const CTL_queue *handle);
 
 /**
  * @brief get last element
@@ -52,7 +53,7 @@ extern void *CTL_queue_front(const CTL_queue *handle);
  * @param handle
  * @return void* last element address
  */
-extern void *CTL_queue_back(const CTL_queue *handle);
+CTL_API extern void *CTL_queue_back(const CTL_queue *handle);
 
 /**
  * @brief push element to the back
@@ -60,14 +61,14 @@ extern void *CTL_queue_back(const CTL_queue *handle);
  * @param handle
  * @param element element address
  */
-extern void CTL_queue_push(CTL_queue *handle, const void *element);
+CTL_API extern void CTL_queue_push(CTL_queue *handle, const void *element);
 
 /**
  * @brief pop element from the front
  *
  * @param handle
  */
-extern void CTL_queue_pop(CTL_queue *handle);
+CTL_API extern void CTL_queue_pop(CTL_queue *handle);
 
 /**
  * @brief get the number of elements that can be held in currently allocated storage
@@ -75,7 +76,7 @@ extern void CTL_queue_pop(CTL_queue *handle);
  * @param handle
  * @return size_t number of elements that can be held in currently allocated storage
  */
-extern size_t CTL_queue_size(const CTL_queue *handle);
+CTL_API extern size_t CTL_queue_size(const CTL_queue *handle);
 
 /**
  * @brief if the queue is empty
@@ -84,4 +85,4 @@ extern size_t CTL_queue_size(const CTL_queue *handle);
  * @return true
  * @return false
  */
-extern bool CTL_queue_empty(const CTL_queue *handle);
+CTL_API extern bool CTL_queue_empty(const CTL_queue *handle);

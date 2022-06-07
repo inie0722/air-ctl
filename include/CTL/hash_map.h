@@ -12,6 +12,8 @@
 
 #include <stddef.h>
 
+#include "CTL/config.h"
+
 typedef struct __CTL_hash_map_node
 {
 	void *data;
@@ -53,21 +55,21 @@ typedef struct
  * @param key_size key type size
  * @param T_size element type size
  */
-extern void CTL_hash_map_new(CTL_hash_map *handle, size_t key_size, size_t T_size);
+CTL_API extern void CTL_hash_map_new(CTL_hash_map *handle, size_t key_size, size_t T_size);
 
 /**
  * @brief clear hash map
  *
  * @param handle
  */
-extern void CTL_hash_map_clear(CTL_hash_map *handle);
+CTL_API extern void CTL_hash_map_clear(CTL_hash_map *handle);
 
 /**
  * @brief destroy hash map
  *
  * @param handle
  */
-extern void CTL_hash_map_delete(CTL_hash_map *handle);
+CTL_API extern void CTL_hash_map_delete(CTL_hash_map *handle);
 
 /**
  * @brief insert element
@@ -77,7 +79,7 @@ extern void CTL_hash_map_delete(CTL_hash_map *handle);
  * @param element element address
  * @return int 0 if success, -1 if failed
  */
-extern int CTL_hash_map_insert(CTL_hash_map *handle, const void *key, const void *element);
+CTL_API extern int CTL_hash_map_insert(CTL_hash_map *handle, const void *key, const void *element);
 
 /**
  * @brief erases the element at a given position
@@ -85,7 +87,7 @@ extern int CTL_hash_map_insert(CTL_hash_map *handle, const void *key, const void
  * @param handle
  * @param iterator erase position
  */
-extern void CTL_hash_map_erase(CTL_hash_map *handle, CTL_hash_map_iterator *iterator);
+CTL_API extern void CTL_hash_map_erase(CTL_hash_map *handle, CTL_hash_map_iterator *iterator);
 
 /**
  * @brief find key
@@ -95,7 +97,7 @@ extern void CTL_hash_map_erase(CTL_hash_map *handle, CTL_hash_map_iterator *iter
  * @param res result key position iterator
  * @return int 0 if success, -1 if failed
  */
-extern int CTL_hash_map_find(const CTL_hash_map *handle, const void *key, CTL_hash_map_iterator *res);
+CTL_API extern int CTL_hash_map_find(const CTL_hash_map *handle, const void *key, CTL_hash_map_iterator *res);
 
 /**
  * @brief get begin iterator
@@ -103,7 +105,7 @@ extern int CTL_hash_map_find(const CTL_hash_map *handle, const void *key, CTL_ha
  * @param handle
  * @param res result begin iterator
  */
-extern void CTL_hash_map_begin(const CTL_hash_map *handle, CTL_hash_map_iterator *res);
+CTL_API extern void CTL_hash_map_begin(const CTL_hash_map *handle, CTL_hash_map_iterator *res);
 
 /**
  * @brief get end iterator
@@ -111,7 +113,7 @@ extern void CTL_hash_map_begin(const CTL_hash_map *handle, CTL_hash_map_iterator
  * @param handle
  * @param res result end iterator
  */
-extern void CTL_hash_map_end(const CTL_hash_map *handle, CTL_hash_map_iterator *res);
+CTL_API extern void CTL_hash_map_end(const CTL_hash_map *handle, CTL_hash_map_iterator *res);
 
 /**
  * @brief get the number of elements
@@ -119,7 +121,7 @@ extern void CTL_hash_map_end(const CTL_hash_map *handle, CTL_hash_map_iterator *
  * @param handle
  * @return size_t number of elements
  */
-extern size_t CTL_hash_map_size(const CTL_hash_map *handle);
+CTL_API extern size_t CTL_hash_map_size(const CTL_hash_map *handle);
 
 /**
  * @brief if hash map is empty return true, else return false
@@ -128,7 +130,7 @@ extern size_t CTL_hash_map_size(const CTL_hash_map *handle);
  * @return true
  * @return false
  */
-extern bool CTL_hash_map_empty(const CTL_hash_map *handle);
+CTL_API extern bool CTL_hash_map_empty(const CTL_hash_map *handle);
 
 /**
  * @brief get iterator next
@@ -136,7 +138,7 @@ extern bool CTL_hash_map_empty(const CTL_hash_map *handle);
  * @param handle
  * @param res result iterator
  */
-extern void CTL_hash_map_iterator_next(const CTL_hash_map_iterator *handle, CTL_hash_map_iterator *res);
+CTL_API extern void CTL_hash_map_iterator_next(const CTL_hash_map_iterator *handle, CTL_hash_map_iterator *res);
 
 /**
  * @brief if left iterator equal right iterator return true, else return false
@@ -146,4 +148,4 @@ extern void CTL_hash_map_iterator_next(const CTL_hash_map_iterator *handle, CTL_
  * @return true
  * @return false
  */
-extern bool CTL_hash_map_iterator_equal(const CTL_hash_map_iterator *left, const CTL_hash_map_iterator *right);
+CTL_API extern bool CTL_hash_map_iterator_equal(const CTL_hash_map_iterator *left, const CTL_hash_map_iterator *right);

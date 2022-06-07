@@ -13,6 +13,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#include "CTL/config.h"
+
 /**
  * @brief vector iterator
  *
@@ -41,21 +43,21 @@ typedef struct
  * @param data_size initial data size
  * @param T_size element type size
  */
-extern void CTL_vector_new(CTL_vector *handle, size_t data_size, size_t T_size);
+CTL_API extern void CTL_vector_new(CTL_vector *handle, size_t data_size, size_t T_size);
 
 /**
  * @brief clear vector
  *
  * @param handle vector handle
  */
-extern void CTL_vector_clear(CTL_vector *handle);
+CTL_API extern void CTL_vector_clear(CTL_vector *handle);
 
 /**
  * @brief destroy vector
  *
  * @param handle vector handle
  */
-extern void CTL_vector_delete(CTL_vector *handle);
+CTL_API extern void CTL_vector_delete(CTL_vector *handle);
 
 /**
  * @brief get first element
@@ -63,7 +65,7 @@ extern void CTL_vector_delete(CTL_vector *handle);
  * @param handle vector handle
  * @return void* first element address
  */
-extern void *CTL_vector_front(const CTL_vector *handle);
+CTL_API extern void *CTL_vector_front(const CTL_vector *handle);
 
 /**
  * @brief get last element
@@ -71,7 +73,7 @@ extern void *CTL_vector_front(const CTL_vector *handle);
  * @param handle vector handle
  * @return void* last element address
  */
-extern void *CTL_vector_back(const CTL_vector *handle);
+CTL_API extern void *CTL_vector_back(const CTL_vector *handle);
 
 /**
  * @brief get begin iterator
@@ -79,7 +81,7 @@ extern void *CTL_vector_back(const CTL_vector *handle);
  * @param handle vector handle
  * @param res result begin iterator
  */
-extern void CTL_vector_begin(const CTL_vector *handle, CTL_vector_iterator *res);
+CTL_API extern void CTL_vector_begin(const CTL_vector *handle, CTL_vector_iterator *res);
 
 /**
  * @brief get end iterator
@@ -87,7 +89,7 @@ extern void CTL_vector_begin(const CTL_vector *handle, CTL_vector_iterator *res)
  * @param handle vector handle
  * @param res result end iterator
  */
-extern void CTL_vector_end(const CTL_vector *handle, CTL_vector_iterator *res);
+CTL_API extern void CTL_vector_end(const CTL_vector *handle, CTL_vector_iterator *res);
 
 /**
  * @brief adds an element to the end
@@ -95,14 +97,14 @@ extern void CTL_vector_end(const CTL_vector *handle, CTL_vector_iterator *res);
  * @param handle vector handle
  * @param data element address
  */
-extern void CTL_vector_push_back(CTL_vector *handle, const void *element);
+CTL_API extern void CTL_vector_push_back(CTL_vector *handle, const void *element);
 
 /**
  * @brief erases the last element
  *
  * @param handle vector handle
  */
-extern void CTL_vector_pop_back(CTL_vector *handle);
+CTL_API extern void CTL_vector_pop_back(CTL_vector *handle);
 
 /**
  * @brief inserts an element at a given position
@@ -111,7 +113,7 @@ extern void CTL_vector_pop_back(CTL_vector *handle);
  * @param iterator insert position
  * @param data
  */
-extern void CTL_vector_insert(CTL_vector *handle, CTL_vector_iterator *iterator, const void *element);
+CTL_API extern void CTL_vector_insert(CTL_vector *handle, CTL_vector_iterator *iterator, const void *element);
 
 /**
  * @brief erases the element at a given position
@@ -119,7 +121,7 @@ extern void CTL_vector_insert(CTL_vector *handle, CTL_vector_iterator *iterator,
  * @param handle vector handle
  * @param iterator erase position
  */
-extern void CTL_vector_erase(CTL_vector *handle, CTL_vector_iterator *iterator);
+CTL_API extern void CTL_vector_erase(CTL_vector *handle, CTL_vector_iterator *iterator);
 
 /**
  * @brief get index element
@@ -128,7 +130,7 @@ extern void CTL_vector_erase(CTL_vector *handle, CTL_vector_iterator *iterator);
  * @param index
  * @return void* element address
  */
-extern void *CTL_vector_at(const CTL_vector *handle, size_t index);
+CTL_API extern void *CTL_vector_at(const CTL_vector *handle, size_t index);
 
 /**
  * @brief get the number of elements
@@ -136,7 +138,7 @@ extern void *CTL_vector_at(const CTL_vector *handle, size_t index);
  * @param handle vector handle
  * @return size_t number of elements
  */
-extern size_t CTL_vector_size(const CTL_vector *handle);
+CTL_API extern size_t CTL_vector_size(const CTL_vector *handle);
 
 /**
  * @brief get the number of elements that can be held in currently allocated storage
@@ -144,7 +146,7 @@ extern size_t CTL_vector_size(const CTL_vector *handle);
  * @param handle
  * @return size_t number of elements that can be held in currently allocated storage
  */
-extern size_t CTL_vector_capacity(const CTL_vector *handle);
+CTL_API extern size_t CTL_vector_capacity(const CTL_vector *handle);
 
 /**
  * @brief if vector is empty return true, else return false
@@ -153,7 +155,7 @@ extern size_t CTL_vector_capacity(const CTL_vector *handle);
  * @return true
  * @return false
  */
-extern bool CTL_vector_empty(const CTL_vector *handle);
+CTL_API extern bool CTL_vector_empty(const CTL_vector *handle);
 
 /**
  * @brief iterator move to n
@@ -162,7 +164,7 @@ extern bool CTL_vector_empty(const CTL_vector *handle);
  * @param n
  * @param res result iterator
  */
-extern void CTL_vector_iterator_move(const CTL_vector_iterator *handle, const ptrdiff_t n, CTL_vector_iterator *res);
+CTL_API extern void CTL_vector_iterator_move(const CTL_vector_iterator *handle, const ptrdiff_t n, CTL_vector_iterator *res);
 
 /**
  * @brief if left iterator equal right iterator return true, else return false
@@ -172,7 +174,7 @@ extern void CTL_vector_iterator_move(const CTL_vector_iterator *handle, const pt
  * @return true
  * @return false
  */
-extern bool CTL_vector_iterator_equal(const CTL_vector_iterator *left, const CTL_vector_iterator *right);
+CTL_API extern bool CTL_vector_iterator_equal(const CTL_vector_iterator *left, const CTL_vector_iterator *right);
 
 /**
  * @brief if left iterator precedes right iterator return true, else return false
@@ -182,7 +184,7 @@ extern bool CTL_vector_iterator_equal(const CTL_vector_iterator *left, const CTL
  * @return true
  * @return false
  */
-extern bool CTL_vector_iterator_less(const CTL_vector_iterator *left, const CTL_vector_iterator *right);
+CTL_API extern bool CTL_vector_iterator_less(const CTL_vector_iterator *left, const CTL_vector_iterator *right);
 
 /**
  * @brief calculate distance between left and right iterator
@@ -191,4 +193,4 @@ extern bool CTL_vector_iterator_less(const CTL_vector_iterator *left, const CTL_
  * @param right
  * @return ptrdiff_t
  */
-extern ptrdiff_t CTL_vector_iterator_diff(const CTL_vector_iterator *left, const CTL_vector_iterator *right);
+CTL_API extern ptrdiff_t CTL_vector_iterator_diff(const CTL_vector_iterator *left, const CTL_vector_iterator *right);

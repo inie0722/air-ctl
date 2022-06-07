@@ -12,19 +12,21 @@
 
 #include <stddef.h>
 
+#include "CTL/config.h"
+
 /**
  * @brief get The amount of memory that has been used
  *
  * @return size_t The amount of memory that has been used
  */
-extern size_t CTL_get_mem_size();
+CTL_API extern size_t CTL_get_mem_size();
 
 /**
  * @brief set memory allocation failure handling operation
  *
  * @param handler memory allocation failure handling operation
  */
-extern void CTL_set_malloc_handler(void (*handler)());
+CTL_API extern void CTL_set_malloc_handler(void (*handler)());
 
 /**
  * @brief allocate memory
@@ -32,7 +34,7 @@ extern void CTL_set_malloc_handler(void (*handler)());
  * @param size memory size
  * @return void* memory address
  */
-extern void *CTL_allocate(size_t size);
+CTL_API extern void *CTL_allocate(size_t size);
 
 /**
  * @brief reallocate memory
@@ -42,7 +44,7 @@ extern void *CTL_allocate(size_t size);
  * @param new_size new memory size
  * @return void* new memory address
  */
-extern void *CTL_reallocate(void *old_ptr, size_t old_size, size_t new_size);
+CTL_API extern void *CTL_reallocate(void *old_ptr, size_t old_size, size_t new_size);
 
 /**
  * @brief free memory
@@ -50,4 +52,4 @@ extern void *CTL_reallocate(void *old_ptr, size_t old_size, size_t new_size);
  * @param ptr memory address
  * @param size memory size
  */
-extern void CTL_deallocate(void *ptr, size_t size);
+CTL_API extern void CTL_deallocate(void *ptr, size_t size);
