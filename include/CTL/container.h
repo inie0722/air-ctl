@@ -14,6 +14,7 @@
 #include "CTL/vector.h"
 #include "CTL/list.h"
 #include "CTL/deque.h"
+#include "CTL/config.h"
 
 /**
  * @brief container
@@ -114,25 +115,25 @@ typedef struct
  *
  * @return CTL_functions*
  */
-CTL_functions *CTL_array_functions();
+CTL_API extern CTL_functions *CTL_array_functions();
 
 /**
  * @brief get vector member function
  *
  * @return CTL_functions*
  */
-CTL_functions *CTL_vector_functions();
+CTL_API extern CTL_functions *CTL_vector_functions();
 
 /**
  * @brief get list member function
  *
  * @return CTL_functions*
  */
-CTL_functions *CTL_list_functions();
+CTL_API extern CTL_functions *CTL_list_functions();
 
 /**
  * @brief get deque member function
  *
  * @return CTL_functions*
  */
-CTL_functions *CTL_deque_functions();
+CTL_API extern CTL_functions *CTL_deque_functions();

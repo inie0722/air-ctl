@@ -14,6 +14,7 @@
 #include <stdbool.h>
 
 #include "CTL/container.h"
+#include "CTL/config.h"
 
 /**
  * @brief stack
@@ -34,14 +35,14 @@ typedef struct
  * @param data_size initial data size
  * @param T_size element type size
  */
-extern void CTL_stack_new(CTL_stack *handle, CTL_functions *functions, size_t buf_size, size_t T_size);
+CTL_API extern void CTL_stack_new(CTL_stack *handle, CTL_functions *functions, size_t buf_size, size_t T_size);
 
 /**
  * @brief destroy stack
  *
  * @param handle
  */
-extern void CTL_stack_delete(CTL_stack *handle);
+CTL_API extern void CTL_stack_delete(CTL_stack *handle);
 
 /**
  * @brief get top element
@@ -49,7 +50,7 @@ extern void CTL_stack_delete(CTL_stack *handle);
  * @param handle
  * @return void* top element address
  */
-extern void *CTL_stack_top(const CTL_stack *handle);
+CTL_API extern void *CTL_stack_top(const CTL_stack *handle);
 
 /**
  * @brief push element
@@ -57,14 +58,14 @@ extern void *CTL_stack_top(const CTL_stack *handle);
  * @param handle
  * @param element element address
  */
-extern void CTL_stack_push(CTL_stack *handle, const void *element);
+CTL_API extern void CTL_stack_push(CTL_stack *handle, const void *element);
 
 /**
  * @brief pop element
  *
  * @param handle
  */
-extern void CTL_stack_pop(CTL_stack *handle);
+CTL_API extern void CTL_stack_pop(CTL_stack *handle);
 
 /**
  * @brief get the number of elements that can be held in currently allocated storage
@@ -72,7 +73,7 @@ extern void CTL_stack_pop(CTL_stack *handle);
  * @param handle
  * @return size_t number of elements that can be held in currently allocated storage
  */
-extern size_t CTL_stack_size(const CTL_stack *handle);
+CTL_API extern size_t CTL_stack_size(const CTL_stack *handle);
 
 /**
  * @brief if the stack is empty
@@ -81,4 +82,4 @@ extern size_t CTL_stack_size(const CTL_stack *handle);
  * @return true
  * @return false
  */
-extern bool CTL_stack_empty(const CTL_stack *handle);
+CTL_API extern bool CTL_stack_empty(const CTL_stack *handle);

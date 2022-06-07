@@ -13,6 +13,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#include "CTL/config.h"
+
 /**
  * @brief array iterator
  *
@@ -41,7 +43,7 @@ typedef struct
  * @param end array end address
  * @param T_size element type size
  */
-extern void CTL_array_init(CTL_array *handle, const void *begin, const void *end, size_t T_size);
+CTL_API extern void CTL_array_init(CTL_array *handle, const void *begin, const void *end, size_t T_size);
 
 /**
  * @brief get first element
@@ -49,7 +51,7 @@ extern void CTL_array_init(CTL_array *handle, const void *begin, const void *end
  * @param handle
  * @return void* first element address
  */
-extern void *CTL_array_front(const CTL_array *handle);
+CTL_API extern void *CTL_array_front(const CTL_array *handle);
 
 /**
  * @brief get last element

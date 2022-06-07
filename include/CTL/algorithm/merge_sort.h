@@ -13,6 +13,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#include "CTL/config.h"
+
 /**
  * @brief sort elements
  * 
@@ -21,10 +23,10 @@
  * @param T_size element type size
  * @param compare compare function
  */
-extern void CTL_merge_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
+CTL_API extern void CTL_merge_sort(void *first, void *last, size_t T_size, bool (*compare)(const void *, const void *));
 
-extern void __CTL_merge(char *first_1, char *last_1, char *first_2, char *last_2, char *buf, size_t T_size, bool (*compare)(const void *, const void *));
+CTL_API extern void __CTL_merge(char *first_1, char *last_1, char *first_2, char *last_2, char *buf, size_t T_size, bool (*compare)(const void *, const void *));
 
-extern void __CTL_inplace_merge(char *first_1, char *last_1, char *first_2, char *last_2, size_t T_size, bool (*compare)(const void *, const void *));
+CTL_API extern void __CTL_inplace_merge(char *first_1, char *last_1, char *first_2, char *last_2, size_t T_size, bool (*compare)(const void *, const void *));
 
-extern void __CTL_reverse(char *first, char *last, size_t T_size);
+CTL_API extern void __CTL_reverse(char *first, char *last, size_t T_size);
