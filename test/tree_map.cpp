@@ -69,7 +69,7 @@ TEST(Modifiers, erase)
         CTL_tree_map_find(&ctl, &key, &ctl_it);
 
         auto stl_it = stl.find(key);
-        if (stl_it->first == key)
+        if (stl_it != stl.end())
         {
             CTL_tree_map_erase(&ctl, &ctl_it);
             stl.erase(stl_it);
