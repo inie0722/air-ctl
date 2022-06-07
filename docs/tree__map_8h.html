@@ -92,15 +92,11 @@ $(document).ready(function(){initNavTree('tree__map_8h.html',''); initResizable(
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &quot;CTL/config.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for tree_map.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="tree__map_8h__incl.png" border="0" usemap="#ainclude_2CTL_2tree__map_8h" alt=""/></div>
-<map name="ainclude_2CTL_2tree__map_8h" id="ainclude_2CTL_2tree__map_8h">
-<area shape="rect" title=" " alt="" coords="10,5,185,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,88,107"/>
-<area shape="rect" title=" " alt="" coords="112,80,187,107"/>
-</map>
 </div>
 </div>
 <p><a href="tree__map_8h_source.html">Go to the source code of this file.</a></p>
@@ -127,42 +123,42 @@ typedef struct <a class="el" href="struct____rb__tree__node.html">__rb_tree_node
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aee57118b123dc5fb144e701a00a76980"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#aee57118b123dc5fb144e701a00a76980">CTL_tree_map_new</a> (<a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, <a class="el" href="structCTL__tree__map__key.html">CTL_tree_map_key</a> *key, size_t T_size)</td></tr>
-<tr class="memdesc:aee57118b123dc5fb144e701a00a76980"><td class="mdescLeft">&#160;</td><td class="mdescRight">create tree map  <a href="tree__map_8h.html#aee57118b123dc5fb144e701a00a76980">More...</a><br /></td></tr>
-<tr class="separator:aee57118b123dc5fb144e701a00a76980"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f2009b4e2f74925a1a6ef3ae41a1411"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a9f2009b4e2f74925a1a6ef3ae41a1411">CTL_tree_map_delete</a> (<a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle)</td></tr>
-<tr class="memdesc:a9f2009b4e2f74925a1a6ef3ae41a1411"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy tree map  <a href="tree__map_8h.html#a9f2009b4e2f74925a1a6ef3ae41a1411">More...</a><br /></td></tr>
-<tr class="separator:a9f2009b4e2f74925a1a6ef3ae41a1411"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19219d88605e0489af165a728da07451"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a19219d88605e0489af165a728da07451">CTL_tree_map_clear</a> (<a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle)</td></tr>
-<tr class="memdesc:a19219d88605e0489af165a728da07451"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear tree map  <a href="tree__map_8h.html#a19219d88605e0489af165a728da07451">More...</a><br /></td></tr>
-<tr class="separator:a19219d88605e0489af165a728da07451"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a269d95da10e06f82e0a70148ea6fa1ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a269d95da10e06f82e0a70148ea6fa1ed">CTL_tree_map_begin</a> (const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *res)</td></tr>
-<tr class="memdesc:a269d95da10e06f82e0a70148ea6fa1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">get begin iterator  <a href="tree__map_8h.html#a269d95da10e06f82e0a70148ea6fa1ed">More...</a><br /></td></tr>
-<tr class="separator:a269d95da10e06f82e0a70148ea6fa1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a290b8a5ca505bdd55c7209312c8f49e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a290b8a5ca505bdd55c7209312c8f49e4">CTL_tree_map_end</a> (const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *res)</td></tr>
-<tr class="memdesc:a290b8a5ca505bdd55c7209312c8f49e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">get end iterator  <a href="tree__map_8h.html#a290b8a5ca505bdd55c7209312c8f49e4">More...</a><br /></td></tr>
-<tr class="separator:a290b8a5ca505bdd55c7209312c8f49e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae62f31f16d35c9ce9be52bdb884f679d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#ae62f31f16d35c9ce9be52bdb884f679d">CTL_tree_map_insert</a> (<a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, const void *key, const void *element)</td></tr>
-<tr class="memdesc:ae62f31f16d35c9ce9be52bdb884f679d"><td class="mdescLeft">&#160;</td><td class="mdescRight">insert element  <a href="tree__map_8h.html#ae62f31f16d35c9ce9be52bdb884f679d">More...</a><br /></td></tr>
-<tr class="separator:ae62f31f16d35c9ce9be52bdb884f679d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30b5f68352374aabdcd62af401e6e285"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a30b5f68352374aabdcd62af401e6e285">CTL_tree_map_erase</a> (<a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *iterator)</td></tr>
-<tr class="memdesc:a30b5f68352374aabdcd62af401e6e285"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the element at a given position  <a href="tree__map_8h.html#a30b5f68352374aabdcd62af401e6e285">More...</a><br /></td></tr>
-<tr class="separator:a30b5f68352374aabdcd62af401e6e285"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97475a34bdbbf3c96456522695039fe2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a97475a34bdbbf3c96456522695039fe2">CTL_tree_map_find</a> (const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, const void *key, <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *res)</td></tr>
-<tr class="memdesc:a97475a34bdbbf3c96456522695039fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">find key  <a href="tree__map_8h.html#a97475a34bdbbf3c96456522695039fe2">More...</a><br /></td></tr>
-<tr class="separator:a97475a34bdbbf3c96456522695039fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c446e8083e6acd8120452588cd9ccc7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a9c446e8083e6acd8120452588cd9ccc7">CTL_tree_map_size</a> (const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle)</td></tr>
-<tr class="memdesc:a9c446e8083e6acd8120452588cd9ccc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements  <a href="tree__map_8h.html#a9c446e8083e6acd8120452588cd9ccc7">More...</a><br /></td></tr>
-<tr class="separator:a9c446e8083e6acd8120452588cd9ccc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70b2a4e47efb41870a230f5fc69d1e21"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a70b2a4e47efb41870a230f5fc69d1e21">CTL_tree_map_empty</a> (const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle)</td></tr>
-<tr class="memdesc:a70b2a4e47efb41870a230f5fc69d1e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">if list is empty return true, else return false  <a href="tree__map_8h.html#a70b2a4e47efb41870a230f5fc69d1e21">More...</a><br /></td></tr>
-<tr class="separator:a70b2a4e47efb41870a230f5fc69d1e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90fa73664b28a6568d4606db2208d699"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a90fa73664b28a6568d4606db2208d699">CTL_tree_map_iterator_move</a> (const <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *handle, const ptrdiff_t n, <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *res)</td></tr>
-<tr class="memdesc:a90fa73664b28a6568d4606db2208d699"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterator move to n  <a href="tree__map_8h.html#a90fa73664b28a6568d4606db2208d699">More...</a><br /></td></tr>
-<tr class="separator:a90fa73664b28a6568d4606db2208d699"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47edcc605587b6c3ceaa6a09bf6afc5a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a47edcc605587b6c3ceaa6a09bf6afc5a">CTL_tree_map_iterator_equal</a> (const <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *left, const <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *right)</td></tr>
-<tr class="memdesc:a47edcc605587b6c3ceaa6a09bf6afc5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">if left iterator equal right iterator return true, else return false  <a href="tree__map_8h.html#a47edcc605587b6c3ceaa6a09bf6afc5a">More...</a><br /></td></tr>
-<tr class="separator:a47edcc605587b6c3ceaa6a09bf6afc5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ae97e94a709b336f23ef6c6960d49f2"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a9ae97e94a709b336f23ef6c6960d49f2">CTL_tree_map_new</a> (<a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, <a class="el" href="structCTL__tree__map__key.html">CTL_tree_map_key</a> *key, size_t T_size)</td></tr>
+<tr class="memdesc:a9ae97e94a709b336f23ef6c6960d49f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">create tree map  <a href="tree__map_8h.html#a9ae97e94a709b336f23ef6c6960d49f2">More...</a><br /></td></tr>
+<tr class="separator:a9ae97e94a709b336f23ef6c6960d49f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae5652f8319afd1dbdd3cce7f8ae51a1"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#aae5652f8319afd1dbdd3cce7f8ae51a1">CTL_tree_map_delete</a> (<a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle)</td></tr>
+<tr class="memdesc:aae5652f8319afd1dbdd3cce7f8ae51a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy tree map  <a href="tree__map_8h.html#aae5652f8319afd1dbdd3cce7f8ae51a1">More...</a><br /></td></tr>
+<tr class="separator:aae5652f8319afd1dbdd3cce7f8ae51a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c66785619784a3f6c987983db9c14db"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a8c66785619784a3f6c987983db9c14db">CTL_tree_map_clear</a> (<a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle)</td></tr>
+<tr class="memdesc:a8c66785619784a3f6c987983db9c14db"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear tree map  <a href="tree__map_8h.html#a8c66785619784a3f6c987983db9c14db">More...</a><br /></td></tr>
+<tr class="separator:a8c66785619784a3f6c987983db9c14db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad221a94c05fc75913135b9fe2444a892"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#ad221a94c05fc75913135b9fe2444a892">CTL_tree_map_begin</a> (const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *res)</td></tr>
+<tr class="memdesc:ad221a94c05fc75913135b9fe2444a892"><td class="mdescLeft">&#160;</td><td class="mdescRight">get begin iterator  <a href="tree__map_8h.html#ad221a94c05fc75913135b9fe2444a892">More...</a><br /></td></tr>
+<tr class="separator:ad221a94c05fc75913135b9fe2444a892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f5164e0f717cea88f6cc9a46fd24db"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a19f5164e0f717cea88f6cc9a46fd24db">CTL_tree_map_end</a> (const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *res)</td></tr>
+<tr class="memdesc:a19f5164e0f717cea88f6cc9a46fd24db"><td class="mdescLeft">&#160;</td><td class="mdescRight">get end iterator  <a href="tree__map_8h.html#a19f5164e0f717cea88f6cc9a46fd24db">More...</a><br /></td></tr>
+<tr class="separator:a19f5164e0f717cea88f6cc9a46fd24db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14d9fad494bb8cba68b65577d2a8257f"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a14d9fad494bb8cba68b65577d2a8257f">CTL_tree_map_insert</a> (<a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, const void *key, const void *element)</td></tr>
+<tr class="memdesc:a14d9fad494bb8cba68b65577d2a8257f"><td class="mdescLeft">&#160;</td><td class="mdescRight">insert element  <a href="tree__map_8h.html#a14d9fad494bb8cba68b65577d2a8257f">More...</a><br /></td></tr>
+<tr class="separator:a14d9fad494bb8cba68b65577d2a8257f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c5e57ea4009a78034a09cec7cf4394"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a66c5e57ea4009a78034a09cec7cf4394">CTL_tree_map_erase</a> (<a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *iterator)</td></tr>
+<tr class="memdesc:a66c5e57ea4009a78034a09cec7cf4394"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the element at a given position  <a href="tree__map_8h.html#a66c5e57ea4009a78034a09cec7cf4394">More...</a><br /></td></tr>
+<tr class="separator:a66c5e57ea4009a78034a09cec7cf4394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5548699b30ff26d49b45e222cca06dbe"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a5548699b30ff26d49b45e222cca06dbe">CTL_tree_map_find</a> (const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle, const void *key, <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *res)</td></tr>
+<tr class="memdesc:a5548699b30ff26d49b45e222cca06dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">find key  <a href="tree__map_8h.html#a5548699b30ff26d49b45e222cca06dbe">More...</a><br /></td></tr>
+<tr class="separator:a5548699b30ff26d49b45e222cca06dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ea96dc1b211c70328fe31882a8f6aec"><td class="memItemLeft" align="right" valign="top">CTL_API size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a5ea96dc1b211c70328fe31882a8f6aec">CTL_tree_map_size</a> (const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle)</td></tr>
+<tr class="memdesc:a5ea96dc1b211c70328fe31882a8f6aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements  <a href="tree__map_8h.html#a5ea96dc1b211c70328fe31882a8f6aec">More...</a><br /></td></tr>
+<tr class="separator:a5ea96dc1b211c70328fe31882a8f6aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273e575dadf382a961eed984a4fa42eb"><td class="memItemLeft" align="right" valign="top">CTL_API bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a273e575dadf382a961eed984a4fa42eb">CTL_tree_map_empty</a> (const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *handle)</td></tr>
+<tr class="memdesc:a273e575dadf382a961eed984a4fa42eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">if list is empty return true, else return false  <a href="tree__map_8h.html#a273e575dadf382a961eed984a4fa42eb">More...</a><br /></td></tr>
+<tr class="separator:a273e575dadf382a961eed984a4fa42eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae55666c2c99f1d9f960938a0075188be"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#ae55666c2c99f1d9f960938a0075188be">CTL_tree_map_iterator_move</a> (const <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *handle, const ptrdiff_t n, <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *res)</td></tr>
+<tr class="memdesc:ae55666c2c99f1d9f960938a0075188be"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterator move to n  <a href="tree__map_8h.html#ae55666c2c99f1d9f960938a0075188be">More...</a><br /></td></tr>
+<tr class="separator:ae55666c2c99f1d9f960938a0075188be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35f2815d2cbe2b7ef361e44b4fbdf9aa"><td class="memItemLeft" align="right" valign="top">CTL_API bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__map_8h.html#a35f2815d2cbe2b7ef361e44b4fbdf9aa">CTL_tree_map_iterator_equal</a> (const <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *left, const <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *right)</td></tr>
+<tr class="memdesc:a35f2815d2cbe2b7ef361e44b4fbdf9aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">if left iterator equal right iterator return true, else return false  <a href="tree__map_8h.html#a35f2815d2cbe2b7ef361e44b4fbdf9aa">More...</a><br /></td></tr>
+<tr class="separator:a35f2815d2cbe2b7ef361e44b4fbdf9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>然Y (<a href="#" onclick="location.href='mai'+'lto:'+'ini'+'e0'+'722'+'@g'+'mai'+'l.'+'com'; return false;">inie0<span style="display: none;">.nosp@m.</span>722@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
@@ -170,14 +166,14 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2022-05-20</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a269d95da10e06f82e0a70148ea6fa1ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a269d95da10e06f82e0a70148ea6fa1ed">&#9670;&nbsp;</a></span>CTL_tree_map_begin()</h2>
+<a id="ad221a94c05fc75913135b9fe2444a892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad221a94c05fc75913135b9fe2444a892">&#9670;&nbsp;</a></span>CTL_tree_map_begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_tree_map_begin </td>
+          <td class="memname">CTL_API void CTL_tree_map_begin </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -207,14 +203,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a19219d88605e0489af165a728da07451"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19219d88605e0489af165a728da07451">&#9670;&nbsp;</a></span>CTL_tree_map_clear()</h2>
+<a id="a8c66785619784a3f6c987983db9c14db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c66785619784a3f6c987983db9c14db">&#9670;&nbsp;</a></span>CTL_tree_map_clear()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_tree_map_clear </td>
+          <td class="memname">CTL_API void CTL_tree_map_clear </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -233,14 +229,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9f2009b4e2f74925a1a6ef3ae41a1411"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f2009b4e2f74925a1a6ef3ae41a1411">&#9670;&nbsp;</a></span>CTL_tree_map_delete()</h2>
+<a id="aae5652f8319afd1dbdd3cce7f8ae51a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae5652f8319afd1dbdd3cce7f8ae51a1">&#9670;&nbsp;</a></span>CTL_tree_map_delete()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_tree_map_delete </td>
+          <td class="memname">CTL_API void CTL_tree_map_delete </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -259,14 +255,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a70b2a4e47efb41870a230f5fc69d1e21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70b2a4e47efb41870a230f5fc69d1e21">&#9670;&nbsp;</a></span>CTL_tree_map_empty()</h2>
+<a id="a273e575dadf382a961eed984a4fa42eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a273e575dadf382a961eed984a4fa42eb">&#9670;&nbsp;</a></span>CTL_tree_map_empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CTL_tree_map_empty </td>
+          <td class="memname">CTL_API bool CTL_tree_map_empty </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -288,14 +284,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a290b8a5ca505bdd55c7209312c8f49e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a290b8a5ca505bdd55c7209312c8f49e4">&#9670;&nbsp;</a></span>CTL_tree_map_end()</h2>
+<a id="a19f5164e0f717cea88f6cc9a46fd24db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19f5164e0f717cea88f6cc9a46fd24db">&#9670;&nbsp;</a></span>CTL_tree_map_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_tree_map_end </td>
+          <td class="memname">CTL_API void CTL_tree_map_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -325,14 +321,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a30b5f68352374aabdcd62af401e6e285"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30b5f68352374aabdcd62af401e6e285">&#9670;&nbsp;</a></span>CTL_tree_map_erase()</h2>
+<a id="a66c5e57ea4009a78034a09cec7cf4394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66c5e57ea4009a78034a09cec7cf4394">&#9670;&nbsp;</a></span>CTL_tree_map_erase()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_tree_map_erase </td>
+          <td class="memname">CTL_API void CTL_tree_map_erase </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -362,14 +358,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a97475a34bdbbf3c96456522695039fe2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97475a34bdbbf3c96456522695039fe2">&#9670;&nbsp;</a></span>CTL_tree_map_find()</h2>
+<a id="a5548699b30ff26d49b45e222cca06dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5548699b30ff26d49b45e222cca06dbe">&#9670;&nbsp;</a></span>CTL_tree_map_find()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_tree_map_find </td>
+          <td class="memname">CTL_API void CTL_tree_map_find </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -406,14 +402,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="ae62f31f16d35c9ce9be52bdb884f679d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae62f31f16d35c9ce9be52bdb884f679d">&#9670;&nbsp;</a></span>CTL_tree_map_insert()</h2>
+<a id="a14d9fad494bb8cba68b65577d2a8257f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14d9fad494bb8cba68b65577d2a8257f">&#9670;&nbsp;</a></span>CTL_tree_map_insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_tree_map_insert </td>
+          <td class="memname">CTL_API void CTL_tree_map_insert </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -450,14 +446,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a47edcc605587b6c3ceaa6a09bf6afc5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47edcc605587b6c3ceaa6a09bf6afc5a">&#9670;&nbsp;</a></span>CTL_tree_map_iterator_equal()</h2>
+<a id="a35f2815d2cbe2b7ef361e44b4fbdf9aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35f2815d2cbe2b7ef361e44b4fbdf9aa">&#9670;&nbsp;</a></span>CTL_tree_map_iterator_equal()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CTL_tree_map_iterator_equal </td>
+          <td class="memname">CTL_API bool CTL_tree_map_iterator_equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *&#160;</td>
           <td class="paramname"><em>left</em>, </td>
@@ -490,14 +486,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a90fa73664b28a6568d4606db2208d699"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90fa73664b28a6568d4606db2208d699">&#9670;&nbsp;</a></span>CTL_tree_map_iterator_move()</h2>
+<a id="ae55666c2c99f1d9f960938a0075188be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae55666c2c99f1d9f960938a0075188be">&#9670;&nbsp;</a></span>CTL_tree_map_iterator_move()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_tree_map_iterator_move </td>
+          <td class="memname">CTL_API void CTL_tree_map_iterator_move </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__tree__map__iterator.html">CTL_tree_map_iterator</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -534,14 +530,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="aee57118b123dc5fb144e701a00a76980"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee57118b123dc5fb144e701a00a76980">&#9670;&nbsp;</a></span>CTL_tree_map_new()</h2>
+<a id="a9ae97e94a709b336f23ef6c6960d49f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ae97e94a709b336f23ef6c6960d49f2">&#9670;&nbsp;</a></span>CTL_tree_map_new()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_tree_map_new </td>
+          <td class="memname">CTL_API void CTL_tree_map_new </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -578,14 +574,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a9c446e8083e6acd8120452588cd9ccc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c446e8083e6acd8120452588cd9ccc7">&#9670;&nbsp;</a></span>CTL_tree_map_size()</h2>
+<a id="a5ea96dc1b211c70328fe31882a8f6aec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ea96dc1b211c70328fe31882a8f6aec">&#9670;&nbsp;</a></span>CTL_tree_map_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t CTL_tree_map_size </td>
+          <td class="memname">CTL_API size_t CTL_tree_map_size </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__tree__map.html">CTL_tree_map</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>

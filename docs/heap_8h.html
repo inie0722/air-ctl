@@ -90,38 +90,29 @@ $(document).ready(function(){initNavTree('heap_8h.html',''); initResizable(); })
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="container_8h_source.html">CTL/container.h</a>&quot;</code><br />
+<code>#include &quot;CTL/config.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for heap.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="heap_8h__incl.png" border="0" usemap="#ainclude_2CTL_2heap_8h" alt=""/></div>
-<map name="ainclude_2CTL_2heap_8h" id="ainclude_2CTL_2heap_8h">
-<area shape="rect" title=" " alt="" coords="22,5,167,32"/>
-<area shape="rect" title=" " alt="" coords="157,229,240,256"/>
-<area shape="rect" href="container_8h.html" title=" " alt="" coords="137,80,260,107"/>
-<area shape="rect" href="array_8h.html" title=" " alt="" coords="29,155,123,181"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="147,155,250,181"/>
-<area shape="rect" href="list_8h.html" title=" " alt="" coords="275,155,357,181"/>
-<area shape="rect" href="deque_8h.html" title=" " alt="" coords="382,155,485,181"/>
-<area shape="rect" title=" " alt="" coords="271,229,345,256"/>
-</map>
 </div>
 </div>
 <p><a href="heap_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a64dfd87b4aaaece817fff36390ea7635"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8h.html#a64dfd87b4aaaece817fff36390ea7635">CTL_push_heap</a> (<a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *last, bool(*compare_handler)(const void *left, const void *right))</td></tr>
-<tr class="memdesc:a64dfd87b4aaaece817fff36390ea7635"><td class="mdescLeft">&#160;</td><td class="mdescRight">push element  <a href="heap_8h.html#a64dfd87b4aaaece817fff36390ea7635">More...</a><br /></td></tr>
-<tr class="separator:a64dfd87b4aaaece817fff36390ea7635"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae68b07a0be1b20d89dad36f44c2d87ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8h.html#ae68b07a0be1b20d89dad36f44c2d87ea">CTL_pop_heap</a> (<a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *last, bool(*compare_handler)(const void *left, const void *right))</td></tr>
-<tr class="memdesc:ae68b07a0be1b20d89dad36f44c2d87ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">pop element  <a href="heap_8h.html#ae68b07a0be1b20d89dad36f44c2d87ea">More...</a><br /></td></tr>
-<tr class="separator:ae68b07a0be1b20d89dad36f44c2d87ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a9f440691e7973556ac01772fb90987"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8h.html#a3a9f440691e7973556ac01772fb90987">CTL_sort_heap</a> (<a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *last, bool(*compare_handler)(const void *left, const void *right))</td></tr>
-<tr class="memdesc:a3a9f440691e7973556ac01772fb90987"><td class="mdescLeft">&#160;</td><td class="mdescRight">sort elements  <a href="heap_8h.html#a3a9f440691e7973556ac01772fb90987">More...</a><br /></td></tr>
-<tr class="separator:a3a9f440691e7973556ac01772fb90987"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5736c8b26e80eba6f7bf30a35b32b284"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8h.html#a5736c8b26e80eba6f7bf30a35b32b284">CTL_make_heap</a> (<a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *last, bool(*compare_handler)(const void *left, const void *right))</td></tr>
-<tr class="memdesc:a5736c8b26e80eba6f7bf30a35b32b284"><td class="mdescLeft">&#160;</td><td class="mdescRight">make heap  <a href="heap_8h.html#a5736c8b26e80eba6f7bf30a35b32b284">More...</a><br /></td></tr>
-<tr class="separator:a5736c8b26e80eba6f7bf30a35b32b284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c811b23f41fe643319c960a858de537"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8h.html#a7c811b23f41fe643319c960a858de537">CTL_push_heap</a> (<a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *last, bool(*compare_handler)(const void *left, const void *right))</td></tr>
+<tr class="memdesc:a7c811b23f41fe643319c960a858de537"><td class="mdescLeft">&#160;</td><td class="mdescRight">push element  <a href="heap_8h.html#a7c811b23f41fe643319c960a858de537">More...</a><br /></td></tr>
+<tr class="separator:a7c811b23f41fe643319c960a858de537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f0a0404ff6d0e1502f6877682bf2a00"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8h.html#a6f0a0404ff6d0e1502f6877682bf2a00">CTL_pop_heap</a> (<a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *last, bool(*compare_handler)(const void *left, const void *right))</td></tr>
+<tr class="memdesc:a6f0a0404ff6d0e1502f6877682bf2a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">pop element  <a href="heap_8h.html#a6f0a0404ff6d0e1502f6877682bf2a00">More...</a><br /></td></tr>
+<tr class="separator:a6f0a0404ff6d0e1502f6877682bf2a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a549ff4398197115b10c1fea5f769e8f4"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8h.html#a549ff4398197115b10c1fea5f769e8f4">CTL_sort_heap</a> (<a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *last, bool(*compare_handler)(const void *left, const void *right))</td></tr>
+<tr class="memdesc:a549ff4398197115b10c1fea5f769e8f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">sort elements  <a href="heap_8h.html#a549ff4398197115b10c1fea5f769e8f4">More...</a><br /></td></tr>
+<tr class="separator:a549ff4398197115b10c1fea5f769e8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb8d438414e3e59c47c18402c7d9a569"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8h.html#acb8d438414e3e59c47c18402c7d9a569">CTL_make_heap</a> (<a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *first, <a class="el" href="unionCTL__iterator.html">CTL_iterator</a> *last, bool(*compare_handler)(const void *left, const void *right))</td></tr>
+<tr class="memdesc:acb8d438414e3e59c47c18402c7d9a569"><td class="mdescLeft">&#160;</td><td class="mdescRight">make heap  <a href="heap_8h.html#acb8d438414e3e59c47c18402c7d9a569">More...</a><br /></td></tr>
+<tr class="separator:acb8d438414e3e59c47c18402c7d9a569"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>然Y (<a href="#" onclick="location.href='mai'+'lto:'+'ini'+'e0'+'722'+'@g'+'mai'+'l.'+'com'; return false;">inie0<span style="display: none;">.nosp@m.</span>722@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
@@ -129,14 +120,14 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2022-05-20</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a5736c8b26e80eba6f7bf30a35b32b284"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5736c8b26e80eba6f7bf30a35b32b284">&#9670;&nbsp;</a></span>CTL_make_heap()</h2>
+<a id="acb8d438414e3e59c47c18402c7d9a569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb8d438414e3e59c47c18402c7d9a569">&#9670;&nbsp;</a></span>CTL_make_heap()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_make_heap </td>
+          <td class="memname">CTL_API void CTL_make_heap </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__functions.html">CTL_functions</a> *&#160;</td>
           <td class="paramname"><em>functions</em>, </td>
@@ -180,14 +171,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae68b07a0be1b20d89dad36f44c2d87ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae68b07a0be1b20d89dad36f44c2d87ea">&#9670;&nbsp;</a></span>CTL_pop_heap()</h2>
+<a id="a6f0a0404ff6d0e1502f6877682bf2a00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f0a0404ff6d0e1502f6877682bf2a00">&#9670;&nbsp;</a></span>CTL_pop_heap()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_pop_heap </td>
+          <td class="memname">CTL_API void CTL_pop_heap </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__functions.html">CTL_functions</a> *&#160;</td>
           <td class="paramname"><em>functions</em>, </td>
@@ -231,14 +222,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a64dfd87b4aaaece817fff36390ea7635"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64dfd87b4aaaece817fff36390ea7635">&#9670;&nbsp;</a></span>CTL_push_heap()</h2>
+<a id="a7c811b23f41fe643319c960a858de537"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c811b23f41fe643319c960a858de537">&#9670;&nbsp;</a></span>CTL_push_heap()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_push_heap </td>
+          <td class="memname">CTL_API void CTL_push_heap </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__functions.html">CTL_functions</a> *&#160;</td>
           <td class="paramname"><em>functions</em>, </td>
@@ -282,14 +273,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3a9f440691e7973556ac01772fb90987"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a9f440691e7973556ac01772fb90987">&#9670;&nbsp;</a></span>CTL_sort_heap()</h2>
+<a id="a549ff4398197115b10c1fea5f769e8f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a549ff4398197115b10c1fea5f769e8f4">&#9670;&nbsp;</a></span>CTL_sort_heap()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_sort_heap </td>
+          <td class="memname">CTL_API void CTL_sort_heap </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__functions.html">CTL_functions</a> *&#160;</td>
           <td class="paramname"><em>functions</em>, </td>

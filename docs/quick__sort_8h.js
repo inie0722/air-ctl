@@ -1,6 +1,6 @@
 var quick__sort_8h =
 [
-    [ "__CTL_median", "quick__sort_8h.html#ad03433a1673526f88e5a76ebe47383da", null ],
-    [ "__CTL_unguarded_partition", "quick__sort_8h.html#a6256e0df3e06ab86bb509f747ac28525", null ],
-    [ "CTL_quick_sort", "quick__sort_8h.html#ab05e4dff6f9e896c1edf0a87e77b78d7", null ]
+    [ "__CTL_median", "quick__sort_8h.html#a9a8b6526f1d7300db68b7df87f5d458b", null ],
+    [ "__CTL_unguarded_partition", "quick__sort_8h.html#a49f04c1c282f2cb97e7184497fc46d7e", null ],
+    [ "CTL_quick_sort", "quick__sort_8h.html#a1d9f8cf600a53b88971502623ca1d815", null ]
 ];

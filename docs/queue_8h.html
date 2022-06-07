@@ -92,20 +92,11 @@ $(document).ready(function(){initNavTree('queue_8h.html',''); initResizable(); }
 <div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="container_8h_source.html">CTL/container.h</a>&quot;</code><br />
+<code>#include &quot;CTL/config.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for queue.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="queue_8h__incl.png" border="0" usemap="#ainclude_2CTL_2queue_8h" alt=""/></div>
-<map name="ainclude_2CTL_2queue_8h" id="ainclude_2CTL_2queue_8h">
-<area shape="rect" title=" " alt="" coords="166,5,320,32"/>
-<area shape="rect" title=" " alt="" coords="144,229,219,256"/>
-<area shape="rect" title=" " alt="" coords="263,229,346,256"/>
-<area shape="rect" href="container_8h.html" title=" " alt="" coords="182,80,304,107"/>
-<area shape="rect" href="array_8h.html" title=" " alt="" coords="257,155,352,181"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="376,155,478,181"/>
-<area shape="rect" href="list_8h.html" title=" " alt="" coords="23,155,106,181"/>
-<area shape="rect" href="deque_8h.html" title=" " alt="" coords="130,155,233,181"/>
-</map>
 </div>
 </div>
 <p><a href="queue_8h_source.html">Go to the source code of this file.</a></p>
@@ -117,30 +108,30 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2af9c1da15a57d2c8f071acf5515892c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a2af9c1da15a57d2c8f071acf5515892c">CTL_queue_new</a> (<a class="el" href="structCTL__queue.html">CTL_queue</a> *handle, <a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, size_t data_size, size_t T_size)</td></tr>
-<tr class="memdesc:a2af9c1da15a57d2c8f071acf5515892c"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates a new queue  <a href="queue_8h.html#a2af9c1da15a57d2c8f071acf5515892c">More...</a><br /></td></tr>
-<tr class="separator:a2af9c1da15a57d2c8f071acf5515892c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89950cb9a59f8816bbf699eeebcd5dc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a89950cb9a59f8816bbf699eeebcd5dc4">CTL_queue_delete</a> (<a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
-<tr class="memdesc:a89950cb9a59f8816bbf699eeebcd5dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroys a queue  <a href="queue_8h.html#a89950cb9a59f8816bbf699eeebcd5dc4">More...</a><br /></td></tr>
-<tr class="separator:a89950cb9a59f8816bbf699eeebcd5dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc8b25ff83379768b79ca081076aedf3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#acc8b25ff83379768b79ca081076aedf3">CTL_queue_front</a> (const <a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
-<tr class="memdesc:acc8b25ff83379768b79ca081076aedf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">get first element  <a href="queue_8h.html#acc8b25ff83379768b79ca081076aedf3">More...</a><br /></td></tr>
-<tr class="separator:acc8b25ff83379768b79ca081076aedf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9c373d1bead2b50b215d4a4a22a0aa1"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#ae9c373d1bead2b50b215d4a4a22a0aa1">CTL_queue_back</a> (const <a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
-<tr class="memdesc:ae9c373d1bead2b50b215d4a4a22a0aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">get last element  <a href="queue_8h.html#ae9c373d1bead2b50b215d4a4a22a0aa1">More...</a><br /></td></tr>
-<tr class="separator:ae9c373d1bead2b50b215d4a4a22a0aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5c44468b963605573a537c1cd213a4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#af5c44468b963605573a537c1cd213a4a">CTL_queue_push</a> (<a class="el" href="structCTL__queue.html">CTL_queue</a> *handle, const void *element)</td></tr>
-<tr class="memdesc:af5c44468b963605573a537c1cd213a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">push element to the back  <a href="queue_8h.html#af5c44468b963605573a537c1cd213a4a">More...</a><br /></td></tr>
-<tr class="separator:af5c44468b963605573a537c1cd213a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c6791bc7b6a530cc03036d17431c708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a6c6791bc7b6a530cc03036d17431c708">CTL_queue_pop</a> (<a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
-<tr class="memdesc:a6c6791bc7b6a530cc03036d17431c708"><td class="mdescLeft">&#160;</td><td class="mdescRight">pop element from the front  <a href="queue_8h.html#a6c6791bc7b6a530cc03036d17431c708">More...</a><br /></td></tr>
-<tr class="separator:a6c6791bc7b6a530cc03036d17431c708"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55182e7b8b75f73b87bda9325e00e403"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a55182e7b8b75f73b87bda9325e00e403">CTL_queue_size</a> (const <a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
-<tr class="memdesc:a55182e7b8b75f73b87bda9325e00e403"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements that can be held in currently allocated storage  <a href="queue_8h.html#a55182e7b8b75f73b87bda9325e00e403">More...</a><br /></td></tr>
-<tr class="separator:a55182e7b8b75f73b87bda9325e00e403"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab29a38d2808d4a49ec328baeba222b97"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#ab29a38d2808d4a49ec328baeba222b97">CTL_queue_empty</a> (const <a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
-<tr class="memdesc:ab29a38d2808d4a49ec328baeba222b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">if the queue is empty  <a href="queue_8h.html#ab29a38d2808d4a49ec328baeba222b97">More...</a><br /></td></tr>
-<tr class="separator:ab29a38d2808d4a49ec328baeba222b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade97309ea7519df7073cfcc07361f270"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#ade97309ea7519df7073cfcc07361f270">CTL_queue_new</a> (<a class="el" href="structCTL__queue.html">CTL_queue</a> *handle, <a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, size_t data_size, size_t T_size)</td></tr>
+<tr class="memdesc:ade97309ea7519df7073cfcc07361f270"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates a new queue  <a href="queue_8h.html#ade97309ea7519df7073cfcc07361f270">More...</a><br /></td></tr>
+<tr class="separator:ade97309ea7519df7073cfcc07361f270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c63b74f5a42e83f0a3f760bd691066"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a12c63b74f5a42e83f0a3f760bd691066">CTL_queue_delete</a> (<a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
+<tr class="memdesc:a12c63b74f5a42e83f0a3f760bd691066"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroys a queue  <a href="queue_8h.html#a12c63b74f5a42e83f0a3f760bd691066">More...</a><br /></td></tr>
+<tr class="separator:a12c63b74f5a42e83f0a3f760bd691066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75d71ba13729987d72e494be86c3a734"><td class="memItemLeft" align="right" valign="top">CTL_API void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a75d71ba13729987d72e494be86c3a734">CTL_queue_front</a> (const <a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
+<tr class="memdesc:a75d71ba13729987d72e494be86c3a734"><td class="mdescLeft">&#160;</td><td class="mdescRight">get first element  <a href="queue_8h.html#a75d71ba13729987d72e494be86c3a734">More...</a><br /></td></tr>
+<tr class="separator:a75d71ba13729987d72e494be86c3a734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42f9561c8ac1cbfd3669565460e9304"><td class="memItemLeft" align="right" valign="top">CTL_API void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#af42f9561c8ac1cbfd3669565460e9304">CTL_queue_back</a> (const <a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
+<tr class="memdesc:af42f9561c8ac1cbfd3669565460e9304"><td class="mdescLeft">&#160;</td><td class="mdescRight">get last element  <a href="queue_8h.html#af42f9561c8ac1cbfd3669565460e9304">More...</a><br /></td></tr>
+<tr class="separator:af42f9561c8ac1cbfd3669565460e9304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b4531a0d13257a1b75044a0cf19ea82"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a9b4531a0d13257a1b75044a0cf19ea82">CTL_queue_push</a> (<a class="el" href="structCTL__queue.html">CTL_queue</a> *handle, const void *element)</td></tr>
+<tr class="memdesc:a9b4531a0d13257a1b75044a0cf19ea82"><td class="mdescLeft">&#160;</td><td class="mdescRight">push element to the back  <a href="queue_8h.html#a9b4531a0d13257a1b75044a0cf19ea82">More...</a><br /></td></tr>
+<tr class="separator:a9b4531a0d13257a1b75044a0cf19ea82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f83058b1f21c1c3c1f963d716276b9"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a31f83058b1f21c1c3c1f963d716276b9">CTL_queue_pop</a> (<a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
+<tr class="memdesc:a31f83058b1f21c1c3c1f963d716276b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">pop element from the front  <a href="queue_8h.html#a31f83058b1f21c1c3c1f963d716276b9">More...</a><br /></td></tr>
+<tr class="separator:a31f83058b1f21c1c3c1f963d716276b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11950cb8d79e0c9d58ebfa23ac507e79"><td class="memItemLeft" align="right" valign="top">CTL_API size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a11950cb8d79e0c9d58ebfa23ac507e79">CTL_queue_size</a> (const <a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
+<tr class="memdesc:a11950cb8d79e0c9d58ebfa23ac507e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements that can be held in currently allocated storage  <a href="queue_8h.html#a11950cb8d79e0c9d58ebfa23ac507e79">More...</a><br /></td></tr>
+<tr class="separator:a11950cb8d79e0c9d58ebfa23ac507e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ef69159f1698cd53df52cf736bd5f1"><td class="memItemLeft" align="right" valign="top">CTL_API bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a91ef69159f1698cd53df52cf736bd5f1">CTL_queue_empty</a> (const <a class="el" href="structCTL__queue.html">CTL_queue</a> *handle)</td></tr>
+<tr class="memdesc:a91ef69159f1698cd53df52cf736bd5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">if the queue is empty  <a href="queue_8h.html#a91ef69159f1698cd53df52cf736bd5f1">More...</a><br /></td></tr>
+<tr class="separator:a91ef69159f1698cd53df52cf736bd5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>然Y (<a href="#" onclick="location.href='mai'+'lto:'+'ini'+'e0'+'722'+'@g'+'mai'+'l.'+'com'; return false;">inie0<span style="display: none;">.nosp@m.</span>722@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
@@ -148,14 +139,14 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2022-05-19</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ae9c373d1bead2b50b215d4a4a22a0aa1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9c373d1bead2b50b215d4a4a22a0aa1">&#9670;&nbsp;</a></span>CTL_queue_back()</h2>
+<a id="af42f9561c8ac1cbfd3669565460e9304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42f9561c8ac1cbfd3669565460e9304">&#9670;&nbsp;</a></span>CTL_queue_back()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* CTL_queue_back </td>
+          <td class="memname">CTL_API void* CTL_queue_back </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__queue.html">CTL_queue</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -175,14 +166,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a89950cb9a59f8816bbf699eeebcd5dc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89950cb9a59f8816bbf699eeebcd5dc4">&#9670;&nbsp;</a></span>CTL_queue_delete()</h2>
+<a id="a12c63b74f5a42e83f0a3f760bd691066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c63b74f5a42e83f0a3f760bd691066">&#9670;&nbsp;</a></span>CTL_queue_delete()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_queue_delete </td>
+          <td class="memname">CTL_API void CTL_queue_delete </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__queue.html">CTL_queue</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -201,14 +192,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab29a38d2808d4a49ec328baeba222b97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab29a38d2808d4a49ec328baeba222b97">&#9670;&nbsp;</a></span>CTL_queue_empty()</h2>
+<a id="a91ef69159f1698cd53df52cf736bd5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91ef69159f1698cd53df52cf736bd5f1">&#9670;&nbsp;</a></span>CTL_queue_empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CTL_queue_empty </td>
+          <td class="memname">CTL_API bool CTL_queue_empty </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__queue.html">CTL_queue</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -230,14 +221,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="acc8b25ff83379768b79ca081076aedf3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc8b25ff83379768b79ca081076aedf3">&#9670;&nbsp;</a></span>CTL_queue_front()</h2>
+<a id="a75d71ba13729987d72e494be86c3a734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75d71ba13729987d72e494be86c3a734">&#9670;&nbsp;</a></span>CTL_queue_front()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* CTL_queue_front </td>
+          <td class="memname">CTL_API void* CTL_queue_front </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__queue.html">CTL_queue</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -257,14 +248,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a2af9c1da15a57d2c8f071acf5515892c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2af9c1da15a57d2c8f071acf5515892c">&#9670;&nbsp;</a></span>CTL_queue_new()</h2>
+<a id="ade97309ea7519df7073cfcc07361f270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade97309ea7519df7073cfcc07361f270">&#9670;&nbsp;</a></span>CTL_queue_new()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_queue_new </td>
+          <td class="memname">CTL_API void CTL_queue_new </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__queue.html">CTL_queue</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -308,14 +299,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a6c6791bc7b6a530cc03036d17431c708"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c6791bc7b6a530cc03036d17431c708">&#9670;&nbsp;</a></span>CTL_queue_pop()</h2>
+<a id="a31f83058b1f21c1c3c1f963d716276b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31f83058b1f21c1c3c1f963d716276b9">&#9670;&nbsp;</a></span>CTL_queue_pop()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_queue_pop </td>
+          <td class="memname">CTL_API void CTL_queue_pop </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__queue.html">CTL_queue</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -334,14 +325,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="af5c44468b963605573a537c1cd213a4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5c44468b963605573a537c1cd213a4a">&#9670;&nbsp;</a></span>CTL_queue_push()</h2>
+<a id="a9b4531a0d13257a1b75044a0cf19ea82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b4531a0d13257a1b75044a0cf19ea82">&#9670;&nbsp;</a></span>CTL_queue_push()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_queue_push </td>
+          <td class="memname">CTL_API void CTL_queue_push </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__queue.html">CTL_queue</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -371,14 +362,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a55182e7b8b75f73b87bda9325e00e403"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55182e7b8b75f73b87bda9325e00e403">&#9670;&nbsp;</a></span>CTL_queue_size()</h2>
+<a id="a11950cb8d79e0c9d58ebfa23ac507e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11950cb8d79e0c9d58ebfa23ac507e79">&#9670;&nbsp;</a></span>CTL_queue_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t CTL_queue_size </td>
+          <td class="memname">CTL_API size_t CTL_queue_size </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__queue.html">CTL_queue</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>

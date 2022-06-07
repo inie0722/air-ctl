@@ -89,35 +89,32 @@ $(document).ready(function(){initNavTree('allocator_8h.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &quot;CTL/config.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for allocator.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="allocator_8h__incl.png" border="0" usemap="#ainclude_2CTL_2allocator_8h" alt=""/></div>
-<map name="ainclude_2CTL_2allocator_8h" id="ainclude_2CTL_2allocator_8h">
-<area shape="rect" title=" " alt="" coords="5,5,175,32"/>
-<area shape="rect" title=" " alt="" coords="53,80,127,107"/>
-</map>
 </div>
 </div>
 <p><a href="allocator_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3229fa2116e6c3c366a610a44a8f9024"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="allocator_8h.html#a3229fa2116e6c3c366a610a44a8f9024">CTL_get_mem_size</a> ()</td></tr>
-<tr class="memdesc:a3229fa2116e6c3c366a610a44a8f9024"><td class="mdescLeft">&#160;</td><td class="mdescRight">get The amount of memory that has been used  <a href="allocator_8h.html#a3229fa2116e6c3c366a610a44a8f9024">More...</a><br /></td></tr>
-<tr class="separator:a3229fa2116e6c3c366a610a44a8f9024"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14991d06fbd4b532f7f719ad7d3d8ba3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="allocator_8h.html#a14991d06fbd4b532f7f719ad7d3d8ba3">CTL_set_malloc_handler</a> (void(*handler)())</td></tr>
-<tr class="memdesc:a14991d06fbd4b532f7f719ad7d3d8ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">set memory allocation failure handling operation  <a href="allocator_8h.html#a14991d06fbd4b532f7f719ad7d3d8ba3">More...</a><br /></td></tr>
-<tr class="separator:a14991d06fbd4b532f7f719ad7d3d8ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51f7de1b537df222ac8d71f88fd09618"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="allocator_8h.html#a51f7de1b537df222ac8d71f88fd09618">CTL_allocate</a> (size_t size)</td></tr>
-<tr class="memdesc:a51f7de1b537df222ac8d71f88fd09618"><td class="mdescLeft">&#160;</td><td class="mdescRight">allocate memory  <a href="allocator_8h.html#a51f7de1b537df222ac8d71f88fd09618">More...</a><br /></td></tr>
-<tr class="separator:a51f7de1b537df222ac8d71f88fd09618"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6803e726846b6c3acbd0ec545126b013"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="allocator_8h.html#a6803e726846b6c3acbd0ec545126b013">CTL_reallocate</a> (void *old_ptr, size_t old_size, size_t new_size)</td></tr>
-<tr class="memdesc:a6803e726846b6c3acbd0ec545126b013"><td class="mdescLeft">&#160;</td><td class="mdescRight">reallocate memory  <a href="allocator_8h.html#a6803e726846b6c3acbd0ec545126b013">More...</a><br /></td></tr>
-<tr class="separator:a6803e726846b6c3acbd0ec545126b013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac63c47b58841b92cda580aad44e23ef7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="allocator_8h.html#ac63c47b58841b92cda580aad44e23ef7">CTL_deallocate</a> (void *ptr, size_t size)</td></tr>
-<tr class="memdesc:ac63c47b58841b92cda580aad44e23ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">free memory  <a href="allocator_8h.html#ac63c47b58841b92cda580aad44e23ef7">More...</a><br /></td></tr>
-<tr class="separator:ac63c47b58841b92cda580aad44e23ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a38bc40500709e716ae63770e99fd89"><td class="memItemLeft" align="right" valign="top">CTL_API size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="allocator_8h.html#a0a38bc40500709e716ae63770e99fd89">CTL_get_mem_size</a> ()</td></tr>
+<tr class="memdesc:a0a38bc40500709e716ae63770e99fd89"><td class="mdescLeft">&#160;</td><td class="mdescRight">get The amount of memory that has been used  <a href="allocator_8h.html#a0a38bc40500709e716ae63770e99fd89">More...</a><br /></td></tr>
+<tr class="separator:a0a38bc40500709e716ae63770e99fd89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253e328f13c33dedba2ec918d330363e"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="allocator_8h.html#a253e328f13c33dedba2ec918d330363e">CTL_set_malloc_handler</a> (void(*handler)())</td></tr>
+<tr class="memdesc:a253e328f13c33dedba2ec918d330363e"><td class="mdescLeft">&#160;</td><td class="mdescRight">set memory allocation failure handling operation  <a href="allocator_8h.html#a253e328f13c33dedba2ec918d330363e">More...</a><br /></td></tr>
+<tr class="separator:a253e328f13c33dedba2ec918d330363e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180000268a8bb116b16852f9a2a8e7d3"><td class="memItemLeft" align="right" valign="top">CTL_API void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="allocator_8h.html#a180000268a8bb116b16852f9a2a8e7d3">CTL_allocate</a> (size_t size)</td></tr>
+<tr class="memdesc:a180000268a8bb116b16852f9a2a8e7d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">allocate memory  <a href="allocator_8h.html#a180000268a8bb116b16852f9a2a8e7d3">More...</a><br /></td></tr>
+<tr class="separator:a180000268a8bb116b16852f9a2a8e7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ea1d7cecd3e1eab551afa3ac5e2f4e"><td class="memItemLeft" align="right" valign="top">CTL_API void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="allocator_8h.html#af8ea1d7cecd3e1eab551afa3ac5e2f4e">CTL_reallocate</a> (void *old_ptr, size_t old_size, size_t new_size)</td></tr>
+<tr class="memdesc:af8ea1d7cecd3e1eab551afa3ac5e2f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">reallocate memory  <a href="allocator_8h.html#af8ea1d7cecd3e1eab551afa3ac5e2f4e">More...</a><br /></td></tr>
+<tr class="separator:af8ea1d7cecd3e1eab551afa3ac5e2f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53ce1208817bf9f5576486a5c5a264d"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="allocator_8h.html#ac53ce1208817bf9f5576486a5c5a264d">CTL_deallocate</a> (void *ptr, size_t size)</td></tr>
+<tr class="memdesc:ac53ce1208817bf9f5576486a5c5a264d"><td class="mdescLeft">&#160;</td><td class="mdescRight">free memory  <a href="allocator_8h.html#ac53ce1208817bf9f5576486a5c5a264d">More...</a><br /></td></tr>
+<tr class="separator:ac53ce1208817bf9f5576486a5c5a264d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>然Y (<a href="#" onclick="location.href='mai'+'lto:'+'ini'+'e0'+'722'+'@g'+'mai'+'l.'+'com'; return false;">inie0<span style="display: none;">.nosp@m.</span>722@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
@@ -125,14 +122,14 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2022-05-19</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a51f7de1b537df222ac8d71f88fd09618"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51f7de1b537df222ac8d71f88fd09618">&#9670;&nbsp;</a></span>CTL_allocate()</h2>
+<a id="a180000268a8bb116b16852f9a2a8e7d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a180000268a8bb116b16852f9a2a8e7d3">&#9670;&nbsp;</a></span>CTL_allocate()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* CTL_allocate </td>
+          <td class="memname">CTL_API void* CTL_allocate </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>size</em></td><td>)</td>
@@ -152,14 +149,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac63c47b58841b92cda580aad44e23ef7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac63c47b58841b92cda580aad44e23ef7">&#9670;&nbsp;</a></span>CTL_deallocate()</h2>
+<a id="ac53ce1208817bf9f5576486a5c5a264d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac53ce1208817bf9f5576486a5c5a264d">&#9670;&nbsp;</a></span>CTL_deallocate()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deallocate </td>
+          <td class="memname">CTL_API void CTL_deallocate </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>ptr</em>, </td>
@@ -189,14 +186,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3229fa2116e6c3c366a610a44a8f9024"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3229fa2116e6c3c366a610a44a8f9024">&#9670;&nbsp;</a></span>CTL_get_mem_size()</h2>
+<a id="a0a38bc40500709e716ae63770e99fd89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a38bc40500709e716ae63770e99fd89">&#9670;&nbsp;</a></span>CTL_get_mem_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t CTL_get_mem_size </td>
+          <td class="memname">CTL_API size_t CTL_get_mem_size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -209,14 +206,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6803e726846b6c3acbd0ec545126b013"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6803e726846b6c3acbd0ec545126b013">&#9670;&nbsp;</a></span>CTL_reallocate()</h2>
+<a id="af8ea1d7cecd3e1eab551afa3ac5e2f4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ea1d7cecd3e1eab551afa3ac5e2f4e">&#9670;&nbsp;</a></span>CTL_reallocate()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* CTL_reallocate </td>
+          <td class="memname">CTL_API void* CTL_reallocate </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>old_ptr</em>, </td>
@@ -254,14 +251,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a14991d06fbd4b532f7f719ad7d3d8ba3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14991d06fbd4b532f7f719ad7d3d8ba3">&#9670;&nbsp;</a></span>CTL_set_malloc_handler()</h2>
+<a id="a253e328f13c33dedba2ec918d330363e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a253e328f13c33dedba2ec918d330363e">&#9670;&nbsp;</a></span>CTL_set_malloc_handler()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_set_malloc_handler </td>
+          <td class="memname">CTL_API void CTL_set_malloc_handler </td>
           <td>(</td>
           <td class="paramtype">void(*)()&#160;</td>
           <td class="paramname"><em>handler</em></td><td>)</td>

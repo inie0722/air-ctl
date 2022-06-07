@@ -90,33 +90,29 @@ $(document).ready(function(){initNavTree('merge__sort_8h.html',''); initResizabl
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &quot;CTL/config.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for merge_sort.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="merge__sort_8h__incl.png" border="0" usemap="#ainclude_2CTL_2algorithm_2merge__sort_8h" alt=""/></div>
-<map name="ainclude_2CTL_2algorithm_2merge__sort_8h" id="ainclude_2CTL_2algorithm_2merge__sort_8h">
-<area shape="rect" title=" " alt="" coords="15,5,179,47"/>
-<area shape="rect" title=" " alt="" coords="5,95,88,121"/>
-<area shape="rect" title=" " alt="" coords="112,95,187,121"/>
-</map>
 </div>
 </div>
 <p><a href="merge__sort_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a91458559c8a4f9f18dfc036cd01a6c81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="merge__sort_8h.html#a91458559c8a4f9f18dfc036cd01a6c81">CTL_merge_sort</a> (void *first, void *last, size_t T_size, bool(*compare)(const void *, const void *))</td></tr>
-<tr class="memdesc:a91458559c8a4f9f18dfc036cd01a6c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">sort elements  <a href="merge__sort_8h.html#a91458559c8a4f9f18dfc036cd01a6c81">More...</a><br /></td></tr>
-<tr class="separator:a91458559c8a4f9f18dfc036cd01a6c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c435f3fb61a371f23bf375da71d3e34"><td class="memItemLeft" align="right" valign="top"><a id="a7c435f3fb61a371f23bf375da71d3e34"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>__CTL_merge</b> (char *first_1, char *last_1, char *first_2, char *last_2, char *buf, size_t T_size, bool(*compare)(const void *, const void *))</td></tr>
-<tr class="separator:a7c435f3fb61a371f23bf375da71d3e34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55c4571b11a90d4bf6a1bf2957c8e9f1"><td class="memItemLeft" align="right" valign="top"><a id="a55c4571b11a90d4bf6a1bf2957c8e9f1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>__CTL_inplace_merge</b> (char *first_1, char *last_1, char *first_2, char *last_2, size_t T_size, bool(*compare)(const void *, const void *))</td></tr>
-<tr class="separator:a55c4571b11a90d4bf6a1bf2957c8e9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38eef8d4f93f9e54959d2b9908f24195"><td class="memItemLeft" align="right" valign="top"><a id="a38eef8d4f93f9e54959d2b9908f24195"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>__CTL_reverse</b> (char *first, char *last, size_t T_size)</td></tr>
-<tr class="separator:a38eef8d4f93f9e54959d2b9908f24195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9297d6727e7732d02e96cd1240c6968"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="merge__sort_8h.html#ac9297d6727e7732d02e96cd1240c6968">CTL_merge_sort</a> (void *first, void *last, size_t T_size, bool(*compare)(const void *, const void *))</td></tr>
+<tr class="memdesc:ac9297d6727e7732d02e96cd1240c6968"><td class="mdescLeft">&#160;</td><td class="mdescRight">sort elements  <a href="merge__sort_8h.html#ac9297d6727e7732d02e96cd1240c6968">More...</a><br /></td></tr>
+<tr class="separator:ac9297d6727e7732d02e96cd1240c6968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a400745d1e8970af051b76905a5045db1"><td class="memItemLeft" align="right" valign="top"><a id="a400745d1e8970af051b76905a5045db1"></a>
+CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><b>__CTL_merge</b> (char *first_1, char *last_1, char *first_2, char *last_2, char *buf, size_t T_size, bool(*compare)(const void *, const void *))</td></tr>
+<tr class="separator:a400745d1e8970af051b76905a5045db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ddc4e7ea0bf4917058b911b7fa6c3ea"><td class="memItemLeft" align="right" valign="top"><a id="a3ddc4e7ea0bf4917058b911b7fa6c3ea"></a>
+CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><b>__CTL_inplace_merge</b> (char *first_1, char *last_1, char *first_2, char *last_2, size_t T_size, bool(*compare)(const void *, const void *))</td></tr>
+<tr class="separator:a3ddc4e7ea0bf4917058b911b7fa6c3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac07b62d6d8d213f86d8ec52ea5b04b0e"><td class="memItemLeft" align="right" valign="top"><a id="ac07b62d6d8d213f86d8ec52ea5b04b0e"></a>
+CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><b>__CTL_reverse</b> (char *first, char *last, size_t T_size)</td></tr>
+<tr class="separator:ac07b62d6d8d213f86d8ec52ea5b04b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>然Y (<a href="#" onclick="location.href='mai'+'lto:'+'ini'+'e0'+'722'+'@g'+'mai'+'l.'+'com'; return false;">inie0<span style="display: none;">.nosp@m.</span>722@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
@@ -124,14 +120,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>__CTL_reverse</b> (ch
 <dl class="section date"><dt>Date</dt><dd>2022-05-20</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a91458559c8a4f9f18dfc036cd01a6c81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91458559c8a4f9f18dfc036cd01a6c81">&#9670;&nbsp;</a></span>CTL_merge_sort()</h2>
+<a id="ac9297d6727e7732d02e96cd1240c6968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9297d6727e7732d02e96cd1240c6968">&#9670;&nbsp;</a></span>CTL_merge_sort()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_merge_sort </td>
+          <td class="memname">CTL_API void CTL_merge_sort </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>first</em>, </td>

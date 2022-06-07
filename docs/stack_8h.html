@@ -92,20 +92,11 @@ $(document).ready(function(){initNavTree('stack_8h.html',''); initResizable(); }
 <div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="container_8h_source.html">CTL/container.h</a>&quot;</code><br />
+<code>#include &quot;CTL/config.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for stack.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="stack_8h__incl.png" border="0" usemap="#ainclude_2CTL_2stack_8h" alt=""/></div>
-<map name="ainclude_2CTL_2stack_8h" id="ainclude_2CTL_2stack_8h">
-<area shape="rect" title=" " alt="" coords="169,5,317,32"/>
-<area shape="rect" title=" " alt="" coords="144,229,219,256"/>
-<area shape="rect" title=" " alt="" coords="263,229,346,256"/>
-<area shape="rect" href="container_8h.html" title=" " alt="" coords="182,80,304,107"/>
-<area shape="rect" href="array_8h.html" title=" " alt="" coords="257,155,352,181"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="376,155,478,181"/>
-<area shape="rect" href="list_8h.html" title=" " alt="" coords="23,155,106,181"/>
-<area shape="rect" href="deque_8h.html" title=" " alt="" coords="130,155,233,181"/>
-</map>
 </div>
 </div>
 <p><a href="stack_8h_source.html">Go to the source code of this file.</a></p>
@@ -118,27 +109,27 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5d9221e25fc2f8908d46dadce416ea8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#a5d9221e25fc2f8908d46dadce416ea8d">CTL_stack_new</a> (<a class="el" href="structCTL__stack.html">CTL_stack</a> *handle, <a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, size_t buf_size, size_t T_size)</td></tr>
-<tr class="memdesc:a5d9221e25fc2f8908d46dadce416ea8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">create stack  <a href="stack_8h.html#a5d9221e25fc2f8908d46dadce416ea8d">More...</a><br /></td></tr>
-<tr class="separator:a5d9221e25fc2f8908d46dadce416ea8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1faa2f02335d4a16ddb4e42d93af8db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#af1faa2f02335d4a16ddb4e42d93af8db">CTL_stack_delete</a> (<a class="el" href="structCTL__stack.html">CTL_stack</a> *handle)</td></tr>
-<tr class="memdesc:af1faa2f02335d4a16ddb4e42d93af8db"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy stack  <a href="stack_8h.html#af1faa2f02335d4a16ddb4e42d93af8db">More...</a><br /></td></tr>
-<tr class="separator:af1faa2f02335d4a16ddb4e42d93af8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad184cde12e405dcdde4797781241ef1a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#ad184cde12e405dcdde4797781241ef1a">CTL_stack_top</a> (const <a class="el" href="structCTL__stack.html">CTL_stack</a> *handle)</td></tr>
-<tr class="memdesc:ad184cde12e405dcdde4797781241ef1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">get top element  <a href="stack_8h.html#ad184cde12e405dcdde4797781241ef1a">More...</a><br /></td></tr>
-<tr class="separator:ad184cde12e405dcdde4797781241ef1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96a5a8f74d64f4bfae567c080f9910d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#a96a5a8f74d64f4bfae567c080f9910d7">CTL_stack_push</a> (<a class="el" href="structCTL__stack.html">CTL_stack</a> *handle, const void *element)</td></tr>
-<tr class="memdesc:a96a5a8f74d64f4bfae567c080f9910d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">push element  <a href="stack_8h.html#a96a5a8f74d64f4bfae567c080f9910d7">More...</a><br /></td></tr>
-<tr class="separator:a96a5a8f74d64f4bfae567c080f9910d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a129a939451d974e03987708e59d52709"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#a129a939451d974e03987708e59d52709">CTL_stack_pop</a> (<a class="el" href="structCTL__stack.html">CTL_stack</a> *handle)</td></tr>
-<tr class="memdesc:a129a939451d974e03987708e59d52709"><td class="mdescLeft">&#160;</td><td class="mdescRight">pop element  <a href="stack_8h.html#a129a939451d974e03987708e59d52709">More...</a><br /></td></tr>
-<tr class="separator:a129a939451d974e03987708e59d52709"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34971ba9f65f6906a74c1af2930cd433"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#a34971ba9f65f6906a74c1af2930cd433">CTL_stack_size</a> (const <a class="el" href="structCTL__stack.html">CTL_stack</a> *handle)</td></tr>
-<tr class="memdesc:a34971ba9f65f6906a74c1af2930cd433"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements that can be held in currently allocated storage  <a href="stack_8h.html#a34971ba9f65f6906a74c1af2930cd433">More...</a><br /></td></tr>
-<tr class="separator:a34971ba9f65f6906a74c1af2930cd433"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00571b3de180f357d90c63db53013ba2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#a00571b3de180f357d90c63db53013ba2">CTL_stack_empty</a> (const <a class="el" href="structCTL__stack.html">CTL_stack</a> *handle)</td></tr>
-<tr class="memdesc:a00571b3de180f357d90c63db53013ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">if the stack is empty  <a href="stack_8h.html#a00571b3de180f357d90c63db53013ba2">More...</a><br /></td></tr>
-<tr class="separator:a00571b3de180f357d90c63db53013ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bf05ff0d4498b71d711bc875dd925cb"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#a5bf05ff0d4498b71d711bc875dd925cb">CTL_stack_new</a> (<a class="el" href="structCTL__stack.html">CTL_stack</a> *handle, <a class="el" href="structCTL__functions.html">CTL_functions</a> *functions, size_t buf_size, size_t T_size)</td></tr>
+<tr class="memdesc:a5bf05ff0d4498b71d711bc875dd925cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">create stack  <a href="stack_8h.html#a5bf05ff0d4498b71d711bc875dd925cb">More...</a><br /></td></tr>
+<tr class="separator:a5bf05ff0d4498b71d711bc875dd925cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa200fe35cefa1bce3e5f0fac4a7c2335"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#aa200fe35cefa1bce3e5f0fac4a7c2335">CTL_stack_delete</a> (<a class="el" href="structCTL__stack.html">CTL_stack</a> *handle)</td></tr>
+<tr class="memdesc:aa200fe35cefa1bce3e5f0fac4a7c2335"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy stack  <a href="stack_8h.html#aa200fe35cefa1bce3e5f0fac4a7c2335">More...</a><br /></td></tr>
+<tr class="separator:aa200fe35cefa1bce3e5f0fac4a7c2335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53926abdc8cd2bede5be9699d6f6ae2"><td class="memItemLeft" align="right" valign="top">CTL_API void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#ab53926abdc8cd2bede5be9699d6f6ae2">CTL_stack_top</a> (const <a class="el" href="structCTL__stack.html">CTL_stack</a> *handle)</td></tr>
+<tr class="memdesc:ab53926abdc8cd2bede5be9699d6f6ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">get top element  <a href="stack_8h.html#ab53926abdc8cd2bede5be9699d6f6ae2">More...</a><br /></td></tr>
+<tr class="separator:ab53926abdc8cd2bede5be9699d6f6ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cbdcde9cededf80cb3409ae7d5d789a"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#a8cbdcde9cededf80cb3409ae7d5d789a">CTL_stack_push</a> (<a class="el" href="structCTL__stack.html">CTL_stack</a> *handle, const void *element)</td></tr>
+<tr class="memdesc:a8cbdcde9cededf80cb3409ae7d5d789a"><td class="mdescLeft">&#160;</td><td class="mdescRight">push element  <a href="stack_8h.html#a8cbdcde9cededf80cb3409ae7d5d789a">More...</a><br /></td></tr>
+<tr class="separator:a8cbdcde9cededf80cb3409ae7d5d789a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59c4002d2d646d9ec22d4a04e2d31b69"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#a59c4002d2d646d9ec22d4a04e2d31b69">CTL_stack_pop</a> (<a class="el" href="structCTL__stack.html">CTL_stack</a> *handle)</td></tr>
+<tr class="memdesc:a59c4002d2d646d9ec22d4a04e2d31b69"><td class="mdescLeft">&#160;</td><td class="mdescRight">pop element  <a href="stack_8h.html#a59c4002d2d646d9ec22d4a04e2d31b69">More...</a><br /></td></tr>
+<tr class="separator:a59c4002d2d646d9ec22d4a04e2d31b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16329eddd297bd2929298b26ef407347"><td class="memItemLeft" align="right" valign="top">CTL_API size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#a16329eddd297bd2929298b26ef407347">CTL_stack_size</a> (const <a class="el" href="structCTL__stack.html">CTL_stack</a> *handle)</td></tr>
+<tr class="memdesc:a16329eddd297bd2929298b26ef407347"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements that can be held in currently allocated storage  <a href="stack_8h.html#a16329eddd297bd2929298b26ef407347">More...</a><br /></td></tr>
+<tr class="separator:a16329eddd297bd2929298b26ef407347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a4277b628f11ae749fe2c0c9b7af55d"><td class="memItemLeft" align="right" valign="top">CTL_API bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack_8h.html#a4a4277b628f11ae749fe2c0c9b7af55d">CTL_stack_empty</a> (const <a class="el" href="structCTL__stack.html">CTL_stack</a> *handle)</td></tr>
+<tr class="memdesc:a4a4277b628f11ae749fe2c0c9b7af55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">if the stack is empty  <a href="stack_8h.html#a4a4277b628f11ae749fe2c0c9b7af55d">More...</a><br /></td></tr>
+<tr class="separator:a4a4277b628f11ae749fe2c0c9b7af55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>然Y (<a href="#" onclick="location.href='mai'+'lto:'+'ini'+'e0'+'722'+'@g'+'mai'+'l.'+'com'; return false;">inie0<span style="display: none;">.nosp@m.</span>722@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
@@ -146,14 +137,14 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2022-05-19</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="af1faa2f02335d4a16ddb4e42d93af8db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1faa2f02335d4a16ddb4e42d93af8db">&#9670;&nbsp;</a></span>CTL_stack_delete()</h2>
+<a id="aa200fe35cefa1bce3e5f0fac4a7c2335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa200fe35cefa1bce3e5f0fac4a7c2335">&#9670;&nbsp;</a></span>CTL_stack_delete()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_stack_delete </td>
+          <td class="memname">CTL_API void CTL_stack_delete </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__stack.html">CTL_stack</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -172,14 +163,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a00571b3de180f357d90c63db53013ba2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00571b3de180f357d90c63db53013ba2">&#9670;&nbsp;</a></span>CTL_stack_empty()</h2>
+<a id="a4a4277b628f11ae749fe2c0c9b7af55d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a4277b628f11ae749fe2c0c9b7af55d">&#9670;&nbsp;</a></span>CTL_stack_empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CTL_stack_empty </td>
+          <td class="memname">CTL_API bool CTL_stack_empty </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__stack.html">CTL_stack</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -201,14 +192,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a5d9221e25fc2f8908d46dadce416ea8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d9221e25fc2f8908d46dadce416ea8d">&#9670;&nbsp;</a></span>CTL_stack_new()</h2>
+<a id="a5bf05ff0d4498b71d711bc875dd925cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bf05ff0d4498b71d711bc875dd925cb">&#9670;&nbsp;</a></span>CTL_stack_new()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_stack_new </td>
+          <td class="memname">CTL_API void CTL_stack_new </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__stack.html">CTL_stack</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -252,14 +243,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a129a939451d974e03987708e59d52709"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a129a939451d974e03987708e59d52709">&#9670;&nbsp;</a></span>CTL_stack_pop()</h2>
+<a id="a59c4002d2d646d9ec22d4a04e2d31b69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59c4002d2d646d9ec22d4a04e2d31b69">&#9670;&nbsp;</a></span>CTL_stack_pop()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_stack_pop </td>
+          <td class="memname">CTL_API void CTL_stack_pop </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__stack.html">CTL_stack</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -278,14 +269,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a96a5a8f74d64f4bfae567c080f9910d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96a5a8f74d64f4bfae567c080f9910d7">&#9670;&nbsp;</a></span>CTL_stack_push()</h2>
+<a id="a8cbdcde9cededf80cb3409ae7d5d789a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cbdcde9cededf80cb3409ae7d5d789a">&#9670;&nbsp;</a></span>CTL_stack_push()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_stack_push </td>
+          <td class="memname">CTL_API void CTL_stack_push </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__stack.html">CTL_stack</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -315,14 +306,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a34971ba9f65f6906a74c1af2930cd433"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34971ba9f65f6906a74c1af2930cd433">&#9670;&nbsp;</a></span>CTL_stack_size()</h2>
+<a id="a16329eddd297bd2929298b26ef407347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16329eddd297bd2929298b26ef407347">&#9670;&nbsp;</a></span>CTL_stack_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t CTL_stack_size </td>
+          <td class="memname">CTL_API size_t CTL_stack_size </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__stack.html">CTL_stack</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -342,14 +333,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="ad184cde12e405dcdde4797781241ef1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad184cde12e405dcdde4797781241ef1a">&#9670;&nbsp;</a></span>CTL_stack_top()</h2>
+<a id="ab53926abdc8cd2bede5be9699d6f6ae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab53926abdc8cd2bede5be9699d6f6ae2">&#9670;&nbsp;</a></span>CTL_stack_top()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* CTL_stack_top </td>
+          <td class="memname">CTL_API void* CTL_stack_top </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__stack.html">CTL_stack</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>

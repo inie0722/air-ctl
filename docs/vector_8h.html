@@ -91,28 +91,16 @@ $(document).ready(function(){initNavTree('vector_8h.html',''); initResizable(); 
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &quot;CTL/config.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for vector.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="vector_8h__incl.png" border="0" usemap="#ainclude_2CTL_2vector_8h" alt=""/></div>
-<map name="ainclude_2CTL_2vector_8h" id="ainclude_2CTL_2vector_8h">
-<area shape="rect" title=" " alt="" coords="21,5,174,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,88,107"/>
-<area shape="rect" title=" " alt="" coords="112,80,187,107"/>
-</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="vector_8h__dep__incl.png" border="0" usemap="#ainclude_2CTL_2vector_8hdep" alt=""/></div>
-<map name="ainclude_2CTL_2vector_8hdep" id="ainclude_2CTL_2vector_8hdep">
-<area shape="rect" title=" " alt="" coords="259,5,412,32"/>
-<area shape="rect" href="container_8h.html" title=" " alt="" coords="249,80,422,107"/>
-<area shape="rect" href="heap_8h.html" title=" " alt="" coords="5,162,151,189"/>
-<area shape="rect" href="priority__queue_8h.html" title=" " alt="" coords="175,155,323,196"/>
-<area shape="rect" href="queue_8h.html" title=" " alt="" coords="347,162,500,189"/>
-<area shape="rect" href="stack_8h.html" title=" " alt="" coords="524,162,672,189"/>
-</map>
 </div>
 </div>
 <p><a href="vector_8h_source.html">Go to the source code of this file.</a></p>
@@ -128,63 +116,63 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac733dd95f8965b939f3f66feb70b6f45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ac733dd95f8965b939f3f66feb70b6f45">CTL_vector_new</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, size_t data_size, size_t T_size)</td></tr>
-<tr class="memdesc:ac733dd95f8965b939f3f66feb70b6f45"><td class="mdescLeft">&#160;</td><td class="mdescRight">create vector  <a href="vector_8h.html#ac733dd95f8965b939f3f66feb70b6f45">More...</a><br /></td></tr>
-<tr class="separator:ac733dd95f8965b939f3f66feb70b6f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a6a07a79cdb3ff931807c213c11efcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a5a6a07a79cdb3ff931807c213c11efcb">CTL_vector_clear</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
-<tr class="memdesc:a5a6a07a79cdb3ff931807c213c11efcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear vector  <a href="vector_8h.html#a5a6a07a79cdb3ff931807c213c11efcb">More...</a><br /></td></tr>
-<tr class="separator:a5a6a07a79cdb3ff931807c213c11efcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb018dcc8f5ce5f2b14454d1cbd480c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#acb018dcc8f5ce5f2b14454d1cbd480c4">CTL_vector_delete</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
-<tr class="memdesc:acb018dcc8f5ce5f2b14454d1cbd480c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy vector  <a href="vector_8h.html#acb018dcc8f5ce5f2b14454d1cbd480c4">More...</a><br /></td></tr>
-<tr class="separator:acb018dcc8f5ce5f2b14454d1cbd480c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e48b4e1dd545c31120e9451ca61204e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a7e48b4e1dd545c31120e9451ca61204e">CTL_vector_front</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
-<tr class="memdesc:a7e48b4e1dd545c31120e9451ca61204e"><td class="mdescLeft">&#160;</td><td class="mdescRight">get first element  <a href="vector_8h.html#a7e48b4e1dd545c31120e9451ca61204e">More...</a><br /></td></tr>
-<tr class="separator:a7e48b4e1dd545c31120e9451ca61204e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a345139b5ad0760f2307e6ccaf1198960"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a345139b5ad0760f2307e6ccaf1198960">CTL_vector_back</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
-<tr class="memdesc:a345139b5ad0760f2307e6ccaf1198960"><td class="mdescLeft">&#160;</td><td class="mdescRight">get last element  <a href="vector_8h.html#a345139b5ad0760f2307e6ccaf1198960">More...</a><br /></td></tr>
-<tr class="separator:a345139b5ad0760f2307e6ccaf1198960"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a154fd4a81e6f116ccf1a08cf6341a8b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a154fd4a81e6f116ccf1a08cf6341a8b6">CTL_vector_begin</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *res)</td></tr>
-<tr class="memdesc:a154fd4a81e6f116ccf1a08cf6341a8b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">get begin iterator  <a href="vector_8h.html#a154fd4a81e6f116ccf1a08cf6341a8b6">More...</a><br /></td></tr>
-<tr class="separator:a154fd4a81e6f116ccf1a08cf6341a8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa186a6ec3e313d58839689181520285c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#aa186a6ec3e313d58839689181520285c">CTL_vector_end</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *res)</td></tr>
-<tr class="memdesc:aa186a6ec3e313d58839689181520285c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get end iterator  <a href="vector_8h.html#aa186a6ec3e313d58839689181520285c">More...</a><br /></td></tr>
-<tr class="separator:aa186a6ec3e313d58839689181520285c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14a108c92cc36fa1603b9fb1a0a5502a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a14a108c92cc36fa1603b9fb1a0a5502a">CTL_vector_push_back</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, const void *element)</td></tr>
-<tr class="memdesc:a14a108c92cc36fa1603b9fb1a0a5502a"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an element to the end  <a href="vector_8h.html#a14a108c92cc36fa1603b9fb1a0a5502a">More...</a><br /></td></tr>
-<tr class="separator:a14a108c92cc36fa1603b9fb1a0a5502a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d1a6ef83f938f822a15162c950efb9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a1d1a6ef83f938f822a15162c950efb9d">CTL_vector_pop_back</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
-<tr class="memdesc:a1d1a6ef83f938f822a15162c950efb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the last element  <a href="vector_8h.html#a1d1a6ef83f938f822a15162c950efb9d">More...</a><br /></td></tr>
-<tr class="separator:a1d1a6ef83f938f822a15162c950efb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f1ec0bfafe49bc4516b6f20c07137e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a9f1ec0bfafe49bc4516b6f20c07137e6">CTL_vector_insert</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *iterator, const void *element)</td></tr>
-<tr class="memdesc:a9f1ec0bfafe49bc4516b6f20c07137e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">inserts an element at a given position  <a href="vector_8h.html#a9f1ec0bfafe49bc4516b6f20c07137e6">More...</a><br /></td></tr>
-<tr class="separator:a9f1ec0bfafe49bc4516b6f20c07137e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a775fb707d3f0952deb4f7dbd752625ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a775fb707d3f0952deb4f7dbd752625ff">CTL_vector_erase</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *iterator)</td></tr>
-<tr class="memdesc:a775fb707d3f0952deb4f7dbd752625ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the element at a given position  <a href="vector_8h.html#a775fb707d3f0952deb4f7dbd752625ff">More...</a><br /></td></tr>
-<tr class="separator:a775fb707d3f0952deb4f7dbd752625ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a343d8f46a3532500efdc5c863d27e53f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a343d8f46a3532500efdc5c863d27e53f">CTL_vector_at</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, size_t index)</td></tr>
-<tr class="memdesc:a343d8f46a3532500efdc5c863d27e53f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get index element  <a href="vector_8h.html#a343d8f46a3532500efdc5c863d27e53f">More...</a><br /></td></tr>
-<tr class="separator:a343d8f46a3532500efdc5c863d27e53f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af11d1204529b3d95f0142737c3b09d8d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#af11d1204529b3d95f0142737c3b09d8d">CTL_vector_size</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
-<tr class="memdesc:af11d1204529b3d95f0142737c3b09d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements  <a href="vector_8h.html#af11d1204529b3d95f0142737c3b09d8d">More...</a><br /></td></tr>
-<tr class="separator:af11d1204529b3d95f0142737c3b09d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a194f1c494e025a78a810e3094e273706"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a194f1c494e025a78a810e3094e273706">CTL_vector_capacity</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
-<tr class="memdesc:a194f1c494e025a78a810e3094e273706"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements that can be held in currently allocated storage  <a href="vector_8h.html#a194f1c494e025a78a810e3094e273706">More...</a><br /></td></tr>
-<tr class="separator:a194f1c494e025a78a810e3094e273706"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4fefc3ed4ce61b3f2c5b9214f76f223"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ac4fefc3ed4ce61b3f2c5b9214f76f223">CTL_vector_empty</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
-<tr class="memdesc:ac4fefc3ed4ce61b3f2c5b9214f76f223"><td class="mdescLeft">&#160;</td><td class="mdescRight">if vector is empty return true, else return false  <a href="vector_8h.html#ac4fefc3ed4ce61b3f2c5b9214f76f223">More...</a><br /></td></tr>
-<tr class="separator:ac4fefc3ed4ce61b3f2c5b9214f76f223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b32891a2ba0415b22496b653d54597a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a9b32891a2ba0415b22496b653d54597a">CTL_vector_iterator_move</a> (const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *handle, const ptrdiff_t n, <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *res)</td></tr>
-<tr class="memdesc:a9b32891a2ba0415b22496b653d54597a"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterator move to n  <a href="vector_8h.html#a9b32891a2ba0415b22496b653d54597a">More...</a><br /></td></tr>
-<tr class="separator:a9b32891a2ba0415b22496b653d54597a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab186cccbb1715522532142e45c7ce907"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ab186cccbb1715522532142e45c7ce907">CTL_vector_iterator_equal</a> (const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *left, const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *right)</td></tr>
-<tr class="memdesc:ab186cccbb1715522532142e45c7ce907"><td class="mdescLeft">&#160;</td><td class="mdescRight">if left iterator equal right iterator return true, else return false  <a href="vector_8h.html#ab186cccbb1715522532142e45c7ce907">More...</a><br /></td></tr>
-<tr class="separator:ab186cccbb1715522532142e45c7ce907"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae22d8f2f00de437133cea0b01a77ba0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ae22d8f2f00de437133cea0b01a77ba0e">CTL_vector_iterator_less</a> (const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *left, const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *right)</td></tr>
-<tr class="memdesc:ae22d8f2f00de437133cea0b01a77ba0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">if left iterator precedes right iterator return true, else return false  <a href="vector_8h.html#ae22d8f2f00de437133cea0b01a77ba0e">More...</a><br /></td></tr>
-<tr class="separator:ae22d8f2f00de437133cea0b01a77ba0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a4ec8ed3ed17c6b1ae55c829f1f103a"><td class="memItemLeft" align="right" valign="top">ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a3a4ec8ed3ed17c6b1ae55c829f1f103a">CTL_vector_iterator_diff</a> (const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *left, const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *right)</td></tr>
-<tr class="memdesc:a3a4ec8ed3ed17c6b1ae55c829f1f103a"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate distance between left and right iterator  <a href="vector_8h.html#a3a4ec8ed3ed17c6b1ae55c829f1f103a">More...</a><br /></td></tr>
-<tr class="separator:a3a4ec8ed3ed17c6b1ae55c829f1f103a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c5b8ea826729babe715d610b8b844bd"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a4c5b8ea826729babe715d610b8b844bd">CTL_vector_new</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, size_t data_size, size_t T_size)</td></tr>
+<tr class="memdesc:a4c5b8ea826729babe715d610b8b844bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">create vector  <a href="vector_8h.html#a4c5b8ea826729babe715d610b8b844bd">More...</a><br /></td></tr>
+<tr class="separator:a4c5b8ea826729babe715d610b8b844bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2835f25a76cdde9cee714bfa6739c78c"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a2835f25a76cdde9cee714bfa6739c78c">CTL_vector_clear</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
+<tr class="memdesc:a2835f25a76cdde9cee714bfa6739c78c"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear vector  <a href="vector_8h.html#a2835f25a76cdde9cee714bfa6739c78c">More...</a><br /></td></tr>
+<tr class="separator:a2835f25a76cdde9cee714bfa6739c78c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae630bb632a5e2524111dc725139a680a"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ae630bb632a5e2524111dc725139a680a">CTL_vector_delete</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
+<tr class="memdesc:ae630bb632a5e2524111dc725139a680a"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy vector  <a href="vector_8h.html#ae630bb632a5e2524111dc725139a680a">More...</a><br /></td></tr>
+<tr class="separator:ae630bb632a5e2524111dc725139a680a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45d208c4613df95ac346a1056e392f43"><td class="memItemLeft" align="right" valign="top">CTL_API void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a45d208c4613df95ac346a1056e392f43">CTL_vector_front</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
+<tr class="memdesc:a45d208c4613df95ac346a1056e392f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">get first element  <a href="vector_8h.html#a45d208c4613df95ac346a1056e392f43">More...</a><br /></td></tr>
+<tr class="separator:a45d208c4613df95ac346a1056e392f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b02b710464ccbcd4f07e136360fc738"><td class="memItemLeft" align="right" valign="top">CTL_API void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a2b02b710464ccbcd4f07e136360fc738">CTL_vector_back</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
+<tr class="memdesc:a2b02b710464ccbcd4f07e136360fc738"><td class="mdescLeft">&#160;</td><td class="mdescRight">get last element  <a href="vector_8h.html#a2b02b710464ccbcd4f07e136360fc738">More...</a><br /></td></tr>
+<tr class="separator:a2b02b710464ccbcd4f07e136360fc738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50c8b9786fc134f12ce83415bb42c279"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a50c8b9786fc134f12ce83415bb42c279">CTL_vector_begin</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *res)</td></tr>
+<tr class="memdesc:a50c8b9786fc134f12ce83415bb42c279"><td class="mdescLeft">&#160;</td><td class="mdescRight">get begin iterator  <a href="vector_8h.html#a50c8b9786fc134f12ce83415bb42c279">More...</a><br /></td></tr>
+<tr class="separator:a50c8b9786fc134f12ce83415bb42c279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a428d1136511c3823f1b816077e3c5df6"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a428d1136511c3823f1b816077e3c5df6">CTL_vector_end</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *res)</td></tr>
+<tr class="memdesc:a428d1136511c3823f1b816077e3c5df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">get end iterator  <a href="vector_8h.html#a428d1136511c3823f1b816077e3c5df6">More...</a><br /></td></tr>
+<tr class="separator:a428d1136511c3823f1b816077e3c5df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9deb5158c3a3bb23c6ef9a9779fc6dd8"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a9deb5158c3a3bb23c6ef9a9779fc6dd8">CTL_vector_push_back</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, const void *element)</td></tr>
+<tr class="memdesc:a9deb5158c3a3bb23c6ef9a9779fc6dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an element to the end  <a href="vector_8h.html#a9deb5158c3a3bb23c6ef9a9779fc6dd8">More...</a><br /></td></tr>
+<tr class="separator:a9deb5158c3a3bb23c6ef9a9779fc6dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78fbd15e4327a443b2771cb53496d42b"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a78fbd15e4327a443b2771cb53496d42b">CTL_vector_pop_back</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
+<tr class="memdesc:a78fbd15e4327a443b2771cb53496d42b"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the last element  <a href="vector_8h.html#a78fbd15e4327a443b2771cb53496d42b">More...</a><br /></td></tr>
+<tr class="separator:a78fbd15e4327a443b2771cb53496d42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aede14e40392653f43784717fd1531ffd"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#aede14e40392653f43784717fd1531ffd">CTL_vector_insert</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *iterator, const void *element)</td></tr>
+<tr class="memdesc:aede14e40392653f43784717fd1531ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">inserts an element at a given position  <a href="vector_8h.html#aede14e40392653f43784717fd1531ffd">More...</a><br /></td></tr>
+<tr class="separator:aede14e40392653f43784717fd1531ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3933c06a15f381d0ba1a4884040a99fe"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a3933c06a15f381d0ba1a4884040a99fe">CTL_vector_erase</a> (<a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *iterator)</td></tr>
+<tr class="memdesc:a3933c06a15f381d0ba1a4884040a99fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the element at a given position  <a href="vector_8h.html#a3933c06a15f381d0ba1a4884040a99fe">More...</a><br /></td></tr>
+<tr class="separator:a3933c06a15f381d0ba1a4884040a99fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf2bd899fcbfb6cd96fb142af967bcbe"><td class="memItemLeft" align="right" valign="top">CTL_API void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#aaf2bd899fcbfb6cd96fb142af967bcbe">CTL_vector_at</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle, size_t index)</td></tr>
+<tr class="memdesc:aaf2bd899fcbfb6cd96fb142af967bcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">get index element  <a href="vector_8h.html#aaf2bd899fcbfb6cd96fb142af967bcbe">More...</a><br /></td></tr>
+<tr class="separator:aaf2bd899fcbfb6cd96fb142af967bcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add06697e43a73d2445fc2a809bf2d532"><td class="memItemLeft" align="right" valign="top">CTL_API size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#add06697e43a73d2445fc2a809bf2d532">CTL_vector_size</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
+<tr class="memdesc:add06697e43a73d2445fc2a809bf2d532"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements  <a href="vector_8h.html#add06697e43a73d2445fc2a809bf2d532">More...</a><br /></td></tr>
+<tr class="separator:add06697e43a73d2445fc2a809bf2d532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a804936c4c945591fa247336b8d3d3783"><td class="memItemLeft" align="right" valign="top">CTL_API size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a804936c4c945591fa247336b8d3d3783">CTL_vector_capacity</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
+<tr class="memdesc:a804936c4c945591fa247336b8d3d3783"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements that can be held in currently allocated storage  <a href="vector_8h.html#a804936c4c945591fa247336b8d3d3783">More...</a><br /></td></tr>
+<tr class="separator:a804936c4c945591fa247336b8d3d3783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe9009e85f486e9c22f0181019b479da"><td class="memItemLeft" align="right" valign="top">CTL_API bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#abe9009e85f486e9c22f0181019b479da">CTL_vector_empty</a> (const <a class="el" href="structCTL__vector.html">CTL_vector</a> *handle)</td></tr>
+<tr class="memdesc:abe9009e85f486e9c22f0181019b479da"><td class="mdescLeft">&#160;</td><td class="mdescRight">if vector is empty return true, else return false  <a href="vector_8h.html#abe9009e85f486e9c22f0181019b479da">More...</a><br /></td></tr>
+<tr class="separator:abe9009e85f486e9c22f0181019b479da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a857027048a397618bd4963c5d7499cf3"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a857027048a397618bd4963c5d7499cf3">CTL_vector_iterator_move</a> (const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *handle, const ptrdiff_t n, <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *res)</td></tr>
+<tr class="memdesc:a857027048a397618bd4963c5d7499cf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterator move to n  <a href="vector_8h.html#a857027048a397618bd4963c5d7499cf3">More...</a><br /></td></tr>
+<tr class="separator:a857027048a397618bd4963c5d7499cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4746ec7791977dde69ac7ff8d1671539"><td class="memItemLeft" align="right" valign="top">CTL_API bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a4746ec7791977dde69ac7ff8d1671539">CTL_vector_iterator_equal</a> (const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *left, const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *right)</td></tr>
+<tr class="memdesc:a4746ec7791977dde69ac7ff8d1671539"><td class="mdescLeft">&#160;</td><td class="mdescRight">if left iterator equal right iterator return true, else return false  <a href="vector_8h.html#a4746ec7791977dde69ac7ff8d1671539">More...</a><br /></td></tr>
+<tr class="separator:a4746ec7791977dde69ac7ff8d1671539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac563e1920662898d6ce76157e35cf5cb"><td class="memItemLeft" align="right" valign="top">CTL_API bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ac563e1920662898d6ce76157e35cf5cb">CTL_vector_iterator_less</a> (const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *left, const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *right)</td></tr>
+<tr class="memdesc:ac563e1920662898d6ce76157e35cf5cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">if left iterator precedes right iterator return true, else return false  <a href="vector_8h.html#ac563e1920662898d6ce76157e35cf5cb">More...</a><br /></td></tr>
+<tr class="separator:ac563e1920662898d6ce76157e35cf5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48522c26d58805a48c486efcc6286b47"><td class="memItemLeft" align="right" valign="top">CTL_API ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a48522c26d58805a48c486efcc6286b47">CTL_vector_iterator_diff</a> (const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *left, const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *right)</td></tr>
+<tr class="memdesc:a48522c26d58805a48c486efcc6286b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate distance between left and right iterator  <a href="vector_8h.html#a48522c26d58805a48c486efcc6286b47">More...</a><br /></td></tr>
+<tr class="separator:a48522c26d58805a48c486efcc6286b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>然Y (<a href="#" onclick="location.href='mai'+'lto:'+'ini'+'e0'+'722'+'@g'+'mai'+'l.'+'com'; return false;">inie0<span style="display: none;">.nosp@m.</span>722@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
@@ -192,14 +180,14 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2022-05-19</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a343d8f46a3532500efdc5c863d27e53f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a343d8f46a3532500efdc5c863d27e53f">&#9670;&nbsp;</a></span>CTL_vector_at()</h2>
+<a id="aaf2bd899fcbfb6cd96fb142af967bcbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf2bd899fcbfb6cd96fb142af967bcbe">&#9670;&nbsp;</a></span>CTL_vector_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* CTL_vector_at </td>
+          <td class="memname">CTL_API void* CTL_vector_at </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -230,14 +218,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a345139b5ad0760f2307e6ccaf1198960"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a345139b5ad0760f2307e6ccaf1198960">&#9670;&nbsp;</a></span>CTL_vector_back()</h2>
+<a id="a2b02b710464ccbcd4f07e136360fc738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b02b710464ccbcd4f07e136360fc738">&#9670;&nbsp;</a></span>CTL_vector_back()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* CTL_vector_back </td>
+          <td class="memname">CTL_API void* CTL_vector_back </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -257,14 +245,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a154fd4a81e6f116ccf1a08cf6341a8b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a154fd4a81e6f116ccf1a08cf6341a8b6">&#9670;&nbsp;</a></span>CTL_vector_begin()</h2>
+<a id="a50c8b9786fc134f12ce83415bb42c279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50c8b9786fc134f12ce83415bb42c279">&#9670;&nbsp;</a></span>CTL_vector_begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_vector_begin </td>
+          <td class="memname">CTL_API void CTL_vector_begin </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -294,14 +282,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a194f1c494e025a78a810e3094e273706"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a194f1c494e025a78a810e3094e273706">&#9670;&nbsp;</a></span>CTL_vector_capacity()</h2>
+<a id="a804936c4c945591fa247336b8d3d3783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a804936c4c945591fa247336b8d3d3783">&#9670;&nbsp;</a></span>CTL_vector_capacity()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t CTL_vector_capacity </td>
+          <td class="memname">CTL_API size_t CTL_vector_capacity </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -321,14 +309,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5a6a07a79cdb3ff931807c213c11efcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a6a07a79cdb3ff931807c213c11efcb">&#9670;&nbsp;</a></span>CTL_vector_clear()</h2>
+<a id="a2835f25a76cdde9cee714bfa6739c78c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2835f25a76cdde9cee714bfa6739c78c">&#9670;&nbsp;</a></span>CTL_vector_clear()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_vector_clear </td>
+          <td class="memname">CTL_API void CTL_vector_clear </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -347,14 +335,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acb018dcc8f5ce5f2b14454d1cbd480c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb018dcc8f5ce5f2b14454d1cbd480c4">&#9670;&nbsp;</a></span>CTL_vector_delete()</h2>
+<a id="ae630bb632a5e2524111dc725139a680a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae630bb632a5e2524111dc725139a680a">&#9670;&nbsp;</a></span>CTL_vector_delete()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_vector_delete </td>
+          <td class="memname">CTL_API void CTL_vector_delete </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -373,14 +361,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac4fefc3ed4ce61b3f2c5b9214f76f223"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4fefc3ed4ce61b3f2c5b9214f76f223">&#9670;&nbsp;</a></span>CTL_vector_empty()</h2>
+<a id="abe9009e85f486e9c22f0181019b479da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe9009e85f486e9c22f0181019b479da">&#9670;&nbsp;</a></span>CTL_vector_empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CTL_vector_empty </td>
+          <td class="memname">CTL_API bool CTL_vector_empty </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -402,14 +390,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="aa186a6ec3e313d58839689181520285c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa186a6ec3e313d58839689181520285c">&#9670;&nbsp;</a></span>CTL_vector_end()</h2>
+<a id="a428d1136511c3823f1b816077e3c5df6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a428d1136511c3823f1b816077e3c5df6">&#9670;&nbsp;</a></span>CTL_vector_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_vector_end </td>
+          <td class="memname">CTL_API void CTL_vector_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -439,14 +427,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a775fb707d3f0952deb4f7dbd752625ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a775fb707d3f0952deb4f7dbd752625ff">&#9670;&nbsp;</a></span>CTL_vector_erase()</h2>
+<a id="a3933c06a15f381d0ba1a4884040a99fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3933c06a15f381d0ba1a4884040a99fe">&#9670;&nbsp;</a></span>CTL_vector_erase()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_vector_erase </td>
+          <td class="memname">CTL_API void CTL_vector_erase </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -476,14 +464,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a7e48b4e1dd545c31120e9451ca61204e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e48b4e1dd545c31120e9451ca61204e">&#9670;&nbsp;</a></span>CTL_vector_front()</h2>
+<a id="a45d208c4613df95ac346a1056e392f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45d208c4613df95ac346a1056e392f43">&#9670;&nbsp;</a></span>CTL_vector_front()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* CTL_vector_front </td>
+          <td class="memname">CTL_API void* CTL_vector_front </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -503,14 +491,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a9f1ec0bfafe49bc4516b6f20c07137e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f1ec0bfafe49bc4516b6f20c07137e6">&#9670;&nbsp;</a></span>CTL_vector_insert()</h2>
+<a id="aede14e40392653f43784717fd1531ffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aede14e40392653f43784717fd1531ffd">&#9670;&nbsp;</a></span>CTL_vector_insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_vector_insert </td>
+          <td class="memname">CTL_API void CTL_vector_insert </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -547,14 +535,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a3a4ec8ed3ed17c6b1ae55c829f1f103a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a4ec8ed3ed17c6b1ae55c829f1f103a">&#9670;&nbsp;</a></span>CTL_vector_iterator_diff()</h2>
+<a id="a48522c26d58805a48c486efcc6286b47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48522c26d58805a48c486efcc6286b47">&#9670;&nbsp;</a></span>CTL_vector_iterator_diff()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ptrdiff_t CTL_vector_iterator_diff </td>
+          <td class="memname">CTL_API ptrdiff_t CTL_vector_iterator_diff </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *&#160;</td>
           <td class="paramname"><em>left</em>, </td>
@@ -585,14 +573,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="ab186cccbb1715522532142e45c7ce907"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab186cccbb1715522532142e45c7ce907">&#9670;&nbsp;</a></span>CTL_vector_iterator_equal()</h2>
+<a id="a4746ec7791977dde69ac7ff8d1671539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4746ec7791977dde69ac7ff8d1671539">&#9670;&nbsp;</a></span>CTL_vector_iterator_equal()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CTL_vector_iterator_equal </td>
+          <td class="memname">CTL_API bool CTL_vector_iterator_equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *&#160;</td>
           <td class="paramname"><em>left</em>, </td>
@@ -625,14 +613,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="ae22d8f2f00de437133cea0b01a77ba0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae22d8f2f00de437133cea0b01a77ba0e">&#9670;&nbsp;</a></span>CTL_vector_iterator_less()</h2>
+<a id="ac563e1920662898d6ce76157e35cf5cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac563e1920662898d6ce76157e35cf5cb">&#9670;&nbsp;</a></span>CTL_vector_iterator_less()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CTL_vector_iterator_less </td>
+          <td class="memname">CTL_API bool CTL_vector_iterator_less </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *&#160;</td>
           <td class="paramname"><em>left</em>, </td>
@@ -665,14 +653,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a9b32891a2ba0415b22496b653d54597a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b32891a2ba0415b22496b653d54597a">&#9670;&nbsp;</a></span>CTL_vector_iterator_move()</h2>
+<a id="a857027048a397618bd4963c5d7499cf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a857027048a397618bd4963c5d7499cf3">&#9670;&nbsp;</a></span>CTL_vector_iterator_move()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_vector_iterator_move </td>
+          <td class="memname">CTL_API void CTL_vector_iterator_move </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector__iterator.html">CTL_vector_iterator</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -709,14 +697,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="ac733dd95f8965b939f3f66feb70b6f45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac733dd95f8965b939f3f66feb70b6f45">&#9670;&nbsp;</a></span>CTL_vector_new()</h2>
+<a id="a4c5b8ea826729babe715d610b8b844bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c5b8ea826729babe715d610b8b844bd">&#9670;&nbsp;</a></span>CTL_vector_new()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_vector_new </td>
+          <td class="memname">CTL_API void CTL_vector_new </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -753,14 +741,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a1d1a6ef83f938f822a15162c950efb9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d1a6ef83f938f822a15162c950efb9d">&#9670;&nbsp;</a></span>CTL_vector_pop_back()</h2>
+<a id="a78fbd15e4327a443b2771cb53496d42b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78fbd15e4327a443b2771cb53496d42b">&#9670;&nbsp;</a></span>CTL_vector_pop_back()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_vector_pop_back </td>
+          <td class="memname">CTL_API void CTL_vector_pop_back </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -779,14 +767,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a14a108c92cc36fa1603b9fb1a0a5502a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14a108c92cc36fa1603b9fb1a0a5502a">&#9670;&nbsp;</a></span>CTL_vector_push_back()</h2>
+<a id="a9deb5158c3a3bb23c6ef9a9779fc6dd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9deb5158c3a3bb23c6ef9a9779fc6dd8">&#9670;&nbsp;</a></span>CTL_vector_push_back()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_vector_push_back </td>
+          <td class="memname">CTL_API void CTL_vector_push_back </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -816,14 +804,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="af11d1204529b3d95f0142737c3b09d8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af11d1204529b3d95f0142737c3b09d8d">&#9670;&nbsp;</a></span>CTL_vector_size()</h2>
+<a id="add06697e43a73d2445fc2a809bf2d532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add06697e43a73d2445fc2a809bf2d532">&#9670;&nbsp;</a></span>CTL_vector_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t CTL_vector_size </td>
+          <td class="memname">CTL_API size_t CTL_vector_size </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__vector.html">CTL_vector</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>

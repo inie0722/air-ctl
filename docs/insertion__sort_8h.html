@@ -90,27 +90,23 @@ $(document).ready(function(){initNavTree('insertion__sort_8h.html',''); initResi
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &quot;CTL/config.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for insertion_sort.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="insertion__sort_8h__incl.png" border="0" usemap="#ainclude_2CTL_2algorithm_2insertion__sort_8h" alt=""/></div>
-<map name="ainclude_2CTL_2algorithm_2insertion__sort_8h" id="ainclude_2CTL_2algorithm_2insertion__sort_8h">
-<area shape="rect" title=" " alt="" coords="15,5,179,47"/>
-<area shape="rect" title=" " alt="" coords="5,95,88,121"/>
-<area shape="rect" title=" " alt="" coords="112,95,187,121"/>
-</map>
 </div>
 </div>
 <p><a href="insertion__sort_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a37d55d26649ede0948d07b4cdf8069b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="insertion__sort_8h.html#a37d55d26649ede0948d07b4cdf8069b3">CTL_insertion_sort</a> (void *first, void *last, size_t T_size, bool(*compare)(const void *, const void *))</td></tr>
-<tr class="memdesc:a37d55d26649ede0948d07b4cdf8069b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">sort elements  <a href="insertion__sort_8h.html#a37d55d26649ede0948d07b4cdf8069b3">More...</a><br /></td></tr>
-<tr class="separator:a37d55d26649ede0948d07b4cdf8069b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93bb7e8e860debf7768240f018ac30a2"><td class="memItemLeft" align="right" valign="top"><a id="a93bb7e8e860debf7768240f018ac30a2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>__CTL_unguarded_linear_insert</b> (char *last, char *value, size_t T_size, bool(*compare)(const void *, const void *))</td></tr>
-<tr class="separator:a93bb7e8e860debf7768240f018ac30a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa54d2db40394e5061b8cfc924e865f66"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="insertion__sort_8h.html#aa54d2db40394e5061b8cfc924e865f66">CTL_insertion_sort</a> (void *first, void *last, size_t T_size, bool(*compare)(const void *, const void *))</td></tr>
+<tr class="memdesc:aa54d2db40394e5061b8cfc924e865f66"><td class="mdescLeft">&#160;</td><td class="mdescRight">sort elements  <a href="insertion__sort_8h.html#aa54d2db40394e5061b8cfc924e865f66">More...</a><br /></td></tr>
+<tr class="separator:aa54d2db40394e5061b8cfc924e865f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8b2080ffba9e649c61e3f39a5c7cef"><td class="memItemLeft" align="right" valign="top"><a id="acc8b2080ffba9e649c61e3f39a5c7cef"></a>
+CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><b>__CTL_unguarded_linear_insert</b> (char *last, char *value, size_t T_size, bool(*compare)(const void *, const void *))</td></tr>
+<tr class="separator:acc8b2080ffba9e649c61e3f39a5c7cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>然Y (<a href="#" onclick="location.href='mai'+'lto:'+'ini'+'e0'+'722'+'@g'+'mai'+'l.'+'com'; return false;">inie0<span style="display: none;">.nosp@m.</span>722@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
@@ -118,14 +114,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>__CTL_unguarded_linea
 <dl class="section date"><dt>Date</dt><dd>2022-05-20</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a37d55d26649ede0948d07b4cdf8069b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37d55d26649ede0948d07b4cdf8069b3">&#9670;&nbsp;</a></span>CTL_insertion_sort()</h2>
+<a id="aa54d2db40394e5061b8cfc924e865f66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa54d2db40394e5061b8cfc924e865f66">&#9670;&nbsp;</a></span>CTL_insertion_sort()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_insertion_sort </td>
+          <td class="memname">CTL_API void CTL_insertion_sort </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>first</em>, </td>

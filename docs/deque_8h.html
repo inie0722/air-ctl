@@ -91,28 +91,16 @@ $(document).ready(function(){initNavTree('deque_8h.html',''); initResizable(); }
 <div class="contents">
 <div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;CTL/config.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for deque.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="deque_8h__incl.png" border="0" usemap="#ainclude_2CTL_2deque_8h" alt=""/></div>
-<map name="ainclude_2CTL_2deque_8h" id="ainclude_2CTL_2deque_8h">
-<area shape="rect" title=" " alt="" coords="17,5,170,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,80,107"/>
-<area shape="rect" title=" " alt="" coords="104,80,187,107"/>
-</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="deque_8h__dep__incl.png" border="0" usemap="#ainclude_2CTL_2deque_8hdep" alt=""/></div>
-<map name="ainclude_2CTL_2deque_8hdep" id="ainclude_2CTL_2deque_8hdep">
-<area shape="rect" title=" " alt="" coords="259,5,412,32"/>
-<area shape="rect" href="container_8h.html" title=" " alt="" coords="249,80,422,107"/>
-<area shape="rect" href="heap_8h.html" title=" " alt="" coords="5,162,151,189"/>
-<area shape="rect" href="priority__queue_8h.html" title=" " alt="" coords="175,155,323,196"/>
-<area shape="rect" href="queue_8h.html" title=" " alt="" coords="347,162,500,189"/>
-<area shape="rect" href="stack_8h.html" title=" " alt="" coords="524,162,672,189"/>
-</map>
 </div>
 </div>
 <p><a href="deque_8h_source.html">Go to the source code of this file.</a></p>
@@ -128,66 +116,66 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4dcd3a4a4ce0b0fc9048f88b2d3c375d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a4dcd3a4a4ce0b0fc9048f88b2d3c375d">CTL_deque_new</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, size_t data_size, size_t T_size)</td></tr>
-<tr class="memdesc:a4dcd3a4a4ce0b0fc9048f88b2d3c375d"><td class="mdescLeft">&#160;</td><td class="mdescRight">create deque  <a href="deque_8h.html#a4dcd3a4a4ce0b0fc9048f88b2d3c375d">More...</a><br /></td></tr>
-<tr class="separator:a4dcd3a4a4ce0b0fc9048f88b2d3c375d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a542d8fd243c5cd3a87083c9a34d48a55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a542d8fd243c5cd3a87083c9a34d48a55">CTL_deque_delete</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
-<tr class="memdesc:a542d8fd243c5cd3a87083c9a34d48a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy deque  <a href="deque_8h.html#a542d8fd243c5cd3a87083c9a34d48a55">More...</a><br /></td></tr>
-<tr class="separator:a542d8fd243c5cd3a87083c9a34d48a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d09b0792b78549d9796d76a1603fab2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a5d09b0792b78549d9796d76a1603fab2">CTL_deque_clear</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
-<tr class="memdesc:a5d09b0792b78549d9796d76a1603fab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear deque  <a href="deque_8h.html#a5d09b0792b78549d9796d76a1603fab2">More...</a><br /></td></tr>
-<tr class="separator:a5d09b0792b78549d9796d76a1603fab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadb33110b482b9c1361d05e5b6e95a7f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#aadb33110b482b9c1361d05e5b6e95a7f">CTL_deque_front</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
-<tr class="memdesc:aadb33110b482b9c1361d05e5b6e95a7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get first element  <a href="deque_8h.html#aadb33110b482b9c1361d05e5b6e95a7f">More...</a><br /></td></tr>
-<tr class="separator:aadb33110b482b9c1361d05e5b6e95a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed3bcd8ac069b03753f6ec1c161d7af4"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#aed3bcd8ac069b03753f6ec1c161d7af4">CTL_deque_back</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
-<tr class="memdesc:aed3bcd8ac069b03753f6ec1c161d7af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">get last element  <a href="deque_8h.html#aed3bcd8ac069b03753f6ec1c161d7af4">More...</a><br /></td></tr>
-<tr class="separator:aed3bcd8ac069b03753f6ec1c161d7af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1184305a582bf3fbed41467996f0f9f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a1184305a582bf3fbed41467996f0f9f0">CTL_deque_begin</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *res)</td></tr>
-<tr class="memdesc:a1184305a582bf3fbed41467996f0f9f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">get begin iterator  <a href="deque_8h.html#a1184305a582bf3fbed41467996f0f9f0">More...</a><br /></td></tr>
-<tr class="separator:a1184305a582bf3fbed41467996f0f9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dd1493678fbe5303a4fdc21b571dc80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a3dd1493678fbe5303a4fdc21b571dc80">CTL_deque_end</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *res)</td></tr>
-<tr class="memdesc:a3dd1493678fbe5303a4fdc21b571dc80"><td class="mdescLeft">&#160;</td><td class="mdescRight">get end iterator  <a href="deque_8h.html#a3dd1493678fbe5303a4fdc21b571dc80">More...</a><br /></td></tr>
-<tr class="separator:a3dd1493678fbe5303a4fdc21b571dc80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a194a71a5f010a9b2792cd6baeb9f6adc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a194a71a5f010a9b2792cd6baeb9f6adc">CTL_deque_push_back</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, const void *element)</td></tr>
-<tr class="memdesc:a194a71a5f010a9b2792cd6baeb9f6adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an element to the end  <a href="deque_8h.html#a194a71a5f010a9b2792cd6baeb9f6adc">More...</a><br /></td></tr>
-<tr class="separator:a194a71a5f010a9b2792cd6baeb9f6adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af73e3aac18657bb71d5acef9dd516d07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#af73e3aac18657bb71d5acef9dd516d07">CTL_deque_push_front</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, const void *element)</td></tr>
-<tr class="memdesc:af73e3aac18657bb71d5acef9dd516d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an element to the front  <a href="deque_8h.html#af73e3aac18657bb71d5acef9dd516d07">More...</a><br /></td></tr>
-<tr class="separator:af73e3aac18657bb71d5acef9dd516d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cb8fe0673d2ef593de3870a2226ccab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a0cb8fe0673d2ef593de3870a2226ccab">CTL_deque_pop_back</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
-<tr class="memdesc:a0cb8fe0673d2ef593de3870a2226ccab"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the last element  <a href="deque_8h.html#a0cb8fe0673d2ef593de3870a2226ccab">More...</a><br /></td></tr>
-<tr class="separator:a0cb8fe0673d2ef593de3870a2226ccab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae71f07e8ffd0f9f40a33843407839f28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#ae71f07e8ffd0f9f40a33843407839f28">CTL_deque_pop_front</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
-<tr class="memdesc:ae71f07e8ffd0f9f40a33843407839f28"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the first element  <a href="deque_8h.html#ae71f07e8ffd0f9f40a33843407839f28">More...</a><br /></td></tr>
-<tr class="separator:ae71f07e8ffd0f9f40a33843407839f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9d66d27404c19d87a46eca009bc4536"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#ae9d66d27404c19d87a46eca009bc4536">CTL_deque_insert</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *iterator, const void *element)</td></tr>
-<tr class="memdesc:ae9d66d27404c19d87a46eca009bc4536"><td class="mdescLeft">&#160;</td><td class="mdescRight">inserts an element at a given position  <a href="deque_8h.html#ae9d66d27404c19d87a46eca009bc4536">More...</a><br /></td></tr>
-<tr class="separator:ae9d66d27404c19d87a46eca009bc4536"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac4cad50a104eb4dd388b18c2a7a4999"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#aac4cad50a104eb4dd388b18c2a7a4999">CTL_deque_erase</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *iterator)</td></tr>
-<tr class="memdesc:aac4cad50a104eb4dd388b18c2a7a4999"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the element at a given position  <a href="deque_8h.html#aac4cad50a104eb4dd388b18c2a7a4999">More...</a><br /></td></tr>
-<tr class="separator:aac4cad50a104eb4dd388b18c2a7a4999"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a152616033077c8daf463adcdff6a53b7"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a152616033077c8daf463adcdff6a53b7">CTL_deque_at</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, const size_t index)</td></tr>
-<tr class="memdesc:a152616033077c8daf463adcdff6a53b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get index element  <a href="deque_8h.html#a152616033077c8daf463adcdff6a53b7">More...</a><br /></td></tr>
-<tr class="separator:a152616033077c8daf463adcdff6a53b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5809091a80c8cff79ec1996f4185268b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a5809091a80c8cff79ec1996f4185268b">CTL_deque_size</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
-<tr class="memdesc:a5809091a80c8cff79ec1996f4185268b"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements  <a href="deque_8h.html#a5809091a80c8cff79ec1996f4185268b">More...</a><br /></td></tr>
-<tr class="separator:a5809091a80c8cff79ec1996f4185268b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a2e2ee780b7198ff4eadce7ea70294f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a7a2e2ee780b7198ff4eadce7ea70294f">CTL_deque_empty</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
-<tr class="memdesc:a7a2e2ee780b7198ff4eadce7ea70294f"><td class="mdescLeft">&#160;</td><td class="mdescRight">if deque is empty return true, else return false  <a href="deque_8h.html#a7a2e2ee780b7198ff4eadce7ea70294f">More...</a><br /></td></tr>
-<tr class="separator:a7a2e2ee780b7198ff4eadce7ea70294f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae81ffd05318ef84862b99d58e60f7d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#aae81ffd05318ef84862b99d58e60f7d5">CTL_deque_iterator_move</a> (const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *handle, const ptrdiff_t n, <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *res)</td></tr>
-<tr class="memdesc:aae81ffd05318ef84862b99d58e60f7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterator move to n  <a href="deque_8h.html#aae81ffd05318ef84862b99d58e60f7d5">More...</a><br /></td></tr>
-<tr class="separator:aae81ffd05318ef84862b99d58e60f7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a241c5840af5de29ba75927d8c65b1fcc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a241c5840af5de29ba75927d8c65b1fcc">CTL_deque_iterator_equal</a> (const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *left, const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *right)</td></tr>
-<tr class="memdesc:a241c5840af5de29ba75927d8c65b1fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">if left iterator equal right iterator return true, else return false  <a href="deque_8h.html#a241c5840af5de29ba75927d8c65b1fcc">More...</a><br /></td></tr>
-<tr class="separator:a241c5840af5de29ba75927d8c65b1fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70ab8a92bc8ac6a6cedcf7eb852ac418"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a70ab8a92bc8ac6a6cedcf7eb852ac418">CTL_deque_iterator_less</a> (const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *left, const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *right)</td></tr>
-<tr class="memdesc:a70ab8a92bc8ac6a6cedcf7eb852ac418"><td class="mdescLeft">&#160;</td><td class="mdescRight">if left iterator precedes right iterator return true, else return false  <a href="deque_8h.html#a70ab8a92bc8ac6a6cedcf7eb852ac418">More...</a><br /></td></tr>
-<tr class="separator:a70ab8a92bc8ac6a6cedcf7eb852ac418"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaf49b616ca9e49ef8107af2a9c38891"><td class="memItemLeft" align="right" valign="top">ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#adaf49b616ca9e49ef8107af2a9c38891">CTL_deque_iterator_diff</a> (const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *left, const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *right)</td></tr>
-<tr class="memdesc:adaf49b616ca9e49ef8107af2a9c38891"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate distance between left and right iterator  <a href="deque_8h.html#adaf49b616ca9e49ef8107af2a9c38891">More...</a><br /></td></tr>
-<tr class="separator:adaf49b616ca9e49ef8107af2a9c38891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a055c27da6622f61e1671f5dc8de3581d"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a055c27da6622f61e1671f5dc8de3581d">CTL_deque_new</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, size_t data_size, size_t T_size)</td></tr>
+<tr class="memdesc:a055c27da6622f61e1671f5dc8de3581d"><td class="mdescLeft">&#160;</td><td class="mdescRight">create deque  <a href="deque_8h.html#a055c27da6622f61e1671f5dc8de3581d">More...</a><br /></td></tr>
+<tr class="separator:a055c27da6622f61e1671f5dc8de3581d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a011d7f4f68f1e9768d076128da5dfe00"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a011d7f4f68f1e9768d076128da5dfe00">CTL_deque_delete</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
+<tr class="memdesc:a011d7f4f68f1e9768d076128da5dfe00"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy deque  <a href="deque_8h.html#a011d7f4f68f1e9768d076128da5dfe00">More...</a><br /></td></tr>
+<tr class="separator:a011d7f4f68f1e9768d076128da5dfe00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75305001369ef275dcaa9b8c7f0efd3e"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a75305001369ef275dcaa9b8c7f0efd3e">CTL_deque_clear</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
+<tr class="memdesc:a75305001369ef275dcaa9b8c7f0efd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear deque  <a href="deque_8h.html#a75305001369ef275dcaa9b8c7f0efd3e">More...</a><br /></td></tr>
+<tr class="separator:a75305001369ef275dcaa9b8c7f0efd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab15412e7d11eeb2c653e1cc03cd943ff"><td class="memItemLeft" align="right" valign="top">CTL_API void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#ab15412e7d11eeb2c653e1cc03cd943ff">CTL_deque_front</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
+<tr class="memdesc:ab15412e7d11eeb2c653e1cc03cd943ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">get first element  <a href="deque_8h.html#ab15412e7d11eeb2c653e1cc03cd943ff">More...</a><br /></td></tr>
+<tr class="separator:ab15412e7d11eeb2c653e1cc03cd943ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7334849f00f9a4542833d6b31947bd0"><td class="memItemLeft" align="right" valign="top">CTL_API void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#ab7334849f00f9a4542833d6b31947bd0">CTL_deque_back</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
+<tr class="memdesc:ab7334849f00f9a4542833d6b31947bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">get last element  <a href="deque_8h.html#ab7334849f00f9a4542833d6b31947bd0">More...</a><br /></td></tr>
+<tr class="separator:ab7334849f00f9a4542833d6b31947bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2e0daceb5f2fa6b5265098d260bfece"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#ad2e0daceb5f2fa6b5265098d260bfece">CTL_deque_begin</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *res)</td></tr>
+<tr class="memdesc:ad2e0daceb5f2fa6b5265098d260bfece"><td class="mdescLeft">&#160;</td><td class="mdescRight">get begin iterator  <a href="deque_8h.html#ad2e0daceb5f2fa6b5265098d260bfece">More...</a><br /></td></tr>
+<tr class="separator:ad2e0daceb5f2fa6b5265098d260bfece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2efaf2ecde9a4543e7d40fe53287a074"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a2efaf2ecde9a4543e7d40fe53287a074">CTL_deque_end</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *res)</td></tr>
+<tr class="memdesc:a2efaf2ecde9a4543e7d40fe53287a074"><td class="mdescLeft">&#160;</td><td class="mdescRight">get end iterator  <a href="deque_8h.html#a2efaf2ecde9a4543e7d40fe53287a074">More...</a><br /></td></tr>
+<tr class="separator:a2efaf2ecde9a4543e7d40fe53287a074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545dddc7d6095413d3c3a12f831e9c33"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a545dddc7d6095413d3c3a12f831e9c33">CTL_deque_push_back</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, const void *element)</td></tr>
+<tr class="memdesc:a545dddc7d6095413d3c3a12f831e9c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an element to the end  <a href="deque_8h.html#a545dddc7d6095413d3c3a12f831e9c33">More...</a><br /></td></tr>
+<tr class="separator:a545dddc7d6095413d3c3a12f831e9c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b15ebf8156d6a811b65b5721f930448"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a6b15ebf8156d6a811b65b5721f930448">CTL_deque_push_front</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, const void *element)</td></tr>
+<tr class="memdesc:a6b15ebf8156d6a811b65b5721f930448"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an element to the front  <a href="deque_8h.html#a6b15ebf8156d6a811b65b5721f930448">More...</a><br /></td></tr>
+<tr class="separator:a6b15ebf8156d6a811b65b5721f930448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae904e1924b4b8a85480fd01b967f77ca"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#ae904e1924b4b8a85480fd01b967f77ca">CTL_deque_pop_back</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
+<tr class="memdesc:ae904e1924b4b8a85480fd01b967f77ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the last element  <a href="deque_8h.html#ae904e1924b4b8a85480fd01b967f77ca">More...</a><br /></td></tr>
+<tr class="separator:ae904e1924b4b8a85480fd01b967f77ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d1c4a7ab0aacf1bb46286a4b6ff417"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a69d1c4a7ab0aacf1bb46286a4b6ff417">CTL_deque_pop_front</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
+<tr class="memdesc:a69d1c4a7ab0aacf1bb46286a4b6ff417"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the first element  <a href="deque_8h.html#a69d1c4a7ab0aacf1bb46286a4b6ff417">More...</a><br /></td></tr>
+<tr class="separator:a69d1c4a7ab0aacf1bb46286a4b6ff417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e15855ed59e99350268c2bc4bf569c4"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a9e15855ed59e99350268c2bc4bf569c4">CTL_deque_insert</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *iterator, const void *element)</td></tr>
+<tr class="memdesc:a9e15855ed59e99350268c2bc4bf569c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">inserts an element at a given position  <a href="deque_8h.html#a9e15855ed59e99350268c2bc4bf569c4">More...</a><br /></td></tr>
+<tr class="separator:a9e15855ed59e99350268c2bc4bf569c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad17a5ede4870ab3d2cd34b13da3ca97a"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#ad17a5ede4870ab3d2cd34b13da3ca97a">CTL_deque_erase</a> (<a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *iterator)</td></tr>
+<tr class="memdesc:ad17a5ede4870ab3d2cd34b13da3ca97a"><td class="mdescLeft">&#160;</td><td class="mdescRight">erases the element at a given position  <a href="deque_8h.html#ad17a5ede4870ab3d2cd34b13da3ca97a">More...</a><br /></td></tr>
+<tr class="separator:ad17a5ede4870ab3d2cd34b13da3ca97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7a8b7feebb563cb71d95b4e6330c34"><td class="memItemLeft" align="right" valign="top">CTL_API void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a3f7a8b7feebb563cb71d95b4e6330c34">CTL_deque_at</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle, const size_t index)</td></tr>
+<tr class="memdesc:a3f7a8b7feebb563cb71d95b4e6330c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">get index element  <a href="deque_8h.html#a3f7a8b7feebb563cb71d95b4e6330c34">More...</a><br /></td></tr>
+<tr class="separator:a3f7a8b7feebb563cb71d95b4e6330c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a560a27af233952abe026ec1df66a210c"><td class="memItemLeft" align="right" valign="top">CTL_API size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a560a27af233952abe026ec1df66a210c">CTL_deque_size</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
+<tr class="memdesc:a560a27af233952abe026ec1df66a210c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of elements  <a href="deque_8h.html#a560a27af233952abe026ec1df66a210c">More...</a><br /></td></tr>
+<tr class="separator:a560a27af233952abe026ec1df66a210c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4531a5eb84490b824dbcd025276d33a1"><td class="memItemLeft" align="right" valign="top">CTL_API bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a4531a5eb84490b824dbcd025276d33a1">CTL_deque_empty</a> (const <a class="el" href="structCTL__deque.html">CTL_deque</a> *handle)</td></tr>
+<tr class="memdesc:a4531a5eb84490b824dbcd025276d33a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">if deque is empty return true, else return false  <a href="deque_8h.html#a4531a5eb84490b824dbcd025276d33a1">More...</a><br /></td></tr>
+<tr class="separator:a4531a5eb84490b824dbcd025276d33a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5482c3caab71ec1059bcab2fa6aaaac3"><td class="memItemLeft" align="right" valign="top">CTL_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a5482c3caab71ec1059bcab2fa6aaaac3">CTL_deque_iterator_move</a> (const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *handle, const ptrdiff_t n, <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *res)</td></tr>
+<tr class="memdesc:a5482c3caab71ec1059bcab2fa6aaaac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterator move to n  <a href="deque_8h.html#a5482c3caab71ec1059bcab2fa6aaaac3">More...</a><br /></td></tr>
+<tr class="separator:a5482c3caab71ec1059bcab2fa6aaaac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae88a73a5bfe837a5e423067d8dca594b"><td class="memItemLeft" align="right" valign="top">CTL_API bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#ae88a73a5bfe837a5e423067d8dca594b">CTL_deque_iterator_equal</a> (const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *left, const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *right)</td></tr>
+<tr class="memdesc:ae88a73a5bfe837a5e423067d8dca594b"><td class="mdescLeft">&#160;</td><td class="mdescRight">if left iterator equal right iterator return true, else return false  <a href="deque_8h.html#ae88a73a5bfe837a5e423067d8dca594b">More...</a><br /></td></tr>
+<tr class="separator:ae88a73a5bfe837a5e423067d8dca594b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2676fa42782ccaf0e8415173cdcc4c4b"><td class="memItemLeft" align="right" valign="top">CTL_API bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a2676fa42782ccaf0e8415173cdcc4c4b">CTL_deque_iterator_less</a> (const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *left, const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *right)</td></tr>
+<tr class="memdesc:a2676fa42782ccaf0e8415173cdcc4c4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">if left iterator precedes right iterator return true, else return false  <a href="deque_8h.html#a2676fa42782ccaf0e8415173cdcc4c4b">More...</a><br /></td></tr>
+<tr class="separator:a2676fa42782ccaf0e8415173cdcc4c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca57a6978d4487cb30cd0b3914dc778"><td class="memItemLeft" align="right" valign="top">CTL_API ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deque_8h.html#a2ca57a6978d4487cb30cd0b3914dc778">CTL_deque_iterator_diff</a> (const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *left, const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *right)</td></tr>
+<tr class="memdesc:a2ca57a6978d4487cb30cd0b3914dc778"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate distance between left and right iterator  <a href="deque_8h.html#a2ca57a6978d4487cb30cd0b3914dc778">More...</a><br /></td></tr>
+<tr class="separator:a2ca57a6978d4487cb30cd0b3914dc778"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>然Y (<a href="#" onclick="location.href='mai'+'lto:'+'ini'+'e0'+'722'+'@g'+'mai'+'l.'+'com'; return false;">inie0<span style="display: none;">.nosp@m.</span>722@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
@@ -195,14 +183,14 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2022-05-19</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a152616033077c8daf463adcdff6a53b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a152616033077c8daf463adcdff6a53b7">&#9670;&nbsp;</a></span>CTL_deque_at()</h2>
+<a id="a3f7a8b7feebb563cb71d95b4e6330c34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f7a8b7feebb563cb71d95b4e6330c34">&#9670;&nbsp;</a></span>CTL_deque_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* CTL_deque_at </td>
+          <td class="memname">CTL_API void* CTL_deque_at </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -233,14 +221,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aed3bcd8ac069b03753f6ec1c161d7af4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed3bcd8ac069b03753f6ec1c161d7af4">&#9670;&nbsp;</a></span>CTL_deque_back()</h2>
+<a id="ab7334849f00f9a4542833d6b31947bd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7334849f00f9a4542833d6b31947bd0">&#9670;&nbsp;</a></span>CTL_deque_back()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* CTL_deque_back </td>
+          <td class="memname">CTL_API void* CTL_deque_back </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -260,14 +248,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1184305a582bf3fbed41467996f0f9f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1184305a582bf3fbed41467996f0f9f0">&#9670;&nbsp;</a></span>CTL_deque_begin()</h2>
+<a id="ad2e0daceb5f2fa6b5265098d260bfece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2e0daceb5f2fa6b5265098d260bfece">&#9670;&nbsp;</a></span>CTL_deque_begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_begin </td>
+          <td class="memname">CTL_API void CTL_deque_begin </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -297,14 +285,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5d09b0792b78549d9796d76a1603fab2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d09b0792b78549d9796d76a1603fab2">&#9670;&nbsp;</a></span>CTL_deque_clear()</h2>
+<a id="a75305001369ef275dcaa9b8c7f0efd3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75305001369ef275dcaa9b8c7f0efd3e">&#9670;&nbsp;</a></span>CTL_deque_clear()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_clear </td>
+          <td class="memname">CTL_API void CTL_deque_clear </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -323,14 +311,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a542d8fd243c5cd3a87083c9a34d48a55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a542d8fd243c5cd3a87083c9a34d48a55">&#9670;&nbsp;</a></span>CTL_deque_delete()</h2>
+<a id="a011d7f4f68f1e9768d076128da5dfe00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a011d7f4f68f1e9768d076128da5dfe00">&#9670;&nbsp;</a></span>CTL_deque_delete()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_delete </td>
+          <td class="memname">CTL_API void CTL_deque_delete </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -349,14 +337,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7a2e2ee780b7198ff4eadce7ea70294f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a2e2ee780b7198ff4eadce7ea70294f">&#9670;&nbsp;</a></span>CTL_deque_empty()</h2>
+<a id="a4531a5eb84490b824dbcd025276d33a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4531a5eb84490b824dbcd025276d33a1">&#9670;&nbsp;</a></span>CTL_deque_empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CTL_deque_empty </td>
+          <td class="memname">CTL_API bool CTL_deque_empty </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -378,14 +366,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a3dd1493678fbe5303a4fdc21b571dc80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dd1493678fbe5303a4fdc21b571dc80">&#9670;&nbsp;</a></span>CTL_deque_end()</h2>
+<a id="a2efaf2ecde9a4543e7d40fe53287a074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2efaf2ecde9a4543e7d40fe53287a074">&#9670;&nbsp;</a></span>CTL_deque_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_end </td>
+          <td class="memname">CTL_API void CTL_deque_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -415,14 +403,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="aac4cad50a104eb4dd388b18c2a7a4999"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac4cad50a104eb4dd388b18c2a7a4999">&#9670;&nbsp;</a></span>CTL_deque_erase()</h2>
+<a id="ad17a5ede4870ab3d2cd34b13da3ca97a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad17a5ede4870ab3d2cd34b13da3ca97a">&#9670;&nbsp;</a></span>CTL_deque_erase()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_erase </td>
+          <td class="memname">CTL_API void CTL_deque_erase </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -452,14 +440,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="aadb33110b482b9c1361d05e5b6e95a7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadb33110b482b9c1361d05e5b6e95a7f">&#9670;&nbsp;</a></span>CTL_deque_front()</h2>
+<a id="ab15412e7d11eeb2c653e1cc03cd943ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab15412e7d11eeb2c653e1cc03cd943ff">&#9670;&nbsp;</a></span>CTL_deque_front()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* CTL_deque_front </td>
+          <td class="memname">CTL_API void* CTL_deque_front </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -479,14 +467,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="ae9d66d27404c19d87a46eca009bc4536"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9d66d27404c19d87a46eca009bc4536">&#9670;&nbsp;</a></span>CTL_deque_insert()</h2>
+<a id="a9e15855ed59e99350268c2bc4bf569c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e15855ed59e99350268c2bc4bf569c4">&#9670;&nbsp;</a></span>CTL_deque_insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_insert </td>
+          <td class="memname">CTL_API void CTL_deque_insert </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -523,14 +511,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="adaf49b616ca9e49ef8107af2a9c38891"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adaf49b616ca9e49ef8107af2a9c38891">&#9670;&nbsp;</a></span>CTL_deque_iterator_diff()</h2>
+<a id="a2ca57a6978d4487cb30cd0b3914dc778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca57a6978d4487cb30cd0b3914dc778">&#9670;&nbsp;</a></span>CTL_deque_iterator_diff()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ptrdiff_t CTL_deque_iterator_diff </td>
+          <td class="memname">CTL_API ptrdiff_t CTL_deque_iterator_diff </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *&#160;</td>
           <td class="paramname"><em>left</em>, </td>
@@ -561,14 +549,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a241c5840af5de29ba75927d8c65b1fcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a241c5840af5de29ba75927d8c65b1fcc">&#9670;&nbsp;</a></span>CTL_deque_iterator_equal()</h2>
+<a id="ae88a73a5bfe837a5e423067d8dca594b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae88a73a5bfe837a5e423067d8dca594b">&#9670;&nbsp;</a></span>CTL_deque_iterator_equal()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CTL_deque_iterator_equal </td>
+          <td class="memname">CTL_API bool CTL_deque_iterator_equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *&#160;</td>
           <td class="paramname"><em>left</em>, </td>
@@ -601,14 +589,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a70ab8a92bc8ac6a6cedcf7eb852ac418"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70ab8a92bc8ac6a6cedcf7eb852ac418">&#9670;&nbsp;</a></span>CTL_deque_iterator_less()</h2>
+<a id="a2676fa42782ccaf0e8415173cdcc4c4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2676fa42782ccaf0e8415173cdcc4c4b">&#9670;&nbsp;</a></span>CTL_deque_iterator_less()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CTL_deque_iterator_less </td>
+          <td class="memname">CTL_API bool CTL_deque_iterator_less </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *&#160;</td>
           <td class="paramname"><em>left</em>, </td>
@@ -641,14 +629,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="aae81ffd05318ef84862b99d58e60f7d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae81ffd05318ef84862b99d58e60f7d5">&#9670;&nbsp;</a></span>CTL_deque_iterator_move()</h2>
+<a id="a5482c3caab71ec1059bcab2fa6aaaac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5482c3caab71ec1059bcab2fa6aaaac3">&#9670;&nbsp;</a></span>CTL_deque_iterator_move()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_iterator_move </td>
+          <td class="memname">CTL_API void CTL_deque_iterator_move </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__deque__iterator.html">CTL_deque_iterator</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -685,14 +673,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a4dcd3a4a4ce0b0fc9048f88b2d3c375d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dcd3a4a4ce0b0fc9048f88b2d3c375d">&#9670;&nbsp;</a></span>CTL_deque_new()</h2>
+<a id="a055c27da6622f61e1671f5dc8de3581d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a055c27da6622f61e1671f5dc8de3581d">&#9670;&nbsp;</a></span>CTL_deque_new()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_new </td>
+          <td class="memname">CTL_API void CTL_deque_new </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -729,14 +717,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a0cb8fe0673d2ef593de3870a2226ccab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cb8fe0673d2ef593de3870a2226ccab">&#9670;&nbsp;</a></span>CTL_deque_pop_back()</h2>
+<a id="ae904e1924b4b8a85480fd01b967f77ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae904e1924b4b8a85480fd01b967f77ca">&#9670;&nbsp;</a></span>CTL_deque_pop_back()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_pop_back </td>
+          <td class="memname">CTL_API void CTL_deque_pop_back </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -755,14 +743,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="ae71f07e8ffd0f9f40a33843407839f28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae71f07e8ffd0f9f40a33843407839f28">&#9670;&nbsp;</a></span>CTL_deque_pop_front()</h2>
+<a id="a69d1c4a7ab0aacf1bb46286a4b6ff417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d1c4a7ab0aacf1bb46286a4b6ff417">&#9670;&nbsp;</a></span>CTL_deque_pop_front()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_pop_front </td>
+          <td class="memname">CTL_API void CTL_deque_pop_front </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -781,14 +769,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a194a71a5f010a9b2792cd6baeb9f6adc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a194a71a5f010a9b2792cd6baeb9f6adc">&#9670;&nbsp;</a></span>CTL_deque_push_back()</h2>
+<a id="a545dddc7d6095413d3c3a12f831e9c33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545dddc7d6095413d3c3a12f831e9c33">&#9670;&nbsp;</a></span>CTL_deque_push_back()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_push_back </td>
+          <td class="memname">CTL_API void CTL_deque_push_back </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -818,14 +806,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="af73e3aac18657bb71d5acef9dd516d07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af73e3aac18657bb71d5acef9dd516d07">&#9670;&nbsp;</a></span>CTL_deque_push_front()</h2>
+<a id="a6b15ebf8156d6a811b65b5721f930448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b15ebf8156d6a811b65b5721f930448">&#9670;&nbsp;</a></span>CTL_deque_push_front()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CTL_deque_push_front </td>
+          <td class="memname">CTL_API void CTL_deque_push_front </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -855,14 +843,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a5809091a80c8cff79ec1996f4185268b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5809091a80c8cff79ec1996f4185268b">&#9670;&nbsp;</a></span>CTL_deque_size()</h2>
+<a id="a560a27af233952abe026ec1df66a210c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a560a27af233952abe026ec1df66a210c">&#9670;&nbsp;</a></span>CTL_deque_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t CTL_deque_size </td>
+          <td class="memname">CTL_API size_t CTL_deque_size </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCTL__deque.html">CTL_deque</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
