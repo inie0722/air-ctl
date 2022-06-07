@@ -4,7 +4,7 @@ file(GLOB adapter ./adapter/*)
 file(GLOB algorithm ./algorithm/*)
 
 if(BUILD_SHARED_LIBS)
-  	add_definitions(-D CTL_DLL_BUILD)
+	add_compile_definitions(CTL_DLL_BUILD)
   	add_library(CTL SHARED ${allocator} ${container} ${adapter} ${algorithm})
 else()
 	add_library(CTL STATIC ${allocator} ${container} ${adapter} ${algorithm})

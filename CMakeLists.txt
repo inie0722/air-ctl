@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.00)
+cmake_minimum_required(VERSION 3.12)
 project(CTL)
 
 set(CMAKE_CXX_STANDARD 17)
