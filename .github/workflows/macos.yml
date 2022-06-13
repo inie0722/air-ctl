@@ -2,9 +2,9 @@ name: macos
 
 on:
   push:
-    branches: [ master ]
+    branches: [ lock-free ]
   pull_request:
-    branches: [ master ]
+    branches: [ lock-free ]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
