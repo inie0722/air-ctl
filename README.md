@@ -18,6 +18,35 @@ cmake ../ -DTest=ON
 make check && ctest
 ```
 
+## Container task lists
+- [x] `array`
+- [x] `vector`
+- [x] `deque`
+- [x] `list`
+- [x] `hash map`
+- [x] `tree map`
+- [x] `queue`
+- [x] `stack`
+- [x] `heap`
+- [x] `priority queue`
+- [x] `allocator`
+
+## Algorithm task lists 
+- [x] `heap sort`
+- [x] `insertion sort`
+- [x] `intro sort`
+- [x] `quick sort`
+- [x] `tim sort`
+
+## Lockfree task lists 
+- [ ] `spsc queue`
+- [ ] `ring queue`
+- [ ] `queue`
+- [ ] `stack`
+- [ ] `apa pointer`
+- [ ] `allocator`
+
+
 ## About
 This library is a C language container library written by imitating STL, you can use this library like STL<br>
 If you want to see the specific container usage method, you can go to the [documentation](https://inie0722.github.io/CTL/)
