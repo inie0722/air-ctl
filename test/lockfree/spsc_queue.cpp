@@ -7,7 +7,7 @@
 
 extern "C"
 {
-    #include "CTL/lockfree/spsc_queue.h"
+#include "CTL/lockfree/spsc_queue.h"
 }
 
 constexpr size_t COUNT = 10000;
@@ -35,7 +35,7 @@ public:
 
         CTL_lockfree_spsc_queue queue;
         CTL_lockfree_spsc_queue_new(&queue, MAX_SIZE, sizeof(value_t));
-        
+
         std::vector<size_t> array(COUNT);
 
         std::chrono::nanoseconds write_diff;
