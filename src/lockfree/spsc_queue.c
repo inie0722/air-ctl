@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 
 #include "CTL/lockfree/spsc_queue.h"
 
@@ -19,4 +20,75 @@ void CTL_lockfree_spsc_queue_new(CTL_lockfree_spsc_queue *handle, size_t max_siz
 void CTL_lockfree_spsc_queue_delete(CTL_lockfree_spsc_queue *handle)
 {
     free(handle->data);
+}
+
+size_t CTL_lockfree_spsc_queue_push(CTL_lockfree_spsc_queue *handle, const void *first, size_t count)
+{
+    size_t max_size = handle->max_size;
+    size_t T_size = handle->T_size;
+    char *data = handle->data;
+
+    //可写数量
+    size_t available = max_size - (handle->writable_limit - atomic_load_explicit(&handle->readable_limit, memory_order_acquire));
+    if (available == 0)
+    {
+        return 0;
+    }
+
+    if ((handle->writable_limit % max_size) + available > max_size)
+    {
+        size_t len = max_size - (handle->writable_limit % max_size);
+
+        memcpy(data + get_index(max_size, handle->writable_limit) * T_size, first, len * T_size);
+        memcpy(data, (char *)first + len * T_size, available - len * T_size);
+    }
+    else
+    {
+        memcpy(data + get_index(max_size, handle->writable_limit) * T_size, first, available * T_size);
+    }
+
+    atomic_fetch_add_explicit(&handle->writable_limit, available, memory_order_release);
+
+    return available;
+}
+
+size_t CTL_lockfree_spsc_queue_pop(CTL_lockfree_spsc_queue *handle, void *result, size_t count)
+{
+    size_t max_size = handle->max_size;
+    size_t T_size = handle->T_size;
+    char *data = handle->data;
+
+    //可读数量
+    size_t available = atomic_load_explicit(&handle->writable_limit, memory_order_acquire) - handle->readable_limit;
+
+    if (available == 0)
+    {
+        return 0;
+    }
+
+    if ((handle->readable_limit % max_size) + available > max_size)
+    {
+        size_t len = max_size - (handle->readable_limit % max_size);
+
+        memcpy(result, data + get_index(max_size, handle->readable_limit) * T_size, len * T_size);
+        memcpy((char *)result + len * T_size, data, available - len * T_size);
+    }
+    else
+    {
+        memcpy(result, data + get_index(max_size, handle->readable_limit) * T_size, available * T_size);
+    }
+
+    atomic_fetch_add_explicit(&handle->readable_limit, available, memory_order_release);
+
+    return available;
+}
+
+size_t CTL_lockfree_spsc_queue_size(const CTL_lockfree_spsc_queue *handle)
+{
+    return atomic_load_explicit(&handle->writable_limit, memory_order_acquire) - atomic_load_explicit(&handle->readable_limit, memory_order_acquire);
+}
+
+bool CTL_lockfree_spsc_queue_empty(const CTL_lockfree_spsc_queue *handle)
+{
+    return !CTL_lockfree_spsc_queue_size(handle);
 }
