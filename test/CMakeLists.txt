@@ -1,5 +1,3 @@
-add_subdirectory(algorithm)
-
 add_executable(array EXCLUDE_FROM_ALL array.cpp)
 add_executable(vector EXCLUDE_FROM_ALL vector.cpp)
 add_executable(list EXCLUDE_FROM_ALL list.cpp)
@@ -11,7 +9,11 @@ add_executable(priority_queue EXCLUDE_FROM_ALL priority_queue.cpp)
 add_executable(tree_map EXCLUDE_FROM_ALL tree_map.cpp)
 add_executable(hash_map EXCLUDE_FROM_ALL hash_map.cpp)
 
-add_custom_target(check DEPENDS array deque hash_map heap list priority_queue queue stack tree_map vector sort)
+add_executable(sort EXCLUDE_FROM_ALL algorithm/sort.c)
+
+add_executable(spsc_queue EXCLUDE_FROM_ALL lockfree/spsc_queue.cpp)
+
+add_custom_target(check DEPENDS array deque hash_map heap list priority_queue queue stack tree_map vector sort spsc_queue)
 
 if(UNIX OR APPLE)
     set(target_lib CTL GTest::gtest pthread)
@@ -29,6 +31,8 @@ target_link_libraries(heap ${target_lib})
 target_link_libraries(priority_queue ${target_lib})
 target_link_libraries(tree_map ${target_lib})
 target_link_libraries(hash_map ${target_lib})
+target_link_libraries(sort ${target_lib})
+target_link_libraries(spsc_queue ${target_lib})
 
 add_test(NAME array COMMAND array)
 add_test(NAME vector COMMAND vector)
@@ -41,3 +45,4 @@ add_test(NAME queue COMMAND queue)
 add_test(NAME stack COMMAND stack)
 add_test(NAME tree_map COMMAND tree_map)
 add_test(NAME sort COMMAND sort)
+add_test(NAME spsc_queue COMMAND spsc_queue)
