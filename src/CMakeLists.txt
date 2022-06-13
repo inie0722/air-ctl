@@ -1,8 +1,8 @@
-file(GLOB allocator ./allocator/*)
-file(GLOB container ./container/*)
-file(GLOB adapter ./adapter/*)
-file(GLOB algorithm ./algorithm/*)
-file(GLOB lockfree ./lockfree/*)
+file(GLOB allocator allocator/*)
+file(GLOB container container/*)
+file(GLOB adapter adapter/*)
+file(GLOB algorithm algorithm/*)
+file(GLOB lockfree lockfree/*)
 
 if(BUILD_SHARED_LIBS)
 	add_compile_definitions(CTL_DLL_BUILD)
