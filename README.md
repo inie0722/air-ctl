@@ -39,7 +39,7 @@ make check && ctest
 - [x] `tim sort`
 
 ## Lockfree task lists 
-- [ ] `spsc queue`
+- [x] `spsc queue`
 - [ ] `ring queue`
 - [ ] `queue`
 - [ ] `stack`

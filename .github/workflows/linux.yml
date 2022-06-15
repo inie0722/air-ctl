@@ -2,9 +2,9 @@ name: linux
 
 on:
   push:
-    branches: [ lock-free ]
+    branches: [ master ]
   pull_request:
-    branches: [ lock-free ]
+    branches: [ master ]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
