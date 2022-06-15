@@ -1,10 +1,11 @@
 #pragma once
 
-#include <stdatomic.h>
+
 #include <stddef.h>
 #include <stdbool.h>
 
 #include "CTL/config.h"
+#include "CTL/lockfree/atomic.h"
 
 typedef struct
 {
