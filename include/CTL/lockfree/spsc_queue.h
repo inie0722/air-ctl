@@ -13,10 +13,11 @@ typedef struct
     size_t T_size;
     size_t max_size;
     atomic_size_t writable_limit;
+    CTL_CACHE_LINE_ALIGN(atomic_size_t, 0)
     atomic_size_t readable_limit;
 } CTL_lockfree_spsc_queue;
 
-#define SPSC_QUEUE_LOCK_FREE ATOMIC_LONG_LOCK_FREE
+#define CTL_SPSC_QUEUE_LOCK_FREE ATOMIC_LONG_LOCK_FREE
 
 CTL_API extern void CTL_lockfree_spsc_queue_new(CTL_lockfree_spsc_queue *handle, size_t max_size, size_t T_size);
 
