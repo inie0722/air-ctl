@@ -120,6 +120,36 @@ public:
 
 TEST(spsc_queue, spsc_queue)
 {
+    CTL_lockfree_spsc_queue queue;
+    CTL_lockfree_spsc_queue_new(&queue, 64, sizeof(int));
+
+    int a = rand();
+    CTL_lockfree_spsc_queue_push(&queue, &a, 1);
+    ASSERT_TRUE(CTL_lockfree_spsc_queue_size(&queue) == 1);
+    ASSERT_FALSE(CTL_lockfree_spsc_queue_empty(&queue));
+
+    int b = 0;
+    CTL_lockfree_spsc_queue_pop(&queue, &b, 1);
+    ASSERT_TRUE(b == a);
+    ASSERT_TRUE(CTL_lockfree_spsc_queue_size(&queue) == 0);
+    ASSERT_TRUE(CTL_lockfree_spsc_queue_empty(&queue));
+
+    int array_a[5] = {rand(), rand(), rand(), rand(), rand()};
+    CTL_lockfree_spsc_queue_push(&queue, &array_a, 5);
+    ASSERT_TRUE(CTL_lockfree_spsc_queue_size(&queue) == 5);
+    ASSERT_FALSE(CTL_lockfree_spsc_queue_empty(&queue));
+
+    int array_b[5] = {0};
+    CTL_lockfree_spsc_queue_pop(&queue, &array_b, 5);
+    ASSERT_TRUE(b == a);
+    ASSERT_TRUE(CTL_lockfree_spsc_queue_size(&queue) == 0);
+    ASSERT_TRUE(CTL_lockfree_spsc_queue_empty(&queue));
+
+    CTL_lockfree_spsc_queue_delete(&queue);
+}
+
+TEST(spsc_queue, performance)
+{
     verify v;
     v.run<64, 128, 256, 512, 1024>();
 }
