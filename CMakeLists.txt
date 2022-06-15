@@ -9,6 +9,10 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 include_directories(${CMAKE_SOURCE_DIR}/include/)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 
+if(NOT CTL_CACHE_LINE_SIZE)
+    set(CTL_CACHE_LINE_SIZE 64)
+endif()
+
 if(Test)
     enable_testing()
     find_package(GTest CONFIG REQUIRED)

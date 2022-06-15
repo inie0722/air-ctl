@@ -17,6 +17,12 @@
 
 #pragma once
 
+#if defined CTL_CACHE_LINE_SIZE && CTL_CACHE_LINE_SIZE > 0
+#define CTL_CACHE_LINE_ALIGN(type, count) char __align_##count[CTL_CACHE_LINE_SIZE - sizeof(type)];
+#else
+#define CTL_CACHE_LINE_ALIGN(type, count)
+#endif
+
 #if defined __cplusplus && __cplusplus <= 201703L
 
 #include <stdbool.h>
