@@ -12,7 +12,7 @@ extern "C"
 
 constexpr size_t COUNT = 10000;
 
-constexpr size_t MAX_SIZE = 256;
+constexpr size_t MAX_SIZE = 64;
 
 constexpr size_t THREAD_WRITE_NUM = 1;
 
