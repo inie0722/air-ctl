@@ -120,16 +120,16 @@ int CTL_hash_map_insert(CTL_hash_map *handle, const void *key, const void *eleme
 
 void CTL_hash_map_erase(CTL_hash_map *handle, CTL_hash_map_iterator *iterator)
 {
-	__CTL_hash_map_node *prior = *iterator->bucket;
-	if (prior == iterator->node)
+	if (*iterator->bucket == iterator->node)
 	{
 		*iterator->bucket = iterator->node->next;
 	}
 	else
 	{
+		__CTL_hash_map_node *prior = *iterator->bucket;
 		for (; prior->next != iterator->node; prior = prior->next)
 			;
-		prior = iterator->node->next;
+		prior->next = iterator->node->next;
 	}
 
 	CTL_deallocate(iterator->node->data, handle->T_size);
