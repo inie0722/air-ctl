@@ -106,7 +106,7 @@ static void reallocate_map(CTL_deque *handle, size_t nodes_to_add, bool front)
 
     if (handle->map_size > 2 * num_new_nodes)
     {
-        //map空间足够
+        // map空间足够
         new_start = handle->map + (handle->map_size - num_new_nodes) / 2 + (front ? nodes_to_add : 0);
 
         memmove(new_start, handle->begin.node, sizeof(char *) * (handle->end.node - handle->begin.node + 1));
@@ -127,7 +127,7 @@ static void reallocate_map(CTL_deque *handle, size_t nodes_to_add, bool front)
     }
 
     set_node(&handle->begin, new_start, handle->data_size, handle->end.T_size);
-    handle->begin.data = *new_start;
+    handle->begin.data = *new_start + (handle->begin.data - handle->begin.first);
     handle->end.data = *(new_start + num_old_nodes - 1) + (handle->end.data - handle->end.first);
     set_node(&handle->end, new_start + num_old_nodes - 1, handle->data_size, handle->end.T_size);
 }
