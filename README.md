@@ -40,7 +40,7 @@ make check && ctest
 
 ## Lockfree task lists 
 - [x] `spsc queue`
-- [ ] `mpmc queue`
+- [x] `mpmc queue`
 - [ ] `queue`
 - [ ] `stack`
 - [ ] `aba pointer`
