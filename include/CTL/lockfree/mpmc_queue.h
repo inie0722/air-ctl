@@ -9,7 +9,7 @@
 typedef struct
 {
     atomic_size_t writable;
-    CTL_CACHE_LINE_ALIGN(atomic_size_t, 0);
+    CTL_CACHE_LINE_ALIGN(atomic_size_t, 0)
     atomic_size_t readable;
 } __CTL_lockfree_mpmc_queue_flag;
 
@@ -20,7 +20,7 @@ typedef struct
     size_t max_size;
     __CTL_lockfree_mpmc_queue_flag *flag;
     atomic_size_t writable_limit;
-    CTL_CACHE_LINE_ALIGN(atomic_size_t, 0);
+    CTL_CACHE_LINE_ALIGN(atomic_size_t, 0)
     atomic_size_t readable_limit;
 } CTL_lockfree_mpmc_queue;
 
