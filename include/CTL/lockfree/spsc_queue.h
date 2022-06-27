@@ -5,7 +5,7 @@
 #include <stdbool.h>
 
 #include "CTL/config.h"
-#include "CTL/lockfree/atomic.h"
+#include "CTL/compat/atomic.h"
 
 typedef struct
 {
