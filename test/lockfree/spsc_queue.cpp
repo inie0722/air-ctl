@@ -104,7 +104,7 @@ public:
             }
         }
 
-        printf("size/%lu byte\t w/%lu ns\t r/%lu ns\n", DATA_SIZE, write_diff.count() / COUNT, read_diff.count() / COUNT);
+        printf("size/%zu byte\t w/%zu ns\t r/%zu ns\n", DATA_SIZE, write_diff.count() / COUNT, read_diff.count() / COUNT);
 
         ASSERT_TRUE(max == 0);
         ASSERT_TRUE(min == 0);
