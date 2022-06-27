@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CTL
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.1</span>
    </div>
   </td>
  </tr>
@@ -90,58 +90,59 @@ $(document).ready(function(){initNavTree('hash__map_8h_source.html',''); initRes
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;CTL/config.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct____CTL__hash__map__node.html">   17</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> *data;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> *key;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a> *next;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;} <a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structCTL__hash__map.html">   28</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a> **bucket;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">size_t</span> B_size;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> hash_offset_basis;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">size_t</span> size;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">size_t</span> K_size;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">size_t</span> T_size;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;} <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structCTL__hash__map__iterator.html">   42</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> *data;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">size_t</span> T_size;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a> **bucket;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a> **bucket_end;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a> *node;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;} <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#a80fa68837167101ea83bf9c3eff39451">CTL_hash_map_new</a>(<a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <span class="keywordtype">size_t</span> key_size, <span class="keywordtype">size_t</span> T_size);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#a2a2a217fe0a21be0fcf0a3efc07cf529">CTL_hash_map_clear</a>(<a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#a5636f3d57d21d09385eb1d94555c5567">CTL_hash_map_delete</a>(<a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="hash__map_8h.html#ad33596c91a92ac5205284046eef119cb">CTL_hash_map_insert</a>(<a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *key, <span class="keyword">const</span> <span class="keywordtype">void</span> *element);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#a57c5a12c240c2182f8c36f14222e7bf7">CTL_hash_map_erase</a>(<a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *iterator);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="hash__map_8h.html#aad9814196d64738c3173f15568eb0376">CTL_hash_map_find</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *key, <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *res);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#ad630ca8126f98b7afd1288fa40f94e2c">CTL_hash_map_begin</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *res);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#ae8cb99d9e651a32e55a111aa0db3e673">CTL_hash_map_end</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *res);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">size_t</span> <a class="code" href="hash__map_8h.html#a72095728584bdc3f7d9b94bff3758dd0">CTL_hash_map_size</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="hash__map_8h.html#aa65d337009815ffb0593d163a8d6462b">CTL_hash_map_empty</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#a7d70c1e9d7be902be460534a403e5d87">CTL_hash_map_iterator_next</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *handle, <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *res);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="hash__map_8h.html#ae633100172989917ba12963ca13452db">CTL_hash_map_iterator_equal</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *left, <span class="keyword">const</span> <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *right);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;CTL/config.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct____CTL__hash__map__node.html">   18</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> *data;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> *key;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a> *next;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;} <a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structCTL__hash__map.html">   29</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a> **bucket;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">size_t</span> B_size;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> hash_offset_basis;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">size_t</span> size;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">size_t</span> K_size;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">size_t</span> T_size;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;} <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structCTL__hash__map__iterator.html">   43</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> *data;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">size_t</span> T_size;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a> **bucket;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a> **bucket_end;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a> *node;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;} <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#a80fa68837167101ea83bf9c3eff39451">CTL_hash_map_new</a>(<a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <span class="keywordtype">size_t</span> key_size, <span class="keywordtype">size_t</span> T_size);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#a2a2a217fe0a21be0fcf0a3efc07cf529">CTL_hash_map_clear</a>(<a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#a5636f3d57d21d09385eb1d94555c5567">CTL_hash_map_delete</a>(<a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="hash__map_8h.html#ad33596c91a92ac5205284046eef119cb">CTL_hash_map_insert</a>(<a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *key, <span class="keyword">const</span> <span class="keywordtype">void</span> *element);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#a57c5a12c240c2182f8c36f14222e7bf7">CTL_hash_map_erase</a>(<a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *iterator);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="hash__map_8h.html#aad9814196d64738c3173f15568eb0376">CTL_hash_map_find</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *key, <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *res);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#ad630ca8126f98b7afd1288fa40f94e2c">CTL_hash_map_begin</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *res);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#ae8cb99d9e651a32e55a111aa0db3e673">CTL_hash_map_end</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle, <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *res);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">size_t</span> <a class="code" href="hash__map_8h.html#a72095728584bdc3f7d9b94bff3758dd0">CTL_hash_map_size</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="hash__map_8h.html#aa65d337009815ffb0593d163a8d6462b">CTL_hash_map_empty</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map.html">CTL_hash_map</a> *handle);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="hash__map_8h.html#a7d70c1e9d7be902be460534a403e5d87">CTL_hash_map_iterator_next</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *handle, <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *res);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;CTL_API <span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="hash__map_8h.html#ae633100172989917ba12963ca13452db">CTL_hash_map_iterator_equal</a>(<span class="keyword">const</span> <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *left, <span class="keyword">const</span> <a class="code" href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a> *right);</div>
 <div class="ttc" id="ahash__map_8h_html_a2a2a217fe0a21be0fcf0a3efc07cf529"><div class="ttname"><a href="hash__map_8h.html#a2a2a217fe0a21be0fcf0a3efc07cf529">CTL_hash_map_clear</a></div><div class="ttdeci">CTL_API void CTL_hash_map_clear(CTL_hash_map *handle)</div><div class="ttdoc">clear hash map</div><div class="ttdef"><b>Definition:</b> hash_map.c:69</div></div>
 <div class="ttc" id="ahash__map_8h_html_a5636f3d57d21d09385eb1d94555c5567"><div class="ttname"><a href="hash__map_8h.html#a5636f3d57d21d09385eb1d94555c5567">CTL_hash_map_delete</a></div><div class="ttdeci">CTL_API void CTL_hash_map_delete(CTL_hash_map *handle)</div><div class="ttdoc">destroy hash map</div><div class="ttdef"><b>Definition:</b> hash_map.c:84</div></div>
 <div class="ttc" id="ahash__map_8h_html_a57c5a12c240c2182f8c36f14222e7bf7"><div class="ttname"><a href="hash__map_8h.html#a57c5a12c240c2182f8c36f14222e7bf7">CTL_hash_map_erase</a></div><div class="ttdeci">CTL_API void CTL_hash_map_erase(CTL_hash_map *handle, CTL_hash_map_iterator *iterator)</div><div class="ttdoc">erases the element at a given position</div><div class="ttdef"><b>Definition:</b> hash_map.c:121</div></div>
@@ -154,9 +155,9 @@ $(document).ready(function(){initNavTree('hash__map_8h_source.html',''); initRes
 <div class="ttc" id="ahash__map_8h_html_ad630ca8126f98b7afd1288fa40f94e2c"><div class="ttname"><a href="hash__map_8h.html#ad630ca8126f98b7afd1288fa40f94e2c">CTL_hash_map_begin</a></div><div class="ttdeci">CTL_API void CTL_hash_map_begin(const CTL_hash_map *handle, CTL_hash_map_iterator *res)</div><div class="ttdoc">get begin iterator</div><div class="ttdef"><b>Definition:</b> hash_map.c:163</div></div>
 <div class="ttc" id="ahash__map_8h_html_ae633100172989917ba12963ca13452db"><div class="ttname"><a href="hash__map_8h.html#ae633100172989917ba12963ca13452db">CTL_hash_map_iterator_equal</a></div><div class="ttdeci">CTL_API bool CTL_hash_map_iterator_equal(const CTL_hash_map_iterator *left, const CTL_hash_map_iterator *right)</div><div class="ttdoc">if left iterator equal right iterator return true, else return false</div><div class="ttdef"><b>Definition:</b> hash_map.c:219</div></div>
 <div class="ttc" id="ahash__map_8h_html_ae8cb99d9e651a32e55a111aa0db3e673"><div class="ttname"><a href="hash__map_8h.html#ae8cb99d9e651a32e55a111aa0db3e673">CTL_hash_map_end</a></div><div class="ttdeci">CTL_API void CTL_hash_map_end(const CTL_hash_map *handle, CTL_hash_map_iterator *res)</div><div class="ttdoc">get end iterator</div><div class="ttdef"><b>Definition:</b> hash_map.c:181</div></div>
-<div class="ttc" id="astructCTL__hash__map__iterator_html"><div class="ttname"><a href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a></div><div class="ttdoc">hash map iterator</div><div class="ttdef"><b>Definition:</b> hash_map.h:43</div></div>
-<div class="ttc" id="astructCTL__hash__map_html"><div class="ttname"><a href="structCTL__hash__map.html">CTL_hash_map</a></div><div class="ttdoc">hash map</div><div class="ttdef"><b>Definition:</b> hash_map.h:29</div></div>
-<div class="ttc" id="astruct____CTL__hash__map__node_html"><div class="ttname"><a href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a></div><div class="ttdef"><b>Definition:</b> hash_map.h:18</div></div>
+<div class="ttc" id="astructCTL__hash__map__iterator_html"><div class="ttname"><a href="structCTL__hash__map__iterator.html">CTL_hash_map_iterator</a></div><div class="ttdoc">hash map iterator</div><div class="ttdef"><b>Definition:</b> hash_map.h:44</div></div>
+<div class="ttc" id="astructCTL__hash__map_html"><div class="ttname"><a href="structCTL__hash__map.html">CTL_hash_map</a></div><div class="ttdoc">hash map</div><div class="ttdef"><b>Definition:</b> hash_map.h:30</div></div>
+<div class="ttc" id="astruct____CTL__hash__map__node_html"><div class="ttname"><a href="struct____CTL__hash__map__node.html">__CTL_hash_map_node</a></div><div class="ttdef"><b>Definition:</b> hash_map.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,6 +1,8 @@
 var dir_613d60abcf46c506831f816b5a965fcd =
 [
     [ "algorithm", "dir_dbd12e429e2e67fe2605de08ad0007a6.html", "dir_dbd12e429e2e67fe2605de08ad0007a6" ],
+    [ "compat", "dir_5b6826eeb32bd2d5bd839d5992adfe4d.html", "dir_5b6826eeb32bd2d5bd839d5992adfe4d" ],
+    [ "lockfree", "dir_17bd68863fd8297a6160837f66cf70cb.html", "dir_17bd68863fd8297a6160837f66cf70cb" ],
     [ "allocator.h", "allocator_8h.html", "allocator_8h" ],
     [ "array.h", "array_8h.html", "array_8h" ],
     [ "config.h", "config_8h_source.html", null ],
