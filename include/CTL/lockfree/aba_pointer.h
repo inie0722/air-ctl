@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-#include "CTL/lockfree/atomic.h"
+#include "CTL/compat/atomic.h"
 
 #define __CTL_ABA_COUNT_MASK (0XFFFFull << 48)
 #define __CTL_ABA_POINTER_MASK (~__CTL_ABA_COUNT_MASK)
