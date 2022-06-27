@@ -36,7 +36,7 @@ public:
         CTL_lockfree_spsc_queue queue;
         CTL_lockfree_spsc_queue_new(&queue, MAX_SIZE, sizeof(value_t));
 
-        std::vector<size_t> array(COUNT);
+        std::vector<std::atomic<size_t>> array(COUNT);
 
         std::chrono::nanoseconds write_diff;
         std::chrono::nanoseconds read_diff;
