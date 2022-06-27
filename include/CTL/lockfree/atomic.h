@@ -23,13 +23,47 @@
 #define CTL_CACHE_LINE_ALIGN(type, count)
 #endif
 
-#if defined __cplusplus && __cplusplus <= 201703L
+#if (defined __cplusplus) || (defined _MSC_VER && defined __STDC_NO_ATOMICS__ && __STDC_VERSION__ >= 201112L)
 
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
 
 #define _Atomic volatile
+
+#ifndef ATOMIC_BOOL_LOCK_FREE 
+#define ATOMIC_BOOL_LOCK_FREE 1
+#endif
+#ifndef ATOMIC_CHAR_LOCK_FREE
+#define ATOMIC_CHAR_LOCK_FREE 1
+#endif
+#ifndef ATOMIC_SHORT_LOCK_FREE
+#define ATOMIC_SHORT_LOCK_FREE 1
+#endif
+#ifndef ATOMIC_INT_LOCK_FREE
+#define ATOMIC_INT_LOCK_FREE 1
+#endif
+#ifndef ATOMIC_LONG_LOCK_FREE
+#define ATOMIC_LONG_LOCK_FREE 1
+#endif
+#ifndef ATOMIC_LLONG_LOCK_FREE
+#define ATOMIC_LLONG_LOCK_FREE 1
+#endif
+#ifndef ATOMIC_POINTER_LOCK_FREE
+#define ATOMIC_POINTER_LOCK_FREE 1
+#endif
+#ifndef ATOMIC_FLAG_INIT
+#define ATOMIC_FLAG_INIT {0}
+#endif
+
+typedef enum memory_order {
+    memory_order_relaxed = 0,
+    memory_order_consume,
+    memory_order_acquire,
+    memory_order_release,
+    memory_order_acq_rel,
+    memory_order_seq_cst
+} memory_order;
 
 typedef long long llong;
 typedef unsigned char uchar;
@@ -56,6 +90,8 @@ typedef _Atomic ptrdiff_t atomic_ptrdiff_t;
 typedef _Atomic intmax_t atomic_intmax_t;
 typedef _Atomic uintmax_t atomic_uintmax_t;
 typedef void *_Atomic atomic_ptr;
+
+typedef struct atomic_flag { atomic_bool _Value; } atomic_flag;
 
 #elif defined _MSC_VER && defined __STDC_NO_ATOMICS__ && __STDC_VERSION__ >= 201112L
 /*
@@ -96,69 +132,6 @@ typedef void *_Atomic atomic_ptr;
 #else
 #error unable to determine pointer width
 #endif
-
-/*
- * constant macros and enumerations
- */
-#define _Atomic volatile
-
-#define ATOMIC_BOOL_LOCK_FREE 1
-#define ATOMIC_CHAR_LOCK_FREE 1
-#define ATOMIC_SHORT_LOCK_FREE 1
-#define ATOMIC_INT_LOCK_FREE 1
-#define ATOMIC_LONG_LOCK_FREE 1
-#define ATOMIC_LLONG_LOCK_FREE 1
-#define ATOMIC_POINTER_LOCK_FREE 1
-
-#define ATOMIC_FLAG_INIT { 0 }
-
-#define __ATOMIC_RELAXED 0
-#define __ATOMIC_CONSUME 1
-#define __ATOMIC_ACQUIRE 2
-#define __ATOMIC_RELEASE 3
-#define __ATOMIC_ACQ_REL 4
-#define __ATOMIC_SEQ_CST 5
-
-typedef enum memory_order {
-    memory_order_relaxed = __ATOMIC_RELAXED,
-    memory_order_consume = __ATOMIC_CONSUME,
-    memory_order_acquire = __ATOMIC_ACQUIRE,
-    memory_order_release = __ATOMIC_RELEASE,
-    memory_order_acq_rel = __ATOMIC_ACQ_REL,
-    memory_order_seq_cst = __ATOMIC_SEQ_CST
-} memory_order;
-
-/*
- * type definitions
- */
-
-typedef long long llong;
-typedef unsigned char uchar;
-typedef unsigned short ushort;
-typedef unsigned int uint;
-typedef unsigned long ulong;
-typedef unsigned long long ullong;
-
-typedef _Atomic _Bool atomic_bool;
-typedef _Atomic char atomic_char;
-typedef _Atomic unsigned char atomic_uchar;
-typedef _Atomic short atomic_short;
-typedef _Atomic unsigned short atomic_ushort;
-typedef _Atomic int atomic_int;
-typedef _Atomic unsigned int atomic_uint;
-typedef _Atomic long atomic_long;
-typedef _Atomic unsigned long atomic_ulong;
-typedef _Atomic long long atomic_llong;
-typedef _Atomic unsigned long long atomic_ullong;
-typedef _Atomic intptr_t atomic_intptr_t;
-typedef _Atomic uintptr_t atomic_uintptr_t;
-typedef _Atomic size_t atomic_size_t;
-typedef _Atomic ptrdiff_t atomic_ptrdiff_t;
-typedef _Atomic intmax_t atomic_intmax_t;
-typedef _Atomic uintmax_t atomic_uintmax_t;
-typedef void * _Atomic atomic_ptr;
-
-typedef struct atomic_flag { atomic_bool _Value; } atomic_flag;
 
 /*
  * atomic_exchange
