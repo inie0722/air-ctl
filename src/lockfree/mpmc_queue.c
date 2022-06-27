@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "CTL/lockfree/mpmc_queue.h"
+#include "CTL/compat/threads.h"
 
 static inline size_t get_index(size_t max_size, size_t index)
 {
@@ -46,7 +47,10 @@ size_t CTL_lockfree_mpmc_queue_push(CTL_lockfree_mpmc_queue *handle, const void 
         size_t writable_flag = atomic_load_explicit(&flag[get_index(max_size, index)].writable, memory_order_acquire);
 
         if (writable_flag != index)
+        {
+            thrd_yield();
             continue;
+        } 
         else
             break;
     }
@@ -70,7 +74,10 @@ size_t CTL_lockfree_mpmc_queue_pop(CTL_lockfree_mpmc_queue *handle, void *elemen
         size_t readable_flag = atomic_load_explicit(&flag[get_index(max_size, index)].readable, memory_order_acquire);
 
         if (readable_flag != index + 1)
+        {
+            thrd_yield();
             continue;
+        }
         else
             break;
     }

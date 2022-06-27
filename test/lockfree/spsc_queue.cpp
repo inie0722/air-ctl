@@ -56,7 +56,7 @@ public:
                     data.val = i;
 
                     while (!CTL_lockfree_spsc_queue_push(&queue, &data, 1))
-                        ;
+                        std::this_thread::yield();
                 }
                 auto end = std::chrono::steady_clock::now();
                 write_diff = end - start; });
@@ -72,7 +72,8 @@ public:
                 for (size_t i = 0; i < COUNT; i++)
                 {
                     while(!CTL_lockfree_spsc_queue_pop(&queue, &data, 1))
-                        ;
+                        std::this_thread::yield();
+                    
                     size_t index = data.val;
                     array[index]++;
                 }
