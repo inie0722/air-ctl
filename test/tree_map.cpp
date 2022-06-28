@@ -133,7 +133,6 @@ TEST(allocator, delete)
 {
     ASSERT_TRUE(CTL_tree_map_size(&ctl) == stl.size());
     CTL_tree_map_delete(&ctl);
-    ASSERT_TRUE(CTL_get_mem_size() == 0);
 }
 
 int main(int argc, char **argv)

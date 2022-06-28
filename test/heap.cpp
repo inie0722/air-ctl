@@ -62,13 +62,12 @@ TEST(Algorithm, sort)
         ASSERT_TRUE(stl[i] == *(size_t *)CTL_vector_at(&ctl, i));
     }
 }
-/*
+
 TEST(allocator, delete)
 {
     CTL_vector_delete(&ctl);
-    ASSERT_TRUE(CTL_get_mem_size() == 0);
 }
-*/
+
 
 int main(int argc, char **argv)
 {

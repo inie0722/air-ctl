@@ -58,7 +58,6 @@ TEST(Capacity, empty)
 TEST(allocator, delete)
 {
     CTL_stack_delete(&ctl);
-    ASSERT_TRUE(CTL_get_mem_size() == 0);
 }
 
 int main(int argc, char **argv)

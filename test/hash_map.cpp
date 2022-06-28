@@ -87,7 +87,6 @@ TEST(allocator, delete)
 {
     ASSERT_TRUE(CTL_hash_map_size(&ctl) == 200);
     CTL_hash_map_delete(&ctl);
-    ASSERT_TRUE(CTL_get_mem_size() == 0);
 }
 
 int main(int argc, char **argv)

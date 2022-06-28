@@ -211,7 +211,6 @@ TEST(Iterators, operator)
 TEST(allocator, delete)
 {
     CTL_deque_delete(&ctl);
-    ASSERT_TRUE(CTL_get_mem_size() == 0);
 }
 
 int main(int argc, char **argv)

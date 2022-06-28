@@ -332,7 +332,6 @@ TEST(allocator, delete)
 {
     ASSERT_TRUE(CTL_list_size(&ctl) == stl.size());
     CTL_list_delete(&ctl);
-    ASSERT_TRUE(CTL_get_mem_size() == 0);
 }
 
 int main(int argc, char **argv)

@@ -15,13 +15,6 @@
 #include "CTL/config.h"
 
 /**
- * @brief get The amount of memory that has been used
- *
- * @return size_t The amount of memory that has been used
- */
-CTL_API extern size_t CTL_get_mem_size();
-
-/**
  * @brief set memory allocation failure handling operation
  *
  * @param handler memory allocation failure handling operation
