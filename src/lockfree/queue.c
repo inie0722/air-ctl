@@ -24,7 +24,7 @@ void CTL_lockfree_queue_new(CTL_lockfree_queue *handle, size_t T_size)
 
 void CTL_lockfree_queue_delete(CTL_lockfree_queue *handle)
 {
-    while (handle->head)
+    while (__aba_ptr_get(handle->head))
     {
         CTL_aba_pointer head = handle->head;
         CTL_aba_pointer next = __aba_ptr_get(head)->next;
@@ -44,7 +44,7 @@ void CTL_lockfree_queue_push(CTL_lockfree_queue *handle, const void *element)
     while (1)
     {
         CTL_aba_pointer tail = CTL_aba_pointer_atomic_load(&handle->tail, memory_order_acquire);
-        CTL_aba_pointer next = CTL_aba_pointer_atomic_load(&__aba_ptr_get(node)->next, memory_order_acquire);
+        CTL_aba_pointer next = CTL_aba_pointer_atomic_load(&__aba_ptr_get(tail)->next, memory_order_acquire);
         CTL_aba_pointer tail2 = CTL_aba_pointer_atomic_load(&handle->tail, memory_order_acquire);
 
         if (__aba_ptr_get(tail) == __aba_ptr_get(tail2))

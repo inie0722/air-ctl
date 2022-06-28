@@ -120,7 +120,7 @@ public:
 TEST(queue, queue)
 {
     CTL_lockfree_queue queue;
-    CTL_lockfree_queue_new(&queue, 64);
+    CTL_lockfree_queue_new(&queue, sizeof(int));
 
     int a = rand();
     CTL_lockfree_queue_push(&queue, &a);
