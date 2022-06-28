@@ -17,10 +17,12 @@ typedef struct
     size_t T_size;
 } CTL_lockfree_allocator;
 
+#define CTL_ALLOCATOR_LOCK_FREE CTL_APA_POINTER_LOCK_FREE
+
 CTL_API extern void CTL_lockfree_allocator_new(CTL_lockfree_allocator *handle, size_t T_size);
 
 CTL_API extern void CTL_lockfree_allocator_delete(CTL_lockfree_allocator *handle, size_t T_size);
 
-CTL_API extern CTL_aba_pointer CTL_lockfree_allocator_allocate(CTL_lockfree_allocator *handle);
+CTL_API extern CTL_aba_pointer CTL_lockfree_allocate(CTL_lockfree_allocator *handle);
 
-CTL_API extern void CTL_lockfree_allocator_deallocate(CTL_lockfree_allocator *handle, CTL_aba_pointer ptr);
+CTL_API extern void CTL_lockfree_deallocate(CTL_lockfree_allocator *handle, CTL_aba_pointer ptr);

@@ -27,7 +27,7 @@ void CTL_lockfree_allocator_delete(CTL_lockfree_allocator *handle, size_t T_size
     }
 }
 
-CTL_aba_pointer CTL_lockfree_allocator_allocate(CTL_lockfree_allocator *handle)
+CTL_aba_pointer CTL_lockfree_allocate(CTL_lockfree_allocator *handle)
 {
     CTL_aba_pointer exp = CTL_aba_pointer_atomic_load(&handle->free_list, memory_order_seq_cst);
 
@@ -47,7 +47,7 @@ CTL_aba_pointer CTL_lockfree_allocator_allocate(CTL_lockfree_allocator *handle)
     }
 }
 
-void CTL_lockfree_allocator_deallocate(CTL_lockfree_allocator *handle, CTL_aba_pointer ptr)
+void CTL_lockfree_deallocate(CTL_lockfree_allocator *handle, CTL_aba_pointer ptr)
 {
 
     while (1)

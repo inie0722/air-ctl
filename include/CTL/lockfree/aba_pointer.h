@@ -15,6 +15,8 @@ _Static_assert(sizeof(void *) == 8, "only support 64-bit");
 #define __CTL_ABA_COUNT_MASK (0XFFFFull << 48)
 #define __CTL_ABA_POINTER_MASK (~__CTL_ABA_COUNT_MASK)
 
+#define CTL_APA_POINTER_LOCK_FREE ATOMIC_POINTER_LOCK_FREE
+
 typedef uint64_t CTL_aba_pointer;
 
 inline CTL_aba_pointer CTL_aba_pointer_make(void *ptr)
