@@ -44,7 +44,7 @@ make check && ctest
 - [ ] `queue`
 - [ ] `stack`
 - [x] `aba pointer`
-- [ ] `allocator`
+- [x] `allocator`
 
 
 ## About
