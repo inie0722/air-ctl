@@ -1,6 +1,7 @@
 #include <stdlib.h>
 
 #include "CTL/lockfree/allocator.h"
+#include "CTL/allocator.h"
 
 void CTL_lockfree_allocator_new(CTL_lockfree_allocator *handle, size_t T_size)
 {
@@ -20,7 +21,7 @@ void CTL_lockfree_allocator_delete(CTL_lockfree_allocator *handle, size_t T_size
         }
 
         CTL_aba_pointer next = ((__CTL_lockfree_allocator_node *)CTL_aba_pointer_get(free_list))->next;
-        free(CTL_aba_pointer_get(free_list));
+        CTL_deallocate(CTL_aba_pointer_get(free_list), handle->T_size);
 
         CTL_aba_pointer_atomic_store(&handle->free_list, next, memory_order_seq_cst);
     }
@@ -34,7 +35,7 @@ CTL_aba_pointer CTL_lockfree_allocator_allocate(CTL_lockfree_allocator *handle)
     {
         if (!CTL_aba_pointer_get(exp))
         {
-            return CTL_aba_pointer_make(malloc(handle->T_size));
+            return CTL_aba_pointer_make(CTL_allocate(handle->T_size));
         }
 
         CTL_aba_pointer next = ((__CTL_lockfree_allocator_node *)CTL_aba_pointer_get(exp))->next;
