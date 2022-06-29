@@ -33,7 +33,7 @@ static inline void *CTL_aba_pointer_get(CTL_aba_pointer ptr)
 
 #if defined __STDC_VERSION__
 
-static inline void CTL_aba_pointer_atomic_init(const _Atomic CTL_aba_pointer *obj, CTL_aba_pointer val)
+static inline void CTL_aba_pointer_atomic_init(_Atomic CTL_aba_pointer *obj, CTL_aba_pointer val)
 {
     atomic_init(obj, val);
 }

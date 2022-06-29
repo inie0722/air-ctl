@@ -33,6 +33,8 @@ void CTL_lockfree_queue_delete(CTL_lockfree_queue *handle)
         CTL_lockfree_deallocate(&handle->alloc, head);
         CTL_aba_pointer_atomic_store(&handle->head, next, memory_order_release);
     }
+
+    CTL_lockfree_allocator_delete(&handle->alloc, sizeof(__CTL_lockfree_queue_node) + handle->T_size);
 }
 
 void CTL_lockfree_queue_push(CTL_lockfree_queue *handle, const void *element)
@@ -93,6 +95,7 @@ void CTL_lockfree_queue_pop(CTL_lockfree_queue *handle, void *element)
                 if (CTL_aba_pointer_atomic_weak(&handle->head, &head, next, memory_order_release, memory_order_relaxed))
                 {
                     atomic_fetch_sub_explicit(&handle->size, 1, memory_order_relaxed);
+                    CTL_lockfree_deallocate(&handle->alloc, head);
                     return;
                 }
             }

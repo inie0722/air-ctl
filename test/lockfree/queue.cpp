@@ -38,8 +38,8 @@ public:
 
         std::vector<std::atomic<size_t>> array(COUNT);
 
-        std::chrono::nanoseconds write_diff;
-        std::chrono::nanoseconds read_diff;
+        std::atomic<size_t> write_diff = 0;
+        std::atomic<size_t> read_diff = 0;
 
         std::thread write_thread[THREAD_WRITE_NUM];
         std::thread read_thread[THREAD_READ_NUM];
@@ -59,7 +59,7 @@ public:
                         
                 }
                 auto end = std::chrono::steady_clock::now();
-                write_diff = end - start; });
+                write_diff += (end - start).count(); });
         }
 
         for (size_t i = 0; i < THREAD_READ_NUM; i++)
@@ -76,7 +76,7 @@ public:
                     array[index]++;
                 }
                 auto end = std::chrono::steady_clock::now();
-                read_diff = end - start; });
+                read_diff += (end - start).count(); });
         }
 
         for (size_t i = 0; i < THREAD_WRITE_NUM; i++)
@@ -101,8 +101,11 @@ public:
                     min++;
             }
         }
-
-        printf("size/%zu byte\t w/%zu ns\t r/%zu ns\n", DATA_SIZE, write_diff.count() / COUNT, read_diff.count() / COUNT);
+        std::cout << "size/" << DATA_SIZE << " byte\t"
+                  << "w/" << (write_diff / THREAD_WRITE_NUM / COUNT)
+                  << " ns\t"
+                  << "r/" << read_diff / THREAD_READ_NUM / COUNT
+                  << " ns\t" << std::endl;
 
         ASSERT_TRUE(max == 0);
         ASSERT_TRUE(min == 0);
