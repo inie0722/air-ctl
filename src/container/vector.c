@@ -97,7 +97,7 @@ void CTL_vector_insert(CTL_vector *handle, CTL_vector_iterator *iterator, const 
     }
     else
     {
-        memcpy(iterator->data + handle->end.T_size, iterator->data, handle->end.data - iterator->data);
+        memmove(iterator->data + handle->end.T_size, iterator->data, handle->end.data - iterator->data);
         memcpy(iterator->data, element, handle->end.T_size);
     }
     handle->end.data += handle->end.T_size;
