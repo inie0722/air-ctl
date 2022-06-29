@@ -10,7 +10,7 @@ void CTL_lockfree_allocator_new(CTL_lockfree_allocator *handle, size_t T_size)
 {
     handle->T_size = T_size;
 
-    CTL_aba_pointer_atomic_store(&handle->free_list, CTL_aba_pointer_make(NULL), memory_order_release);
+    CTL_aba_pointer_atomic_init(&handle->free_list, CTL_aba_pointer_make(NULL));
 }
 
 void CTL_lockfree_allocator_delete(CTL_lockfree_allocator *handle, size_t T_size)
@@ -44,7 +44,7 @@ CTL_aba_pointer CTL_lockfree_allocate(CTL_lockfree_allocator *handle)
 
         CTL_aba_pointer next = __aba_ptr_get(exp)->next;
 
-        if (CTL_aba_pointer_atomic_weak(&handle->free_list, &exp, next, memory_order_release))
+        if (CTL_aba_pointer_atomic_weak(&handle->free_list, &exp, next, memory_order_release, memory_order_relaxed))
         {
             return exp;
         }
@@ -58,7 +58,7 @@ void CTL_lockfree_deallocate(CTL_lockfree_allocator *handle, CTL_aba_pointer ptr
         CTL_aba_pointer exp = CTL_aba_pointer_atomic_load(&handle->free_list, memory_order_acquire);
         __aba_ptr_get(ptr)->next = exp;
 
-        if (CTL_aba_pointer_atomic_weak(&handle->free_list, &exp, ptr, memory_order_release))
+        if (CTL_aba_pointer_atomic_weak(&handle->free_list, &exp, ptr, memory_order_release, memory_order_relaxed))
             return;
     }
 }

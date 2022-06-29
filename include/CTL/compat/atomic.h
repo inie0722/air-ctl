@@ -553,6 +553,6 @@ default: __c11_atomic_is_lock_free__unhandled             \
 
 /* Initialize an atomic object pointed to by PTR with VAL.  */
 #define atomic_init(PTR, VAL) \
-    atomic_store_explicit(PTR, VAL, memory_order_seq_cst)
+    atomic_store_explicit(PTR, VAL, memory_order_relaxed)
 
 #endif

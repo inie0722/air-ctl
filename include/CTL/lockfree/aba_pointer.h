@@ -32,6 +32,12 @@ static inline void *CTL_aba_pointer_get(CTL_aba_pointer ptr)
 }
 
 #if defined __STDC_VERSION__
+
+static inline void CTL_aba_pointer_atomic_init(const _Atomic CTL_aba_pointer *obj, CTL_aba_pointer val)
+{
+    atomic_init(obj, val);
+}
+
 static inline CTL_aba_pointer CTL_aba_pointer_atomic_load(const _Atomic CTL_aba_pointer *obj, memory_order order)
 {
     return atomic_load_explicit(obj, order);
@@ -53,20 +59,20 @@ static inline CTL_aba_pointer CTL_aba_pointer_atomic_exchange(_Atomic CTL_aba_po
     return atomic_exchange_explicit(obj, new_ptr, order);
 }
 
-static inline bool CTL_aba_pointer_atomic_weak(_Atomic CTL_aba_pointer *obj, CTL_aba_pointer *expected, CTL_aba_pointer desired, memory_order order)
+static inline bool CTL_aba_pointer_atomic_weak(_Atomic CTL_aba_pointer *obj, CTL_aba_pointer *expected, CTL_aba_pointer desired, memory_order succ, memory_order fail)
 {
     uint16_t count = ((desired & __CTL_ABA_COUNT_MASK) >> 48) + 1;
     uint64_t new_ptr = ((uint64_t)count << 48) + (desired & __CTL_ABA_POINTER_MASK);
 
-    return atomic_compare_exchange_weak_explicit(obj, expected, new_ptr, order, order);
+    return atomic_compare_exchange_weak_explicit(obj, expected, new_ptr, succ, fail);
 }
 
-static inline bool CTL_aba_pointer_atomic_strong(_Atomic CTL_aba_pointer *obj, CTL_aba_pointer *expected, CTL_aba_pointer desired, memory_order order)
+static inline bool CTL_aba_pointer_atomic_strong(_Atomic CTL_aba_pointer *obj, CTL_aba_pointer *expected, CTL_aba_pointer desired, memory_order succ, memory_order fail)
 {
     uint16_t count = ((desired & __CTL_ABA_COUNT_MASK) >> 48) + 1;
     uint64_t new_ptr = ((uint64_t)count << 48) + (desired & __CTL_ABA_POINTER_MASK);
 
-    return atomic_compare_exchange_strong_explicit(obj, expected, new_ptr, order, order);
+    return atomic_compare_exchange_strong_explicit(obj, expected, new_ptr, succ, fail);
 }
 
 static inline CTL_aba_pointer CTL_aba_pointer_atomic_fetch_add(_Atomic CTL_aba_pointer *obj, ptrdiff_t arg, memory_order order)
