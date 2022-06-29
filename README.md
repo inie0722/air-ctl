@@ -41,7 +41,7 @@ make check && ctest
 ## Lockfree task lists 
 - [x] `spsc queue`
 - [x] `mpmc queue`
-- [ ] `queue`
+- [x] `queue`
 - [ ] `stack`
 - [x] `aba pointer`
 - [x] `allocator`

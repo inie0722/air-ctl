@@ -20,12 +20,12 @@ void CTL_lockfree_mpmc_queue_new(CTL_lockfree_mpmc_queue *handle, size_t max_siz
 
     for (size_t i = 0; i < max_size; i++)
     {
-        handle->flag[i].writable = i;
-        handle->flag[i].readable = 0;
+        atomic_init(&handle->flag[i].readable, 0);
+        atomic_init(&handle->flag[i].writable, i);
     }
 
-    handle->readable_limit = 0;
-    handle->writable_limit = 0;
+    atomic_init(&handle->readable_limit, 0);
+    atomic_init(&handle->writable_limit, 0);
 }
 
 void CTL_lockfree_mpmc_queue_delete(CTL_lockfree_mpmc_queue *handle)

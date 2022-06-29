@@ -13,9 +13,10 @@ void CTL_lockfree_spsc_queue_new(CTL_lockfree_spsc_queue *handle, size_t max_siz
 {
     handle->T_size = T_size;
     handle->max_size = max_size;
-    handle->writable_limit = 0;
-    handle->readable_limit = 0;
     handle->data = CTL_allocate(max_size * T_size);
+
+    atomic_init(&handle->writable_limit, 0);
+    atomic_init(&handle->readable_limit, 0);
 }
 
 void CTL_lockfree_spsc_queue_delete(CTL_lockfree_spsc_queue *handle)
