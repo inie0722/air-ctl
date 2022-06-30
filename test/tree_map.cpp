@@ -8,7 +8,6 @@
 extern "C"
 {
 #include "CTL/tree_map.h"
-#include "CTL/allocator.h"
 }
 
 using namespace std;

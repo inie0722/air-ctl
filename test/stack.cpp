@@ -9,7 +9,6 @@
 extern "C"
 {
 #include "CTL/stack.h"
-#include "CTL/allocator.h"
 }
 
 using namespace std;

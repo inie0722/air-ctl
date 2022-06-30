@@ -7,7 +7,6 @@
 extern "C"
 {
 #include "CTL/hash_map.h"
-#include "CTL/allocator.h"
 }
 
 using namespace std;

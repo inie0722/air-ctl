@@ -9,7 +9,6 @@
 extern "C"
 {
 #include "CTL/list.h"
-#include "CTL/allocator.h"
 }
 
 using namespace std;

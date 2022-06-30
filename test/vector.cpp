@@ -8,7 +8,6 @@
 extern "C"
 {
 #include "CTL/vector.h"
-#include "CTL/allocator.h"
 }
 
 using namespace std;
