@@ -42,7 +42,7 @@ make check && ctest
 - [x] `spsc queue`
 - [x] `mpmc queue`
 - [x] `queue`
-- [ ] `stack`
+- [x] `stack`
 - [x] `aba pointer`
 - [x] `allocator`
 
