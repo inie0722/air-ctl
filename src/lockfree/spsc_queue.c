@@ -2,7 +2,7 @@
 #include <string.h>
 
 #include "CTL/lockfree/spsc_queue.h"
-#include "CTL/allocator.h"
+#include "CTL/malloc.h"
 
 static inline size_t get_index(size_t max_size, size_t index)
 {
@@ -13,7 +13,7 @@ void CTL_lockfree_spsc_queue_new(CTL_lockfree_spsc_queue *handle, size_t max_siz
 {
     handle->T_size = T_size;
     handle->max_size = max_size;
-    handle->data = CTL_allocate(max_size * T_size);
+    handle->data = CTL_malloc(max_size * T_size);
 
     atomic_init(&handle->writable_limit, 0);
     atomic_init(&handle->readable_limit, 0);
@@ -21,7 +21,7 @@ void CTL_lockfree_spsc_queue_new(CTL_lockfree_spsc_queue *handle, size_t max_siz
 
 void CTL_lockfree_spsc_queue_delete(CTL_lockfree_spsc_queue *handle)
 {
-    CTL_deallocate(handle->data, handle->max_size * handle->T_size);
+    CTL_free(handle->data, handle->max_size * handle->T_size);
 }
 
 size_t CTL_lockfree_spsc_queue_push(CTL_lockfree_spsc_queue *handle, const void *first, size_t count)

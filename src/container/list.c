@@ -3,7 +3,7 @@
 #include <string.h>
 
 #include "CTL/list.h"
-#include "CTL/allocator.h"
+#include "CTL/malloc.h"
 
 #define CTL_swap(Type, a, b) \
 	do                       \
@@ -17,7 +17,7 @@
 void CTL_list_new(CTL_list *handle, size_t T_size)
 {
 	//构造 一个 头结点
-	__CTL_list_node *node = (__CTL_list_node *)CTL_allocate(sizeof(__CTL_list_node));
+	__CTL_list_node *node = (__CTL_list_node *)CTL_malloc(sizeof(__CTL_list_node));
 
 	//设置其他成员状态
 	handle->list = node;
@@ -33,8 +33,8 @@ void CTL_list_clear(CTL_list *handle)
 	for (node = handle->list->next; node != handle->list;)
 	{
 		__CTL_list_node *next_node = node->next;
-		CTL_deallocate(node->data, handle->T_size);
-		CTL_deallocate(node, sizeof(__CTL_list_node));
+		CTL_free(node->data, handle->T_size);
+		CTL_free(node, sizeof(__CTL_list_node));
 		node = next_node;
 	}
 	//恢复成员 原始状态
@@ -46,7 +46,7 @@ void CTL_list_clear(CTL_list *handle)
 void CTL_list_delete(CTL_list *handle)
 {
 	CTL_list_clear(handle);
-	CTL_deallocate(handle->list, sizeof(__CTL_list_node));
+	CTL_free(handle->list, sizeof(__CTL_list_node));
 }
 
 void *CTL_list_front(const CTL_list *handle)
@@ -104,9 +104,9 @@ void CTL_list_pop_front(CTL_list *handle)
 
 void CTL_list_insert(CTL_list *handle, CTL_list_iterator *iterator, const void *element)
 {
-	__CTL_list_node *new_node = (__CTL_list_node *)CTL_allocate(sizeof(__CTL_list_node));
+	__CTL_list_node *new_node = (__CTL_list_node *)CTL_malloc(sizeof(__CTL_list_node));
 
-	new_node->data = (char *)CTL_allocate(handle->T_size);
+	new_node->data = (char *)CTL_malloc(handle->T_size);
 	memcpy(new_node->data, element, handle->T_size);
 	new_node->next = iterator->node;
 	new_node->prior = iterator->node->prior;
@@ -120,8 +120,8 @@ void CTL_list_erase(CTL_list *handle, CTL_list_iterator *iterator)
 	iterator->node->prior->next = iterator->node->next;
 	iterator->node->next->prior = iterator->node->prior;
 
-	CTL_deallocate(iterator->data, handle->T_size);
-	CTL_deallocate(iterator->node, sizeof(__CTL_list_node));
+	CTL_free(iterator->data, handle->T_size);
+	CTL_free(iterator->node, sizeof(__CTL_list_node));
 }
 
 static void __transfer(const CTL_list_iterator *position, const CTL_list_iterator *first, const CTL_list_iterator *last)

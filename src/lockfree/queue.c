@@ -40,9 +40,8 @@ void CTL_lockfree_queue_delete(CTL_lockfree_queue *handle)
 void CTL_lockfree_queue_push(CTL_lockfree_queue *handle, const void *element)
 {
     CTL_aba_pointer node = CTL_lockfree_allocate(&handle->alloc);
-    __CTL_lockfree_queue_node *node_ptr = __aba_ptr_get(node);
-    node_ptr->next = CTL_aba_pointer_make(NULL);
-    memcpy(node_ptr->data, element, handle->T_size);
+    memcpy(__aba_ptr_get(node)->data, element, handle->T_size);
+    CTL_aba_pointer_atomic_init(&__aba_ptr_get(node)->next, CTL_aba_pointer_make(NULL));
 
     while (1)
     {

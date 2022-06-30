@@ -3,7 +3,7 @@
 #include <string.h>
 
 #include "CTL/tree_map.h"
-#include "CTL/allocator.h"
+#include "CTL/malloc.h"
 
 #define RED true
 
@@ -82,9 +82,9 @@ static void __clear(CTL_tree_map *handle, __rb_tree_node *n)
         __clear(handle, n->right);
     }
 
-    CTL_deallocate(n->data, handle->T_size);
-    CTL_deallocate(n->key, handle->key.size);
-    CTL_deallocate(n, sizeof(__rb_tree_node));
+    CTL_free(n->data, handle->T_size);
+    CTL_free(n->key, handle->key.size);
+    CTL_free(n, sizeof(__rb_tree_node));
 }
 
 //左旋操作
@@ -323,7 +323,7 @@ static void fix_erase(CTL_tree_map *handle, __rb_tree_node *x)
 
 void CTL_tree_map_new(CTL_tree_map *handle, CTL_tree_map_key *key, size_t T_size)
 {
-    handle->header = (__rb_tree_node *)CTL_allocate(sizeof(__rb_tree_node));
+    handle->header = (__rb_tree_node *)CTL_malloc(sizeof(__rb_tree_node));
     handle->header->parent = NULL;
     handle->header->left = handle->header;
     handle->header->right = handle->header;
@@ -346,7 +346,7 @@ void CTL_tree_map_clear(CTL_tree_map *handle)
 void CTL_tree_map_delete(CTL_tree_map *handle)
 {
     CTL_tree_map_clear(handle);
-    CTL_deallocate(handle->header, sizeof(__rb_tree_node));
+    CTL_free(handle->header, sizeof(__rb_tree_node));
 }
 
 void CTL_tree_map_begin(const CTL_tree_map *handle, CTL_tree_map_iterator *res)
@@ -377,9 +377,9 @@ void CTL_tree_map_insert(CTL_tree_map *handle, const void *key, const void *elem
         i = (handle->key.compare(i->key, key) ? i->left : i->right);
     }
 
-    __rb_tree_node *new_node = (__rb_tree_node *)CTL_allocate(sizeof(__rb_tree_node));
-    new_node->data = (char *)CTL_allocate(handle->T_size);
-    new_node->key = (char *)CTL_allocate(handle->key.size);
+    __rb_tree_node *new_node = (__rb_tree_node *)CTL_malloc(sizeof(__rb_tree_node));
+    new_node->data = (char *)CTL_malloc(handle->T_size);
+    new_node->key = (char *)CTL_malloc(handle->key.size);
     //设置节点
     new_node->parent = parent;
     memcpy(new_node->key, key, handle->key.size);
@@ -541,9 +541,9 @@ void CTL_tree_map_erase(CTL_tree_map *handle, CTL_tree_map_iterator *iterator)
         handle->header->right = u->parent;
     }
 
-    CTL_deallocate(u->data, handle->T_size);
-    CTL_deallocate(u->key, handle->key.size);
-    CTL_deallocate(u, sizeof(__rb_tree_node));
+    CTL_free(u->data, handle->T_size);
+    CTL_free(u->key, handle->key.size);
+    CTL_free(u, sizeof(__rb_tree_node));
 
     --handle->size;
 }

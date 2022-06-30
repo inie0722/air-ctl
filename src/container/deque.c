@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "CTL/allocator.h"
+#include "CTL/malloc.h"
 #include "CTL/deque.h"
 
 static inline void set_node(CTL_deque_iterator *dest, char **src, size_t data_size, size_t T_size)
@@ -28,12 +28,12 @@ void CTL_deque_new(CTL_deque *handle, size_t data_size, size_t T_size)
     handle->data_size = data_size;
     //一个map至少 拥有8个节点
     handle->map_size = 8;
-    handle->map = (char **)CTL_allocate(sizeof(char *) * handle->map_size);
+    handle->map = (char **)CTL_malloc(sizeof(char *) * handle->map_size);
 
     //先分配一个缓存区
     char **start = handle->map + ((handle->map_size - 1) / 2);
     char **finish = start;
-    *start = (char *)CTL_allocate(T_size * handle->data_size);
+    *start = (char *)CTL_malloc(T_size * handle->data_size);
     //设置 begin和end 两个迭代器
     set_node(&handle->begin, start, handle->data_size, T_size);
     handle->begin.data = *start;
@@ -54,7 +54,7 @@ void CTL_deque_clear(CTL_deque *handle)
         //释放缓存区
         for (char **node = handle->begin.node + 1; node <= handle->end.node; ++node)
         {
-            CTL_deallocate(*node, handle->end.T_size * handle->data_size);
+            CTL_free(*node, handle->end.T_size * handle->data_size);
         }
     }
 
@@ -71,8 +71,8 @@ void CTL_deque_clear(CTL_deque *handle)
 void CTL_deque_delete(CTL_deque *handle)
 {
     CTL_deque_clear(handle);
-    CTL_deallocate(*handle->begin.node, handle->end.T_size * handle->data_size);
-    CTL_deallocate(handle->map, sizeof(char *) * handle->map_size);
+    CTL_free(*handle->begin.node, handle->end.T_size * handle->data_size);
+    CTL_free(handle->map, sizeof(char *) * handle->map_size);
 }
 
 void *CTL_deque_front(const CTL_deque *handle)
@@ -115,12 +115,12 @@ static void reallocate_map(CTL_deque *handle, size_t nodes_to_add, bool front)
     {
         //重新 分配 map空间
         size_t new_map_size = handle->map_size + 2 + (handle->map_size > nodes_to_add ? handle->map_size : nodes_to_add);
-        char **new_map = (char **)CTL_allocate(sizeof(char *) * new_map_size);
+        char **new_map = (char **)CTL_malloc(sizeof(char *) * new_map_size);
 
         new_start = new_map + (new_map_size - num_new_nodes) / 2 + (front ? nodes_to_add : 0);
 
         memcpy(new_start, handle->begin.node, sizeof(char *) * (handle->end.node - handle->begin.node + 1));
-        CTL_deallocate(handle->map, sizeof(char *) * handle->map_size);
+        CTL_free(handle->map, sizeof(char *) * handle->map_size);
 
         handle->map = new_map;
         handle->map_size = new_map_size;
@@ -142,7 +142,7 @@ static void push_aux_back(CTL_deque *handle, const void *element)
         reallocate_map(handle, 1, false);
     }
     //分配一个新节点
-    *(handle->end.node + 1) = (char *)CTL_allocate(handle->end.T_size * handle->data_size);
+    *(handle->end.node + 1) = (char *)CTL_malloc(handle->end.T_size * handle->data_size);
     //设置end 迭代器
     ++handle->end.node;
     set_node(&handle->end, handle->end.node, handle->data_size, handle->end.T_size);
@@ -173,7 +173,7 @@ static void push_aux_front(CTL_deque *handle, const void *element)
         reallocate_map(handle, 1, true);
     }
     //分配一个新节点
-    *(handle->begin.node - 1) = (char *)CTL_allocate(handle->end.T_size * handle->data_size);
+    *(handle->begin.node - 1) = (char *)CTL_malloc(handle->end.T_size * handle->data_size);
     //设置begin 迭代器
     --handle->begin.node;
     set_node(&handle->begin, handle->begin.node, handle->data_size, handle->end.T_size);
@@ -199,7 +199,7 @@ void CTL_deque_push_front(CTL_deque *handle, const void *element)
 
 static void pop_aux_back(CTL_deque *handle)
 {
-    CTL_deallocate(*handle->end.node, handle->end.T_size * handle->data_size);
+    CTL_free(*handle->end.node, handle->end.T_size * handle->data_size);
     --handle->end.node;
     set_node(&handle->end, handle->end.node, handle->data_size, handle->end.T_size);
     handle->end.data = handle->end.last - handle->end.T_size;
@@ -224,7 +224,7 @@ void CTL_deque_pop_back(CTL_deque *handle)
 
 static void pop_aux_front(CTL_deque *handle)
 {
-    CTL_deallocate(*handle->begin.node, handle->end.T_size * handle->data_size);
+    CTL_free(*handle->begin.node, handle->end.T_size * handle->data_size);
     ++handle->begin.node;
     set_node(&handle->begin, handle->begin.node, handle->data_size, handle->end.T_size);
     handle->begin.data = handle->begin.first;

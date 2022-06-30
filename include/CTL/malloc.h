@@ -27,7 +27,7 @@ CTL_API extern void CTL_set_malloc_handler(void (*handler)());
  * @param size memory size
  * @return void* memory address
  */
-CTL_API extern void *CTL_allocate(size_t size);
+CTL_API extern void *CTL_malloc(size_t size);
 
 /**
  * @brief reallocate memory
@@ -37,7 +37,7 @@ CTL_API extern void *CTL_allocate(size_t size);
  * @param new_size new memory size
  * @return void* new memory address
  */
-CTL_API extern void *CTL_reallocate(void *old_ptr, size_t old_size, size_t new_size);
+CTL_API extern void *CTL_remalloc(void *old_ptr, size_t old_size, size_t new_size);
 
 /**
  * @brief free memory
@@ -45,4 +45,4 @@ CTL_API extern void *CTL_reallocate(void *old_ptr, size_t old_size, size_t new_s
  * @param ptr memory address
  * @param size memory size
  */
-CTL_API extern void CTL_deallocate(void *ptr, size_t size);
+CTL_API extern void CTL_free(void *ptr, size_t size);

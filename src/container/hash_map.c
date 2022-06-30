@@ -4,7 +4,7 @@
 #include <stdbool.h>
 
 #include "CTL/hash_map.h"
-#include "CTL/allocator.h"
+#include "CTL/malloc.h"
 
 #define BUCKET_INITIAL_CAPACITY 16
 #define LOAD_FACTOR 0.75
@@ -33,7 +33,7 @@ inline static size_t __index(unsigned long hash, size_t len)
 static void resize(CTL_hash_map *handle)
 {
 	size_t new_B_size = handle->B_size * 2;
-	__CTL_hash_map_node **new_bucket = (__CTL_hash_map_node **)CTL_allocate(new_B_size * sizeof(__CTL_hash_map_node *));
+	__CTL_hash_map_node **new_bucket = (__CTL_hash_map_node **)CTL_malloc(new_B_size * sizeof(__CTL_hash_map_node *));
 	memset(new_bucket, 0, new_B_size * sizeof(__CTL_hash_map_node *));
 
 	for (size_t i = 0; i < handle->B_size; ++i)
@@ -49,7 +49,7 @@ static void resize(CTL_hash_map *handle)
 		}
 	}
 
-	CTL_deallocate(handle->bucket, handle->B_size * sizeof(__CTL_hash_map_node *));
+	CTL_free(handle->bucket, handle->B_size * sizeof(__CTL_hash_map_node *));
 	handle->bucket = new_bucket;
 	handle->B_size = new_B_size;
 }
@@ -62,7 +62,7 @@ void CTL_hash_map_new(CTL_hash_map *handle, size_t key_size, size_t T_size)
 	handle->size = 0;
 	handle->hash_offset_basis = rand();
 
-	handle->bucket = (__CTL_hash_map_node **)CTL_allocate(sizeof(__CTL_hash_map_node *) * handle->B_size);
+	handle->bucket = (__CTL_hash_map_node **)CTL_malloc(sizeof(__CTL_hash_map_node *) * handle->B_size);
 	memset(handle->bucket, 0, sizeof(__CTL_hash_map_node *) * handle->B_size);
 }
 
@@ -73,9 +73,9 @@ void CTL_hash_map_clear(CTL_hash_map *handle)
 		for (__CTL_hash_map_node *node = handle->bucket[i]; node != NULL;)
 		{
 			__CTL_hash_map_node *next_node = node->next;
-			CTL_deallocate(node->data, handle->T_size);
-			CTL_deallocate(node->key, handle->K_size);
-			CTL_deallocate(node, sizeof(__CTL_hash_map_node));
+			CTL_free(node->data, handle->T_size);
+			CTL_free(node->key, handle->K_size);
+			CTL_free(node, sizeof(__CTL_hash_map_node));
 			node = next_node;
 		}
 	}
@@ -84,7 +84,7 @@ void CTL_hash_map_clear(CTL_hash_map *handle)
 void CTL_hash_map_delete(CTL_hash_map *handle)
 {
 	CTL_hash_map_clear(handle);
-	CTL_deallocate(handle->bucket, handle->B_size * sizeof(__CTL_hash_map_node *));
+	CTL_free(handle->bucket, handle->B_size * sizeof(__CTL_hash_map_node *));
 }
 
 int CTL_hash_map_insert(CTL_hash_map *handle, const void *key, const void *element)
@@ -106,9 +106,9 @@ int CTL_hash_map_insert(CTL_hash_map *handle, const void *key, const void *eleme
 		resize(handle);
 	}
 
-	__CTL_hash_map_node *new_node = (__CTL_hash_map_node *)CTL_allocate(sizeof(__CTL_hash_map_node));
-	new_node->key = CTL_allocate(handle->K_size);
-	new_node->data = CTL_allocate(handle->T_size);
+	__CTL_hash_map_node *new_node = (__CTL_hash_map_node *)CTL_malloc(sizeof(__CTL_hash_map_node));
+	new_node->key = CTL_malloc(handle->K_size);
+	new_node->data = CTL_malloc(handle->T_size);
 	memcpy(new_node->key, key, handle->K_size);
 	memcpy(new_node->data, element, handle->T_size);
 
@@ -132,9 +132,9 @@ void CTL_hash_map_erase(CTL_hash_map *handle, CTL_hash_map_iterator *iterator)
 		prior->next = iterator->node->next;
 	}
 
-	CTL_deallocate(iterator->node->data, handle->T_size);
-	CTL_deallocate(iterator->node->key, handle->K_size);
-	CTL_deallocate(iterator->node, sizeof(__CTL_hash_map_node));
+	CTL_free(iterator->node->data, handle->T_size);
+	CTL_free(iterator->node->key, handle->K_size);
+	CTL_free(iterator->node, sizeof(__CTL_hash_map_node));
 
 	--handle->size;
 }

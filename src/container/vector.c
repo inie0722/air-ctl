@@ -2,7 +2,7 @@
 #include <string.h>
 
 #include "CTL/vector.h"
-#include "CTL/allocator.h"
+#include "CTL/malloc.h"
 
 static void insert_aux(CTL_vector *handle, CTL_vector_iterator *iterator, size_t n);
 
@@ -12,7 +12,7 @@ void CTL_vector_new(CTL_vector *handle, const size_t data_size, const size_t T_s
     handle->end.T_size = T_size;
     handle->end_of_storage.T_size = T_size;
 
-    handle->begin.data = (char *)CTL_allocate(T_size * data_size);
+    handle->begin.data = (char *)CTL_malloc(T_size * data_size);
     handle->end.data = handle->begin.data;
     handle->end_of_storage.data = handle->begin.data + (T_size * data_size);
 }
@@ -25,7 +25,7 @@ void CTL_vector_clear(CTL_vector *handle)
 void CTL_vector_delete(CTL_vector *handle)
 {
     size_t size = handle->begin.T_size * CTL_vector_iterator_diff(&handle->end_of_storage, &handle->begin);
-    CTL_deallocate(handle->begin.data, size);
+    CTL_free(handle->begin.data, size);
 }
 
 void *CTL_vector_front(const CTL_vector *handle)
@@ -70,14 +70,14 @@ void CTL_vector_pop_back(CTL_vector *handle)
 static void insert_aux(CTL_vector *handle, CTL_vector_iterator *iterator, size_t n)
 {
     size_t size = handle->end.T_size * CTL_vector_size(handle);
-    char *ptr = (char *)CTL_allocate(2 * size);
+    char *ptr = (char *)CTL_malloc(2 * size);
     //拷贝插入点前面的数据
     memcpy(ptr, handle->begin.data, iterator->data - handle->begin.data);
 
     //拷贝插入点后面的数据 并空出一个位置
     memcpy(ptr + (iterator->data - handle->begin.data) + (handle->end.T_size * n), iterator->data, handle->end.data - iterator->data);
 
-    CTL_deallocate(handle->begin.data, size);
+    CTL_free(handle->begin.data, size);
 
     handle->begin.data = ptr;
     handle->end_of_storage.data = handle->begin.data + (size * 2);

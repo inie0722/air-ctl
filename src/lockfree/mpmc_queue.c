@@ -3,7 +3,7 @@
 
 #include "CTL/lockfree/mpmc_queue.h"
 #include "CTL/compat/threads.h"
-#include "CTL/allocator.h"
+#include "CTL/malloc.h"
 
 static inline size_t get_index(size_t max_size, size_t index)
 {
@@ -15,8 +15,8 @@ void CTL_lockfree_mpmc_queue_new(CTL_lockfree_mpmc_queue *handle, size_t max_siz
     handle->T_size = T_size;
     handle->max_size = max_size;
 
-    handle->data = CTL_allocate(max_size * T_size);
-    handle->flag = CTL_allocate(max_size * sizeof(__CTL_lockfree_mpmc_queue_flag));
+    handle->data = CTL_malloc(max_size * T_size);
+    handle->flag = CTL_malloc(max_size * sizeof(__CTL_lockfree_mpmc_queue_flag));
 
     for (size_t i = 0; i < max_size; i++)
     {
@@ -30,8 +30,8 @@ void CTL_lockfree_mpmc_queue_new(CTL_lockfree_mpmc_queue *handle, size_t max_siz
 
 void CTL_lockfree_mpmc_queue_delete(CTL_lockfree_mpmc_queue *handle)
 {
-    CTL_deallocate(handle->data, handle->max_size * handle->T_size);
-    CTL_deallocate(handle->flag, handle->max_size * sizeof(__CTL_lockfree_mpmc_queue_flag));
+    CTL_free(handle->data, handle->max_size * handle->T_size);
+    CTL_free(handle->flag, handle->max_size * sizeof(__CTL_lockfree_mpmc_queue_flag));
 }
 
 size_t CTL_lockfree_mpmc_queue_push(CTL_lockfree_mpmc_queue *handle, const void *element)

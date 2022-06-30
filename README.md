@@ -29,7 +29,6 @@ make check && ctest
 - [x] `stack`
 - [x] `heap`
 - [x] `priority queue`
-- [x] `allocator`
 
 ## Algorithm task lists 
 - [x] `heap sort`
