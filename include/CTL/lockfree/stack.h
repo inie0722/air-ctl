@@ -45,7 +45,7 @@ CTL_API extern void CTL_lockfree_stack_delete(CTL_lockfree_stack *handle);
  * @param element element address
  * @return size_t number of push element
  */
-CTL_API extern void CTL_lockfree_stack_push(CTL_lockfree_stack *handle, const void *element);
+CTL_API extern size_t CTL_lockfree_stack_push(CTL_lockfree_stack *handle, const void *element);
 
 /**
  * @brief pop element from the back
