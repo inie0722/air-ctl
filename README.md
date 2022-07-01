@@ -10,11 +10,11 @@ vcpkg install air-ctl
 git clone https://github.com/inie0722/CTL
 cd CTL
 mkdir build && cd build
-cmake ../
+cmake ../ -DCMAKE_BUILD_TYPE=Release
 cmake --build ./ --config Release --target install
 
 //run test
-cmake ../ -DTest=ON
+cmake ../ -DCMAKE_BUILD_TYPE=Release -DTest=ON
 make check && ctest
 ```
 
@@ -52,7 +52,6 @@ If you want to see the specific container usage method, you can go to the [docum
 The code implementation is modeled after SGI-STL<br>
 
 ## Note
-This library provides an allocator, you can disable the allocator by precompiling the macro CTL_NO_ALLOCATE<br>
 For memory overflow, function callback is used, which means that all APIs will not return the error of memory allocation failure, but you need to set the OOM callback function yourself<br>
 ```c
 void CTL_set_malloc_handler(void (*handler)()); //Memory allocation failure Handler function Defined 
