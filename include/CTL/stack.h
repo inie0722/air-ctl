@@ -68,10 +68,10 @@ CTL_API extern void CTL_stack_push(CTL_stack *handle, const void *element);
 CTL_API extern void CTL_stack_pop(CTL_stack *handle);
 
 /**
- * @brief get the number of elements that can be held in currently allocated storage
+ * @brief the number of elements
  *
  * @param handle
- * @return size_t number of elements that can be held in currently allocated storage
+ * @return size_t The number of elements in the container
  */
 CTL_API extern size_t CTL_stack_size(const CTL_stack *handle);
 
