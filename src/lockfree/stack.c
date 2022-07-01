@@ -1,6 +1,7 @@
 #include <string.h>
 
 #include "CTL/lockfree/stack.h"
+#include "CTL/compat/threads.h"
 
 static inline __CTL_lockfree_stack_node *__aba_ptr_get(CTL_aba_pointer aba_ptr)
 {
@@ -32,7 +33,7 @@ void CTL_lockfree_stack_delete(CTL_lockfree_stack *handle)
     CTL_lockfree_allocator_delete(&handle->alloc, sizeof(__CTL_lockfree_stack_node) + handle->T_size);
 }
 
-void CTL_lockfree_stack_push(CTL_lockfree_stack *handle, const void *element)
+size_t CTL_lockfree_stack_push(CTL_lockfree_stack *handle, const void *element)
 {
     CTL_aba_pointer node = CTL_lockfree_allocate(&handle->alloc);
     memcpy(__aba_ptr_get(node)->data, element, handle->T_size);
@@ -46,18 +47,21 @@ void CTL_lockfree_stack_push(CTL_lockfree_stack *handle, const void *element)
     }
 
     atomic_fetch_add_explicit(&handle->size, 1, memory_order_relaxed);
+
+    return 1;
 }
 
-void CTL_lockfree_stack_pop(CTL_lockfree_stack *handle, void *element)
+size_t CTL_lockfree_stack_pop(CTL_lockfree_stack *handle, void *element)
 {
     CTL_aba_pointer exp = CTL_aba_pointer_atomic_load(&handle->top, memory_order_acquire);
     CTL_aba_pointer ret = exp;
 
-    while (!__aba_ptr_get(exp) ||
+    while (__aba_ptr_get(exp) == NULL ||
            !CTL_aba_pointer_atomic_weak(&handle->top, &exp, __aba_ptr_get(exp)->next, memory_order_release, memory_order_relaxed))
     {
-        while (!__aba_ptr_get(exp))
+        while (__aba_ptr_get(exp) == NULL)
         {
+            thrd_yield();
             exp = CTL_aba_pointer_atomic_load(&handle->top, memory_order_acquire);
         }
 
@@ -67,6 +71,8 @@ void CTL_lockfree_stack_pop(CTL_lockfree_stack *handle, void *element)
     atomic_fetch_sub_explicit(&handle->size, 1, memory_order_relaxed);
     memcpy(element, __aba_ptr_get(ret)->data, handle->T_size);
     CTL_lockfree_deallocate(&handle->alloc, ret);
+
+    return 1;
 }
 
 size_t CTL_lockfree_stack_size(const CTL_lockfree_stack *handle)

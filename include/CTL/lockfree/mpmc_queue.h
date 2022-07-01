@@ -25,14 +25,53 @@ typedef struct
 
 #define CTL_MPMC_QUEUE_LOCK_FREE ATOMIC_LONG_LOCK_FREE
 
+/**
+ * @brief create mpmc queue
+ *
+ * @param handle
+ * @param max_size
+ * @param T_size element type size
+ */
 CTL_API extern void CTL_lockfree_mpmc_queue_new(CTL_lockfree_mpmc_queue *handle, size_t max_size, size_t T_size);
 
+/**
+ * @brief destroy mpmc queue
+ *
+ * @param handle
+ */
 CTL_API extern void CTL_lockfree_mpmc_queue_delete(CTL_lockfree_mpmc_queue *handle);
 
+/**
+ * @brief push element to the back
+ *
+ * @param handle
+ * @param element element address
+ * @return size_t number of push element
+ */
 CTL_API extern size_t CTL_lockfree_mpmc_queue_push(CTL_lockfree_mpmc_queue *handle, const void *element);
 
+/**
+ * @brief pop element from the front
+ *
+ * @param handle
+ * @param element storage element address
+ * @return size_t number of pop element
+ */
 CTL_API extern size_t CTL_lockfree_mpmc_queue_pop(CTL_lockfree_mpmc_queue *handle, void *element);
 
+/**
+ * @brief returns the number of elements
+ *
+ * @param handle
+ * @return size_t The number of elements in the container
+ */
 CTL_API extern size_t CTL_lockfree_mpmc_queue_size(const CTL_lockfree_mpmc_queue *handle);
 
+/**
+ * @brief checks whether the underlying container is empty
+ *
+ * @param handle
+ * @return true
+ * @return false
+ */
 CTL_API extern bool CTL_lockfree_mpmc_queue_empty(const CTL_lockfree_mpmc_queue *handle);
