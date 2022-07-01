@@ -17,10 +17,8 @@
 
 #pragma once
 
-#if defined CTL_CACHE_LINE_SIZE && CTL_CACHE_LINE_SIZE > 0
-#define CTL_CACHE_LINE_ALIGN(type, count) char __align_##count[CTL_CACHE_LINE_SIZE - sizeof(type)];
-#else
-#define CTL_CACHE_LINE_ALIGN(type, count)
+#if !defined CTL_CACHE_LINE_SIZE
+#define CTL_CACHE_LINE_SIZE  64
 #endif
 
 #if (defined __cplusplus) || (defined _MSC_VER && defined __STDC_NO_ATOMICS__ && __STDC_VERSION__ >= 201112L)

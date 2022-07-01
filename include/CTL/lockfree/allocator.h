@@ -1,20 +1,21 @@
 #pragma once
 
 #include <stddef.h>
+#include <stdalign.h>
 
 #include "CTL/config.h"
 #include "CTL/lockfree/aba_pointer.h"
 
 typedef union
 {
-    _Atomic CTL_aba_pointer next;
+    alignas(CTL_CACHE_LINE_SIZE) _Atomic CTL_aba_pointer next;
     char data[0];
 } __CTL_lockfree_allocator_node;
 
 typedef struct
 {
-    _Atomic CTL_aba_pointer free_list;
     size_t T_size;
+    alignas(CTL_CACHE_LINE_SIZE) _Atomic CTL_aba_pointer free_list;
 } CTL_lockfree_allocator;
 
 #define CTL_ALLOCATOR_LOCK_FREE CTL_APA_POINTER_LOCK_FREE

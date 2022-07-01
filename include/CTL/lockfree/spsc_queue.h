@@ -1,7 +1,7 @@
 #pragma once
 
-
 #include <stddef.h>
+#include <stdalign.h>
 #include <stdbool.h>
 
 #include "CTL/config.h"
@@ -12,9 +12,8 @@ typedef struct
     char *data;
     size_t T_size;
     size_t max_size;
-    atomic_size_t writable_limit;
-    CTL_CACHE_LINE_ALIGN(atomic_size_t, 0)
-    atomic_size_t readable_limit;
+    alignas(CTL_CACHE_LINE_SIZE) atomic_size_t writable_limit;
+    alignas(CTL_CACHE_LINE_SIZE) atomic_size_t readable_limit;
 } CTL_lockfree_spsc_queue;
 
 #define CTL_SPSC_QUEUE_LOCK_FREE ATOMIC_LONG_LOCK_FREE
