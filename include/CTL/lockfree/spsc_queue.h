@@ -15,15 +15,14 @@
 
 #include "CTL/config.h"
 #include "CTL/compat/atomic.h"
-#include "CTL/compat/stdalign.h"
 
 typedef struct
 {
     char *data;
     size_t T_size;
     size_t max_size;
-    alignas(CTL_CACHE_LINE_SIZE) atomic_size_t writable_limit;
-    alignas(CTL_CACHE_LINE_SIZE) atomic_size_t readable_limit;
+    CTL_ALIGNAS(CTL_CACHE_LINE_SIZE) atomic_size_t writable_limit;
+    CTL_ALIGNAS(CTL_CACHE_LINE_SIZE) atomic_size_t readable_limit;
 } CTL_lockfree_spsc_queue;
 
 #define CTL_SPSC_QUEUE_LOCK_FREE ATOMIC_LONG_LOCK_FREE

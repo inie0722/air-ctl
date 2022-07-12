@@ -15,12 +15,11 @@
 
 #include "CTL/config.h"
 #include "CTL/compat/atomic.h"
-#include "CTL/compat/stdalign.h"
 
 typedef struct
 {
-    alignas(CTL_CACHE_LINE_SIZE) atomic_size_t writable;
-    alignas(CTL_CACHE_LINE_SIZE) atomic_size_t readable;
+    CTL_ALIGNAS(CTL_CACHE_LINE_SIZE) atomic_size_t writable;
+    CTL_ALIGNAS(CTL_CACHE_LINE_SIZE) atomic_size_t readable;
 } __CTL_lockfree_mpmc_queue_flag;
 
 typedef struct
@@ -29,8 +28,8 @@ typedef struct
     size_t T_size;
     size_t max_size;
     __CTL_lockfree_mpmc_queue_flag *flag;
-    alignas(CTL_CACHE_LINE_SIZE) atomic_size_t writable_limit;
-    alignas(CTL_CACHE_LINE_SIZE) atomic_size_t readable_limit;
+    CTL_ALIGNAS(CTL_CACHE_LINE_SIZE) atomic_size_t writable_limit;
+    CTL_ALIGNAS(CTL_CACHE_LINE_SIZE) atomic_size_t readable_limit;
 } CTL_lockfree_mpmc_queue;
 
 #define CTL_MPMC_QUEUE_LOCK_FREE ATOMIC_LONG_LOCK_FREE

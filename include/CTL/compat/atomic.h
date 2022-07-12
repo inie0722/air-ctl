@@ -18,7 +18,14 @@
 #pragma once
 
 #if !defined CTL_CACHE_LINE_SIZE
-#define CTL_CACHE_LINE_SIZE  64
+#define CTL_CACHE_LINE_SIZE 64
+#endif
+
+#if CTL_CACHE_LINE_SIZE <= 0
+#define CTL_ALIGNAS(size)
+#else
+#include <stdalign.h>
+#define CTL_ALIGNAS(size) alignas(size)
 #endif
 
 #if (defined __cplusplus) || (defined _MSC_VER && defined __STDC_NO_ATOMICS__ && __STDC_VERSION__ >= 201112L)
