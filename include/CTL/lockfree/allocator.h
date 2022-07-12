@@ -12,10 +12,10 @@
 #pragma once
 
 #include <stddef.h>
-#include <stdalign.h>
 
 #include "CTL/config.h"
 #include "CTL/lockfree/aba_pointer.h"
+#include "CTL/compat/stdalign.h"
 
 typedef union
 {

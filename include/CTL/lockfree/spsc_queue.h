@@ -11,11 +11,11 @@
 #pragma once
 
 #include <stddef.h>
-#include <stdalign.h>
 #include <stdbool.h>
 
 #include "CTL/config.h"
 #include "CTL/compat/atomic.h"
+#include "CTL/compat/stdalign.h"
 
 typedef struct
 {

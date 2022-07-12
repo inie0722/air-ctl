@@ -11,9 +11,9 @@
 #pragma once
 
 #include <stddef.h>
-#include <stdalign.h>
 #include <stdbool.h>
 
+#include "CTL/compat/stdalign.h"
 #include "CTL/lockfree/aba_pointer.h"
 #include "CTL/lockfree/allocator.h"
 
