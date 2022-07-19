@@ -18,5 +18,5 @@ endif()
 set_target_properties(CTL PROPERTIES OUTPUT_NAME "ctl")
 
 if(UNIX OR APPLE)
-    target_link_libraries(CTL pthread)
+    target_link_libraries(CTL PRIVATE pthread)
 endif()

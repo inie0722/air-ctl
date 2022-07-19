@@ -20,7 +20,7 @@ if(Test)
     add_subdirectory(${CMAKE_SOURCE_DIR}/test)
 endif()
 
-TARGET_INCLUDE_DIRECTORIES(CTL INTERFACE $<INSTALL_INTERFACE:include>)
+target_include_directories(CTL INTERFACE $<INSTALL_INTERFACE:include>)
 
 install(TARGETS CTL EXPORT air-ctl-config
         RUNTIME DESTINATION bin
