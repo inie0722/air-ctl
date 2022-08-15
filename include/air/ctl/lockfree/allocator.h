@@ -13,8 +13,8 @@
 
 #include <stddef.h>
 
-#include "CTL/config.h"
-#include "CTL/lockfree/aba_pointer.h"
+#include "air/ctl/config.h"
+#include "air/ctl/lockfree/aba_pointer.h"
 
 typedef union
 {

@@ -7,7 +7,7 @@
 
 extern "C"
 {
-#include "CTL/lockfree/stack.h"
+#include "air/ctl/lockfree/stack.h"
 }
 
 constexpr size_t COUNT = 10000;

@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "CTL/lockfree/spsc_queue.h"
-#include "CTL/malloc.h"
+#include "air/ctl/lockfree/spsc_queue.h"
+#include "air/ctl/malloc.h"
 
 static inline size_t get_index(size_t max_size, size_t index)
 {

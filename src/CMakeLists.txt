@@ -10,13 +10,13 @@ endif()
 
 if(BUILD_SHARED_LIBS)
 	add_compile_definitions(CTL_DLL_BUILD)
-  	add_library(CTL SHARED ${allocator} ${container} ${adapter} ${algorithm} ${lockfree} malloc.c)
+  	add_library(${PROJECT_NAME} SHARED ${allocator} ${container} ${adapter} ${algorithm} ${lockfree} malloc.c)
 else()
-	add_library(CTL STATIC ${allocator} ${container} ${adapter} ${algorithm} ${lockfree} malloc.c)
+	add_library(${PROJECT_NAME} STATIC ${allocator} ${container} ${adapter} ${algorithm} ${lockfree} malloc.c)
 endif()
 
-set_target_properties(CTL PROPERTIES OUTPUT_NAME "ctl")
+set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "airctl")
 
 if(UNIX OR APPLE)
-    target_link_libraries(CTL PRIVATE pthread)
+    target_link_libraries(${PROJECT_NAME} PRIVATE pthread)
 endif()

@@ -6,8 +6,8 @@
 
 extern "C"
 {
-#include "CTL/heap.h"
-#include "CTL/vector.h"
+#include "air/ctl/heap.h"
+#include "air/ctl/vector.h"
 }
 
 using namespace std;

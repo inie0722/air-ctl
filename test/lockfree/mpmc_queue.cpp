@@ -7,7 +7,7 @@
 
 extern "C"
 {
-#include "CTL/lockfree/mpmc_queue.h"
+#include "air/ctl/lockfree/mpmc_queue.h"
 }
 
 constexpr size_t COUNT = 10000;

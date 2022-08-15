@@ -1,7 +1,7 @@
 #include <string.h>
 
-#include "CTL/lockfree/queue.h"
-#include "CTL/compat/threads.h"
+#include "air/ctl/lockfree/queue.h"
+#include "air/ctl/compat/threads.h"
 
 static inline __CTL_lockfree_queue_node *__aba_ptr_get(CTL_aba_pointer aba_ptr)
 {

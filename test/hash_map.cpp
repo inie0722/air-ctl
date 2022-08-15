@@ -6,7 +6,7 @@
 
 extern "C"
 {
-#include "CTL/hash_map.h"
+#include "air/ctl/hash_map.h"
 }
 
 using namespace std;

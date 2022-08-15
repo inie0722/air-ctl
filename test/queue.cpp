@@ -8,7 +8,7 @@
 
 extern "C"
 {
-#include "CTL/queue.h"
+#include "air/ctl/queue.h"
 }
 
 using namespace std;

@@ -7,7 +7,7 @@
 
 extern "C"
 {
-#include "CTL/lockfree/queue.h"
+#include "air/ctl/lockfree/queue.h"
 }
 
 constexpr size_t COUNT = 10000;

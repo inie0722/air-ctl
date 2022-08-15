@@ -14,7 +14,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-#include "CTL/compat/atomic.h"
+#include "air/ctl/compat/atomic.h"
 
 #if defined __cplusplus
 static_assert(sizeof(void *) == 8, "only support 64-bit");

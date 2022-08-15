@@ -1,8 +1,8 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-#include "CTL/priority_queue.h"
-#include "CTL/heap.h"
+#include "air/ctl/priority_queue.h"
+#include "air/ctl/heap.h"
 
 void CTL_priority_queue_new(CTL_priority_queue *handle, bool (*compare_handler)(const void *left, const void *right), CTL_functions *functions, size_t data_size, size_t T_size)
 {

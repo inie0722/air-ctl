@@ -7,7 +7,7 @@
 
 extern "C"
 {
-#include "CTL/lockfree/spsc_queue.h"
+#include "air/ctl/lockfree/spsc_queue.h"
 }
 
 constexpr size_t COUNT = 10000;

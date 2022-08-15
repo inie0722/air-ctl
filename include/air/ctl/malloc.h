@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-#include "CTL/config.h"
+#include "air/ctl/config.h"
 
 /**
  * @brief set memory allocation failure handling operation

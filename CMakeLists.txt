@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(CTL)
+project(AirCtl LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 17)
 set(CMAKE_CXX_STANDARD 17)
@@ -20,20 +20,19 @@ if(Test)
     add_subdirectory(${CMAKE_SOURCE_DIR}/test)
 endif()
 
-target_include_directories(CTL INTERFACE $<INSTALL_INTERFACE:include>)
+target_include_directories(${PROJECT_NAME} INTERFACE $<INSTALL_INTERFACE:include>)
 
-install(TARGETS CTL EXPORT air-ctl-config
+install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
         RUNTIME DESTINATION bin
     	LIBRARY DESTINATION lib
     	ARCHIVE DESTINATION lib)
       
-install(EXPORT air-ctl-config
-        FILE air-ctl-config.cmake
-        NAMESPACE air-ctl::
-        DESTINATION share/air-ctl
+install(EXPORT  ${PROJECT_NAME}Config
+        FILE  ${PROJECT_NAME}Config.cmake
+        DESTINATION share/${PROJECT_NAME}
 )
 
-install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/CTL
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/
     	DESTINATION include
         FILES_MATCHING
         PATTERN *.h

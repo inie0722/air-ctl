@@ -5,7 +5,7 @@
 
 extern "C"
 {
-#include "CTL/array.h"
+#include "air/ctl/array.h"
 }
 
 using namespace std;

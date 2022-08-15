@@ -8,7 +8,7 @@
 
 extern "C"
 {
-#include "CTL/deque.h"
+#include "air/ctl/deque.h"
 }
 
 using namespace std;

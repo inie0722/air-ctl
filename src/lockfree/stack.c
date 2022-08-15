@@ -1,7 +1,7 @@
 #include <string.h>
 
-#include "CTL/lockfree/stack.h"
-#include "CTL/compat/threads.h"
+#include "air/ctl/lockfree/stack.h"
+#include "air/ctl/compat/threads.h"
 
 static inline __CTL_lockfree_stack_node *__aba_ptr_get(CTL_aba_pointer aba_ptr)
 {

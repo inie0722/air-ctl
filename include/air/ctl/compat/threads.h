@@ -35,7 +35,7 @@
 #define TIME_UTC 1
 #endif
 
-#include "CTL/compat/c99_compat.h" /* for `inline` */
+#include "air/ctl/compat/c99_compat.h" /* for `inline` */
 
 /*---------------------------- types ----------------------------*/
 typedef void (*tss_dtor_t)(void*);
@@ -61,9 +61,9 @@ enum {
 /*-------------------------- functions --------------------------*/
 
 #if defined(_WIN32) && !defined(__CYGWIN__)
-#include "CTL/compat/threads_win32.h"
+#include "air/ctl/compat/threads_win32.h"
 #else
-#include "CTL/compat/threads_posix.h"
+#include "air/ctl/compat/threads_posix.h"
 #endif
 
 

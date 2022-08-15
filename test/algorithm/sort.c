@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "CTL/algorithm/intro_sort.h"
-#include "CTL/algorithm/tim_sort.h"
+#include "air/ctl/algorithm/intro_sort.h"
+#include "air/ctl/algorithm/tim_sort.h"
 
 bool compare(const void *a, const void *b)
 {

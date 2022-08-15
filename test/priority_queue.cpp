@@ -8,7 +8,7 @@
 
 extern "C"
 {
-#include "CTL/priority_queue.h"
+#include "air/ctl/priority_queue.h"
 }
 
 using namespace std;

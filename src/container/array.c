@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <string.h>
 
-#include "CTL/array.h"
+#include "air/ctl/array.h"
 
 void CTL_array_init(CTL_array *handle, const void *begin, const void *end, size_t T_size)
 {

@@ -22,7 +22,7 @@ else()
     add_custom_target(check DEPENDS array deque hash_map heap list priority_queue queue stack tree_map vector sort spsc_queue mpmc_queue)
 endif()
 
-set(target_lib CTL GTest::gtest)
+set(target_lib ${PROJECT_NAME} GTest::gtest)
 
 target_link_libraries(array ${target_lib})
 target_link_libraries(vector ${target_lib})
