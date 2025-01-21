@@ -104,6 +104,7 @@ int CTL_hash_map_insert(CTL_hash_map *handle, const void *key, const void *eleme
 	if (handle->size > (handle->B_size - 1) * LOAD_FACTOR)
 	{
 		resize(handle);
+		index = __index(hash, handle->B_size);
 	}
 
 	__CTL_hash_map_node *new_node = (__CTL_hash_map_node *)CTL_malloc(sizeof(__CTL_hash_map_node));
